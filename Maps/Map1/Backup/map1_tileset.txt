@@ -1,0 +1,3 @@
+const unsigned short tilelookup[] = {
+0,1,2,3
+};
