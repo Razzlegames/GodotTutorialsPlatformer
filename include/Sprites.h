@@ -128,13 +128,16 @@ Bits 12-15 are the palette number. If your sprite is a 16-color sprite then this
 /** Point on the screen (where a sprite is,etc)*/
 typedef struct
 {
+
     u16 x;
     u16 y;
+
 }Point;
 
 /** This is the OAM memory as it is laid out in the GBA */
 class OAM_Entry
 {
+
   public:
 #define ATTR_SIZE 3
 
@@ -162,6 +165,7 @@ class OAM_Entry
   (for scaling & rotating sprites)*/
 typedef struct
 {
+
     u16 filler1[3];
     u16 pa;
     u16 filler2[3];
@@ -170,6 +174,7 @@ typedef struct
     u16 pc;
     u16 filler4[3];
     u16 pd;
+
 }RotData;
 
 /** If no sprites are available to the system */
@@ -183,8 +188,10 @@ typedef struct
 //-------------------------------------------------------
 typedef struct SpritesAvailable_ 
 {
+
     u8 sprite_number;
     struct SpritesAvailable_* next;
+
 }SpritesAvailable;
 
 //-------------------------------------------------------
@@ -192,15 +199,25 @@ typedef struct SpritesAvailable_
 //-------------------------------------------------------
 typedef struct SpriteGFX_
 {
+
     /// Offset into GFX memory this sprite begins at*/
     u16 begin_index;
-    /* Size of GFX memory this refers to */
+
+    /// Size of GFX memory this refers to 
     u16  size;
+
     /// pointer to the next contiguous block of memory being used for GFX */
     struct SpriteGFX_* next;
+
 }SpriteGFX;
 
 const int GFX_MEMORY_SIZE   = 32*(2^10);
+
+//******************************************************************************
+/**
+*  Used to control all apsects of sprites in this game. Including 
+*       memory access availability linked list
+*/
 
 class Sprites
 {
@@ -296,15 +313,19 @@ inline bool Sprites::checkGFXBounds(int begin_index, int size)
 
     }
     return true;
+
 }
 
 //******************************************************************************
 /**
+ *
  *   Enable a sprite by clearing the "size double flag" in it's OAM
+ *
  */
 
 inline void Sprites::enableSprite(int sprite_number)
 {
+
     // ATTR0_DISABLED represents the bit we want to clear. So flip the bits and AND it
     OAMCopy[sprite_number].attribute[0] &= ~ATTR0_DISABLED;
 
@@ -406,6 +427,7 @@ inline void Sprites::setTileGFX(unsigned char* tiles, unsigned int size,
     //iprintf("\x1b[2;0H *SPRITE_GFX[%d] = {0x%04x%04x...}",320, *(SPRITE_GFX+320), *(SPRITE_GFX+321));
 
     //iprintf("\x1b[3;0H *tiles[%d] = {0x%02x%02x%02x%02x...}",320, tiles[640],tiles[641], tiles[642], tiles[643]);
+
 }
 
 //******************************************************************************
@@ -416,7 +438,9 @@ inline void Sprites::setTileGFX(unsigned char* tiles, unsigned int size,
 inline void Sprites::setSpriteColorAndShape(const int shape, const int color, 
         int sprite_number)
 {
+
     OAMCopy[sprite_number].attribute[0] |= OBJ_SHAPE(shape) | color;
+
 }
 
 //******************************************************************************
@@ -427,9 +451,11 @@ inline void Sprites::setSpriteColorAndShape(const int shape, const int color,
 
 inline void Sprites::setSpriteShape(const int shape, int sprite_number)
 {
+
     OAMCopy[sprite_number].attribute[0] |= OBJ_SHAPE(shape);
     //    Debug::printSetup();
     //    iprintf("\x1b[1;0H shape number  %d ", OBJ_SHAPE(shape));
+
 }
 
 //******************************************************************************
@@ -439,9 +465,11 @@ inline void Sprites::setSpriteShape(const int shape, int sprite_number)
 
 inline void Sprites::setSpriteSize(const int size, int sprite_number)
 {
+
     OAMCopy[sprite_number].attribute[1] |= size;
     //    Debug::printSetup();
     //    iprintf("\x1b[2;0H sprite size  %x ", OBJ_SIZE(size));
+
 }
 
 //******************************************************************************
@@ -454,12 +482,14 @@ inline void Sprites::setSpriteSize(const int size, int sprite_number)
 
 inline void Sprites::setSpritePosition(int x, int y, int sprite_number)
 {
+
     // Set sprite's y cordinate (8 bits of data)
     setSpriteYCord(y, sprite_number);
     // Set sprite's x cordinate (actually 9 bits of data!) 
     setSpriteXCord(x, sprite_number);  
     //Debug::printSetup();
     //iprintf("\x1b[0;0H sprite_position {%d,%d} ", x,y);
+
 }
 
 //******************************************************************************
@@ -471,10 +501,12 @@ inline void Sprites::setSpritePosition(int x, int y, int sprite_number)
 
 inline void Sprites::setSpritePosition(Point point, int sprite_number)
 {
+
     // Set sprite's y cordinate (8 bits of data)
     setSpriteYCord(point.y, sprite_number);
     // Set sprite's x cordinate (actually 9 bits of data!) 
     setSpriteXCord(point.x, sprite_number);  
+
 }
 
 //******************************************************************************
@@ -484,9 +516,11 @@ inline void Sprites::setSpritePosition(Point point, int sprite_number)
 
 inline void Sprites::setSpriteYCord(int y, int sprite_number)
 {
+
     // Set sprite's y cordinate (8 bits of data)
     OAMCopy[sprite_number].attribute[0] &= 0xFF00;
     OAMCopy[sprite_number].attribute[0] |= (0x00FF)&y;
+
 }
 
 //******************************************************************************
@@ -496,9 +530,11 @@ inline void Sprites::setSpriteYCord(int y, int sprite_number)
 
 inline void Sprites::setSpriteXCord(int x, int sprite_number)
 {
+
     // Set sprite's x cordinate (actually 9 bits of data!) 
     OAMCopy[sprite_number].attribute[1] &= 0xFE00;
     OAMCopy[sprite_number].attribute[1] |= (0x01FF)&x; 
+
 }
 
 //******************************************************************************
@@ -511,9 +547,11 @@ inline void Sprites::setSpriteXCord(int x, int sprite_number)
 
 inline void Sprites::getSpritePosition(Point* point, int sprite_number)
 {
+
     // Get sprite's y cordinate (8 bits of data)
     point->x = (u16)getSpriteXCord(sprite_number);
     point->y = (u16)getSpriteYCord(sprite_number);
+
 }
 
 //******************************************************************************
@@ -524,8 +562,10 @@ inline void Sprites::getSpritePosition(Point* point, int sprite_number)
 
 inline int Sprites::getSpriteYCord(int sprite_number)
 {
+
     // Set sprite's x cordinate (actually 9 bits of data!) 
     return (OAMCopy[sprite_number].attribute[1] & (0x01FF));
+
 }
 
 //******************************************************************************
@@ -536,8 +576,10 @@ inline int Sprites::getSpriteYCord(int sprite_number)
 
 inline int Sprites::getSpriteXCord(int sprite_number)
 {
+
     // Set sprite's x cordinate (actually 9 bits of data!) 
     return OAMCopy[sprite_number].attribute[0] & (0x00FF);
+
 }
 
 //******************************************************************************
@@ -549,6 +591,7 @@ inline int Sprites::getSpriteXCord(int sprite_number)
 inline void Sprites::flipSpriteVertical(int index)
 {
     OAMCopy[index].attribute[1] ^= OBJ_VFLIP;   
+
 }
 
 //******************************************************************************
@@ -559,7 +602,9 @@ inline void Sprites::flipSpriteVertical(int index)
 
 inline void Sprites::flipSpriteHorizontal(int index)
 {
+
     OAMCopy[index].attribute[1] ^= OBJ_HFLIP;   
+
 }
 
 //******************************************************************************
@@ -569,7 +614,9 @@ inline void Sprites::flipSpriteHorizontal(int index)
 
 inline int Sprites::getTileIndex(int sprite_number)
 {
+
     return OBJ_CHAR(OAMCopy[sprite_number].attribute[2]);
+
 }
 
 //******************************************************************************
@@ -581,8 +628,10 @@ inline int Sprites::getTileIndex(int sprite_number)
 
 inline void Sprites::setTileIndex(int index, int sprite_number)
 {
+
     OAMCopy[sprite_number].attribute[2] &= ~TILE_ATTRIBUTE_MASK;
     OAMCopy[sprite_number].attribute[2] |= TILE_ATTRIBUTE_MASK&index;
+
 }
 
 //******************************************************************************
@@ -608,6 +657,7 @@ inline void Sprites::displaySpriteInfo(int sprite_number)
             OAMCopy[sprite_number].attribute[1]);
     iprintf("\x1b[5;0H OAM[%d].att[2]: 0x%04x",sprite_number,
             OAMCopy[sprite_number].attribute[2]);
+
 }
 
 #endif	/* _Sprites_H */

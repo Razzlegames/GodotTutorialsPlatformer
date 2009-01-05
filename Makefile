@@ -44,13 +44,6 @@
 ##########################################################################################
 
 
-# Compile using Krawall software (set to yes or no) ?
-# Also specify if Krawall is registered (yes or no)
-#
-#USE_KRAWALL=yes
-#KRAWALL_IS_REGISTERED=no
-#KRAWALL_FILES=absnuts_changed.s3m
-
 #
 # Set a list of files you want to compile
 #
@@ -80,6 +73,7 @@ include $(DEVKITARM)/gba_rules
 # DATA is a list of directories containing data files
 # INCLUDES is a list of directories containing header files
 #---------------------------------------------------------------------------------
+
 TARGET		:=	$(shell basename $(CURDIR))
 BUILD		:=	build
 SOURCES		:=	gfx source
@@ -88,11 +82,20 @@ INCLUDES	:=	"include"
 INCLUDES	+=	build
 INCLUDES	+=	sound
 KRAWALLDATA	:=	sound
-GRAPHICS	:=	gfx
+BMP_GRAPHICS	:=	gfx/gummy.bmp gfx/crazy_hero.bmp gfx/ball_blue.bmp \
+			gfx/ball_green.bmp gfx/ball_red.bmp gfx/ball_yellow.bmp gfx/heart_16x16.bmp 
+
+# Compile using Krawall software (set to yes or no) ?
+# Also specify if Krawall is registered (yes or no)
+#
+#USE_KRAWALL=yes
+#KRAWALL_IS_REGISTERED=no
+KRAWALL_FILES	:= 	sound/absnuts_changed.s3m 
 
 #---------------------------------------------------------------------------------
 # options for code generation
 #---------------------------------------------------------------------------------
+
 ARCH	:=	-mthumb -mthumb-interwork
 
 CFLAGS	:=	-g -Wall -O3\
@@ -111,6 +114,7 @@ LDFLAGS	=	-g $(ARCH) -Wl,-Map,$(notdir $@).map
 
 #export LIBKRAWALL	:=	$(DEVKITPRO)/Krawall
 #export LIBGBA		:=	$(DEVKITPRO)/libgba
+
 #---------------------------------------------------------------------------------
 # any extra libraries we wish to link with the project
 #---------------------------------------------------------------------------------
@@ -136,7 +140,7 @@ export VPATH	:=	$(foreach dir,$(SOURCES),$(CURDIR)/$(dir)) \
 export DEPSDIR	:=	$(CURDIR)/$(BUILD)
 
 #---------------------------------------------------------------------------------
-# automatically build a list of object files for our project
+# Automatically build a list of object files for our project
 #---------------------------------------------------------------------------------
 CFILES		:=	$(foreach dir,$(SOURCES),$(notdir $(wildcard $(dir)/*.c)))
 CPPFILES	:=	$(foreach dir,$(SOURCES),$(notdir $(wildcard $(dir)/*.cpp)))
@@ -160,7 +164,7 @@ else
 endif
 #---------------------------------------------------------------------------------
 #$
-export OFILES	:=			$(KRAWALLOBJ) \
+export OFILES	:=	$(KRAWALLOBJ) \
 			$(PCXFILES:.pcx=.o)\
 			$(addsuffix .o,$(BINFILES)) \
 			$(CPPFILES:.cpp=.o) \
@@ -185,11 +189,11 @@ export PATH	:=	$(PATH):$(DEVKITARM)/bin:$(LIBKRAWALL)/bin
 .PHONY: $(BUILD) $(KRAWALLOBJ) clean
 
 #---------------------------------------------------------------------------------
-$(BUILD): $(KRAWALLOBJ) gfx
+$(BUILD): Makefile gfx 
 	@[ -d $@ ] || mkdir -p $@
 	@$(MAKE) --no-print-directory -C $(BUILD) -f $(CURDIR)/Makefile
 
-all	: $(BUILD)
+all	: Makefile  $(BUILD)
 
 #---------------------------------------------------------------------------------
 clean:
@@ -227,20 +231,24 @@ endif
 # Custom  Makefile targets start here
 ##########################################################################################
 
-gfx: Makefile gfx/gummy.bmp gfx/crazy_hero.bmp gfx/ball_blue.bmp gfx/ball_green.bmp gfx/ball_red.bmp gfx/ball_yellow.bmp gfx/casper.pcx\
-		gfx/casper2.pcx
-	@echo ""
-	@echo ""
-	@echo "-------------------------------------------------------------"
-	@echo "   Converting your GFX to source.."
-	@echo "-------------------------------------------------------------"
 # Convert Charset WITHOUT map optimation!
 #	gfx2gba -t8 -D -M -fsrc -ogfx -pCharset.pal gfx/Charset.bmp
 #	echo "gfx2gba -t8 -M -fsrc -pgfx/crazy_hero.pal gfx/crazy_hero.bmp"
 #	gfx2gba -t8 -M -fsrc -pgfx/crazy_hero.pal gfx/crazy_hero.bmp
 #	echo "gfx2gba -t8 -M -fsrc -pgfx/gummy.pal gfx/gummy.bmp"
 #	gfx2gba -t8 -M -fsrc -pgfx/gummy.pal gfx/gummy.bmp
-	gfx2gba -t8 -M -fsrc -o gfx -pmaster.pal gfx/gummy.bmp gfx/crazy_hero.bmp gfx/heart_16x16.bmp gfx/ball_blue.bmp gfx/ball_red.bmp gfx/ball_green.bmp gfx/ball_yellow.bmp
+#gfx: Makefile gfx/gummy.bmp gfx/crazy_hero.bmp gfx/ball_blue.bmp gfx/ball_green.bmp gfx/ball_red.bmp gfx/ball_yellow.bmp gfx/casper.pcx\
+#		gfx/casper2.pcx
+gfx: Makefile $(BMP_GRAPHICS)
+	@echo ""
+	@echo ""
+	@echo "-------------------------------------------------------------"
+	@echo "   Converting your GFX to source.."
+	@echo "-------------------------------------------------------------"
+	gfx2gba -t8 -M -fsrc -o gfx -pmaster.pal $(BMP_GRAPHICS)
+
+#	gfx2gba -t8 -M -fsrc -o gfx -pmaster.pal gfx/gummy.bmp gfx/crazy_hero.bmp gfx/heart_16x16.bmp \
+#	    gfx/ball_blue.bmp gfx/ball_red.bmp gfx/ball_green.bmp gfx/ball_yellow.bmp
 
 #music: jungle_noises.wav
 #	wav2gba jungle_noises.wav jungle_noises.raw
@@ -253,12 +261,13 @@ gfx: Makefile gfx/gummy.bmp gfx/crazy_hero.bmp gfx/ball_blue.bmp gfx/ball_green.
 #	@echo "$(CC) $(CFLAGS) -S -marm interrupts/interrupts.c"
 #	$(CC) $(CFLAGS) -S -marm interrupts/interrupts.c
 
-music:
+music: Makefile $(KRAWALL_FILES)
+	@echo ""
 	@echo "-------------------------------------------------------------"
 	@echo "   Hooking up the Music and sound gangster"
 	@echo "-------------------------------------------------------------"
 	krawall_converter -d $(KRAWALL_FILES)
 
 run: all
-	vba -4 *.gba
+	konsole -e vba -4 *.gba &
 
