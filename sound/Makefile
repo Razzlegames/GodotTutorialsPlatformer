@@ -1,4 +1,4 @@
-
+AS := arm-eabi-as
 MODULES := absnuts_changed.s3m living.s3m
 
 ASFLAGS := -mthumb-interwork

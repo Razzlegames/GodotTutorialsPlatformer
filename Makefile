@@ -61,7 +61,7 @@
 #DEVKITPRO   =	/home/kyle2/Development/Games/Multi_System_Compilers/DevikitPro
 
 ifeq ($(strip $(DEVKITARM)),)
-$(error "Please set DEVKITARM in your environment. export DEVKITARM=<path to>devkitARM)
+$(error "Please set DEVKITARM in your environment. export DEVKITARM=<path to>devkitARM")
 endif
 
 include $(DEVKITARM)/gba_rules
@@ -150,6 +150,7 @@ PCXFILES	:=	$(foreach dir,$(SOURCES),$(notdir $(wildcard $(dir)/*.pcx)))
 
 KRAWALLOBJ	:=	$(CURDIR)/$(KRAWALLDATA)/modules.o
 
+
 #---------------------------------------------------------------------------------
 # use CXX for linking C++ projects, CC for standard C
 #---------------------------------------------------------------------------------
@@ -188,12 +189,17 @@ export PATH	:=	$(PATH):$(DEVKITARM)/bin:$(LIBKRAWALL)/bin
 
 .PHONY: $(BUILD) $(KRAWALLOBJ) clean
 
+
 #---------------------------------------------------------------------------------
-$(BUILD): Makefile gfx 
+$(BUILD): Makefile graphics $(KRAWALLOBJ)
 	@[ -d $@ ] || mkdir -p $@
 	@$(MAKE) --no-print-directory -C $(BUILD) -f $(CURDIR)/Makefile
 
-all	: Makefile  $(BUILD)
+$(KRAWALLOBJ):
+	$(MAKE) -C $(KRAWALLDATA)
+
+all	: Makefile $(BUILD) $(KRAWALLOBJ) 
+
 
 #---------------------------------------------------------------------------------
 clean:
@@ -201,8 +207,6 @@ clean:
 	$(MAKE) -C $(KRAWALLDATA) clean
 	@rm -fr $(BUILD) $(TARGET).elf $(TARGET).gba
 
-$(KRAWALLOBJ):
-	$(MAKE) -C $(KRAWALLDATA)
 
 #---------------------------------------------------------------------------------
 else
@@ -239,7 +243,7 @@ endif
 #	gfx2gba -t8 -M -fsrc -pgfx/gummy.pal gfx/gummy.bmp
 #gfx: Makefile gfx/gummy.bmp gfx/crazy_hero.bmp gfx/ball_blue.bmp gfx/ball_green.bmp gfx/ball_red.bmp gfx/ball_yellow.bmp gfx/casper.pcx\
 #		gfx/casper2.pcx
-gfx: Makefile $(BMP_GRAPHICS)
+graphics: Makefile $(BMP_GRAPHICS)
 	@echo ""
 	@echo ""
 	@echo "-------------------------------------------------------------"
