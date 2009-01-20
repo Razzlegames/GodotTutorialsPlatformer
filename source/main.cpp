@@ -221,18 +221,18 @@ void detectBallHeroCollisions(Vector2D orig_position)
 
         current = current->next;
 
-        //		Debug::printSetup();
-        //		
-        //		CollisionBox gc = gummy->collision_box+gummy->position;
-        //		CollisionBox cc = c->collision_box+c->position;
-        //		iprintf("\x1b[1;0H gummy.c:(%d,%d),(%d,%d)",
-        //				gc.bottom_left.x,gc.bottom_left.y,
-        //				gc.top_right.x,gc.top_right.y);
-        //		iprintf("\x1b[2;0H current.c:(%d,%d),(%d,%d)",
-        //						cc.bottom_left.x,cc.bottom_left.y,
-        //						cc.top_right.x,cc.top_right.y);
-        //		iprintf("\x1b[3;0H current.p: %d,%d",c->position.x,c->position.y);
-
+        //        Debug::printSetup();
+        //
+        //        CollisionBox gc = gummy->collision_box+gummy->position;
+        //        CollisionBox cc = c->collision_box+c->position;
+        //        iprintf("\x1b[1;0H gummy.c:(%d,%d),(%d,%d)",
+        //                gc.bottom_left.x,gc.bottom_left.y,
+        //                gc.top_right.x,gc.top_right.y);
+        //        iprintf("\x1b[2;0H current.c:(%d,%d),(%d,%d)",
+        //                cc.bottom_left.x,cc.bottom_left.y,
+        //                cc.top_right.x,cc.top_right.y);
+        //        iprintf("\x1b[3;0H current.p: %d,%d",c->position.x,c->position.y);
+        //
     }
 
 }

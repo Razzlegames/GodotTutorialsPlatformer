@@ -74,11 +74,13 @@ extern const unsigned char gummy_Tiles[7168];
 
 typedef enum GummyState
 {
+
     TURNING = 1<<0,
     FLIPPED = 1<<1,
     JUMPING = 1<<2,
     ON_GROUND = 1<<3,
     DUCKING = 1<<4
+
 };
 
 class Gummy: public Character
@@ -115,13 +117,18 @@ class Gummy: public Character
       // The current velocity the character has
       //int velocity_vector_x;
       //int velocity_vector_y;
+
+      /// If character is moving right
       int in_motion_right;
 
+      /// If character is moving left
       int in_motion_left;
 
       // Debug variable
       int starting_y;
 
+      /// If character is currently turning (used for different 
+      ///       animation frame)
       int turning;
 
       /// Keep track of how many vblank interrupts have 
@@ -297,6 +304,7 @@ inline void Gummy::playImpactSound()
             S3M_SAMPLE_FREQUENCY*2,32,0);
 
 }
+
 //********************************************************
 /**
  *   Play an impact sound with a given volume.

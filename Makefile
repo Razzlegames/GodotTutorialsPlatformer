@@ -200,9 +200,12 @@ $(KRAWALLOBJ):
 
 all	: Makefile $(BUILD) $(KRAWALLOBJ) 
 
+ctags:
+	ctags -R ./ /usr/include/GL/
+
 
 #---------------------------------------------------------------------------------
-clean:
+clean: depend
 	@echo clean ...
 	$(MAKE) -C $(KRAWALLDATA) clean
 	@rm -fr $(BUILD) $(TARGET).elf $(TARGET).gba
@@ -272,6 +275,11 @@ music: Makefile $(KRAWALL_FILES)
 	@echo "-------------------------------------------------------------"
 	krawall_converter -d $(KRAWALL_FILES)
 
+
+depend: ctags
+	makedepend ./*{cpp,c} 
+
 run: all
 	konsole -e vba -4 *.gba &
 
+# DO NOT DELETE

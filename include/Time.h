@@ -74,4 +74,5 @@ class Time
 
       }
 };
+
 #endif /*TIME_H_*/
