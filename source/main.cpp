@@ -356,10 +356,12 @@ void drawObjects(void)
     CharacterList* current = character_list;
     while(current != NULL)
     {
+
         Character* c = current->c;
 
         c->updateGraphic();
         current = current->next;
+
     }
 
     //       for(int i =0; i < TEST_OBJ_NUM; i++)
