@@ -6,6 +6,9 @@
 #include <Vertex2D.h>
 #include <math.h>
 
+/**
+ *   Represent a 3D vertex
+ */
 class Vertex : public Vertex2D
 {
 	public:

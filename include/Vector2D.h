@@ -34,6 +34,9 @@ typedef struct Polygon_
 }Polygon;
 */
 
+/**
+ *   Represent a 2D Vector
+ */
 class Vector2D : public Vertex2D
 {
 

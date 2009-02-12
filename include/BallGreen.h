@@ -4,6 +4,11 @@
 #include "Ball.h"
 
 extern const unsigned char ball_green_Tiles[256];
+
+
+/**
+ *  Represent a Green ball in the game
+ */
 class BallGreen: public Ball
 {
 	public:

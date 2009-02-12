@@ -11,6 +11,9 @@
 #ifndef _Debug_H
 #define	_Debug_H
 
+/**
+ *  Class used as a debug toolset
+ */
 class Debug
 {
     public:
@@ -59,6 +62,7 @@ inline void Debug::printSetup()
         setup = 1;
     //}
 }
+
 //******************************************************************************
 /**
 *   Print stuff to the screen

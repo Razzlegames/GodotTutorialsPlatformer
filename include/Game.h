@@ -3,11 +3,17 @@
 
 #include "Time.h"
 
+/**
+ *   Game states as they become thought of
+ */
 typedef enum GameStates_
 {
 	PAUSED
 }GameStates;
 
+/**
+ *  Game data (winning yet?)
+ */
 class Game
 {
 public:

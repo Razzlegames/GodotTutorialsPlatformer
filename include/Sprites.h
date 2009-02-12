@@ -1,78 +1,78 @@
-// 
-// File:   Sprites.h
-// Author: kyle2
-//
-// Created on June 25, 2007, 9:21 PM
-//
-/* 
-        SIZE_8 	SIZE_16 SIZE_32 SIZE_64
-SQUARE  8x8 	16x16 	32x32 	64x64
-TALL    8x16 	8x32 	16x32 	32x64
-WIDE    16x8 	32x8 	32x16 	64x32
+///// 
+///// File:   Sprites.h
+///// Author: kyle2
+/////
+///// Created on June 25, 2007, 9:21 PM
+/////
+///
+///        SIZE_8 	SIZE_16 SIZE_32 SIZE_64
+///SQUARE  8x8 	16x16 	32x32 	64x64
+///TALL    8x16 	8x32 	16x32 	32x64
+///WIDE    16x8 	32x8 	32x16 	64x32
+///
+///---------------------------------------------------
+///OAM Memory notes (according to pern):
+///---------------------------------------------------
+///Attribute[0]
+///bits 	F 	E 	D 	C 	B 	A 	9 	8 	7 	6 	5 	4 	3 	2 	1 	0
+///        |  Shape|	C 	M 	Mode 	SD 	R 	|       Y Coordinate
+///
+///Bits 0-7 form an 8bit signed integer (range = [-128, 127]) denoting the top of your sprite. 
+///    ANDing your sprite's top with 255 to wrap around the screen. For example, 
+///    say that the top is int y = -1 (one pixel above the screen). 
+///    In hex, this is 0xFFFFFFFF; -1 & 255 = 0xff, which is indeed -1 for signed 8bit integers.
+///Bit 8 is the rotation scaling flag. If set it will draw the sprite with the 
+///    scaling/rotation parameters specified.
+///Bit 9 is something called the size double flag and I will talk about this 
+///    when I describe sprite rotation. One interesting effect of the SD flag 
+///    is that if it is set, but the rotation flag is not, then that sprite will 
+///    not be displayed. This is how we will turn off all of the unused sprites 
+///    and why this flag is sometimes referred to as the TURN_OFF flag.
+///Bits A-B are the mode flags and deal with alpha blending. I will talk about that
+///    more in chapter 9.
+///Bit C is the mosaic flag. When set the sprite will have the mosaic value 
+///    applied to it. This topic is also saved for day 9.
+///Bit D is the color mode. If set it defines the sprite as 256-colors. If 
+///    cleared it uses a 16-color palette.
+///Bit E-F is the object's shape and will be described in more detail when 
+///    we actually draw our first sprite.
+///
+///Attribute[1] 
+///bits 	F 	E 	D 	C 	B 	A 	9 	8 	7 	6 	5 	4 	3 	2 	1 	0
+///        |   Size|       VF      HF     |RotData index   |       X Coordinate [9bits]
+///
+///Bits 0-8 form the left of the sprite. Similar to the top, these 9 bits form a signed 
+///    integer, with the range [-256, 255]. This time, AND with 511 for correct wrapping.
+///Bits 9-13 serve a dual purpose. If the rotation scaling flag is set in attribute[0]
+///    then they are the 5-bit index (0-31) into the rotData array and define which 
+///    set of rot/scaling parameters are going to be used with that sprite. 
+///    If the rotation scaling flag is not set then bits 9-11 are not used.
+///Bit 12 is the horizontal flip flag (the sprite will be flipped along the y axis) 
+///    and bit 13 is the vertical flip flag (x axis). These attributes are not 
+///    used when the rotation flag is set in attribute[0].
+///Bit 14-15 is the size and I will give you a nice little table that explains
+///    the use of this flag and the shape
+///
+///Attribute[2]
+///
+///bits 	F 	E 	D 	C 	B 	A 	9 	8 	7 	6 	5 	4 	3 	2 	1 	0
+/// 	Palette number                 |Priority       |Character Name
+///
+///Bit 0-9 is the index into sprite character memory of the first 8x8 tile of the 
+///    sprite (to fully understand this flag wait until I describe the second area of sprite memory).
+///Bit 10-11 is the priority. As with backgrounds sprites can be assigned a priority
+///    of 0-3. Higher numbered sprites are drawn first, meaning that a sprite of 
+///    priority 0 will be drawn over the top of a sprite with priority of 3. 
+///    Also, a sprite priority is always higher than that of the corresponding 
+///    background priority meaning that if both a sprite and a background have 
+///    the same priority then the sprite will be drawn on top. One more thing: 
+///    for sprites with the same priority then sprites with the lowest OAM number 
+///    are drawn on top.
+///Bits 12-15 are the palette number. If your sprite is a 16-color sprite then this 
+///    value will determine which of the 16 16-color palettes are used. If it is a
+///    256-color sprite then these bits are ignored.
+///
 
----------------------------------------------------
-OAM Memory notes (according to pern):
----------------------------------------------------
-Attribute[0]
-bits 	F 	E 	D 	C 	B 	A 	9 	8 	7 	6 	5 	4 	3 	2 	1 	0
-        |  Shape|	C 	M 	Mode 	SD 	R 	|       Y Coordinate
-
-Bits 0-7 form an 8bit signed integer (range = [-128, 127]) denoting the top of your sprite. 
-    ANDing your sprite's top with 255 to wrap around the screen. For example, 
-    say that the top is int y = -1 (one pixel above the screen). 
-    In hex, this is 0xFFFFFFFF; -1 & 255 = 0xff, which is indeed -1 for signed 8bit integers.
-Bit 8 is the rotation scaling flag. If set it will draw the sprite with the 
-    scaling/rotation parameters specified.
-Bit 9 is something called the size double flag and I will talk about this 
-    when I describe sprite rotation. One interesting effect of the SD flag 
-    is that if it is set, but the rotation flag is not, then that sprite will 
-    not be displayed. This is how we will turn off all of the unused sprites 
-    and why this flag is sometimes referred to as the TURN_OFF flag.
-Bits A-B are the mode flags and deal with alpha blending. I will talk about that
-    more in chapter 9.
-Bit C is the mosaic flag. When set the sprite will have the mosaic value 
-    applied to it. This topic is also saved for day 9.
-Bit D is the color mode. If set it defines the sprite as 256-colors. If 
-    cleared it uses a 16-color palette.
-Bit E-F is the object's shape and will be described in more detail when 
-    we actually draw our first sprite.
-
-Attribute[1] 
-bits 	F 	E 	D 	C 	B 	A 	9 	8 	7 	6 	5 	4 	3 	2 	1 	0
-        |   Size|       VF      HF     |RotData index   |       X Coordinate [9bits]
-
-Bits 0-8 form the left of the sprite. Similar to the top, these 9 bits form a signed 
-    integer, with the range [-256, 255]. This time, AND with 511 for correct wrapping.
-Bits 9-13 serve a dual purpose. If the rotation scaling flag is set in attribute[0]
-    then they are the 5-bit index (0-31) into the rotData array and define which 
-    set of rot/scaling parameters are going to be used with that sprite. 
-    If the rotation scaling flag is not set then bits 9-11 are not used.
-Bit 12 is the horizontal flip flag (the sprite will be flipped along the y axis) 
-    and bit 13 is the vertical flip flag (x axis). These attributes are not 
-    used when the rotation flag is set in attribute[0].
-Bit 14-15 is the size and I will give you a nice little table that explains
-    the use of this flag and the shape
-
-Attribute[2]
-
-bits 	F 	E 	D 	C 	B 	A 	9 	8 	7 	6 	5 	4 	3 	2 	1 	0
- 	Palette number                 |Priority       |Character Name
-
-Bit 0-9 is the index into sprite character memory of the first 8x8 tile of the 
-    sprite (to fully understand this flag wait until I describe the second area of sprite memory).
-Bit 10-11 is the priority. As with backgrounds sprites can be assigned a priority
-    of 0-3. Higher numbered sprites are drawn first, meaning that a sprite of 
-    priority 0 will be drawn over the top of a sprite with priority of 3. 
-    Also, a sprite priority is always higher than that of the corresponding 
-    background priority meaning that if both a sprite and a background have 
-    the same priority then the sprite will be drawn on top. One more thing: 
-    for sprites with the same priority then sprites with the lowest OAM number 
-    are drawn on top.
-Bits 12-15 are the palette number. If your sprite is a 16-color sprite then this 
-    value will determine which of the 16 16-color palettes are used. If it is a
-    256-color sprite then these bits are ignored.
-
-*/
 
 #ifndef _Sprites_H
 #define	_Sprites_H

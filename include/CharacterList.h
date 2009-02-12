@@ -3,6 +3,9 @@
 #include "Character.h"
 #include <stdlib.h>
 
+/**
+ *  List of characters to display, check for collisions, etc
+ */
 class CharacterList
 {
 

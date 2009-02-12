@@ -4,6 +4,9 @@
 
 extern const unsigned char ball_blue_Tiles[256];
 
+/**
+ * Represent a Blue ball in the game
+ */
 class BallBlue: public Ball
 {
 	public:

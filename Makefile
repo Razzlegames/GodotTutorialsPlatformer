@@ -180,6 +180,8 @@ export INCLUDE	:=	$(foreach dir,$(INCLUDES),-I$(CURDIR)/$(dir)) \
 			$(foreach dir,$(LIBDIRS),-I$(dir)/include) \
 			-I$(CURDIR)/$(BUILD)
 
+export HFILES	:= 	$(foreach dir,$(INCLUDE),$(notdir $(wildcard $(dir)/*.h)))
+
 #---------------------------------------------------------------------------------
 # build a list of library paths
 #---------------------------------------------------------------------------------
@@ -281,5 +283,9 @@ depend: ctags
 
 run: all
 	konsole -e vba -4 *.gba &
+
+doc: $(HFILES) $(CFILES) $(CPPFILES) $(SFILES) Makefile
+#doc: all
+	doxygen
 
 # DO NOT DELETE

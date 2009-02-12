@@ -83,6 +83,11 @@ typedef enum GummyState
 
 };
 
+
+//****************************************************************************
+/**
+ *   Represent the Gummy character .
+ */
 class Gummy: public Character
 {
 

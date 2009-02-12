@@ -2,6 +2,9 @@
 #define TIME_H_
 
 
+/**
+ *   A class to abstract time components (really needed??)
+ */
 class Time
 {
 

@@ -23,6 +23,11 @@
 #define ONE_BLOCK_LENGTH    3
 /** Use this to plot a individual pixel in this sprite (for effects)*/
 #define crazyHeroIndexPixel(x,y) x+y*32
+
+
+/**
+ *   Crazy alien guy
+ */
 class CrazyHero: public Character
 {
     private:

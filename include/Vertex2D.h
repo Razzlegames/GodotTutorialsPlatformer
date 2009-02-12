@@ -3,6 +3,9 @@
 #ifndef VERTEX2D_
 #define VERTEX2D_
 
+/**
+ *  Class to represent 2D Vertex (Not NEEDED!)
+ */
 class Vertex2D
 {
 	public:
