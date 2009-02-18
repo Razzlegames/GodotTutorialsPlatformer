@@ -82,8 +82,10 @@ INCLUDES	:=	"include"
 INCLUDES	+=	build
 INCLUDES	+=	sound
 KRAWALLDATA	:=	sound
-BMP_GRAPHICS	:=	gfx/gummy.bmp gfx/crazy_hero.bmp gfx/ball_blue.bmp \
-			gfx/ball_green.bmp gfx/ball_red.bmp gfx/ball_yellow.bmp gfx/heart_16x16.bmp 
+BMP_GRAPHICS	:=	gfx/gummy.bmp gfx/crazy_hero.bmp \
+			gfx/ball_blue.bmp gfx/ball_green.bmp \
+			gfx/ball_red.bmp gfx/ball_yellow.bmp \
+			gfx/heart_16x16.bmp 
 
 # Compile using Krawall software (set to yes or no) ?
 # Also specify if Krawall is registered (yes or no)
@@ -189,7 +191,7 @@ export LIBPATHS	:=	$(foreach dir,$(LIBDIRS),-L$(dir)/lib)
 
 export PATH	:=	$(PATH):$(DEVKITARM)/bin:$(LIBKRAWALL)/bin
 
-.PHONY: $(BUILD) $(KRAWALLOBJ) clean
+.PHONY: $(BUILD) $(KRAWALLOBJ) clean doc music
 
 
 #---------------------------------------------------------------------------------
@@ -207,21 +209,18 @@ ctags:
 
 
 #---------------------------------------------------------------------------------
-clean: depend
+clean: ctags
 	@echo clean ...
 	$(MAKE) -C $(KRAWALLDATA) clean
 	@rm -fr $(BUILD) $(TARGET).elf $(TARGET).gba
-
-
 #---------------------------------------------------------------------------------
 else
 
-DEPENDS	:=	$(OFILES:.o=.d)
 
 #---------------------------------------------------------------------------------
 # main targets
 #---------------------------------------------------------------------------------
-$(OUTPUT).gba	:	$(OUTPUT).elf
+$(OUTPUT).gba	:	$(OUTPUT).elf 
 
 $(OUTPUT).elf	:	$(OFILES) $(LIBGBA)/lib/libgba.a
 
@@ -278,8 +277,8 @@ music: Makefile $(KRAWALL_FILES)
 	krawall_converter -d $(KRAWALL_FILES)
 
 
-depend: ctags
-	makedepend ./*{cpp,c} 
+#depend: ctags
+#	makedepend ./*{cpp,c} 
 
 run: all
 	konsole -e vba -4 *.gba &
@@ -288,4 +287,3 @@ doc: $(HFILES) $(CFILES) $(CPPFILES) $(SFILES) Makefile
 #doc: all
 	doxygen
 
-# DO NOT DELETE
