@@ -12,6 +12,10 @@
 #include "CollisionBox.h"
 #include "Vertex2D.h"
 
+//***********************************************************************
+/**
+ *  Base class for all characters to animate in game (Not needed?)
+ */
 class Character
 {
 
