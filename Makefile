@@ -76,11 +76,12 @@ include $(DEVKITARM)/gba_rules
 
 TARGET		:=	$(shell basename $(CURDIR))
 BUILD		:=	build
-SOURCES		:=	gfx source
+SOURCES		:=	gfx source "Maps/test/"
 DATA		:=
 INCLUDES	:=	"include"
 INCLUDES	+=	build
 INCLUDES	+=	sound
+INCLUDES	+=	Maps/test/
 KRAWALLDATA	:=	sound
 BMP_GRAPHICS	:=	gfx/gummy.bmp gfx/crazy_hero.bmp \
 			gfx/ball_blue.bmp gfx/ball_green.bmp \

@@ -38,6 +38,8 @@ extern "C" {
 #include "casper_pcx.h"
 #include "casper2_pcx.h"
 #include "toolbox.h"
+#include "test_map.h"
+#include "test_bg.h"
 #ifdef	__cplusplus
 }
 #endif
@@ -701,24 +703,89 @@ void init_map()
     tile_mem[CBB_0][1]= tiles[1];
 
     // create a palette
-    pal_bg_bank[0][1]= RGB15(31,  0,  0);
+    pal_bg_bank[0][1]= RGB15((int)(31/2),  0,  0);
+    //pal_bg_bank[0][1]= RGB15(31,  0,  0);
     pal_bg_bank[1][1]= RGB15( 0, 31,  0);
     pal_bg_bank[2][1]= RGB15( 0,  0, 31);
     pal_bg_bank[3][1]= RGB15(16, 16, 16);
 
     // Create a map: four contingent blocks of 
     //   0x0000, 0x1000, 0x2000, 0x3000.
-    SCR_ENTRY *pse= bg0_map;
+    SCR_ENTRY *pse = bg0_map;
     for(ii=0; ii<4; ii++)
                 for(jj=0; jj<32*32; jj++)
-                            *pse++= SE_PALBANK(ii) | 0;
+                            *pse++= SE_PALBANK(ii) ;
+    //| 0;
 }
 
+void init_map_test()
+{
+    int ii, jj;
+
+    // initialize a background
+    REG_BG0CNT= BG_CBB(CBB_0) | BG_SBB(SBB_0) | BG_REG_64x64;
+    REG_BG0HOFS= 0;
+    REG_BG0VOFS= 0;
+
+    // create the 2 tiles: 
+    u32 tile_rows[2*TEST_MAP_WIDTH];
+
+    // Create tiles
+    for(int i = 0; i < TEST_MAP_HEIGHT; i++)
+    {
+
+        // Initialize tile row
+        tile_rows[i] = 0;
+
+        // Append each byte to the tile (as a nibble 
+        //      in the word/tile_row)
+        for(int a = TEST_MAP_WIDTH; a > 0; a--)
+        {
+
+            tile_rows[i] |= 
+                (test_map_data[i] << (4*a));
+
+        }
+
+    }
+
+    TILE* tiles = (TILE*)tile_rows;
+
+    tile_mem[CBB_0][0]= tiles[0];
+    tile_mem[CBB_0][1]= tiles[1];
+
+    // create a palette
+    for(int i = 0; i  < 16; i++)
+    {
+
+        // Convert Gimp colors from 8bit to 4bit (255 to 31 max)
+        //        int color0 = (int)((test_map_pallet[i][0]/255.0)*31.0);
+        //        int color1 = (int)((test_map_pallet[i][1]/255.0)*31.0);
+        //        int color2 = (int)((test_map_pallet[i][2]/255.0)*31.0);
+        int color0 = test_map_pallet[i][0] >> 4;
+        int color1 = test_map_pallet[i][1] >> 4;
+        int color2 = test_map_pallet[i][2] >> 4;
+
+        pal_bg_bank[i][1]= RGB15(color0, color1,color2);
+    }
+    
+    // Create a map: four contingent blocks of 
+    //   0x0000, 0x1000, 0x2000, 0x3000.
+    SCR_ENTRY *pse = bg0_map;
+    for(ii=0; ii<4; ii++)
+                for(jj=0; jj<32*32; jj++)
+                            *pse++= SE_PALBANK(ii) ;
+        //| 0;
+
+
+
+}
 
 //*****************************************************************
 
 int main()
 {   
+
     // Initialize globals
     new_frame = 0;
 
@@ -755,12 +822,11 @@ int main()
     // Set up Sprites and Char list
     character_list = new CharacterList();
 
-
-
     Sprites::initSprites();
     gummy = new Gummy(pallet_number++);
     //gummy2 = new Gummy(pallet_number);
     //gummy2->position = Vector2D(70,120);
+
     //-----------------------------------------
     //		Set up Blue balls
     //-----------------------------------------
@@ -774,13 +840,16 @@ int main()
     ball_list->c = ball;
     Vector2D cv = Vector2D(40,30);
     movable_ball->position = Vector2D(0,0);
+
     for(int i = 0; i< 5; i++)
     {
+
         ball = new BallGreen(pallet_number++);
         ball->position = cv;
         character_list->add(ball);
         ball_list->add(ball);
         cv += cv;
+
     }
 
     //character_list->add(gummy2);
@@ -794,68 +863,81 @@ int main()
     heart_list->c = heart;
     for(int i = 0; i < 0; i++)
     {
+
         heart = new Heart(pallet_number++);
         heart->position += Vector2D(rand()%(SCREEN_WIDTH-16), 
                 rand()%(SCREEN_HEIGHT-16));
         character_list->add(heart);
         heart_list->add(heart);
+    
     }
 
 
-    /*
-       for(int i =0; i < TEST_OBJ_NUM; i++)
-       {
-       gummies[i] = new Gummy(gummy->getPalletNumber(), 
-       i, i*40,0, 0);
-       }
+    //    for(int i =0; i < TEST_OBJ_NUM; i++)
+    //    {
+    //        gummies[i] = new Gummy(gummy->getPalletNumber(), 
+    //                i, i*40,0, 0);
+    //    }
 
-     */
     //  Load up master pallet (256 16 bit colors, 
     //              Mult*2 since data is short; memcpy size param is in bytes)
     Sprites::addPalletData((unsigned char*)master_Palette, 256*2);    
     gummy->enableSprite();
     //crazy_hero->enableSprite();
 
-    /*
-       Debug::printSetup();	     
+    //    Debug::printSetup();	     
+    //
+    //    iprintf("\x1b[1;0H OAMCopy[6].a[0]: %04x", 
+    //            Sprites::OAMCopy[6].attribute[0]);
+    //    iprintf("\x1b[2;0H OAMCopy[6].a[1]: %04x", 
+    //            Sprites::OAMCopy[6].attribute[1]);
+    //    iprintf("\x1b[3;0H OAMCopy[6].a[2]: %04x", 
+    //            Sprites::OAMCopy[6].attribute[2]);
+    //
+    //    iprintf("\x1b[4;0H OAMCopy[7].a[0]: %04x", 
+    //            Sprites::OAMCopy[7].attribute[0]);
+    //    iprintf("\x1b[5;0H OAMCopy[7].a[1]: %04x", 
+    //            Sprites::OAMCopy[7].attribute[1]);
+    //    iprintf("\x1b[6;0H OAMCopy[7].a[2]: %04x", 
+    //            Sprites::OAMCopy[7].attribute[2]);
+    //
+    //    iprintf("\x1b[7;0H OAMCopy[2].a[0]: %04x", 
+    //            Sprites::OAMCopy[2].attribute[0]);
+    //    iprintf("\x1b[8;0H OAMCopy[2].a[1]: %04x", 
+    //            Sprites::OAMCopy[2].attribute[1]);
+    //    iprintf("\x1b[9;0H OAMCopy[2].a[2]: %04x", 
+    //            Sprites::OAMCopy[2].attribute[2]);
+    //    iprintf("\x1b[10;0H ball_position(%d,%d)", 
+    //            ball->position.x,ball->position.y);
+    //    iprintf("\x1b[14;0H heart_position(%d,%d)", 
+    //            heart->position.x,heart->position.y);
 
-       iprintf("\x1b[1;0H OAMCopy[6].a[0]: %04x", Sprites::OAMCopy[6].attribute[0]);
-       iprintf("\x1b[2;0H OAMCopy[6].a[1]: %04x", Sprites::OAMCopy[6].attribute[1]);
-       iprintf("\x1b[3;0H OAMCopy[6].a[2]: %04x", Sprites::OAMCopy[6].attribute[2]);
-
-       iprintf("\x1b[4;0H OAMCopy[7].a[0]: %04x", Sprites::OAMCopy[7].attribute[0]);
-       iprintf("\x1b[5;0H OAMCopy[7].a[1]: %04x", Sprites::OAMCopy[7].attribute[1]);
-       iprintf("\x1b[6;0H OAMCopy[7].a[2]: %04x", Sprites::OAMCopy[7].attribute[2]);
-
-       iprintf("\x1b[7;0H OAMCopy[2].a[0]: %04x", Sprites::OAMCopy[2].attribute[0]);
-       iprintf("\x1b[8;0H OAMCopy[2].a[1]: %04x", Sprites::OAMCopy[2].attribute[1]);
-       iprintf("\x1b[9;0H OAMCopy[2].a[2]: %04x", Sprites::OAMCopy[2].attribute[2]);
-       iprintf("\x1b[10;0H ball_position(%d,%d)", ball->position.x,ball->position.y);
-       iprintf("\x1b[14;0H heart_position(%d,%d)", heart->position.x,heart->position.y);
-     */
     SetMode(MODE_0 | OBJ_ENABLE | OBJ_1D_MAP | BG0_ENABLE);
 
     //REG_BG0CNT |=  BG_256_COLOR;
 
     if(run_music )
     {
+
         //  Play music(Volume, Fade)
         krapSetMusicVol(128/2 + 30,0);
+
     }
 
     // Infinite loop to keep the program running
     while(1)
     {
+
         VBlankIntrWait();     
         game.time++;
 
         queryKeys();
         drawObjects();
 
-        //iprintf("\x1b[11;0H gummy_v(%d,%d)", gummy->velocity_vector.x,gummy->velocity_vector.y);
+        //iprintf("\x1b[11;0H gummy_v(%d,%d)", 
+        //gummy->velocity_vector.x,gummy->velocity_vector.y);
         //iprintf("\x1b[13;0H Time:%02d:%02d:%02d", game.time.minutes,
         //		game.time.seconds,game.time.sec_1_60th);
-
 
         //Sprites::displaySpriteInfo(0);
         new_frame = 0;   
