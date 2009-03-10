@@ -282,7 +282,7 @@ music: Makefile $(KRAWALL_FILES)
 #	makedepend ./*{cpp,c} 
 
 run: all
-	konsole -e vba -4 *.gba &
+	konsole -e VisualBoyAdvance -4 *.gba &
 
 doc: $(HFILES) $(CFILES) $(CPPFILES) $(SFILES) Makefile
 #doc: all

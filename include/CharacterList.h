@@ -24,7 +24,7 @@ class CharacterList
           c=c1; next = NULL;
       }
 
-      bool add(Character* c1)
+      void add(Character* c1)
       {
           if(next == NULL)
           {

@@ -720,7 +720,7 @@ void init_map()
 
 void init_map_test()
 {
-    int ii, jj;
+   
 
     // initialize a background
     REG_BG0CNT= BG_CBB(CBB_0) | BG_SBB(SBB_0) | BG_REG_64x64;
@@ -743,7 +743,8 @@ void init_map_test()
         {
 
             tile_rows[i] |= 
-                (test_map_data[i] << (4*a));
+                (test_map_data[
+                 (i*TEST_MAP_WIDTH) + TEST_MAP_WIDTH-a] << (4*a));
 
         }
 
@@ -759,25 +760,38 @@ void init_map_test()
     {
 
         // Convert Gimp colors from 8bit to 4bit (255 to 31 max)
-        //        int color0 = (int)((test_map_pallet[i][0]/255.0)*31.0);
-        //        int color1 = (int)((test_map_pallet[i][1]/255.0)*31.0);
-        //        int color2 = (int)((test_map_pallet[i][2]/255.0)*31.0);
-        int color0 = test_map_pallet[i][0] >> 4;
-        int color1 = test_map_pallet[i][1] >> 4;
-        int color2 = test_map_pallet[i][2] >> 4;
+        //        int color0 = (int)(test_map_pallet[i][0]*(31.0/255.0);
+        //        int color1 = (int)(test_map_pallet[i][1]*(31.0/255.0);
+        //        int color2 = (int)(test_map_pallet[i][2]*(31.0/255.0);
+        int color0 = test_map_pallet[i][0] >> 3;
+        int color1 = test_map_pallet[i][1] >> 3;
+        int color2 = test_map_pallet[i][2] >> 3;
 
-        pal_bg_bank[i][1]= RGB15(color0, color1,color2);
+        pal_bg_bank[0][i]= RGB15(color0, color1,color2);
+
     }
-    
+
+    //    // create a palette
+    //    pal_bg_bank[0][0]= RGB15((int)(31/2),  0,  0);
+    //    pal_bg_bank[0][1]= RGB15(31,  0,  0);
+    //    pal_bg_bank[0][2]= RGB15( 0, 31,  0);
+    //    pal_bg_bank[0][3]= RGB15( 0,  0, 31);
+    //    pal_bg_bank[0][4]= RGB15(16, 16, 16);
+
     // Create a map: four contingent blocks of 
     //   0x0000, 0x1000, 0x2000, 0x3000.
     SCR_ENTRY *pse = bg0_map;
-    for(ii=0; ii<4; ii++)
-                for(jj=0; jj<32*32; jj++)
-                            *pse++= SE_PALBANK(ii) ;
+    for(int i = 0; i < TEST_MAP_SIZE; i++)
+    {
+
+        *pse++= (TEST_MAP[i]) || SE_PALBANK(0);
+
+    }
+
+    //    for(ii=0; ii<4; ii++)
+    //                for(jj=0; jj<32*32; jj++)
+    //                            *pse++= SE_PALBANK(ii) ;
         //| 0;
-
-
 
 }
 
@@ -801,8 +815,11 @@ int main()
     irqEnable(IRQ_VBLANK);
 
 
-    displayIntro();
-    init_map();
+    //displayIntro();
+
+    //init_map();
+    init_map_test();
+
     REG_DISPCNT= DCNT_MODE0 | DCNT_BG0 | DCNT_OBJ;
 
     // Install the krawall +1 interrupt
