@@ -751,7 +751,8 @@ void init_map_test()
     //    }
 
     // create the tiles: 
-    u32 tile_rows[TEST_MAP_HEIGHT*2] __attribute__((aligned(4)));
+    u32 tile_rows[TEST_MAP_HEIGHT*2];
+
     // Create tiles
     for(int y = 0; y < TEST_MAP_HEIGHT; y++)
     {
@@ -777,10 +778,9 @@ void init_map_test()
 
      }
 
-     memcpy(&tile_mem[0][0], tile_rows, TEST_MAP_HEIGHT*2*sizeof(u16));
+     //memcpy(&tile_mem[0][0], tile_rows, TEST_MAP_HEIGHT*2*sizeof(u16));
      //memcpy(&tile_mem[0][0], brinTiles, brinTilesLen);
-     //memcpy(&tile_mem[0][0], test_map2Tiles, test_map2TilesLen);
-
+     memcpy(&tile_mem[0][0], test_map2Tiles, test_map2TilesLen);
 
      //TILE* tiles = (TILE*)tile_rows;
      //    for(int i = 0; 
@@ -814,18 +814,6 @@ void init_map_test()
      //
      //    }
 
-     if(TEST_MAP_HEIGHT/TEST_MAP_WIDTH != 5)
-     {
-
-         Debug::printSetup();	     
-
-         iprintf("\x1b[1;0H Oh, not rendering 5 tiles?: %d", 
-                 TEST_MAP_HEIGHT/TEST_MAP_WIDTH);
-         //    iprintf("\x1b[1;0H OAMCopy[6].a[0]: %04x", 
-         //            Sprites::OAMCopy[6].attribute[0]);
-
-     }
-
      // create a palette
      for(int i = 0; i  < 256; i++)
      {
@@ -847,7 +835,7 @@ void init_map_test()
      }
 
      //memcpy(&(pal_bg_bank[0][0]),brinPal, brinPalLen);
-     //memcpy(&(pal_bg_bank[0][0]),test_map2Pal, test_map2PalLen);
+     memcpy(&(pal_bg_bank[0][0]),test_map2Pal, test_map2PalLen);
 
      //    // create a palette
      //    pal_bg_bank[0][0]= RGB15((int)(31/2),  0,  0);
@@ -855,7 +843,6 @@ void init_map_test()
      //    pal_bg_bank[0][2]= RGB15( 0, 31,  0);
      //    pal_bg_bank[0][3]= RGB15( 0,  0, 31);
      //    pal_bg_bank[0][4]= RGB15(16, 16, 16);
-
 
      // Create a map: four contingent blocks of 
      //   0x0000, 0x1000, 0x2000, 0x3000.
@@ -887,42 +874,43 @@ void init_map_test()
          //        }
 
      }
-     TILE* src = (TILE*)tile_map;
-     TILE* dst0 = (TILE*)se_mem[SBB_0+0];
-     TILE* dst1 = (TILE*)se_mem[SBB_0+1];
-     TILE* dst2 = (TILE*)se_mem[SBB_0+2];
-     TILE* dst3 = (TILE*)se_mem[SBB_0+3];
 
-     // For each row copy to the appropriate SBB
-     for(int i = 0; i < 32; i++)
-     {
-
-         *(dst0++) = *(src++); 
-         *(dst0++) = *(src++); 
-
-         *(dst1++) = *(src++); 
-         *(dst1++) = *(src++); 
-
-     }
-
-     // For each row copy to the appropriate SBB
-     for(int i = 0; i < 32; i++)
-     {
-
-
-         *(dst2++) = *(src++); 
-         *(dst2++) = *(src++); 
-
-         *(dst3++) = *(src++); 
-         *(dst3++) = *(src++); 
-
-
-     }
+     //     TILE* src = (TILE*)tile_map;
+     //     TILE* dst0 = (TILE*)se_mem[SBB_0+0];
+     //     TILE* dst1 = (TILE*)se_mem[SBB_0+1];
+     //     TILE* dst2 = (TILE*)se_mem[SBB_0+2];
+     //     TILE* dst3 = (TILE*)se_mem[SBB_0+3];
+     //
+     //     // For each row copy to the appropriate SBB
+     //     for(int i = 0; i < 32; i++)
+     //     {
+     //
+     //         *(dst0++) = *(src++); 
+     //         *(dst0++) = *(src++); 
+     //
+     //         *(dst1++) = *(src++); 
+     //         *(dst1++) = *(src++); 
+     //
+     //     }
+     //
+     //     // For each row copy to the appropriate SBB
+     //     for(int i = 0; i < 32; i++)
+     //     {
+     //
+     //
+     //         *(dst2++) = *(src++); 
+     //         *(dst2++) = *(src++); 
+     //
+     //         *(dst3++) = *(src++); 
+     //         *(dst3++) = *(src++); 
+     //
+     //
+     //     }
 
 
      //memcpy(&se_mem[SBB_0][0], tile_map, TEST_MAP_SIZE*sizeof(u16));
      //memcpy(&se_mem[SBB_0][0], brinMap, brinMapLen);
-     //memcpy(&se_mem[SBB_0][0], test_map2Map, test_map2MapLen);
+     memcpy(&se_mem[SBB_0][0], test_map2Map, test_map2MapLen);
 
      //    for(ii=0; ii<4; ii++)
      //                for(jj=0; jj<32*32; jj++)

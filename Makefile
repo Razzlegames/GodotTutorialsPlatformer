@@ -74,7 +74,7 @@ include $(DEVKITARM)/gba_rules
 # INCLUDES is a list of directories containing header files
 #---------------------------------------------------------------------------------
 
-TARGET		:=	$(shell basename $(CURDIR))
+export TARGET		:=	$(shell basename $(CURDIR))
 BUILD		:=	build
 SOURCES		:=	gfx source "Maps/test/"
 DATA		:=
@@ -83,7 +83,7 @@ INCLUDES	+=	build
 INCLUDES	+=	sound
 INCLUDES	+=	Maps/test/
 KRAWALLDATA	:=	sound
-BMP_GRAPHICS	:=	gfx/gummy.bmp gfx/crazy_hero.bmp \
+export BMP_GRAPHICS	:=	gfx/gummy.bmp gfx/crazy_hero.bmp \
 			gfx/ball_blue.bmp gfx/ball_green.bmp \
 			gfx/ball_red.bmp gfx/ball_yellow.bmp \
 			gfx/heart_16x16.bmp 
@@ -196,7 +196,7 @@ export PATH	:=	$(PATH):$(DEVKITARM)/bin:$(LIBKRAWALL)/bin
 
 
 #---------------------------------------------------------------------------------
-$(BUILD): Makefile graphics $(KRAWALLOBJ)
+$(BUILD): Makefile graphics $(KRAWALLOBJ) bg
 	@[ -d $@ ] || mkdir -p $@
 	@$(MAKE) --no-print-directory -C $(BUILD) -f $(CURDIR)/Makefile
 
@@ -248,16 +248,21 @@ endif
 #	gfx2gba -t8 -M -fsrc -pgfx/gummy.pal gfx/gummy.bmp
 #gfx: Makefile gfx/gummy.bmp gfx/crazy_hero.bmp gfx/ball_blue.bmp gfx/ball_green.bmp gfx/ball_red.bmp gfx/ball_yellow.bmp gfx/casper.pcx\
 #		gfx/casper2.pcx
-graphics: Makefile $(BMP_GRAPHICS)
-	@echo ""
-	@echo ""
-	@echo "-------------------------------------------------------------"
-	@echo "   Converting your GFX to source.."
-	@echo "-------------------------------------------------------------"
-	gfx2gba -t8 -M -fsrc -o gfx -pmaster.pal $(BMP_GRAPHICS)
 
-#	gfx2gba -t8 -M -fsrc -o gfx -pmaster.pal gfx/gummy.bmp gfx/crazy_hero.bmp gfx/heart_16x16.bmp \
-#	    gfx/ball_blue.bmp gfx/ball_red.bmp gfx/ball_green.bmp gfx/ball_yellow.bmp
+graphics:
+	$(MAKE) -C gfx/
+#graphics: Makefile $(BMP_GRAPHICS)
+#	@echo ""
+#	@echo ""
+#	@echo "-------------------------------------------------------------"
+#	@echo "   Converting your GFX to source.."
+#	@echo "-------------------------------------------------------------"
+#	gfx2gba -t8 -M -fsrc -o gfx -pmaster.pal $(BMP_GRAPHICS)
+
+bg: 
+	$(MAKE) -C Maps/test/
+
+#gfx2gba -fsrc -c16 -t4 -m Maps/test/gimp_grid.bmp -o gfx
 
 #music: jungle_noises.wav
 #	wav2gba jungle_noises.wav jungle_noises.raw
@@ -282,7 +287,7 @@ music: Makefile $(KRAWALL_FILES)
 #	makedepend ./*{cpp,c} 
 
 run: all
-	konsole -e VisualBoyAdvance -4 *.gba &
+	konsole -e VisualBoyAdvance -3 *.gba &
 
 doc: $(HFILES) $(CFILES) $(CPPFILES) $(SFILES) Makefile
 #doc: all
