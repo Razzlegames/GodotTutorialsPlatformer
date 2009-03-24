@@ -77,14 +77,13 @@ class Vector2D : public Vertex2D
       //   Member Functions
       //---------------------------------------------
       int angleInDegree(const Vector2D v1);
-      void tointArray(int* a);
       void printVector();
       int magnitude();
 
       //  Same as magnitude
       int length();
       Vector2D normalize();
-      void normalizeToint(int* n);
+      //void normalizeToint(int* n);
 
       //void intArrayTo3DVectorList(int* a, int size, vector<Vector2D> v);
       /*

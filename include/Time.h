@@ -75,6 +75,7 @@ class Time
 
           }
 
+          return *this;
       }
 };
 

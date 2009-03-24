@@ -22,6 +22,8 @@
 #include "Heart.h"
 #include "CharacterList.h"
 #include "Game.h"
+#include "Test.h"
+#include <vector>
 
 //--------------------------------
 //	Pictures/effects/etc various includes
@@ -70,6 +72,7 @@ Gummy* gummies[TEST_OBJ_NUM];
 //Ball* ball;
 Heart* heart;
 
+using namespace std;
 
 /// Give an account of what button(s) was/were pushed during 
 ///     the last game loop.  This prevents more 
@@ -142,7 +145,7 @@ void handleBallCollision(Ball* c, Vector2D orig_position)
             }
 
             gummy->velocity_vector = 
-                -Vector2D((int)gummy->velocity_vector.x*.5,
+                -Vector2D((int)(gummy->velocity_vector.x/2),
                         abs(gummy->velocity_vector.y)/3);
 
             iprintf("\x1b[12;0H Gummy: Below");
@@ -754,7 +757,7 @@ void init_map_test()
     u32 tile_rows[TEST_MAP_HEIGHT*2];
 
     // Create tiles
-    for(int y = 0; y < TEST_MAP_HEIGHT; y++)
+    for(unsigned int y = 0; y < TEST_MAP_HEIGHT; y++)
     {
 
         // Initialize tile row
@@ -762,7 +765,7 @@ void init_map_test()
 
         // Append each byte to the tile (as a nibble 
         //      in the word/tile_row)
-        for(int x = TEST_MAP_WIDTH; x > 0; x--)
+        for(unsigned int x = TEST_MAP_WIDTH; x > 0; x--)
         {
 
             // Append the each row's column (1byte) to a 32byte integer
@@ -846,7 +849,7 @@ void init_map_test()
 
      // Create a map: four contingent blocks of 
      //   0x0000, 0x1000, 0x2000, 0x3000.
-     SCR_ENTRY *pse = bg0_map;
+     //SCR_ENTRY *pse = bg0_map;
      u16 tile_map[TEST_MAP_SIZE];
 
      for(int i = 0; i < TEST_MAP_SIZE; i++)
@@ -938,7 +941,6 @@ int main()
     REG_IME = 1;
     irqEnable(IRQ_VBLANK);
 
-
     //displayIntro();
 
     //init_map();
@@ -1002,6 +1004,7 @@ int main()
     heart = new Heart(pallet_number++);
     character_list->add(heart);
     heart_list->c = heart;
+
     for(int i = 0; i < 0; i++)
     {
 
@@ -1089,3 +1092,4 @@ int main()
     return 0; 
 }
 // End of main()
+

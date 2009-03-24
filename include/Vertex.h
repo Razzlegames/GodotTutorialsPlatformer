@@ -27,6 +27,7 @@ class Vertex : public Vertex2D
 		Vertex();
 		
 		int distanceBetween(Vertex v);
+                int distanceBetweenSquared(Vertex v);
 };
 
 #endif /*VERTEX_H_*/

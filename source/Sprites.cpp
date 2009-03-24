@@ -75,7 +75,7 @@ u8 Sprites::createSprite(int x, int y, int sprite_size_code, int color)
  *       @return pallet data index number
  */
 
-int Sprites::addPalletData(unsigned char* pallet, int size)
+void Sprites::addPalletData(unsigned char* pallet, int size)
 {
 
     dmaCopy((const void*)pallet, (void*)SPRITE_PALETTE, size);
@@ -110,6 +110,7 @@ void Sprites::initSprites()
     sprite_pallet_index = 0;
 
     disableAllSprites();
+
     // Set up the linked list of available sprites
     initSpritesAvailable();
 
@@ -143,10 +144,12 @@ void Sprites::initSpritesAvailable()
 {
 
     // Map the sprite rotation data to proper memory 
-    rotData = (RotData*)OAMCopy;
+    //   Use void* cast to avoid compiler warning
+    rotData = (RotData*)((void*)OAMCopy);
 
     // Initialy, Turn off all sprites
     disableAllSprites();
+
     sprites_available = (SpritesAvailable*)malloc(sizeof(SpritesAvailable));
     SpritesAvailable* current = sprites_available;
 
@@ -158,7 +161,7 @@ void Sprites::initSpritesAvailable()
     for(i = 0; i < 128; i++)
     {
 
-        current->next = (SpritesAvailable*)malloc(sizeof(SpritesAvailable));
+        current->next = new SpritesAvailable();
         current->sprite_number = i;
         current = current->next;
 
@@ -207,8 +210,8 @@ bool Sprites::setGFXMemoryUsed(int begin_index, unsigned int size)
         //      appended before current 
         if(current->begin_index > begin_index && 
                 // also make sure the new block fits in this space
-                last == NULL || (current->begin_index - 
-                    last->begin_index+last->size) >= size)           
+                last == NULL || (int)(current->begin_index - 
+                    last->begin_index+last->size) >= (int)size)           
         {
  
             // Place new link in between current and current->next
@@ -263,14 +266,20 @@ bool Sprites::setGFXMemoryUsed(int begin_index, unsigned int size)
 bool Sprites::freeGFXBlock(int begin_index)
 {
 
+    // The current sprite being checked
     SpriteGFX* current = sprite_gfx;
+
+    // The previous sprite checked
     SpriteGFX* last = NULL;
+
+    bool found = false;
+
     while(current != NULL)
     {
 
         // If the block to delete is found, arrange links and delete 
         //      this block
-        if(current->begin_index = begin_index)
+        if(current->begin_index == begin_index)
         {
 
             if(last != NULL)
@@ -289,12 +298,17 @@ bool Sprites::freeGFXBlock(int begin_index)
 
             free(current);
 
+            found = true;
+            return found;
+
         }
 
         last = current;
         current = current->next;
 
     }
+
+    return found;
 
 }
 
@@ -317,14 +331,13 @@ u8 Sprites::getNextAvailableSprite()
         return NO_SPRITES_LEFT;
 
     }
+
     u8 to_return = sprites_available->sprite_number;
+
     // Erase the previous sprite number instance
     SpritesAvailable* to_free = sprites_available;
     sprites_available = sprites_available->next;
     free(to_free);
-
-    static int num = 0;
-
 
     return (to_return);
 
@@ -465,7 +478,8 @@ inline void DMAFastCopy(void* source, void* dest, unsigned int count,
         unsigned int mode)
 {
 
-    if (mode == DMA_16NOW || mode == DMA_32NOW)
+    if (mode == (unsigned int)DMA_16NOW || 
+            mode == (unsigned int)DMA_32NOW)
     {
 
         REG_DMA3SAD = (unsigned int)source;

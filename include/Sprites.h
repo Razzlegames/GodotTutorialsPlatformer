@@ -280,7 +280,7 @@ class Sprites
               u8 sprite_index);
       static int appendTileGFX(unsigned char* tiles, unsigned int size, 
               u8 sprite_index);
-      static int addPalletData(unsigned char* pallet, int size);
+      static void addPalletData(unsigned char* pallet, int size);
       static u8 createSprite(int x, int y, int sprite_size_code, int color);
       static void DMAFastCopy(void* source, void* dest, unsigned int count,
               unsigned int mode);

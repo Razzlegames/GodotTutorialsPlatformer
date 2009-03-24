@@ -41,7 +41,9 @@ CrazyHero::~CrazyHero()
 */
 void CrazyHero::init()
 {
-    this->sprite_index; /* = ham_CreateObj(
+
+    //this->sprite_index; 
+    /* = ham_CreateObj(
                             (void*)crazy_hero_Tiles,        // A pointer to the tile data for this object
                             CRAZYHERO_OBJ_SIZE,                 // obj_shape & obj_size
                             CRAZYHERO_OBJ_MODE,                // obj_mode
@@ -56,6 +58,7 @@ void CrazyHero::init()
                             this->position_y                // y position of sprite on screen
                             );
                         */
+
 }
 //******************************************************************************
 /**

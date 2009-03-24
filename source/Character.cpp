@@ -184,7 +184,7 @@ void Character::init(unsigned char* tiles, int tiles_size,
 
     // Whether pallet memory and tile mem were defined 
     //  for Gummy characters 
-    static int pallet_tile_mem_loaded = 0;
+    //static int pallet_tile_mem_loaded = 0;
 
     this->sprite_index = 
         Sprites::createSprite(position_x, position_y, 

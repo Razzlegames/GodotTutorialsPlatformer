@@ -24,6 +24,7 @@ class Character
     //--------------------------------------------
 public:
 
+    /// Collision box for all game characters
     CollisionBox collision_box;
 
     /// The current position of the character*/

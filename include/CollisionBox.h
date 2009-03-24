@@ -10,6 +10,7 @@ class CollisionBox
 {
 
   public:
+
       // Bottom Left Cordinate
       Vector2D bottom_left;
       Vector2D top_right;
@@ -19,9 +20,10 @@ class CollisionBox
       CollisionBox operator+(Vector2D p);
       CollisionBox operator-(Vector2D p);
       bool operator*(CollisionBox b);
+
       bool collisionCheck(float b1x, float  b1y, float t1x,
               float  t1y, float  b2x,float  b2y, float t2x, float t2y);
-      bool collisionCheck(CollisionBox c2);
+      bool verticiesMatch(CollisionBox c2);
       int above(CollisionBox b);
       int below(CollisionBox b);
 

@@ -78,7 +78,8 @@ export TARGET		:=	$(shell basename $(CURDIR))
 BUILD		:=	build
 SOURCES		:=	gfx source "Maps/test/"
 DATA		:=
-INCLUDES	:=	"include"
+INCLUDES	:=	"include" 
+
 INCLUDES	+=	build
 INCLUDES	+=	sound
 INCLUDES	+=	Maps/test/
@@ -183,6 +184,8 @@ export INCLUDE	:=	$(foreach dir,$(INCLUDES),-I$(CURDIR)/$(dir)) \
 			$(foreach dir,$(LIBDIRS),-I$(dir)/include) \
 			-I$(CURDIR)/$(BUILD)
 
+#export INCLUDE += -I$(DEVKITARM)/include/c++/4.1.1 
+
 export HFILES	:= 	$(foreach dir,$(INCLUDE),$(notdir $(wildcard $(dir)/*.h)))
 
 #---------------------------------------------------------------------------------
@@ -206,7 +209,7 @@ $(KRAWALLOBJ):
 all	: Makefile $(BUILD) $(KRAWALLOBJ) 
 
 ctags:
-	ctags -R ./ /usr/include/GL/
+	ctags -R ./ $(DEVKITARM)/include $(LIBDIRS) 
 
 
 #---------------------------------------------------------------------------------
