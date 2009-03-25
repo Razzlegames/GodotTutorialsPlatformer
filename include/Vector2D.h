@@ -37,16 +37,29 @@ typedef struct Polygon_
 /**
  *   Represent a 2D Vector
  */
-class Vector2D : public Vertex2D
+class Vector2D 
 {
 
   public:
 
+      //---------------------------------------------
+      // The member data
+      //---------------------------------------------
+
+      /// vector components 
+      int x;
+
+      /// vector components 
+      int y;
+
+      //---------------------------------------------
+      // Constructors / Destructor
+      //---------------------------------------------
+
       Vector2D();
       Vector2D(int x, int y);
       Vector2D(int* v);
-      Vector2D(Vertex2D v1, Vertex2D v2);
-      //Vector2D(Vec3f vec3f);
+      //Vector2D(Vertex2D v1, Vertex2D v2);
       virtual ~Vector2D();
 
       //---------------------------------------------
@@ -66,14 +79,6 @@ class Vector2D : public Vertex2D
       void operator-= (const Vector2D v2);
 
       //---------------------------------------------
-      // Static utility functions
-      //---------------------------------------------
-      //static void Vector2DListToVertexList(vector<Vector2D> v,
-      //			vector<Vertex> vert);
-      //static int exists(vector<int> index, int a);
-      //static int existsApprox(vector<Vector2D> index, Vector2D a);
-
-      //---------------------------------------------
       //   Member Functions
       //---------------------------------------------
       int angleInDegree(const Vector2D v1);
@@ -90,8 +95,6 @@ class Vector2D : public Vertex2D
          void vec3fListToVector2DList(vector<Vec3f> vec3f_v,
          vector<Vector2D> v);
        */
-      //void intArraytoVertexList(int* a, int size,
-      //		vector<Vertex> v_l);
       bool equal(const Vector2D v);
       bool equalApprox(const Vector2D v);
 

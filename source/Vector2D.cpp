@@ -1,9 +1,9 @@
 #include <Vector2D.h>
 
-Vector2D::Vector2D()
+Vector2D::Vector2D():
+    x(0),
+    y(0)
 {
-
-	x=0;y=0;
 
 }
 
@@ -14,12 +14,11 @@ Vector2D::Vector2D()
  * 	 \param z cord
  */
 
-Vector2D::Vector2D(int x, int y):Vertex2D(x,y)
+Vector2D::Vector2D(int x, int y):
+    x(x),
+    y(y)
 {
 
-	//this->x = x;
-	//this->y = y;
-	//this->z = z;
 }
 
 //**********************************************************
@@ -27,8 +26,11 @@ Vector2D::Vector2D(int x, int y):Vertex2D(x,y)
  * 	\param v vector (array of 3 ints)
  */
 
-Vector2D::Vector2D(int* v):Vertex2D(v)
+Vector2D::Vector2D(int* v)
 {
+
+    x = v[0];
+    y = v[1];
 
 }
 
@@ -36,71 +38,48 @@ Vector2D::Vector2D(int* v):Vertex2D(v)
 
 Vector2D::~Vector2D()
 {
+
 }
 
-//**********************************************************
-/**
- * 	Create a vector from 2 verticies
- * 		@param v1 point where vector starts
- * 		@param v2 point where vector ends
- */
-
-Vector2D::Vector2D(Vertex2D v1, Vertex2D v2):Vertex2D()
-{
-
-	this->x = v2.x-v1.x;
-	this->y = v2.y-v1.y;
-}
+////**********************************************************
+///**
+// * 	Create a vector from 2 verticies
+// * 		@param v1 point where vector starts
+// * 		@param v2 point where vector ends
+// */
+//
+//Vector2D::Vector2D(Vertex2D v1, Vertex2D v2)
+//{
+//
+//	this->x = v2.x-v1.x;
+//	this->y = v2.y-v1.y;
+//}
 
 //**********************************************************
 
 bool Vector2D::equal(const Vector2D v)
 {
 
+    return (x == v.x && y == v.y);
 
-	return (x == v.x && y == v.y);
 }
 
 //**********************************************************
+/**
+ *   Test equality of two vectors
+ */
+
 
 bool Vector2D::operator==(const Vector2D v)
 {
 
+    return equal(v);
 
-	return (x == v.x && y == v.y);
 }
 
 //**********************************************************
 /**
- *   Check to see if an Vector2D exists in a vector<Vector2D>
- * 	(e.g.  to see if two verticies match)
- * 		@param index vector to check
- * 		@param a integer to look for
- * 			@return  -1 if not found, else place where found
- */
-/*
-
-int Vector2D::existsApprox(vector<Vector2D> index, Vector2D a)
-{
-
-	for(int i = 0; i < index.size();i++)
-	{
-
-		if(index[i].equalApprox(a))
-		{
-
-			return i;
-		}
-
-	}
-
-	return -1;
-}
-
-*/
-//**********************************************************
-/**
- * 		Seemless adding of vectors
+ * 		 adding of vectors
  * 			\param v1 first to add
  * 			\param v2 second
  * 		\return new vector
@@ -109,12 +88,12 @@ int Vector2D::existsApprox(vector<Vector2D> index, Vector2D a)
 Vector2D  Vector2D::operator+ (const Vector2D v2)
 {
 
-	return Vector2D(x+v2.x, y+v2.y);
+    return Vector2D(x+v2.x, y+v2.y);
 }
 
 //**********************************************************
 /**
- * 		Seemless adding of vectors
+ * 		 adding of vectors
  * 			\param v1 first to add
  * 			\param v2 second
  * 		\return new vector
@@ -123,13 +102,13 @@ Vector2D  Vector2D::operator+ (const Vector2D v2)
 void  Vector2D::operator+= (const Vector2D v2)
 {
 
-	const Vector2D v1 = *(this);
-	*this = Vector2D(v1.x+v2.x, v1.y+v2.y);
+    const Vector2D v1 = *(this);
+    *this = Vector2D(v1.x+v2.x, v1.y+v2.y);
 }
 
 //**********************************************************
 /**
- * 		Seemless adding of vectors
+ * 		 adding of vectors
  * 			\param v1 first to add
  * 			\param v2 second
  * 		\return new vector
@@ -138,12 +117,12 @@ void  Vector2D::operator+= (const Vector2D v2)
 void  Vector2D::operator-= (const Vector2D v2)
 {
 
-	*this = Vector2D(x-v2.x, y-v2.y);
+    *this = Vector2D(x-v2.x, y-v2.y);
 }
 
 //**********************************************************
 /**
- * 		Seemless subtraction of vectors
+ * 		 subtraction of vectors
  * 			\param v1 first to add
  * 			\param v2 second
  * 		\return new vector
@@ -152,26 +131,26 @@ void  Vector2D::operator-= (const Vector2D v2)
 Vector2D  Vector2D::operator- (const Vector2D v2)
 {
 
-	const Vector2D v1 = *(this);
-	return Vector2D(v1.x-v2.x, v1.y-v2.y);
+    const Vector2D v1 = *(this);
+    return Vector2D(v1.x-v2.x, v1.y-v2.y);
 }
 
 //**********************************************************
 /**
- * 		Seemless negation of vector
+ * 		 negation of vector
  * 		\return new vector
  */
 
 Vector2D  Vector2D::operator- ()
 {
 
-	const Vector2D v1 = *(this);
-	return Vector2D(-v1.x, -v1.y);
+    const Vector2D v1 = *(this);
+    return Vector2D(-v1.x, -v1.y);
 }
 
 //**********************************************************
 /**
- * 		Seemless mult of vector with scalar
+ * 		 mult of vector with scalar
  * 			\param v1 first to add
  * 			\param v2 second
  * 		\return new vector scaled by s
@@ -180,12 +159,12 @@ Vector2D  Vector2D::operator- ()
 Vector2D Vector2D::operator* (const int s)
 {
 
-	return Vector2D(x*s,y*s);
+    return Vector2D(x*s,y*s);
 }
 
 //**********************************************************
 /**
- * 		Seemless dot product of vectors
+ * 		 dot product of vectors
  * 			\param v1 first to add
  * 			\param v2 second
  * 		\return new int based on dot product of both vectors
@@ -194,14 +173,14 @@ Vector2D Vector2D::operator* (const int s)
 int  Vector2D::operator^ (const Vector2D v2)
 {
 
-	const Vector2D v1 = *(this);
-	return v1.x*v2.x+ v1.y*v2.y;
+    const Vector2D v1 = *(this);
+    return v1.x*v2.x+ v1.y*v2.y;
 }
 
 
 //**********************************************************
 /**
- * 		Seemless cross product of vectors
+ * 		 cross product of vectors
  * 			\param v1 first to add
  * 			\param v2 second
  * 		\return new int based on dot product of both vectors
@@ -210,18 +189,18 @@ int  Vector2D::operator^ (const Vector2D v2)
 Vector2D  Vector2D::operator% (const Vector2D v1)
 {
 
-	const Vector2D v2 = *(this);
+    const Vector2D v2 = *(this);
 
-        // Here is our good ol' cross product determinate
-        return Vector2D(v1.y-v2.y   /* ^x */,
-                -(v1.x-v2.x)/* ^y */
-                );
+    // Here is our good ol' cross product determinate
+    return Vector2D(v1.y-v2.y   /* ^x */,
+            -(v1.x-v2.x)/* ^y */
+            );
 }
 
 //**********************************************************
 /**
  *      FIX!!!
- * 		Seemless angle between 2 vectors
+ * 		 angle between 2 vectors
  * 		(Will be doing normalization on both to avoid
  * 	NOT-A-NUMBER issues with trigonometry, e.g. acos(n),n>1||n<-1)
  * 			\param v1
@@ -231,13 +210,13 @@ Vector2D  Vector2D::operator% (const Vector2D v1)
 int Vector2D::angleInDegree(const Vector2D v1)
 {
 
-	Vector2D temp = v1;
-	//printf("v2 ^ v1: %f\n",normalize() ^ temp.normalize());
-	//printf("acos(v2 ^ v1): %f\n",acos(normalize() ^ temp.normalize()));
-	// Here is our good ol' cross product determinate
-        
-	//return M_180_OVER_PI*acos(normalize() ^ temp.normalize());
-        return 0;
+    Vector2D temp = v1;
+    //printf("v2 ^ v1: %f\n",normalize() ^ temp.normalize());
+    //printf("acos(v2 ^ v1): %f\n",acos(normalize() ^ temp.normalize()));
+    // Here is our good ol' cross product determinate
+
+    //return M_180_OVER_PI*acos(normalize() ^ temp.normalize());
+    return 0;
 }
 
 //************************************************************
@@ -256,13 +235,13 @@ int Vector2D::angleInDegree(const Vector2D v1)
 Vector2D Vector2D::normalize()
 {
 
-	int mag = (int)magnitude();
+    int mag = (int)magnitude();
 
-	// Div by zero is bad, M'Kay
-	if(mag != 0)
-		return (*this)/ mag;
-	else
-		return *this;
+    // Div by zero is bad, M'Kay
+    if(mag != 0)
+                return (*this)/ mag;
+    else
+                return *this;
 }
 
 //************************************************************
@@ -270,8 +249,7 @@ Vector2D Vector2D::normalize()
 int Vector2D::magnitude()
 {
 
-
-	return (int)sqrt(x*x + y*y);
+    return (int)sqrt(x*x + y*y);
 
 }
 
@@ -283,8 +261,7 @@ int Vector2D::magnitude()
 Vector2D  Vector2D::operator/ (int n)
 {
 
-
-	return Vector2D(x/n, y/n);
+    return Vector2D(x/n, y/n);
 
 }
 
@@ -296,9 +273,9 @@ Vector2D  Vector2D::operator/ (int n)
 Vector2D  Vector2D::operator/= (const int n)
 {
 
-	x /= n;
-	y /= n;
-	return *this;
+    x /= n;
+    y /= n;
+    return *this;
 
 }
 
@@ -307,8 +284,7 @@ Vector2D  Vector2D::operator/= (const int n)
 void Vector2D::printVector()
 {
 
-
-	//cout << "{" << x <<", "<<  y <<", " << z <<"} "<<endl;
+    //cout << "{" << x <<", "<<  y <<", " << z <<"} "<<endl;
 
 }
 

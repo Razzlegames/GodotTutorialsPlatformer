@@ -8,17 +8,20 @@
  */
 class Vertex2D
 {
-	public:
-		//---------------------------------------------
-		// The member data
-		//---------------------------------------------
-		/* vector components */
-		int x;
-		/* vector components */
-		int y;
+  public:
 
-		Vertex2D();
-        Vertex2D(int* v);
-		Vertex2D(int x, int y);
+      //---------------------------------------------
+      // The member data
+      //---------------------------------------------
+
+      /// vector components 
+      int x;
+
+      /// vector components 
+      int y;
+
+      Vertex2D();
+      Vertex2D(int* v);
+      Vertex2D(int x, int y);
 };
 #endif /*VERTEX2D_*/

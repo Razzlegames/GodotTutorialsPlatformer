@@ -22,7 +22,6 @@
 #include "Heart.h"
 #include "CharacterList.h"
 #include "Game.h"
-#include "Test.h"
 #include <vector>
 
 //--------------------------------
@@ -43,7 +42,6 @@ extern "C" {
 #include "test_map.h"
 #include "test_map2.h"
 #include "test_bg.h"
-#include "brin.h"
 
 #ifdef	__cplusplus
 }
