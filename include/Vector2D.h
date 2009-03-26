@@ -75,6 +75,7 @@ class Vector2D
       Vector2D  operator/= (const int n);
       Vector2D operator* (const int s);
       bool operator==(const Vector2D v);
+      bool operator!=(const Vector2D v);
       void operator+= (const Vector2D v2);
       void operator-= (const Vector2D v2);
 

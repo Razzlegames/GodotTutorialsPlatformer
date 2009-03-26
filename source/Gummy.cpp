@@ -443,7 +443,7 @@ void Gummy::updatePhysics()
     velocity_vector.y += 2;
 
     // Stop subtracting when it hits the bottom
-    if(position.y >= starting_y)
+    if(position.y >= starting_y )
     {
 
         // Make sure character does not fall through ground
@@ -464,8 +464,6 @@ void Gummy::updatePhysics()
 
     }
 
-    Sprites::setSpritePosition(position.x, 
-            position.y,sprite_index);
 
 }
 
@@ -478,8 +476,9 @@ void Gummy::updatePhysics()
  *           eventually?
  */
 
-void Gummy::updateGraphic()
+void Gummy::updateGraphic(Vector2D orig_position)
 {    
+
 
     //const int  = GUMMY_MAX_X_VELOCITY / MAX_ANIMATION_SPEEDS;
 
@@ -523,6 +522,17 @@ void Gummy::updateGraphic()
     else
     {
         collision_flag = 0;
+    }
+
+
+
+    // If new position hasn't changed, don't 
+    //    update sprite position
+    if(orig_position != position)
+    {
+
+        Character::updateGraphic();
+
     }
 
 }

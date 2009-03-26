@@ -348,15 +348,15 @@ void drawObjects(void)
     //crazy_hero->updateGraphic();
     Vector2D orig_position = gummy->position;
     gummy->updatePhysics();
-    gummy->updateGraphic();
 
     detectHeroCollisions(orig_position);
     detectBallCollisions();
+    gummy->updateGraphic(orig_position);
 
     heart->updateGraphic();
 
     //----------------------------------------------
-    //  Iterate through all the objects (chars) and 
+    //  Iterate through all the Characters and 
     //		make sure to redraw them
     //----------------------------------------------
     CharacterList* current = character_list;
@@ -375,6 +375,12 @@ void drawObjects(void)
     //       gummies[i]->updatePhysics();
     //       gummies[i]->updateGraphic();
     //       }
+    //
+    //
+    //    Debug::printSetup();	     
+    //    iprintf("\x1b[2;0H Gummy position:");
+    //    iprintf("\x1b[5;0H X: %i", gummy->position.x);
+    //    iprintf("\x1b[6;0H Y: %i", gummy->position.y);
 
 }
 

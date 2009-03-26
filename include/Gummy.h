@@ -211,7 +211,7 @@ class Gummy: public Character
       Gummy(int position_x, int position_y,
               int in_motion);
 
-      void updateGraphic();
+      void updateGraphic(Vector2D position);
       void jump(int pressed, u8 button_last_pushed);
       void updatePhysics();
       void stoppingX();   

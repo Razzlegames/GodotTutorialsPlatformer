@@ -41,20 +41,6 @@ Vector2D::~Vector2D()
 
 }
 
-////**********************************************************
-///**
-// * 	Create a vector from 2 verticies
-// * 		@param v1 point where vector starts
-// * 		@param v2 point where vector ends
-// */
-//
-//Vector2D::Vector2D(Vertex2D v1, Vertex2D v2)
-//{
-//
-//	this->x = v2.x-v1.x;
-//	this->y = v2.y-v1.y;
-//}
-
 //**********************************************************
 
 bool Vector2D::equal(const Vector2D v)
@@ -69,13 +55,25 @@ bool Vector2D::equal(const Vector2D v)
  *   Test equality of two vectors
  */
 
-
 bool Vector2D::operator==(const Vector2D v)
 {
 
     return equal(v);
 
 }
+
+//**********************************************************
+/**
+ *   Test inequality of two vectors
+ */
+
+bool Vector2D::operator!=(const Vector2D v)
+{
+
+    return !equal(v);
+
+}
+
 
 //**********************************************************
 /**
