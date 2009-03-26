@@ -10,7 +10,7 @@
 #include "gba_data_types.h"
 #include "Sprites.h"
 #include "CollisionBox.h"
-#include "Vertex2D.h"
+#include "Vector2D.h"
 
 //***********************************************************************
 /**
@@ -91,7 +91,7 @@ public:
     int getPositionX();
     int getPositionY();
     void setPosition(int x, int y);
-    void setPosition(Vertex2D v);
+    void setPosition(Vector2D v);
     void setPositionX(int x);
     void setPositionY(int y);
     Vector2D getPosition();
@@ -104,10 +104,24 @@ public:
 	int in_motion);
     */
 
+    virtual void updateGraphic(Vector2D orig_position)
+    {
+
+        // If new position hasn't changed, don't 
+        //    update sprite position
+        if(orig_position != position)
+        {
+
+            updateGraphic();
+
+        }
+
+    }
+
     virtual void updateGraphic()
     {
 
-	Sprites::setSpritePosition(position.x, 
+        Sprites::setSpritePosition(position.x, 
                 position.y,sprite_index);
 
     }
@@ -165,10 +179,10 @@ inline void Character::setPosition(int x, int y)
 
 //********************************************************
 /**
- *	Set the characters position with a Vertex double
+ *	Set the characters position with a Vector2D double
  */
 
-inline void Character::setPosition(Vertex2D v)
+inline void Character::setPosition(Vector2D v)
 {
 
     setPositionX(v.x);

@@ -175,7 +175,6 @@ void Character::init(unsigned char* tiles, int tiles_size,
     //}
     //
 
-
     this->pallet_number = pallet_number;
     this->position.x = position_x;
     this->position.y = position_y;

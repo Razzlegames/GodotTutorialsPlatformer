@@ -1,5 +1,7 @@
 #include <Vector2D.h>
 
+//**********************************************************
+
 Vector2D::Vector2D():
     x(0),
     y(0)
@@ -9,9 +11,9 @@ Vector2D::Vector2D():
 
 //**********************************************************
 /**
- *   \param x cord
- *   \param y cord
- * 	 \param z cord
+ *   @param x cord
+ *   @param y cord
+ *   @param z cord
  */
 
 Vector2D::Vector2D(int x, int y):
@@ -23,7 +25,7 @@ Vector2D::Vector2D(int x, int y):
 
 //**********************************************************
 /**
- * 	\param v vector (array of 3 ints)
+ *   @param v vector (array of 3 ints)
  */
 
 Vector2D::Vector2D(int* v)
@@ -78,23 +80,24 @@ bool Vector2D::operator!=(const Vector2D v)
 //**********************************************************
 /**
  * 		 adding of vectors
- * 			\param v1 first to add
- * 			\param v2 second
- * 		\return new vector
+ *   @param v1 first to add
+ *   @param v2 second
+ * 		@return new vector
  */
 
 Vector2D  Vector2D::operator+ (const Vector2D v2)
 {
 
     return Vector2D(x+v2.x, y+v2.y);
+
 }
 
 //**********************************************************
 /**
  * 		 adding of vectors
- * 			\param v1 first to add
- * 			\param v2 second
- * 		\return new vector
+ *   @param v1 first to add
+ *   @param v2 second
+ * 		@return new vector
  */
 
 void  Vector2D::operator+= (const Vector2D v2)
@@ -107,9 +110,9 @@ void  Vector2D::operator+= (const Vector2D v2)
 //**********************************************************
 /**
  * 		 adding of vectors
- * 			\param v1 first to add
- * 			\param v2 second
- * 		\return new vector
+ *   @param v1 first to add
+ *   @param v2 second
+ * 		@return new vector
  */
 
 void  Vector2D::operator-= (const Vector2D v2)
@@ -120,68 +123,86 @@ void  Vector2D::operator-= (const Vector2D v2)
 
 //**********************************************************
 /**
- * 		 subtraction of vectors
- * 			\param v1 first to add
- * 			\param v2 second
- * 		\return new vector
+ *     subtraction of vectors
+ *   @param v1 first to add
+ *   @param v2 second
+ * 		@return new vector
  */
 
 Vector2D  Vector2D::operator- (const Vector2D v2)
 {
 
-    const Vector2D v1 = *(this);
-    return Vector2D(v1.x-v2.x, v1.y-v2.y);
+    return Vector2D(x-v2.x, y-v2.y);
 }
 
 //**********************************************************
 /**
  * 		 negation of vector
- * 		\return new vector
+ * 		@return new vector
  */
 
 Vector2D  Vector2D::operator- ()
 {
 
-    const Vector2D v1 = *(this);
-    return Vector2D(-v1.x, -v1.y);
+    return Vector2D(-x, -y);
+
 }
 
 //**********************************************************
 /**
  * 		 mult of vector with scalar
- * 			\param v1 first to add
- * 			\param v2 second
- * 		\return new vector scaled by s
+ *   @param v1 first to add
+ *   @param v2 second
+ * 		@return new vector scaled by s
  */
 
 Vector2D Vector2D::operator* (const int s)
 {
 
     return Vector2D(x*s,y*s);
+
 }
 
 //**********************************************************
 /**
- * 		 dot product of vectors
- * 			\param v1 first to add
- * 			\param v2 second
- * 		\return new int based on dot product of both vectors
+ * 	 dot product of vectors
+ *
+ *   @param v1 first to add
+ *   @param v2 second
+ * 		@return new int based on dot product of both vectors
  */
 
 int  Vector2D::operator^ (const Vector2D v2)
 {
 
-    const Vector2D v1 = *(this);
-    return v1.x*v2.x+ v1.y*v2.y;
+    return dot(v2);
+
 }
+
+//**********************************************************
+/**
+ *    dot product of vectors
+ *
+ *   @param v1 first to add
+ *   @param v2 second
+ * 		@return new int based on dot product of both vectors
+ */
+
+int  Vector2D::dot(const Vector2D v2)
+{
+
+    return x*v2.x + y*v2.y;
+
+}
+
 
 
 //**********************************************************
 /**
  * 		 cross product of vectors
- * 			\param v1 first to add
- * 			\param v2 second
- * 		\return new int based on dot product of both vectors
+ *   @param v1 first to add
+ *   @param v2 second
+ * 		@return new int based on dot product of both vectors
  */
 
 Vector2D  Vector2D::operator% (const Vector2D v1)
@@ -201,8 +222,8 @@ Vector2D  Vector2D::operator% (const Vector2D v1)
  * 		 angle between 2 vectors
  * 		(Will be doing normalization on both to avoid
  * 	NOT-A-NUMBER issues with trigonometry, e.g. acos(n),n>1||n<-1)
- * 			\param v1
- * 		\return new int based on dot product of both vectors
+ *   @param v1
+ * 		@return new int based on dot product of both vectors
  */
 
 int Vector2D::angleInDegree(const Vector2D v1)
@@ -237,9 +258,16 @@ Vector2D Vector2D::normalize()
 
     // Div by zero is bad, M'Kay
     if(mag != 0)
-                return (*this)/ mag;
+    {
+
+        return (*this)/ mag;
+    }
     else
-                return *this;
+    {
+
+        return *this;
+    }
+
 }
 
 //************************************************************

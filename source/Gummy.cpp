@@ -479,7 +479,6 @@ void Gummy::updatePhysics()
 void Gummy::updateGraphic(Vector2D orig_position)
 {    
 
-
     //const int  = GUMMY_MAX_X_VELOCITY / MAX_ANIMATION_SPEEDS;
 
     if(state & ON_GROUND)
@@ -526,14 +525,7 @@ void Gummy::updateGraphic(Vector2D orig_position)
 
 
 
-    // If new position hasn't changed, don't 
-    //    update sprite position
-    if(orig_position != position)
-    {
-
-        Character::updateGraphic();
-
-    }
+    Character::updateGraphic();
 
 }
 

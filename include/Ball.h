@@ -25,7 +25,7 @@ class Ball : public Character
       void init(unsigned char* ball_Tiles, u8 pallet_number, 
               int position_x, int position_y, 
               int velocity_vector_x, int velocity_vector_y);
-      virtual u8 getSpriteIndex(){return sprite_index; }
+      //virtual u8 getSpriteIndex(){return sprite_index; }
       virtual u8 getPalletNumber(){return pallet_number;}
       virtual void updateGraphic();
       // Debug variable

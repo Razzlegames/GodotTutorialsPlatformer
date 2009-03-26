@@ -14,7 +14,6 @@ Vertex::Vertex(int x, int y, int z):Vertex2D(x,y)
 Vertex::Vertex():Vertex2D(0,0)
 {
 
-
     this->z = 0.0f;
 
 }
@@ -22,7 +21,7 @@ Vertex::Vertex():Vertex2D(0,0)
 
 //**********************************************************
 /**
- * 	\param v vector (array of 3 ints)
+ * 	@param v vector (array of 3 ints)
  */
 
 Vertex::Vertex(int* v)

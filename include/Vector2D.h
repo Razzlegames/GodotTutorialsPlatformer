@@ -8,22 +8,15 @@
 #include <stdio.h>
 #include <iostream>
 #include <math.h>
-#include <Vertex.h>
 #include <cassert>
-
-//#include "mesh.h"
 
 //const int M_180_OVER_PI = (180/M_PI);
 //const int M_PI_OVER_180 = (M_PI/180);
-//using namespace Imath;
-
-//typedef Vec3<int> Vec3f;
-//typedef Vec2<int> Vec2f;
 
 /*
 __attribute__((aligned(4))) typedef struct Face_
 {
-	Vertex* v1; Vertex* v2; Vertex* v3;
+	Vector2D* v1; Vector2D* v2; Vector2D* v3;
 }Face;
 */
 //typedef vector<Face> FaceList;
@@ -59,7 +52,6 @@ class Vector2D
       Vector2D();
       Vector2D(int x, int y);
       Vector2D(int* v);
-      //Vector2D(Vertex2D v1, Vertex2D v2);
       virtual ~Vector2D();
 
       //---------------------------------------------
@@ -70,6 +62,7 @@ class Vector2D
       Vector2D  operator- (const Vector2D v2);
       Vector2D  operator-(void);
       int  operator^ (const Vector2D v2);
+      int  dot (const Vector2D v2);
       Vector2D  operator% (const Vector2D v2);
       Vector2D  operator/ (const int n);
       Vector2D  operator/= (const int n);

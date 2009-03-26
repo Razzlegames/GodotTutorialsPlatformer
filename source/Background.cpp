@@ -1,6 +1,7 @@
 /* vim: set filetype=cpp.doxygen : */
 
- #include <gba.h>
+#include <gba.h>
+#include "Background.h"
 
 //******************************************************************************
  /**

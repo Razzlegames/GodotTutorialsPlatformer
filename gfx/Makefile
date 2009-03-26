@@ -6,13 +6,33 @@ BMP_FILES = $(wildcard *bmp)
 
 .PHONY : graphics
 
-../$(TARGET) : $(BMP_FILES)
-	@echo ""
+#  Change all bmp graphics files to name.map.c, the output of gfx2gba
+BMP_CFILES = $(BMP_FILES:.bmp=.map.c)
+
+#  Run the Makefile recursively for each graphics source file name.map.c
+all:
+	@for i in $(BMP_CFILES); do\
+	    $(MAKE) $$i; done
+
+# Recompile the graphics file for each bmp file that is 
+#    newer that it's map.c file
+%.map.c: %.bmp
+	@echo "remaking $*"
 	@echo ""
 	@echo "-------------------------------------------------------------"
 	@echo "   Converting your GFX to source.."
 	@echo "-------------------------------------------------------------"
 	$(GFX_CONV) -t8 -M -fsrc -pmaster.pal  $(BMP_FILES)
+
+#../$(TARGET) : $(BMP_FILES)
+#	@echo ""
+#	@echo ""
+#	@echo "-------------------------------------------------------------"
+#	@echo "   Converting your GFX to source.."
+#	@echo "-------------------------------------------------------------"
+#	$(GFX_CONV) -t8 -M -fsrc -pmaster.pal  $(BMP_FILES)
+
+
 
 # Convert Charset WITHOUT map optimation!
 #	gfx2gba -t8 -D -M -fsrc -ogfx -pCharset.pal gfx/Charset.bmp
