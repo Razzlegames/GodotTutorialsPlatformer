@@ -563,7 +563,7 @@ inline void Sprites::getSpritePosition(Point* point, int sprite_number)
 inline int Sprites::getSpriteYCord(int sprite_number)
 {
 
-    // Set sprite's x cordinate (actually 9 bits of data!) 
+    // Get sprite's x cordinate (actually 9 bits of data!) 
     return (OAMCopy[sprite_number].attribute[1] & (0x01FF));
 
 }
@@ -577,7 +577,7 @@ inline int Sprites::getSpriteYCord(int sprite_number)
 inline int Sprites::getSpriteXCord(int sprite_number)
 {
 
-    // Set sprite's x cordinate (actually 9 bits of data!) 
+    // Get sprite's x cordinate (actually 9 bits of data!) 
     return OAMCopy[sprite_number].attribute[0] & (0x00FF);
 
 }
@@ -590,6 +590,7 @@ inline int Sprites::getSpriteXCord(int sprite_number)
 
 inline void Sprites::flipSpriteVertical(int index)
 {
+
     OAMCopy[index].attribute[1] ^= OBJ_VFLIP;   
 
 }

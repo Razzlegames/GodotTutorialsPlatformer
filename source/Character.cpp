@@ -26,10 +26,12 @@ Character::Character(unsigned char* tiles, int tiles_size,
 
     init(tiles, tiles_size, tiles_loaded,color_code, 
             pallet_number2, sprite_size_code, 50,70,0,0);
+
 }
 
 Character::~Character()
 {
+
 
 }
 
@@ -188,6 +190,8 @@ void Character::init(unsigned char* tiles, int tiles_size,
     this->sprite_index = 
         Sprites::createSprite(position_x, position_y, 
                 sprite_size_code, color_code);
+
+    this->sprite_size_code = sprite_size_code;
 
     Sprites::setSpritePosition(position.x, 
             position.y,sprite_index);

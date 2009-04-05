@@ -38,6 +38,9 @@ protected:
     /// The sprite index the hardware had a reference to*/
     u8 sprite_index;
 
+    int sprite_size_code;
+
+
     // Debug cord
     int starting_y;	 
 
@@ -97,6 +100,8 @@ public:
     Vector2D getPosition();
     Vector2D getVelocityVector();
 
+    Vector2D computeCenter();
+
     /*
     Character(u8 sprite_index, int position_x, int position_y, 
 	int in_motion);
@@ -146,7 +151,7 @@ inline Vector2D Character::getVelocityVector()
 
 //********************************************************
 /**
- * 		\return the X cord of this char
+ * 		@return the X cord of this char
  */
 
 inline int Character::getPositionX()
@@ -156,7 +161,7 @@ inline int Character::getPositionX()
 }
 //********************************************************
 /**
- *   \return the Y cord of this char
+ *   @return the Y cord of this char
  */
 
 inline int Character::getPositionY()

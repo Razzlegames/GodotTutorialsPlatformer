@@ -98,7 +98,7 @@ Ball* movable_ball;
 Game game;
 
 
-//*****************************************************************
+//****************************************************************
 /**
  *   Called by the main vector ISR for when a VBLANK 
  *   interrupt occurs
@@ -118,7 +118,7 @@ void vblFunc(void)
 }
 
 
-//*****************************************************************
+//****************************************************************
 
 void handleBallCollision(Ball* c, Vector2D orig_position)
 {
@@ -131,19 +131,22 @@ void handleBallCollision(Ball* c, Vector2D orig_position)
                 above(c->collision_box+c->position))
         {
 
+            // Save the velocity magnitude, squared
+            int velocity_mag_sq  =
+                    gummy->velocity_vector.magnitudeSquared();
+
             //  Handle sound effects
             if(!gummy->getCollisionFlag() && 
-                    gummy->getVelocityVector().magnitude() >= 10)
+                    velocity_mag_sq >= 100)
             {
 
                 gummy->playImpactSound(
-                        abs(gummy->getVelocityVector().
-                            magnitude()));
+                        abs(velocity_mag_sq));
 
             }
 
             gummy->velocity_vector = 
-                -Vector2D((int)(gummy->velocity_vector.x/2),
+                Vector2D((int)(-gummy->velocity_vector.x/2),
                         abs(gummy->velocity_vector.y)/3);
 
             iprintf("\x1b[12;0H Gummy: Below");
@@ -153,9 +156,13 @@ void handleBallCollision(Ball* c, Vector2D orig_position)
         else
         {
 
+            //            gummy->velocity_vector = 
+            //                Vector2D(gummy->velocity_vector.x,
+            //                        abs(gummy->velocity_vector.y/6));
+
             gummy->velocity_vector = 
                 Vector2D(gummy->velocity_vector.x,
-                        abs(gummy->velocity_vector.y/6));
+                        0);
 
             iprintf("\x1b[12;0H Gummy: Above");
             gummy->setOnGround();
@@ -168,23 +175,16 @@ void handleBallCollision(Ball* c, Vector2D orig_position)
     gummy->position = orig_position;
     gummy->showCollision();
 
-    if(gummy->velocity_vector.x/5 == 0)
-    {
-
-        //gummy->velocity_vector.x = 0;
-
-    }
-
-    if(gummy->velocity_vector.y/10 == 0)
-    {
-
-        gummy->velocity_vector.y = 0;
-
-    }
+    //    if(gummy->velocity_vector.y/10 == 0)
+    //    {
+    //
+    //        gummy->velocity_vector.y = 0;
+    //
+    //    }
 
 }
 
-//*****************************************************************
+//****************************************************************
 /**
  *  @param m
  *  @param c
@@ -199,7 +199,7 @@ void handleBallBallCollision(Ball* m,Ball* c,
 
 }
 
-//*****************************************************************
+//***************************************************************
 
 void detectBallHeroCollisions(Vector2D orig_position)
 {
@@ -237,13 +237,15 @@ void detectBallHeroCollisions(Vector2D orig_position)
         //        iprintf("\x1b[2;0H current.c:(%d,%d),(%d,%d)",
         //                cc.bottom_left.x,cc.bottom_left.y,
         //                cc.top_right.x,cc.top_right.y);
-        //        iprintf("\x1b[3;0H current.p: %d,%d",c->position.x,c->position.y);
+        //        iprintf("\x1b[3;0H current.p: %d,%d",
+        //              c->position.x,c->position.y);
         //
+
     }
 
 }
 
-//*****************************************************************
+//****************************************************************
 
 void detectBallBallCollisions(Ball* m, Vector2D orig_position)
 {
@@ -289,7 +291,7 @@ void detectBallBallCollisions(Ball* m, Vector2D orig_position)
 
 }
 
-//*****************************************************************
+//****************************************************************
 /**
  *  Handle all object collisions
  */
@@ -301,7 +303,7 @@ void detectHeroCollisions(Vector2D orig_position)
 
 }
 
-//*****************************************************************
+//****************************************************************
 /**
  *  Handle all Ball object collisions (also updates Ball Physics)
  */
@@ -335,7 +337,7 @@ void detectBallCollisions()
 
 }
 
-//*****************************************************************
+//****************************************************************
 /**
  *   Draw objects does not exactly draw to LCD, but updates 
  *   graphics related  attrubutes such as physics of 
@@ -384,7 +386,7 @@ void drawObjects(void)
 
 }
 
-//*****************************************************************
+//****************************************************************
 /**
  *   Capture keypresses:  Find out what that crazy player wants us to do
  */
@@ -926,7 +928,7 @@ void init_map_test()
 
 }
 
-//*****************************************************************
+//****************************************************************
 
 int main()
 {   

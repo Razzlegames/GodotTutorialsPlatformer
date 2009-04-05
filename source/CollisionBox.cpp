@@ -110,19 +110,19 @@ bool CollisionBox::verticiesMatch(CollisionBox c2)
  *    Check two collision boxes for intersection
  * 	    It would be a good idea to check for both cases of intersection
  * 
- * 	\param b1x bottom x cord of 1 box
- * 	\param b1y bottom y cord of 1 box
- * 	\param t1x top x cord of 1 box
- *  \param t1y top y cord of 1 box
- * 	\param b2x bottom x cord of 2 box
- * 	\param b2y bottom y cord of 2 box
- * 	\param t2x top x cord of 2 box
- * 	\param t2y top y cord of 2 box
+ * 	@param b1x bottom x cord of 1 box
+ * 	@param b1y bottom y cord of 1 box
+ * 	@param t1x top x cord of 1 box
+ *  @param t1y top y cord of 1 box
+ * 	@param b2x bottom x cord of 2 box
+ * 	@param b2y bottom y cord of 2 box
+ * 	@param t2x top x cord of 2 box
+ * 	@param t2y top y cord of 2 box
  * 
  */
 
-bool CollisionBox::collisionCheck(float b1x, float  b1y, float t1x,
-        float  t1y, float  b2x,float  b2y, float t2x, float t2y)
+bool CollisionBox::collisionCheck(int b1x, int  b1y, int t1x,
+        int  t1y, int  b2x,int  b2y, int t2x, int t2y)
 {
 
     // Check if any point is within x cord, and within either box

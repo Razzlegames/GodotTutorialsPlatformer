@@ -6,6 +6,7 @@
  *  Information (pallet, tiles, tile_map) the hardware needs
  *    to display a proper background
  */
+
 class Background
 {
 

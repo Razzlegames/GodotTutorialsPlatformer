@@ -57,7 +57,7 @@ bool Vector2D::equal(const Vector2D v)
  *   Test equality of two vectors
  */
 
-bool Vector2D::operator==(const Vector2D v)
+bool Vector2D::operator== (const Vector2D v)
 {
 
     return equal(v);
@@ -69,7 +69,7 @@ bool Vector2D::operator==(const Vector2D v)
  *   Test inequality of two vectors
  */
 
-bool Vector2D::operator!=(const Vector2D v)
+bool Vector2D::operator!= (const Vector2D v)
 {
 
     return !equal(v);
@@ -281,6 +281,22 @@ int Vector2D::magnitude()
 
 //************************************************************
 /**
+ *  Magnitude of the vector, without taking the 
+ *      expensive square root
+ *
+ *      @return magnitude squared
+ */
+
+int Vector2D::magnitudeSquared()
+{
+
+    return (int)(x*x + y*y);
+
+}
+
+
+//************************************************************
+/**
  * 	 Scalar division of vector by n
  */
 
@@ -304,6 +320,57 @@ Vector2D  Vector2D::operator/= (const int n)
     return *this;
 
 }
+
+
+//**********************************************************************
+/**
+ * Array like access to attributes (for convenience)
+ *
+ * @param i index into Vector (x=0,y=1,z=2)
+ */
+
+int& Vector2D::operator[](int i)
+{
+
+    return getCord(i);
+
+}
+
+
+//**********************************************************
+/**
+ * Get the cordinate of this vector in array like access
+ *
+ * @param i index into Vector (x=0,y=1)
+ */
+
+int& Vector2D::getCord(unsigned int i) 
+{
+
+    if(i == X_CORD)
+    {
+
+        return x;
+    }
+
+    else if(i == Y_CORD)
+    {
+
+        return y;
+    }
+
+    // Do some kind of error notice here!
+    else
+    {
+
+    }
+
+    // Should not matter since error called?
+    return x;
+
+}
+
+
 
 //**********************************************************
 

@@ -35,6 +35,10 @@ class Vector2D
 
   public:
 
+
+      static const enum {
+          X_CORD=0,Y_CORD=1,Z_CORD=2}cords;
+
       //---------------------------------------------
       // The member data
       //---------------------------------------------
@@ -60,17 +64,20 @@ class Vector2D
 
       Vector2D operator+ (const Vector2D);
       Vector2D  operator- (const Vector2D v2);
-      Vector2D  operator-(void);
-      int  operator^ (const Vector2D v2);
-      int  dot (const Vector2D v2);
+      Vector2D  operator- (void);
+      int operator^ (const Vector2D v2);
+      int dot (const Vector2D v2);
       Vector2D  operator% (const Vector2D v2);
       Vector2D  operator/ (const int n);
       Vector2D  operator/= (const int n);
       Vector2D operator* (const int s);
-      bool operator==(const Vector2D v);
-      bool operator!=(const Vector2D v);
+      bool operator== (const Vector2D v);
+      bool operator!= (const Vector2D v);
       void operator+= (const Vector2D v2);
       void operator-= (const Vector2D v2);
+
+      // Array like access to attributes (for convenience)
+      int& operator[](int i);
 
       //---------------------------------------------
       //   Member Functions
@@ -78,30 +85,19 @@ class Vector2D
       int angleInDegree(const Vector2D v1);
       void printVector();
       int magnitude();
+      int magnitudeSquared();
 
       //  Same as magnitude
       int length();
+
+      // Normalize to legnth 1 vector
       Vector2D normalize();
+
       //void normalizeToint(int* n);
 
-      //void intArrayTo3DVectorList(int* a, int size, vector<Vector2D> v);
-      /*
-         void vec3fListToVector2DList(vector<Vec3f> vec3f_v,
-         vector<Vector2D> v);
-       */
       bool equal(const Vector2D v);
       bool equalApprox(const Vector2D v);
-
-      //---------------------------------------------
-      // The member data
-      //---------------------------------------------
-
-      /* vector components */
-      //int x;
-      /* vector components */
-      //int y;
-      /* vector components */
-      //int z;
+      int& getCord(unsigned int i);
 
 };
 

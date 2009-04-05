@@ -14,15 +14,15 @@ class CollisionBox
       // Bottom Left Cordinate
       Vector2D bottom_left;
       Vector2D top_right;
-      float width;
-      float height;
+      int width;
+      int height;
 
       CollisionBox operator+(Vector2D p);
       CollisionBox operator-(Vector2D p);
       bool operator*(CollisionBox b);
 
-      bool collisionCheck(float b1x, float  b1y, float t1x,
-              float  t1y, float  b2x,float  b2y, float t2x, float t2y);
+      bool collisionCheck(int b1x, int  b1y, int t1x,
+              int  t1y, int  b2x,int  b2y, int t2x, int t2y);
       bool verticiesMatch(CollisionBox c2);
       int above(CollisionBox b);
       int below(CollisionBox b);

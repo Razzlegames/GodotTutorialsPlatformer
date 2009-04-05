@@ -8,6 +8,7 @@
  *    A collection of backgrounds and collision info that makes up
  *     a map
  */
+
 class Map
 {
 

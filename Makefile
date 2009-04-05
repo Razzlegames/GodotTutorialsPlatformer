@@ -199,7 +199,7 @@ export PATH	:=	$(PATH):$(DEVKITARM)/bin:$(LIBKRAWALL)/bin
 
 
 #---------------------------------------------------------------------------------
-$(BUILD): Makefile graphics $(KRAWALLOBJ) bg
+$(BUILD): Makefile graphics $(KRAWALLOBJ) backgrounds
 	@[ -d $@ ] || mkdir -p $@
 	@$(MAKE) --no-print-directory -C $(BUILD) -f $(CURDIR)/Makefile
 
@@ -213,7 +213,7 @@ ctags:
 
 
 #---------------------------------------------------------------------------------
-clean: ctags
+clean: ctags 
 	@echo clean ...
 	$(MAKE) -C $(KRAWALLDATA) clean
 	@rm -fr $(BUILD) $(TARGET).elf $(TARGET).gba
@@ -262,7 +262,7 @@ graphics:
 #	@echo "-------------------------------------------------------------"
 #	gfx2gba -t8 -M -fsrc -o gfx -pmaster.pal $(BMP_GRAPHICS)
 
-bg: 
+backgrounds: 
 	$(MAKE) -C Maps/test/
 
 #gfx2gba -fsrc -c16 -t4 -m Maps/test/gimp_grid.bmp -o gfx
@@ -286,8 +286,8 @@ music: Makefile $(KRAWALL_FILES)
 	krawall_converter -d $(KRAWALL_FILES)
 
 
-#depend: ctags
-#	makedepend ./*{cpp,c} 
+#depend: 
+#	makedepend ./*{cpp,c} ./include/*h
 
 run: all
 	konsole -e VisualBoyAdvance -3 *.gba &
@@ -295,4 +295,3 @@ run: all
 doc: $(HFILES) $(CFILES) $(CPPFILES) $(SFILES) Makefile
 #doc: all
 	doxygen
-
