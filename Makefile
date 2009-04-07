@@ -209,7 +209,7 @@ $(KRAWALLOBJ):
 all	: Makefile $(BUILD) $(KRAWALLOBJ) 
 
 ctags:
-	ctags -R ./ $(DEVKITARM)/include $(LIBDIRS) 
+	ctags -R ./ $(DEVKITARM)/include $(LIBDIRS)
 
 
 #---------------------------------------------------------------------------------
@@ -285,7 +285,6 @@ music: Makefile $(KRAWALL_FILES)
 	@echo "-------------------------------------------------------------"
 	krawall_converter -d $(KRAWALL_FILES)
 
-
 #depend: 
 #	makedepend ./*{cpp,c} ./include/*h
 
@@ -295,3 +294,9 @@ run: all
 doc: $(HFILES) $(CFILES) $(CPPFILES) $(SFILES) Makefile
 #doc: all
 	doxygen
+
+
+diff:
+	svn diff --diff-cmd=diffwrap
+
+

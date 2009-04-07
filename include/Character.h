@@ -27,15 +27,15 @@ public:
     /// Collision box for all game characters
     CollisionBox collision_box;
 
-    /// The current position of the character*/
+    /// The current position of the character
     Vector2D position;
 
-    /// The current velocity the character has */
+    /// The current velocity the character has 
     Vector2D velocity_vector;
 
 protected:
 
-    /// The sprite index the hardware had a reference to*/
+    /// The sprite index the hardware had a reference to
     u8 sprite_index;
 
     int sprite_size_code;
@@ -45,10 +45,10 @@ protected:
     int starting_y;	 
 
     int in_motion;     
-    /// This character's pallet number*/
+    /// This character's pallet number
     u8 pallet_number;
 
-    /// The Object Attribute memory associated with this sprite */
+    /// The Object Attribute memory associated with this sprite 
     OAM_Entry oam;
 
     //--------------------------------------------
@@ -84,7 +84,7 @@ public:
     virtual void init();
     void enableSprite();
 
-    ///   Set the character in motion */
+    ///   Set the character in motion 
     void setInMotion(int in_motion1)
     {
 

@@ -72,7 +72,9 @@ inline void Debug::printSetup()
 */
 inline void debugPrint(char* s, int x, int y)
 {
+
       iprintf("%s",s);
+
 }
 
 

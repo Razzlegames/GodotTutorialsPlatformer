@@ -13,6 +13,9 @@ int Gummy::pallet_tile_mem_loaded = 0;
 ///     set for all gummys)
 int Gummy::gfx_memory_index =0;
 
+/// Frequency to Update graphics bit maps on 
+const int Gummy::GRAPHIC_UPDATE_FREQUENCY = 3;
+
 //*****************************************************************
 /**
  *   Default contructor for the hero of the game
@@ -649,6 +652,7 @@ void Gummy::updateGraphicOnGround()
 
     }
 
+    // Update moving graphics every third vblank
     else if(in_motion_right && vblank == 3)
     {
 

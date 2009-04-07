@@ -84,146 +84,129 @@ typedef enum GummyState
 };
 
 
-//****************************************************************************
+//***********************************************************************
 /**
  *   Represent the Gummy character .
  */
+
 class Gummy: public Character
 {
 
   protected:
 
-      //--------------------------------------------
-      //      Member attributes
-      //--------------------------------------------
-      /// Whether or not to use separate GFX tiles for 
-      ///       each gummy instance
-      static int separate_gfx;
+    /// Frequency to Update graphics bit maps on 
+    static const int GRAPHIC_UPDATE_FREQUENCY;
 
-      int collision_flag;
+    //--------------------------------------------
+    //      Member attributes
+    //--------------------------------------------
+    /// Whether or not to use separate GFX tiles for 
+    ///       each gummy instance
+    static int separate_gfx;
 
-      /// GFX memory index (how far into GFX memory are 
-      /// the tiles for this character: if using 
-      /// same tile set for all gummys)
-      //int gfx_memory_index;
+    int collision_flag;
 
-      /// The Object Attribute memory associated with this sprite 
-      //OAM_Entry oam;
-      /// This character's pallet number
-      //u8 pallet_number;
+    /// If character is moving right
+    int in_motion_right;
 
-      /// The sprite index the hardware had a reference to
-      //u8 sprite_index;
-      //  The current point on the screen the character 
-      //        is occupying
-      //int position_x;
-      //int position_y;
+    /// If character is moving left
+    int in_motion_left;
 
-      // The current velocity the character has
-      //int velocity_vector_x;
-      //int velocity_vector_y;
+    // Debug variable
+    int starting_y;
 
-      /// If character is moving right
-      int in_motion_right;
+    /// If character is currently turning (used for different 
+    ///       animation frame)
+    int turning;
 
-      /// If character is moving left
-      int in_motion_left;
+    /// Keep track of how many vblank interrupts have 
+    ///     been thrown 
+    ///     -Used in animation frame assignment 
+    int vblank;
 
-      // Debug variable
-      int starting_y;
+    /// If the graphic has been flipped left, turning, jumping
+    int state;
 
-      /// If character is currently turning (used for different 
-      ///       animation frame)
-      int turning;
+    /// Whether pallet memory and tile mem were defined for 
+    ///     Gummy characters 
+    static int pallet_tile_mem_loaded;
 
-      /// Keep track of how many vblank interrupts have 
-      ///     been thrown 
-      ///     -Used in animation frame assignment 
-      int vblank;
+    /// GFX memory index (how far into GFX memory are 
+    ///     the tiles for this character: if using 
+    ///     same tile set for all gummys)
+    static int gfx_memory_index;
 
-      /// If the graphic has been flipped left, turning, jumping
-      int state;
+    //--------------------------------------------
+    //  private Function prototypes
+    //--------------------------------------------
+    void init(u8 pallet_number, int position_x, 
+            int position_y, int velocity_vector_x, 
+            int velocity_vector_y, int in_motion_left, 
+            int in_motion_right);
 
-      /// Whether pallet memory and tile mem were defined for 
-      ///     Gummy characters 
-      static int pallet_tile_mem_loaded;
+    virtual void updateWalkFrame();
+    virtual void updateWalkRightFrame();
+    virtual void updateWalkLeftFrame();
 
-      /// GFX memory index (how far into GFX memory are 
-      ///     the tiles for this character: if using 
-      ///     same tile set for all gummys)
-      static int gfx_memory_index;
-
-      //--------------------------------------------
-      //  private Function prototypes
-      //--------------------------------------------
-      void init(u8 pallet_number, int position_x, 
-              int position_y, int velocity_vector_x, 
-              int velocity_vector_y, int in_motion_left, 
-              int in_motion_right);
-
-      virtual void updateWalkFrame();
-      virtual void updateWalkRightFrame();
-      virtual void updateWalkLeftFrame();
-
-      /// The current animation frame of this character 
-      int frame_number;
+    /// The current animation frame of this character 
+    int frame_number;
 
   public:
 
-      //--------------------------------------------
-      // Public member function prototypes
-      //--------------------------------------------
-      // Inherited
-      //void enableSprite();
+    //--------------------------------------------
+    // Public member function prototypes
+    //--------------------------------------------
+    // Inherited
+    //void enableSprite();
 
-      //-------------------------------------------
-      // Motion
-      //-------------------------------------------
-      void moveUp();
-      void moveDown();        
-      void moveLeft();
-      void moveRight();        
-      void moveLeftRunning();
-      void moveRightRunning();
+    //-------------------------------------------
+    // Motion
+    //-------------------------------------------
+    void moveUp();
+    void moveDown();        
+    void moveLeft();
+    void moveRight();        
+    void moveLeftRunning();
+    void moveRightRunning();
 
-      void showCollision();
-      int getOnGround(){ return state & ON_GROUND;};
-      void setOnGround(){state &= ~JUMPING; state |= ON_GROUND;}
-      void setOffGround(){state &= ~ON_GROUND;}
+    void showCollision();
+    int getOnGround(){ return state & ON_GROUND;};
+    void setOnGround(){state &= ~JUMPING; state |= ON_GROUND;}
+    void setOffGround(){state &= ~ON_GROUND;}
 
-      //-------------------------------------------
-      // Sounds
-      //-------------------------------------------
-      void playJumpSound();
-      void playImpactSound();
-      void playImpactSound(unsigned int volume);
-      int getCollisionFlag(){return collision_flag;}
+    //-------------------------------------------
+    // Sounds
+    //-------------------------------------------
+    void playJumpSound();
+    void playImpactSound();
+    void playImpactSound(unsigned int volume);
+    int getCollisionFlag(){return collision_flag;}
 
-      // Inherited
-      //void setInMotion(int in_motion);
-      //u8 getPalletNumber();
-      //u8 getSpriteIndex();
+    // Inherited
+    //void setInMotion(int in_motion);
+    //u8 getPalletNumber();
+    //u8 getSpriteIndex();
 
-      Gummy(u8 pallet_number);
-      ~Gummy();
-      Gummy(u8 pallet_number, int position_x, int position_y, 
-              int velocity_vector_x, int velocity_vector_y);
-      Gummy(int position_x, int position_y,
-              int in_motion);
+    Gummy(u8 pallet_number);
+    ~Gummy();
+    Gummy(u8 pallet_number, int position_x, int position_y, 
+            int velocity_vector_x, int velocity_vector_y);
+    Gummy(int position_x, int position_y,
+            int in_motion);
 
-      void updateGraphic(Vector2D position);
-      void jump(int pressed, u8 button_last_pushed);
-      void updatePhysics();
-      void stoppingX();   
-      void updateGraphicOnGround();
-      void changeAnimationFrame(int frame);
+    void updateGraphic(Vector2D position);
+    void jump(int pressed, u8 button_last_pushed);
+    void updatePhysics();
+    void stoppingX();   
+    void updateGraphicOnGround();
+    void changeAnimationFrame(int frame);
 
 };
 
 ////-------------------------------------------------------------
 //// Put all small member functions here and make inline
 ///   (now in Character.h)
-////******************************************************************************
+////*************************************************************************
 ///**
 //*   Enable sprite
 //*/
