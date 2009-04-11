@@ -1,4 +1,4 @@
-//******************************************************************************
+//************************************************************************
 /**
  *  Used to control all apsects of sprites in this game. Including 
  *       memory access availability linked list
@@ -22,7 +22,7 @@ __attribute__((aligned(4))) SpriteGFX* Sprites::sprite_gfx;
 
 int Sprites::gfx_memory_index;
 
-//******************************************************************************
+//************************************************************************
 /**
  *   Create a sprite on the screen
  */
@@ -40,8 +40,8 @@ u8 Sprites::createSprite(int x, int y, int sprite_size_code, int color)
 
     }
 
-    setSpriteColorAndShape(spriteTypeToShape(sprite_size_code),color, 
-            sprite_number);
+    setSpriteColorModeAndShape(spriteTypeToShape(sprite_size_code),
+            color, sprite_number);
 
     // Set up the sprite on the screen
     setSpritePosition(x, y, sprite_number);
@@ -67,7 +67,7 @@ u8 Sprites::createSprite(int x, int y, int sprite_size_code, int color)
 
 }
 
-//******************************************************************************
+//************************************************************************
 /**
  *  Add pallet data for sprite
  *       @param pallet pallet to place into memory
@@ -95,7 +95,7 @@ void Sprites::addPalletData(unsigned char* pallet, int size)
 
 }
 
-//******************************************************************************
+//************************************************************************
 /**
  *   Init the sprites system
  */
@@ -116,7 +116,7 @@ void Sprites::initSprites()
 
 }
 
-//******************************************************************************
+//************************************************************************
 /**
  *       Disable all sprites
  */
@@ -135,7 +135,7 @@ void Sprites::disableAllSprites()
 
 }
 
-//******************************************************************************
+//************************************************************************
 /**
  *   Initialize all sprites data structures
  */
@@ -150,15 +150,16 @@ void Sprites::initSpritesAvailable()
     // Initialy, Turn off all sprites
     disableAllSprites();
 
-    sprites_available = (SpritesAvailable*)malloc(sizeof(SpritesAvailable));
+    sprites_available = (SpritesAvailable*)
+        malloc(sizeof(SpritesAvailable));
+
     SpritesAvailable* current = sprites_available;
 
     // Set up sprites gfx being used (NULL when not being used)
     sprite_gfx = NULL;
 
-    int i;
     // Populate all nodes, and GFX info
-    for(i = 0; i < 128; i++)
+    for(int i = 0; i < 128; i++)
     {
 
         current->next = new SpritesAvailable();
@@ -172,7 +173,7 @@ void Sprites::initSpritesAvailable()
 
 }
 
-//******************************************************************************
+//************************************************************************
 /**
  *   Update GFX memory block tracker with a new block of used memory
  *       @param begin_index the offset from GFX memory that this new block 
@@ -213,7 +214,7 @@ bool Sprites::setGFXMemoryUsed(int begin_index, unsigned int size)
                 last == NULL || (int)(current->begin_index - 
                     last->begin_index+last->size) >= (int)size)           
         {
- 
+
             // Place new link in between current and current->next
             //      (Re-connect all links)
             if(last != NULL)
@@ -258,7 +259,7 @@ bool Sprites::setGFXMemoryUsed(int begin_index, unsigned int size)
 
 }
 
-//******************************************************************************
+//************************************************************************
 /**
  *   Delete a GFX block (making it usable by the system)
  */
@@ -312,7 +313,7 @@ bool Sprites::freeGFXBlock(int begin_index)
 
 }
 
-//******************************************************************************
+//************************************************************************
 /**
  *  Get the next available sprite number not being used (or NO_SPRITES_LEFT)
  */ 
@@ -343,10 +344,11 @@ u8 Sprites::getNextAvailableSprite()
 
 }
 
-//******************************************************************************
+//************************************************************************
 /**
  *   Make sure the sprite handler linked list knows a new sprite 
- *       became available. Next place to write should write over this area in OAM
+ *       became available. Next place to write should 
+ *       write over this area in OAM
  *       @param sprite_number the sprite number that has become available
  */ 
 
@@ -354,21 +356,26 @@ void Sprites::setSpriteAvailable(int sprite_number)
 {
 
     SpritesAvailable* current; 
+
     //-------------------------------------------
     // Append reference to linked list
     //-------------------------------------------
+
     current = (SpritesAvailable*)malloc(sizeof(SpritesAvailable));
     current->sprite_number = (u8)sprite_number;
+
     //    Make all other sprites the children of this new one
     current->next = sprites_available;
+
     //    Set new sprite as head of list
     sprites_available = current;
+
     // Make sure GFX handler knows this space is free 
     //sprite_gfx_indexes[sprite_index] =  SPRITE_UNUSED;
 
 }
 
-//******************************************************************************
+//************************************************************************
 /**
  *    Check if sprite number is available: 0(n) time
  *       @param sprite_number the sprite number to look for
@@ -397,7 +404,20 @@ bool Sprites::isSpriteAvialable(int sprite_number)
 
 }
 
-//******************************************************************************
+//************************************************************************
+/**
+ *   Update graphics memory
+ */
+int Sprites::updateTileGFX(unsigned char* tiles, unsigned int size,
+        int sprite_gfx_index)
+        
+{
+
+    setTileGFX(tiles,size,sprite_gfx_index);
+
+}
+
+//************************************************************************
 /**
  *  Add graphics to GFX memory for a NEW SPRITE
  *   --offset (in bytes) of where to place sprite tiles into 
@@ -410,10 +430,11 @@ bool Sprites::isSpriteAvialable(int sprite_number)
 int Sprites::appendTileGFX(unsigned char* tiles, unsigned int size, 
         u8 sprite_index)
 {
-   
+
     int to_return = gfx_memory_index;
     setTileGFX(tiles,size,gfx_memory_index);
     //Debug::printSetup();
+    static bool printed = 0;
     //iprintf("\x1b[0;0H -atr[2]: 0x%08x",OAMCopy[sprite_index].attribute[2]);
 
     //setGFXMemoryIndexOAM(sprite_index, to_return);    
@@ -425,11 +446,20 @@ int Sprites::appendTileGFX(unsigned char* tiles, unsigned int size,
     //	iprintf("\x1b[3;0H atr[1]: 0x%08x",OAMCopy[sprite_index].attribute[1]);
     //iprintf("\x1b[4;0H atr[2]: 0x%08x",OAMCopy[sprite_index].attribute[2]);
 
+    //    if(!printed)
+    //    {
+    //
+    //        iprintf("\x1b[8;0H gfx_before: 0x%08x",to_return);
+    //        iprintf("\x1b[9;0H gfx_after: 0x%08x",gfx_memory_index);
+    //        iprintf("\x1b[10;0H gfx_size: 0x%08x",size);
+    //        printed = 1;
+    //    }
+    //
     return to_return;
 
 }
 
-//******************************************************************************
+//************************************************************************
 /**
  *  Place OAM backup buffer in real OAM on Gameboy Adv
  */
@@ -440,6 +470,7 @@ void Sprites::copyObjToOAM()
     // Size of OAM is the size of one OAM record * number of sprites possible
     //			(There's one OAM record per sprite).
     static const int OAM_BYTES_SIZE = sizeof(OAM_Entry)*MAX_SPRITES;
+
     //dmaCopy((const void*)(OAMCopy), (void*)OAM, OAM_BYTES_SIZE);
     //DMA_Copy(3, (const void*)(OAMCopy), (void*)OAM, DMA32 | OAM_BYTES_SIZE>>2);
     dmaCopy32((const void*)(OAMCopy), (void*)OAM, OAM_BYTES_SIZE);
@@ -463,7 +494,7 @@ void Sprites::copyObjToOAM()
 
 }
 
-//******************************************************************************
+//************************************************************************
 /**
  *   Set a DMA transfer to begin.
  *

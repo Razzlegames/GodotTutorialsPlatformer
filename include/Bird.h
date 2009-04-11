@@ -2,13 +2,13 @@
 
 
 /**
- *  Gummy is a cool character to be used as hero and enemy alike.
+ *  Bird is a cool character to be used as hero and enemy alike.
  *       The charater is 32X32 pixels, therefore anywhere 
  *       this product appears,
  *       it is due to this size.
  */
-#ifndef _Gummy_H
-#define	_Gummy_H
+#ifndef _Bird_H
+#define	_Bird_H
 
 #include "Sprites.h"
 #include "world1_physics.h"
@@ -29,70 +29,89 @@ extern OAM_Entry OAMCopy[128];
 extern RotData* rotData;
 
 /// The sprite size of this hero in pixels 
-#define GUMMY_OBJ_SIZE   Sprite_32x32 //OBJ_SIZE_32X32
-
+#define BIRD_OBJ_SIZE   Sprite_64x32 //OBJ_SIZE_64x32
 /// The object mode of the hero sprite 
-#define GUMMY_OBJ_MODE  ATT0_NORMAL
-
-///  The length of one puzzle block in pixels 
-#define ONE_BLOCK_LENGTH    3
+#define BIRD_OBJ_MODE  ATT0_NORMAL
 
 //------------------------------------------------
 // Animation frames for character
 //------------------------------------------------
-/// The graphics tiles to use for this character 
-extern const unsigned char gummy_Tiles[7168];
 
+/// Frame for Bird Turning Left from a right walk/run (indexes start at 0)
+#define BIRD_TURN_LEFT_FRAME_NUMBER   8
 
-/// Frame for Gummy Turning Left from a right walk/run 
-///     (indexes start at 0)
-#define GUMMY_TURN_LEFT_FRAME_NUMBER   0
+/// Frame for Bird Standing Right (indexes start at 0)
+#define BIRD_STAND_RIGHT_FRAME_NUMBER   0
 
-/// Frame for Gummy Standing Right (indexes start at 0)
-#define GUMMY_STAND_RIGHT_FRAME_NUMBER   2
+/// Frame for Bird Standing Right (indexes start at 0)
+#define BIRD_BLINK_FRAME_NUMBER 1
 
-/// Frame for Gummy walking right (indexes start at 0)
-#define GUMMY_WALK_RIGHT_FRAME_NUMBER   1
+/// Frame for Bird walking right (indexes start at 0)
+#define BIRD_WALK_RIGHT_FRAME_NUMBER   2
 
-/// 2nd Frame for Gummy walking right (indexes start at 0)
-#define GUMMY_WALK_RIGHT_FRAME2_NUMBER   3
+/// 2nd Frame for Bird walking right (indexes start at 0)
+#define BIRD_WALK_RIGHT_FRAME2_NUMBER   \
+    (BIRD_WALK_RIGHT_FRAME_NUMBER+1)
 
-/// Frame for Gummy when he dies 
-#define GUMMY_DIES_FRAME_NUMBER     4
+/// 3rd Frame for Bird walking right (indexes start at 0)
+#define BIRD_WALK_RIGHT_FRAME3_NUMBER   \
+    (BIRD_WALK_RIGHT_FRAME_NUMBER+2)
 
-/// Frame for when Gummy is ducking 
-#define GUMMY_DUCKING_FRAME_NUMBER  5
+/// Frame for Bird when he dies 
+#define BIRD_DIES_FRAME_NUMBER     5
+
+/// Frame for when Bird is ducking 
+#define BIRD_DUCKING_FRAME_NUMBER  3
 
 ///  Max animation speeds for the character 
-#define GUMMY_MAX_ANIMATION_SPEEDS    3
+#define BIRD_MAX_ANIMATION_SPEEDS    3
 
-/// Frame for when Gummy is jumping  
-#define GUMMY_JUMPING_FRAME_NUMBER 	6
+/// Frame for when Bird is jumping  
+#define BIRD_JUMPING_FRAME_NUMBER 	6
+
+/// Frame for when Bird is jumping  
+#define BIRD_JUMPING_FRAME2_NUMBER  (BIRD_JUMPING_FRAME_NUMBER +1)
 
 /// Total number of animation frames 
-#define GUMMY_NUMBER_OF_FRAMES  7   
+#define BIRD_NUMBER_OF_FRAMES  11   
 
-/// The size (in pixels) of each animation frame 
-#define GUMMY_FRAME_SIZE    ((sizeof(gummy_Tiles)/GUMMY_NUMBER_OF_FRAMES))
+/// The size (in bytes) of each animation frame 
+#define BIRD_FRAME_SIZE    (32*64)
 
 /// Number of gummy tiles per frame 
-#define GUMMY_TILES_PER_FRAME   (GUMMY_FRAME_SIZE/(64)*2)
+#define BIRD_TILES_PER_FRAME   byteIndexToTileIndex(BIRD_FRAME_SIZE)
 
 /// Vector magnitude and direction (up) of the Gummies jump 
-#define GUMMY_JUMP_VECTOR    -28
+#define BIRD_JUMP_VECTOR    -15
+
+/// The graphics tiles to use for this character 
+extern const unsigned char 
+bird_Tiles[BIRD_FRAME_SIZE*BIRD_NUMBER_OF_FRAMES];
 
 //------------------------------------------------
 
 /// Max speed that a gummy can be traveling 
 ///   in (+/-) X direction 
-#define GUMMY_MAX_X_VELOCITY    20
+#define BIRD_MAX_X_VELOCITY    20
+
+//typedef enum BirdState
+//{
+//
+//    TURNING = 1<<0,
+//    FLIPPED = 1<<1,
+//    JUMPING = 1<<2,
+//    ON_GROUND = 1<<3,
+//    DUCKING = 1<<4
+//
+//};
+//
 
 //***********************************************************************
 /**
- *   Represent the Gummy character .
+ *   Represent the Bird character .
  */
 
-class Gummy: public Character
+class Bird: public Character
 {
 
   protected:
@@ -131,7 +150,7 @@ class Gummy: public Character
     int state;
 
     /// Whether pallet memory and tile mem were defined for 
-    ///     Gummy characters 
+    ///     Bird characters 
     static int pallet_tile_mem_loaded;
 
     /// GFX memory index (how far into GFX memory are 
@@ -190,21 +209,29 @@ class Gummy: public Character
     //u8 getPalletNumber();
     //u8 getSpriteIndex();
 
-    Gummy(u8 pallet_number);
-    ~Gummy();
-    Gummy(u8 pallet_number, int position_x, int position_y, 
+    Bird(u8 pallet_number);
+    ~Bird();
+    Bird(u8 pallet_number, int position_x, int position_y, 
             int velocity_vector_x, int velocity_vector_y);
-    Gummy(int position_x, int position_y,
+    Bird(int position_x, int position_y,
             int in_motion);
+
+    virtual void updateGraphic()
+    {
+
+        Character::updateGraphic();
+
+    }
 
     void updateGraphic(Vector2D position);
     void jump(int pressed, u8 button_last_pushed);
     void updatePhysics();
     void stoppingX();   
     void updateGraphicOnGround();
+    void updateGraphicJumping();
     void changeAnimationFrame(int frame);
-    void flipLeft();
     void flipRight();
+    void flipLeft();
 
 };
 
@@ -215,12 +242,12 @@ class Gummy: public Character
 ///**
 //*   Enable sprite
 //*/
-//inline void Gummy::enableSprite()
+//inline void Bird::enableSprite()
 //{
 //    Sprites::enableSprite(this->sprite_index);
 //}
 ////***************************************************************
-//inline u8 Gummy::getSpriteIndex()
+//inline u8 Bird::getSpriteIndex()
 //{
 //    return this->sprite_index;
 //}
@@ -228,16 +255,16 @@ class Gummy: public Character
 ///**
 //*   Set the character in motion
 //*/
-//inline void Gummy::setInMotion(int in_motion)
+//inline void Bird::setInMotion(int in_motion)
 //{
 //    //this->in_motion = in_motion;
 //}
 //
 ////***************************************************************
-//inline u8 Gummy::getPalletNumber()
+//inline u8 Bird::getPalletNumber()
 //{
 //    return pallet_number;
 //}
 //****************************************************************
-#endif	/* _Gummy_H */
+#endif	/* _Bird_H */
 

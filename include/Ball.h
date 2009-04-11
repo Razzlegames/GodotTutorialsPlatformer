@@ -7,7 +7,7 @@
 extern const unsigned char ball_blue_Tiles[256];
 
 extern const unsigned char ball_Tiles[256];
-const int BALL_PALLET_SIZE = sizeof(ball_blue_Tiles);
+const int BALL_TILE_SIZE = sizeof(ball_blue_Tiles);
 typedef enum BallColor_{BLUE_BALL, GREEN_BALL}BallColor;
 
 /**

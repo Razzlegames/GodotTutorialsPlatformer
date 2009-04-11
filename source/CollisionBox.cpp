@@ -22,8 +22,9 @@ bool CollisionBox::operator*(CollisionBox b)
     //        // Check if any verticies match
     //        verticiesMatch(b);
 
-    return collisionCheck(b);
-        //verticiesMatch(b);
+    // Takes care of calling both cases b-collides(c) c-collides(b)
+    return collisionCheck(b) ||
+        b.collisionCheck(*this);
 
 }
 
@@ -61,55 +62,61 @@ CollisionBox CollisionBox::operator-(Vector2D p)
 
 //**********************************************************************
 
-bool CollisionBox::verticiesMatch(CollisionBox c2)
-{ 
-
-    if(c2.bottom_left == bottom_left || 
-            (c2.bottom_left == Vector2D(bottom_left.x,top_right.y)) ||
-            c2.bottom_left == top_right || 
-            c2.bottom_left == Vector2D(top_right.x,bottom_left.y))
-    {
-
-        return true;
-    }
-
-    else if(c2.top_right == bottom_left || 
-            (c2.top_right == Vector2D(bottom_left.x,top_right.y)) ||
-            c2.top_right == top_right || 
-            c2.top_right == Vector2D(top_right.x,bottom_left.y))
-    {
-
-        return true;
-    }
-
-    else if(Vector2D(c2.bottom_left.x,c2.top_right.y) == bottom_left || 
-            (Vector2D(c2.bottom_left.x,c2.top_right.y)== 
-             Vector2D(bottom_left.x,top_right.y)) ||
-            Vector2D(c2.bottom_left.x,c2.top_right.y) == top_right || 
-            Vector2D(c2.bottom_left.x,c2.top_right.y) == 
-            Vector2D(top_right.x,bottom_left.y))
-    {
-
-        return true;
-    }
-
-    else if(Vector2D(c2.top_right.x,c2.bottom_left.y) == bottom_left || 
-            (Vector2D(c2.top_right.x,c2.bottom_left.y)  == 
-             Vector2D(bottom_left.x,top_right.y)) ||
-            Vector2D(c2.top_right.x,c2.bottom_left.y)  == top_right || 
-            Vector2D(c2.top_right.x,c2.bottom_left.y)  == 
-            Vector2D(top_right.x,bottom_left.y))
-    {
-
-        return true;
-    }
-
-    return false;
-
-}
+//bool CollisionBox::verticiesMatch(CollisionBox c2)
+//{ 
+//
+//    if(c2.bottom_left == bottom_left || 
+//            (c2.bottom_left == Vector2D(bottom_left.x,top_right.y)) ||
+//            c2.bottom_left == top_right || 
+//            c2.bottom_left == Vector2D(top_right.x,bottom_left.y))
+//    {
+//
+//        return true;
+//    }
+//
+//    else if(c2.top_right == bottom_left || 
+//            (c2.top_right == Vector2D(bottom_left.x,top_right.y)) ||
+//            c2.top_right == top_right || 
+//            c2.top_right == Vector2D(top_right.x,bottom_left.y))
+//    {
+//
+//        return true;
+//    }
+//
+//    else if(Vector2D(c2.bottom_left.x,c2.top_right.y) == bottom_left || 
+//            (Vector2D(c2.bottom_left.x,c2.top_right.y)== 
+//             Vector2D(bottom_left.x,top_right.y)) ||
+//            Vector2D(c2.bottom_left.x,c2.top_right.y) == top_right || 
+//            Vector2D(c2.bottom_left.x,c2.top_right.y) == 
+//            Vector2D(top_right.x,bottom_left.y))
+//    {
+//
+//        return true;
+//    }
+//
+//    else if(Vector2D(c2.top_right.x,c2.bottom_left.y) == bottom_left || 
+//            (Vector2D(c2.top_right.x,c2.bottom_left.y)  == 
+//             Vector2D(bottom_left.x,top_right.y)) ||
+//            Vector2D(c2.top_right.x,c2.bottom_left.y)  == top_right || 
+//            Vector2D(c2.top_right.x,c2.bottom_left.y)  == 
+//            Vector2D(top_right.x,bottom_left.y))
+//    {
+//
+//        return true;
+//    }
+//
+//    return false;
+//
+//}
 
 //***********************************************************************
 /**
+ *   Check for a collision with box @p c (needs to be called in 
+ *      reverse also to be complete c.collisionCheck(b) ||
+ *      b.collisionCheck(c), etc
+ *
+ *   @param c box to check for collisions with
+ *
  */
 
 bool CollisionBox::collisionCheck(CollisionBox c)
@@ -151,7 +158,6 @@ bool CollisionBox::collisionCheck(CollisionBox c)
 
     }
             
-
     //----------------------------------
     // Check y cord for overlap
     //----------------------------------

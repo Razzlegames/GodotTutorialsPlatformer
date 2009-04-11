@@ -1,3 +1,4 @@
+
 //
 // vector<Gummy*> gummy_vector;
 // Main devkitArm Headers
@@ -7,22 +8,6 @@
 #include "samples.h"
 #include "krawall.h"
 #include "mtypes.h"
-
-//--------------------------------
-// Game specific includes
-//--------------------------------
-#include "CrazyHero.h"
-#include "Gummy.h"
-#include "Sprites.h"
-#include "interrupts.h"
-#include "Debug.h"
-#include "BallGreen.h"
-#include "BallBlue.h"
-#include "BallRed.h"
-#include "Heart.h"
-#include "CharacterList.h"
-#include "Game.h"
-#include <vector>
 
 //--------------------------------
 //	Pictures/effects/etc various includes
@@ -45,8 +30,27 @@ extern "C" {
 
 #ifdef	__cplusplus
 }
+
 #endif
 
+//--------------------------------
+// Game specific includes
+//--------------------------------
+#include "CrazyHero.h"
+#include "Gummy.h"
+#include "Sprites.h"
+#include "interrupts.h"
+#include "Debug.h"
+#include "BallGreen.h"
+#include "BallBlue.h"
+#include "BallRed.h"
+#include "Heart.h"
+#include "CharacterList.h"
+#include "Game.h"
+#include <vector>
+#include "Bird.h"
+
+using namespace std;
 
 extern const unsigned short master_Palette[256];
 
@@ -67,10 +71,12 @@ CrazyHero* crazy_hero;
 Gummy* gummy;
 Gummy* gummy2;
 Gummy* gummies[TEST_OBJ_NUM];
+
+Bird* bird;
+
 //Ball* ball;
 Heart* heart;
 
-using namespace std;
 
 /// Give an account of what button(s) was/were pushed during 
 ///     the last game loop.  This prevents more 
@@ -349,11 +355,16 @@ void drawObjects(void)
 
     //crazy_hero->updateGraphic();
     Vector2D orig_position = gummy->position;
+    Vector2D bird_orig_position = bird->position;
+
     gummy->updatePhysics();
+    bird->updatePhysics();
 
     detectHeroCollisions(orig_position);
     detectBallCollisions();
     gummy->updateGraphic(orig_position);
+
+    bird->updateGraphic(bird_orig_position);
 
     heart->updateGraphic();
 
@@ -383,6 +394,8 @@ void drawObjects(void)
     //    iprintf("\x1b[2;0H Gummy position:");
     //    iprintf("\x1b[5;0H X: %i", gummy->position.x);
     //    iprintf("\x1b[6;0H Y: %i", gummy->position.y);
+    iprintf("\x1b[13;0H Bird position: %i, %i",bird->position.x, 
+            bird->position.y);
 
 }
 
@@ -415,6 +428,7 @@ void queryKeys(void)
 
         }
 
+        bird->moveLeft();
 
         //movable_ball->moveUp();
         //movable_ball->moveLeft();
@@ -423,6 +437,8 @@ void queryKeys(void)
     else if((~REG_KEYINPUT & KEY_UP) && 
             (~REG_KEYINPUT & KEY_RIGHT))
     {
+
+        bird->moveRight();
 
         //crazy_hero->moveUp();
         //crazy_hero->moveRight();
@@ -472,6 +488,7 @@ void queryKeys(void)
 
         }
 
+        bird->moveLeft();
         //movable_ball->moveDown();
         //movable_ball->moveLeft();
     }
@@ -480,6 +497,7 @@ void queryKeys(void)
             (~REG_KEYINPUT & KEY_RIGHT))
     {
 
+        bird->moveRight();
         //crazy_hero->moveDown();
         //crazy_hero->moveRight();
 
@@ -542,6 +560,7 @@ void queryKeys(void)
 
         }
 
+        bird->moveLeft();
         //movable_ball->moveLeft();
 
     }
@@ -550,6 +569,7 @@ void queryKeys(void)
     else if((~REG_KEYINPUT & KEY_RIGHT))
     {
 
+        bird->moveRight();
         //crazy_hero->moveRight();
 
         if((~REG_KEYINPUT & KEY_B) )
@@ -594,6 +614,7 @@ void queryKeys(void)
 
         //crazy_hero->moveUp();
         gummy->moveUp();
+        bird->moveUp();
         //movable_ball->moveUp();
 
     }
@@ -604,6 +625,7 @@ void queryKeys(void)
 
         //crazy_hero->moveDown();
         gummy->moveDown();
+        bird->moveDown();
         //movable_ball->moveDown();
 
     }
@@ -613,6 +635,7 @@ void queryKeys(void)
     {
 
         gummy->stoppingX();
+        bird->stoppingX();
 
         for(int i =0; i < TEST_OBJ_NUM; i++)
         {
@@ -629,6 +652,7 @@ void queryKeys(void)
 
         //crazy_hero->moveDown();
         gummy->jump(1, ButtonStates.a_pushed);
+        bird->jump(1, ButtonStates.a_pushed);
 
         for(int i =0; i < TEST_OBJ_NUM; i++)
         {
@@ -646,6 +670,7 @@ void queryKeys(void)
     {
 
         gummy->jump(0,ButtonStates.a_pushed);
+        bird->jump(0,ButtonStates.a_pushed);
 
         for(int i =0; i < TEST_OBJ_NUM; i++)
         {
@@ -960,7 +985,7 @@ int main()
     // Initialize the Krawall sound system, Call this 
     //  function once at startup
     kragInit(KRAG_INIT_STEREO);
-    krapPlay(&mod_absnuts_changed,KRAP_MODE_LOOP,0); 
+    krapPlay(&mod_hawaiian_girls,KRAP_MODE_LOOP,0); 
 
     // the vblank interrupt must be enabled to use VBlankIntrWait
     // no handler is required since the libgba dispatcher 
@@ -973,6 +998,9 @@ int main()
 
     Sprites::initSprites();
     gummy = new Gummy(pallet_number++);
+
+    bird = new Bird(pallet_number++);
+
     //gummy2 = new Gummy(pallet_number);
     //gummy2->position = Vector2D(70,120);
 
@@ -1073,6 +1101,7 @@ int main()
         krapSetMusicVol(128/2 + 30,0);
 
     }
+
 
     // Infinite loop to keep the program running
     while(1)

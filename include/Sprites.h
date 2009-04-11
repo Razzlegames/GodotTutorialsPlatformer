@@ -86,53 +86,46 @@
 //#include <gba_video.h>
 #include <string.h>
 #include "Debug.h"
+#include "Vector2D.h"
 
 //sprite defines
 //Attribute0 stuff
-/*
-#define ROTATION_FLAG      BIT8
-#define SIZE_DOUBLE        BIT9
-#define SPRITE_OFF         BIT9
-#define MODE_NORMAL        0
-#define MODE_TRANSPARENT   BIT(0xA)
-#define MODE_WINDOWED      BIT(0xB)
-#define MOSAIC             BIT(0xC)
-#define COLOR_16           0
-#define COLOR_256          BIT(0xD)
-//#define SQUARE             0
-//#define TALL               BIT(0xF)
-//#define WIDE               BIT(0xE)
 
-//Attribute1 stuff
-#define ROTDATA(n)         ((n) << 9)
-#define HORIZONTAL_FLIP    BIT(0xC)
-#define VERTICAL_FLIP      BIT(0xD)
-#define SIZE_8             0
-#define SIZE_16            BIT(0xE)
-#define SIZE_32            BIT(0xF)
-#define SIZE_64            BIT(0xF) | BIT(0xE)
+//#define ROTATION_FLAG      BIT8
+//#define SIZE_DOUBLE        BIT9
+//#define SPRITE_OFF         BIT9
+//#define MODE_NORMAL        0
+//#define MODE_TRANSPARENT   BIT(0xA)
+//#define MODE_WINDOWED      BIT(0xB)
+//#define MOSAIC             BIT(0xC)
+//#define COLOR_16           0
+//#define COLOR_256          BIT(0xD)
+////#define SQUARE             0
+////#define TALL               BIT(0xF)
+////#define WIDE               BIT(0xE)
+//
+////Attribute1 stuff
+//#define ROTDATA(n)         ((n) << 9)
+//#define HORIZONTAL_FLIP    BIT(0xC)
+//#define VERTICAL_FLIP      BIT(0xD)
+//#define SIZE_8             0
+//#define SIZE_16            BIT(0xE)
+//#define SIZE_32            BIT(0xF)
+//#define SIZE_64            BIT(0xF) | BIT(0xE)
 
 //attribute2 stuff
 #define PRIORITY(n)        ((n) << 10)
 #define PALETTE(n)         ((n) << 12)
- */
+
 
 #define spriteTypeToSize(n) ((n&0x0003)<<14)
 #define spriteTypeToShape(n) ((n&0x000C)<<12)
 
 #define MAX_SPRITES     128
 #define TILE_ATTRIBUTE_MASK     0x3FF
+#define byteIndexToTileIndex(n) (n/32)
 
 //#include "mygba.h"
-
-/** Point on the screen (where a sprite is,etc)*/
-typedef struct
-{
-
-    u16 x;
-    u16 y;
-
-}Point;
 
 /** This is the OAM memory as it is laid out in the GBA */
 class OAM_Entry
@@ -206,14 +199,15 @@ typedef struct SpriteGFX_
     /// Size of GFX memory this refers to 
     u16  size;
 
-    /// pointer to the next contiguous block of memory being used for GFX */
+    /// pointer to the next contiguous block of memory being 
+    ///         used for GFX 
     struct SpriteGFX_* next;
 
 }SpriteGFX;
 
 const int GFX_MEMORY_SIZE   = 32*(2^10);
 
-//******************************************************************************
+//************************************************************************
 /**
 *  Used to control all apsects of sprites in this game. Including 
 *       memory access availability linked list
@@ -229,12 +223,13 @@ class Sprites
       __attribute__((aligned(4))) static OAM_Entry OAMCopy[MAX_SPRITES];
       static RotData* rotData;
 
-      /// Current index into sprite pallet memory that should be written to 
-      ///       (not needed in 256 color mode)
+      /// Current index into sprite pallet memory that should be 
+      /// written to  (not needed in 256 color mode)
       static int sprite_pallet_index;
 
       /// Create a linked list of sprite numbers that are available */
-      __attribute__((aligned(4))) static SpritesAvailable* sprites_available;
+      __attribute__((aligned(4))) 
+          static SpritesAvailable* sprites_available;
 
       /// Create linked list to GFX memory being used */
       __attribute__((aligned(4))) static SpriteGFX* sprite_gfx;
@@ -248,14 +243,17 @@ class Sprites
       static bool checkGFXBounds(int begin_index, int size);
       static bool freeGFXBlock(int begin_index);
       static void setGFXMemoryIndexOAM(int sprite_number, int offset);
+      int updateTileGFX(unsigned char* tiles, unsigned int size,
+              int sprite_gfx_index);
 
       //-------------------------------------------
       //   Sprite Prototypes
       //-------------------------------------------
       static void setSpriteSize(const int size, int sprite_number);
       static void setSpriteShape(const int shape, int sprite_number);
-      static void setSpriteColorAndShape(const int shape, const int color, 
-              int sprite_number);
+      static void setSpriteColorModeAndShape(const int shape, 
+              const int color, int sprite_number);
+
       static void enableSprite(int sprite_number);
       static void disableAllSprites();
       static bool isSpriteAvialable(int sprite_number);
@@ -265,12 +263,12 @@ class Sprites
       static void disableSprite(int sprite_number);
       static void setSpriteAvailable(int sprite_number);
       static void setSpritePosition(int x, int y, int sprite_number);
-      static void setSpritePosition(Point point, int sprite_number);
-      static void getSpritePosition(Point* point, int sprite_number);
-      static int getSpriteXCord(int sprite_number);
-      static int getSpriteYCord(int sprite_number);
-      static void setSpriteXCord(int x, int sprite_number);
-      static void setSpriteYCord(int y, int sprite_number);
+      static void setSpritePosition(Vector2D point, int sprite_number);
+      static void getSpritePosition(Vector2D* point, int sprite_number);
+      static int getSpriteXCoord(int sprite_number);
+      static int getSpriteYCoord(int sprite_number);
+      static void setSpriteXCoord(int x, int sprite_number);
+      static void setSpriteYCoord(int y, int sprite_number);
       static void flipSpriteVertical(int index);
       static void flipSpriteHorizontal(int index);
       static void setTileIndex(int index, int sprite_number);
@@ -278,17 +276,23 @@ class Sprites
       static void copyObjToOAM();
       static int addTileGFX(unsigned char* tiles, unsigned int size, 
               u8 sprite_index);
+
       static int appendTileGFX(unsigned char* tiles, unsigned int size, 
               u8 sprite_index);
+
       static void addPalletData(unsigned char* pallet, int size);
-      static u8 createSprite(int x, int y, int sprite_size_code, int color);
-      static void DMAFastCopy(void* source, void* dest, unsigned int count,
-              unsigned int mode);
+
+      static u8 createSprite(int x, int y, 
+              int sprite_size_code, int color);
+
+      static void DMAFastCopy(void* source, void* dest, 
+              unsigned int count, unsigned int mode);
+
       static void displaySpriteInfo(int sprite_number);
 
 };
 
-//******************************************************************************
+//************************************************************************
 /**
  *   Check to see if a GFX memory insert is out of bounds (higher than 32kb 
  *    allowed)
@@ -316,7 +320,7 @@ inline bool Sprites::checkGFXBounds(int begin_index, int size)
 
 }
 
-//******************************************************************************
+//************************************************************************
 /**
  *
  *   Enable a sprite by clearing the "size double flag" in it's OAM
@@ -357,7 +361,7 @@ inline void Sprites::enableSprite(int sprite_number)
 
 }
 
-//******************************************************************************
+//************************************************************************
 /**
  *      Disable the showing of a sprite by setting the "size double flag"
  */
@@ -369,7 +373,7 @@ inline void Sprites::disableSprite(int sprite_number)
 
 }
 
-//******************************************************************************
+//************************************************************************
 /**
  * Attribute[2]
 
@@ -390,14 +394,17 @@ inline void Sprites::setGFXMemoryIndexOAM(int sprite_number, int offset)
     offset = (offset/(8*8)*2)&GFX_MASK;
     OAMCopy[sprite_number].attribute[2] &= ~GFX_MASK;
 
-    iprintf("\x1b[1;0H atr[2]: 0x%08x",OAMCopy[sprite_number].attribute[2]);
+    iprintf("\x1b[1;0H atr[2]: 0x%08x",
+            OAMCopy[sprite_number].attribute[2]);
+
     OAMCopy[sprite_number].attribute[2] |= offset;
     iprintf("\x1b[2;0H offset: 0x%08x",offset);
-    iprintf("\x1b[3;0H atr[2]: 0x%08x",OAMCopy[sprite_number].attribute[2]);
+    iprintf("\x1b[3;0H atr[2]: 0x%08x",
+            OAMCopy[sprite_number].attribute[2]);
 
 }
 
-//******************************************************************************
+//************************************************************************
 /**
  *  Add graphics to GFX memory
  *      @param tiles tiles gfx memory for a sprite
@@ -430,20 +437,21 @@ inline void Sprites::setTileGFX(unsigned char* tiles, unsigned int size,
 
 }
 
-//******************************************************************************
+//************************************************************************
 /**
- *   Set the sprite's color and shape
+ *   Set the sprite's color mode (4bpp, 8bpp) and shape
  */
 
-inline void Sprites::setSpriteColorAndShape(const int shape, const int color, 
-        int sprite_number)
+inline void Sprites::setSpriteColorModeAndShape(const int shape, 
+        const int color_mode, int sprite_number)
 {
 
-    OAMCopy[sprite_number].attribute[0] |= OBJ_SHAPE(shape) | color;
+    OAMCopy[sprite_number].attribute[0] |= OBJ_SHAPE(shape) | 
+        color_mode;
 
 }
 
-//******************************************************************************
+//************************************************************************
 /**
  *   Set a sprite's shape
  *       @param shape the shape code for the sprite SQUARE, WIDE, TALL
@@ -458,7 +466,7 @@ inline void Sprites::setSpriteShape(const int shape, int sprite_number)
 
 }
 
-//******************************************************************************
+//************************************************************************
 /**
  *       Set the sprites size code 
  */
@@ -472,7 +480,7 @@ inline void Sprites::setSpriteSize(const int size, int sprite_number)
 
 }
 
-//******************************************************************************
+//************************************************************************
 /**
  *   Set the sprite's position on the screen
  *       @param x x-cord
@@ -484,37 +492,40 @@ inline void Sprites::setSpritePosition(int x, int y, int sprite_number)
 {
 
     // Set sprite's y cordinate (8 bits of data)
-    setSpriteYCord(y, sprite_number);
+    setSpriteYCoord(y, sprite_number);
+
     // Set sprite's x cordinate (actually 9 bits of data!) 
-    setSpriteXCord(x, sprite_number);  
+    setSpriteXCoord(x, sprite_number);  
+
     //Debug::printSetup();
     //iprintf("\x1b[0;0H sprite_position {%d,%d} ", x,y);
 
 }
 
-//******************************************************************************
+//************************************************************************
 /**
  *   Set a sprites position given only it's oam memory
  *       @param point cords to set sprite on screen
  *       @param sprite_number sprite number
  */
 
-inline void Sprites::setSpritePosition(Point point, int sprite_number)
+inline void Sprites::setSpritePosition(Vector2D point, int sprite_number)
 {
 
     // Set sprite's y cordinate (8 bits of data)
-    setSpriteYCord(point.y, sprite_number);
+    setSpriteYCoord(point.y, sprite_number);
+
     // Set sprite's x cordinate (actually 9 bits of data!) 
-    setSpriteXCord(point.x, sprite_number);  
+    setSpriteXCoord(point.x, sprite_number);  
 
 }
 
-//******************************************************************************
+//************************************************************************
 /**
  *   Set a sprites Y cord
  */  
 
-inline void Sprites::setSpriteYCord(int y, int sprite_number)
+inline void Sprites::setSpriteYCoord(int y, int sprite_number)
 {
 
     // Set sprite's y cordinate (8 bits of data)
@@ -523,12 +534,12 @@ inline void Sprites::setSpriteYCord(int y, int sprite_number)
 
 }
 
-//******************************************************************************
+//************************************************************************
 /**
  *   Set a sprites Y cord
  */  
 
-inline void Sprites::setSpriteXCord(int x, int sprite_number)
+inline void Sprites::setSpriteXCoord(int x, int sprite_number)
 {
 
     // Set sprite's x cordinate (actually 9 bits of data!) 
@@ -537,7 +548,7 @@ inline void Sprites::setSpriteXCord(int x, int sprite_number)
 
 }
 
-//******************************************************************************
+//************************************************************************
 /**
  *   Return a sprite's position, based on it's OAM
  *       @param point point on screen to return
@@ -545,22 +556,22 @@ inline void Sprites::setSpriteXCord(int x, int sprite_number)
  *          (NOT THE ARRAY of ALL OAM!)
  */
 
-inline void Sprites::getSpritePosition(Point* point, int sprite_number)
+inline void Sprites::getSpritePosition(Vector2D* point, int sprite_number)
 {
 
     // Get sprite's y cordinate (8 bits of data)
-    point->x = (u16)getSpriteXCord(sprite_number);
-    point->y = (u16)getSpriteYCord(sprite_number);
+    point->x = (u16)getSpriteXCoord(sprite_number);
+    point->y = (u16)getSpriteYCoord(sprite_number);
 
 }
 
-//******************************************************************************
+//************************************************************************
 /**
  *   Get a sprites y cordinate on the screen
  *       @param oam Object attribute memory for a sprite 
  */
 
-inline int Sprites::getSpriteYCord(int sprite_number)
+inline int Sprites::getSpriteYCoord(int sprite_number)
 {
 
     // Get sprite's x cordinate (actually 9 bits of data!) 
@@ -568,13 +579,13 @@ inline int Sprites::getSpriteYCord(int sprite_number)
 
 }
 
-//******************************************************************************
+//************************************************************************
 /**
  *   Get a sprites x cordinate on the screen
  *       @param oam Object attribute memory for a sprite 
  */
 
-inline int Sprites::getSpriteXCord(int sprite_number)
+inline int Sprites::getSpriteXCoord(int sprite_number)
 {
 
     // Get sprite's x cordinate (actually 9 bits of data!) 
@@ -582,7 +593,7 @@ inline int Sprites::getSpriteXCord(int sprite_number)
 
 }
 
-//******************************************************************************
+//************************************************************************
 /**
  *  Flip a sprite picture vertically
  *       @param index sprite number to change
@@ -595,7 +606,7 @@ inline void Sprites::flipSpriteVertical(int index)
 
 }
 
-//******************************************************************************
+//************************************************************************
 /**
  *  Flip a sprite picture horizontaly
  *       @param index sprite number to change
@@ -608,7 +619,7 @@ inline void Sprites::flipSpriteHorizontal(int index)
 
 }
 
-//******************************************************************************
+//************************************************************************
 /**
  *  Get tile set index
  */ 
@@ -620,7 +631,7 @@ inline int Sprites::getTileIndex(int sprite_number)
 
 }
 
-//******************************************************************************
+//************************************************************************
 /**
  *    Set the sprites tile set it is referencing
  *       @param index sprite index to use for tiles
@@ -635,7 +646,7 @@ inline void Sprites::setTileIndex(int index, int sprite_number)
 
 }
 
-//******************************************************************************
+//************************************************************************
 /**
  *   Display sprite info for 2 contigous sprites
  */

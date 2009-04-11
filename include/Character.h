@@ -12,6 +12,18 @@
 #include "CollisionBox.h"
 #include "Vector2D.h"
 
+typedef enum State
+{
+
+    TURNING = 1<<0,
+    FLIPPED = 1<<1,
+    JUMPING = 1<<2,
+    ON_GROUND = 1<<3,
+    DUCKING = 1<<4
+
+};
+
+
 //***********************************************************************
 /**
  *  Base class for all characters to animate in game (Not needed?)
@@ -157,7 +169,7 @@ inline Vector2D Character::getVelocityVector()
 inline int Character::getPositionX()
 {
 
-    return Sprites::getSpriteXCord(sprite_index);
+    return Sprites::getSpriteXCoord(sprite_index);
 }
 //********************************************************
 /**
@@ -167,7 +179,7 @@ inline int Character::getPositionX()
 inline int Character::getPositionY()
 {
 
-    return Sprites::getSpriteYCord(sprite_index);
+    return Sprites::getSpriteYCoord(sprite_index);
 }
 //*******************************************************
 /**
@@ -200,7 +212,7 @@ inline void Character::setPosition(Vector2D v)
 inline void Character::setPositionX(int x)
 {
 
-    Sprites::setSpriteXCord(x, sprite_index);
+    Sprites::setSpriteXCoord(x, sprite_index);
 
 }
 
@@ -209,7 +221,7 @@ inline void Character::setPositionX(int x)
 inline void Character::setPositionY(int y)
 {
 
-    Sprites::setSpriteYCord(y, sprite_index);
+    Sprites::setSpriteYCoord(y, sprite_index);
 
 }
 

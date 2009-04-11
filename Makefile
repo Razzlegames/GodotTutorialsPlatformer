@@ -81,13 +81,13 @@ DATA		:=
 INCLUDES	:=	"include" 
 
 INCLUDES	+=	build
-INCLUDES	+=	sound
+INCLUDES	+=	"sound"
 INCLUDES	+=	Maps/test/
 KRAWALLDATA	:=	sound
 export BMP_GRAPHICS	:=	gfx/gummy.bmp gfx/crazy_hero.bmp \
 			gfx/ball_blue.bmp gfx/ball_green.bmp \
 			gfx/ball_red.bmp gfx/ball_yellow.bmp \
-			gfx/heart_16x16.bmp 
+			gfx/heart_16x16.bmp bird.bmp
 
 # Compile using Krawall software (set to yes or no) ?
 # Also specify if Krawall is registered (yes or no)
@@ -294,7 +294,6 @@ run: all
 doc: $(HFILES) $(CFILES) $(CPPFILES) $(SFILES) Makefile
 #doc: all
 	doxygen
-
 
 diff:
 	svn diff --diff-cmd=diffwrap

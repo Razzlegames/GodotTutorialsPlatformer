@@ -25,7 +25,7 @@ void BallRed::init(u8 pallet_number,
     // Set up Collision Box (assume middle of box is current position of ball)
     Ball::initCollisionBox();           
     
-	Character::init((unsigned char*)ball_red_Tiles,BALL_PALLET_SIZE,
+	Character::init((unsigned char*)ball_red_Tiles,BALL_TILE_SIZE,
 			pallet_tile_mem_loaded, OBJ_256_COLOR,
 	    		pallet_number, Sprite_16x16, 
 	    		position_x, position_y,
@@ -36,7 +36,7 @@ void BallRed::init(u8 pallet_number,
     if(!pallet_tile_mem_loaded)
     {
     	gfx_memory_index = Sprites::appendTileGFX((unsigned char*)ball_red_Tiles, 
-    			BALL_PALLET_SIZE, sprite_index);
+    			BALL_TILE_SIZE, sprite_index);
     	pallet_tile_mem_loaded = 1;
     }
     Sprites::setTileIndex(gfx_memory_index/64*4, sprite_index);

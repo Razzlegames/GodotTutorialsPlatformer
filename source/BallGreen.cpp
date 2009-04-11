@@ -35,7 +35,7 @@ void BallGreen::init(u8 pallet_number,
     Ball::initCollisionBox();       
 
     Character::init((unsigned char*)ball_green_Tiles,
-            BALL_PALLET_SIZE,
+            BALL_TILE_SIZE,
             pallet_tile_mem_loaded, OBJ_256_COLOR,
             pallet_number, Sprite_16x16, 
             position_x, position_y,
@@ -50,7 +50,7 @@ void BallGreen::init(u8 pallet_number,
         gfx_memory_index = 
             Sprites::appendTileGFX((unsigned char*)
                     ball_green_Tiles, 
-                    BALL_PALLET_SIZE, sprite_index);
+                    BALL_TILE_SIZE, sprite_index);
 
         pallet_tile_mem_loaded = 1;
 

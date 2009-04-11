@@ -28,10 +28,13 @@ class Debug
 */
 inline void Debug::printSetup()
 {
+
     static int setup = 0;
+
     // Check to make sure that the setup only occures once
-    //if(setup == 0)
-    //{
+    if(setup == 0)
+    {
+
         consoleInit( 0 , 4 , 0, NULL , 0 , 15);
         BG_COLORS[0]=RGB8(58,110,165);
         BG_COLORS[241]=RGB5(31,31,31);
@@ -57,10 +60,11 @@ inline void Debug::printSetup()
         }
         */
         //------------------------------------------
-        
+
         SetMode(MODE_0 | BG0_ON | OBJ_ENABLE);
         setup = 1;
-    //}
+
+    }
 }
 
 //******************************************************************************
