@@ -257,7 +257,7 @@ bool Sprites::setGFXMemoryUsed(int begin_index, unsigned int size)
     iprintf("\x1b[0;0H ERROR!!: GFX[%d],size=%d was not inserted!", 
             begin_index,size); 
 
-    free new_gfx;
+    delete new_gfx;
 
     return false;
 
