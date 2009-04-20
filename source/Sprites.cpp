@@ -223,7 +223,9 @@ bool Sprites::setGFXMemoryUsed(int begin_index, unsigned int size)
                 last->next = new_gfx;
 
             }
+
             new_gfx->next = current;
+
             // Since all our work is done, return
             return true;
 
@@ -254,6 +256,8 @@ bool Sprites::setGFXMemoryUsed(int begin_index, unsigned int size)
     Debug::printSetup();
     iprintf("\x1b[0;0H ERROR!!: GFX[%d],size=%d was not inserted!", 
             begin_index,size); 
+
+    free new_gfx;
 
     return false;
 
