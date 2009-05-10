@@ -177,7 +177,6 @@ void handleBallCollision(Ball* c, Vector2D orig_position)
 
     }
 
-
     gummy->position = orig_position;
     gummy->showCollision();
 

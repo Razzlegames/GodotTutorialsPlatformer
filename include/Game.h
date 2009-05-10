@@ -16,15 +16,20 @@ typedef enum GameStates_
  */
 class Game
 {
+
 public:
+
 	Time time;
+
 	/** Number of hearts collected */
 	int heart_count;
-	
-	Game()
+
+	Game():
+          heart_count(0)
 	{
-		heart_count = 0;		
+
 	}
+
 };
 
 
