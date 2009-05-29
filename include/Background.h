@@ -11,6 +11,7 @@
 #include <gba_sprites.h>
 #include <toolbox.h>
 
+typedef TILE HALF_SBB;
 
 /**
  *  Information (pallet, tiles, tile_map) the hardware needs

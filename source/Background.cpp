@@ -65,14 +65,16 @@ void Background::loadMapRearange(const unsigned int* tiles,
   //   [0][1]
   //   [2][3]
   //
-  //   Each one 
-  TILE* src = (TILE*)map;
-  TILE* dst0 = (TILE*)se_mem[SBB_0+0];
-  TILE* dst1 = (TILE*)se_mem[SBB_0+1];
-  TILE* dst2 = (TILE*)se_mem[SBB_0+2];
-  TILE* dst3 = (TILE*)se_mem[SBB_0+3];
+  //   Each SBB is 32 tiles long in this case since
+  //     BG is 64X64 (tiles)
+  HALF_SBB* src = (HALF_SBB*)map;
+  HALF_SBB* dst0 = (HALF_SBB*)se_mem[SBB_0+0];
+  HALF_SBB* dst1 = (HALF_SBB*)se_mem[SBB_0+1];
+  HALF_SBB* dst2 = (HALF_SBB*)se_mem[SBB_0+2];
+  HALF_SBB* dst3 = (HALF_SBB*)se_mem[SBB_0+3];
 
   // For each row copy to the appropriate SBB
+  //    (32 rows)
   for(int i = 0; i < 32; i++)
   {
 
@@ -85,6 +87,7 @@ void Background::loadMapRearange(const unsigned int* tiles,
   }
 
   // For each row copy to the appropriate SBB
+  //    (32 rows)
   for(int i = 0; i < 32; i++)
   {
 
@@ -136,7 +139,7 @@ void Background::loadMap(const unsigned int* tiles,
   // Load the tiles: 
   memcpy(&tile_mem[0][0], tiles, tiles_len);
 
-  //TILE* tiles = (TILE*)tile_rows;
+  //HALF_SBB* tiles = (HALF_SBB*)tile_rows;
   //    for(int i = 0; 
   //        i < TEST_MAP_HEIGHT/TEST_MAP_WIDTH; i++)
   //    {
@@ -228,11 +231,11 @@ void Background::loadMap(const unsigned int* tiles,
   //
   //  }
 
-  //     TILE* src = (TILE*)tile_map;
-  //     TILE* dst0 = (TILE*)se_mem[SBB_0+0];
-  //     TILE* dst1 = (TILE*)se_mem[SBB_0+1];
-  //     TILE* dst2 = (TILE*)se_mem[SBB_0+2];
-  //     TILE* dst3 = (TILE*)se_mem[SBB_0+3];
+  //     HALF_SBB* src = (HALF_SBB*)tile_map;
+  //     HALF_SBB* dst0 = (HALF_SBB*)se_mem[SBB_0+0];
+  //     HALF_SBB* dst1 = (HALF_SBB*)se_mem[SBB_0+1];
+  //     HALF_SBB* dst2 = (HALF_SBB*)se_mem[SBB_0+2];
+  //     HALF_SBB* dst3 = (HALF_SBB*)se_mem[SBB_0+3];
   //
   //     // For each row copy to the appropriate SBB
   //     for(int i = 0; i < 32; i++)
