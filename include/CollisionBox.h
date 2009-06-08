@@ -20,8 +20,6 @@ class CollisionBox
       CollisionBox operator-(Vector2D p);
       bool operator*(CollisionBox b);
 
-      bool collisionCheck(int b1x, int  b1y, int t1x,
-              int  t1y, int  b2x,int  b2y, int t2x, int t2y);
       bool collisionCheck(CollisionBox c);
 
       //bool verticiesMatch(CollisionBox c2);

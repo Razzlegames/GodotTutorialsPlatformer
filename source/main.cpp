@@ -269,7 +269,7 @@ void detectBallBallCollisions(Ball* m, Vector2D orig_position)
     Ball* c = (Ball*)current->c;
 
     if(m != c && 
-        (m->collision_box+m->position)*
+        (m->collision_box+m->position).collisionCheck
         (c->collision_box+c->position))
     {
 
@@ -301,7 +301,7 @@ void detectBallBallCollisions(Ball* m, Vector2D orig_position)
  *  Handle all object collisions
  */
 
-void detectHeroCollisions(Vector2D orig_position)
+void detectCollisions(Vector2D orig_position, Character* character)
 {
 
   detectBallHeroCollisions(orig_position);	
@@ -359,7 +359,7 @@ void drawObjects(void)
   gummy->updatePhysics();
   bird->updatePhysics();
 
-  detectHeroCollisions(orig_position);
+  detectBallHeroCollisions(orig_position);
   detectBallCollisions();
   gummy->updateGraphic(orig_position);
 
