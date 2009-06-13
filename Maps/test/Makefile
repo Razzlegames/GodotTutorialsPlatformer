@@ -1,14 +1,35 @@
-MAP_BMP = ./gimp_grid.bmp
+MAP_BMP = ./gimp_grid.bmp \
+	  puzzle_bezel.bmp \
+	  puzzle_background_swirl.bmp
+
+MAP_BMP_CFILES= $(MAP_BMP:.bmp=.c)
+
+#  Run the Makefile recursively for each map bmp 
+#       file in the list above
+all:
+	@for i in $(MAP_BMP_CFILES); do\
+	    $(MAKE) $$i; done
+
+%.h %.c: %.bmp
+	@echo ""
+	@echo ""
+	@echo "----------------------------------------------------------"
+	@echo "  Converting background:$*"
+	@echo "----------------------------------------------------------"
+	grit $*.bmp -gB4 -mRtpf -mLs -o $*.c
+	cp  -fv $*.{c,h} ../../source/
+
 MAP_NAME = test_map2
 
-$(MAP_NAME).h $(MAP_NAME).c: $(MAP_BMP)
-	@echo ""
-	@echo ""
-	@echo "----------------------------------------------------------"
-	@echo "  Converting backgrounds"
-	@echo "----------------------------------------------------------"
-	grit $(MAP_BMP) -gB4 -mRtpf -mLs -o test_map2.c
-	cp  -fv $(MAP_NAME).{c,h} ../../source/
+#$(MAP_NAME).h $(MAP_NAME).c: $(MAP_BMP)
+#	@echo ""
+#	@echo ""
+#	@echo "----------------------------------------------------------"
+#	@echo "  Converting backgrounds"
+#	@echo "----------------------------------------------------------"
+#	grit $(MAP_BMP) -gB4 -mRtpf -mLs -o $(MAP_NAME).c
+#	cp  -fv $(MAP_NAME).{c,h} ../../source/
+
 
 #---grit v0.8.1 ---
 #GRIT: GBA Raster Image Transmogrifier. (grit v0.8.1, 20080512)
