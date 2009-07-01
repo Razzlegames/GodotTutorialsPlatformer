@@ -3,11 +3,14 @@ MAP_BMP = ./gimp_grid.bmp \
 	  puzzle_background_swirl.bmp
 
 MAP_BMP_CFILES= $(MAP_BMP:.bmp=.c)
+MAP_BMP_HFILES= $(MAP_BMP:.bmp=.h)
 
 #  Run the Makefile recursively for each map bmp 
 #       file in the list above
 all:
 	@for i in $(MAP_BMP_CFILES); do\
+	    $(MAKE) $$i; done
+	@for i in $(MAP_BMP_HFILES); do\
 	    $(MAKE) $$i; done
 
 %.h %.c: %.bmp
@@ -19,8 +22,18 @@ all:
 	grit $*.bmp -gB4 -mRtpf -mLs -o $*.c
 	cp  -fv $*.{c,h} ../../source/
 
-MAP_NAME = test_map2
 
+
+clean:
+	@echo "----------------------------------------------------------"
+	@echo "  Cleaning map files: "
+	@echo "----------------------------------------------------------"
+	@echo rm -fv $(MAP_BMP_CFILES)
+	rm -fv $(MAP_BMP_CFILES)
+	@echo rm -fv $(MAP_BMP_HFILES)
+	rm -fv $(MAP_BMP_HFILES)
+
+# MAP_NAME = test_map2
 #$(MAP_NAME).h $(MAP_NAME).c: $(MAP_BMP)
 #	@echo ""
 #	@echo ""

@@ -146,13 +146,13 @@ export DEPSDIR	:=	$(CURDIR)/$(BUILD)
 #---------------------------------------------------------------------------------
 # Automatically build a list of object files for our project
 #---------------------------------------------------------------------------------
-CFILES		:=	$(foreach dir,$(SOURCES),$(notdir $(wildcard $(dir)/*.c)))
-CPPFILES	:=	$(foreach dir,$(SOURCES),$(notdir $(wildcard $(dir)/*.cpp)))
-SFILES		:=	$(foreach dir,$(SOURCES),$(notdir $(wildcard $(dir)/*.s)))
-BINFILES	:=	$(foreach dir,$(DATA),$(notdir $(wildcard $(dir)/*.*)))
-PCXFILES	:=	$(foreach dir,$(SOURCES),$(notdir $(wildcard $(dir)/*.pcx)))
+CFILES := $(foreach dir,$(SOURCES),$(notdir $(wildcard $(dir)/*.c)))
+CPPFILES := $(foreach dir,$(SOURCES),$(notdir $(wildcard $(dir)/*.cpp)))
+SFILES  := $(foreach dir,$(SOURCES),$(notdir $(wildcard $(dir)/*.s)))
+BINFILES := $(foreach dir,$(DATA),$(notdir $(wildcard $(dir)/*.*)))
+PCXFILES := $(foreach dir,$(SOURCES),$(notdir $(wildcard $(dir)/*.pcx)))
 
-KRAWALLOBJ	:=	$(CURDIR)/$(KRAWALLDATA)/modules.o
+KRAWALLOBJ := $(CURDIR)/$(KRAWALLDATA)/modules.o
 
 
 #---------------------------------------------------------------------------------
@@ -206,7 +206,7 @@ $(BUILD): Makefile graphics $(KRAWALLOBJ) backgrounds
 $(KRAWALLOBJ):
 	$(MAKE) -C $(KRAWALLDATA)
 
-all	: Makefile $(BUILD) $(KRAWALLOBJ) 
+all	: Makefile $(BUILD) $(KRAWALLOBJ) backgrounds
 
 ctags:
 	ctags -R ./ $(DEVKITARM)/include $(LIBDIRS)
@@ -216,6 +216,7 @@ ctags:
 clean: ctags 
 	@echo clean ...
 	$(MAKE) -C $(KRAWALLDATA) clean
+	$(MAKE) -C ./Maps/test/ clean
 	@rm -fr $(BUILD) $(TARGET).elf $(TARGET).gba
 #---------------------------------------------------------------------------------
 else
@@ -289,7 +290,11 @@ music: Makefile $(KRAWALL_FILES)
 #	makedepend ./*{cpp,c} ./include/*h
 
 run: all
-	konsole -e VisualBoyAdvance -3 *.gba &
+	vbam -f 13 *.gba
+#xterm -e "VisualBoyAdvance -3 *.gba" &
+
+runwin: all
+	konsole -e padsp wine $(HOME)/bin/VisualBoyAdvance.exe  $(PWD)/$(TARGET).gba &
 
 doc: $(HFILES) $(CFILES) $(CPPFILES) $(SFILES) Makefile
 #doc: all

@@ -8,6 +8,7 @@
 #include "samples.h"
 #include "krawall.h"
 #include "mtypes.h"
+#include <vector>
 
 //--------------------------------
 //	Pictures/effects/etc various includes
@@ -47,8 +48,10 @@ extern "C" {
 #include "Heart.h"
 #include "CharacterList.h"
 #include "Game.h"
-#include <vector>
 #include "Bird.h"
+#include "Background.h"
+#include "puzzle_bezel.h"
+#include "gimp_grid.h"
 
 using namespace std;
 
@@ -930,10 +933,12 @@ void init_map_test()
 
 }
 
+
 //****************************************************************
 
 int main()
 {   
+
 
   // Initialize globals
   new_frame = 0;
@@ -951,10 +956,25 @@ int main()
 
   //displayIntro();
 
-  //init_map();
-  init_map_test();
+  //init_map_test();
+  //  Background background;
+  //  background.loadMap(test_map2Tiles, test_map2TilesLen,
+  //      test_map2Map, test_map2MapLen, test_map2Pal, test_map2PalLen,
+  //      0, 0);
+  Background background;
+  background.loadMap(gimp_gridTiles, gimp_gridTilesLen,
+      gimp_gridMap, gimp_gridMapLen, gimp_gridPal, gimp_gridPalLen,
+      0, 0, BG_16_COLOR, BG_REG_64x64);
 
-  REG_DISPCNT= DCNT_MODE0 | DCNT_BG0 | DCNT_OBJ;
+  //  Background background2;
+  //  background2.loadMap(puzzle_bezelTiles, puzzle_bezelTilesLen,
+  //      puzzle_bezelMap, puzzle_bezelMapLen, puzzle_bezelPal,
+  //      puzzle_bezelPalLen, 1, 1, BG_16_COLOR);
+
+  //init_map();
+
+  REG_DISPCNT= DCNT_MODE0 | DCNT_BG0 | DCNT_OBJ
+    | DCNT_BG1;
 
   // Install the krawall +1 interrupt
   irqSet(IRQ_TIMER1, kradInterrupt);
@@ -1079,6 +1099,8 @@ int main()
 
   }
 
+  int x = 0;
+  int y = 0;
 
   // Infinite loop to keep the program running
   while(1)
@@ -1089,6 +1111,12 @@ int main()
 
     queryKeys();
     drawObjects();
+
+    if(x & 0x0001)
+        background.setOffset(x,y);
+
+    x++;
+    //y++;
 
     //iprintf("\x1b[11;0H gummy_v(%d,%d)", 
     //gummy->velocity_vector.x,gummy->velocity_vector.y);

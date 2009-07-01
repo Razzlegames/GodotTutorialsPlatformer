@@ -11,31 +11,36 @@
 #define CROSS_TY 10
 
 
-//********************************************************************
-/**
- *
- *      @param bg_number the number of the background to add.
- */
-
-static void addBackgroundPallet(int bg_number, u16* pallet)
-{
-
-}
-
-//*******************************************************************
-/**
- *
- */
-
-static void addBackgoundTiles(int bg_number, u8* tiles)
-{
-
-}
+////********************************************************************
+///**
+// *
+// *      @param bg_number the number of the background to add.
+// */
+//
+//static void addBackgroundPallet(int bg_number, u16* pallet)
+//{
+//
+//}
+//
+////*******************************************************************
+///**
+// *
+// */
+//
+//static void addBackgoundTiles(int bg_number, u8* tiles)
+//{
+//
+//}
 
 //********************************************************************
 /**
  *   Load a background map that is out of order, 
- *     (needs to be arranged in 4 screen block segments)
+ *     (needs to be arranged in 4 screen block segments).
+ *      Max size a bg map can be is 0x2000 bytes, 
+ *      Which is 4 SBB entries, since 1 SBB = 0x800 bytes)
+ *
+ * Addr:0x6000000   | 0x6004000  | 0x6008000 | 0x600C000
+ *   SBB:   0 - 7   | 8-15       | 16-23     | 24-31
  *
  *   @param tiles memory containing BG tiles 
  *   @param tiles_len length in bytes of all total tiles
@@ -43,17 +48,24 @@ static void addBackgoundTiles(int bg_number, u8* tiles)
  *   @param map_len length in bytes of all map pieces
  *   @param palette color pallet for all backgrounds
  *   @param palette_len length in bytes for the pallet to load
+ *   @param priority priority of this backgrounds drawing order
+ *   @param color_mode BG_256_COLOR or BG_16_COLOR
+ *   @param size_mode The size and mode of the background, 
+ *      eg BG_REG_64x64
  */
 
 void Background::loadMapRearange(const unsigned int* tiles, 
     int tiles_len, const unsigned short* map, int map_len,
-    const unsigned short* palette, int palette_len, int bg_number)
+    const unsigned short* palette, int palette_len, int bg_number,
+    int priority, int color_mode, int size_mode)
 {
 
   // initialize a background
-  REG_BG0CNT= BG_CBB(CBB_0) | BG_SBB(SBB_0) | BG_REG_32x32 |BG_4BPP;
-  REG_BG0HOFS= 0;
-  REG_BG0VOFS= 0;
+  BGCTRL[bg_number]= BG_CBB(bg_number) | BG_SBB(SBB_0) | 
+    size_mode |BG_4BPP |
+    (BG_PRIORITY(priority) & BG_PRIO_MASK) | color_mode;
+
+  setOffset(0,0);
 
   // Load the tiles: 
   memcpy(&tile_mem[0][0], tiles, tiles_len);
@@ -91,32 +103,27 @@ void Background::loadMapRearange(const unsigned int* tiles,
   for(int i = 0; i < 32; i++)
   {
 
-
     *(dst2++) = *(src++); 
     *(dst2++) = *(src++); 
 
     *(dst3++) = *(src++); 
     *(dst3++) = *(src++); 
-
 
   }
 
-  //memcpy(&se_mem[SBB_0][0], tile_map, TEST_MAP_SIZE*sizeof(u16));
-  //memcpy(&se_mem[SBB_0][0], brinMap, brinMapLen);
-  //memcpy(&se_mem[SBB_0][0], map, map_len);
-
-  //    for(ii=0; ii<4; ii++)
-  //                for(jj=0; jj<32*32; jj++)
-  //                            *pse++= SE_PALBANK(ii) ;
-  //| 0;
-
 }
 
+//#define BACKGROUND_OFFSET(
 
 //********************************************************************
 /**
- *   Load a background map that is inorder, (does not need to be rearranged
- *   into 4 blocks memory transfer.
+ *   Load a background map that is inorder, (does not need to 
+ *   be rearranged into 4 blocks memory transfer).
+ *      Max size a bg map can be is 0x2000 bytes, 
+ *      Which is 4 SBB entries, since 1 SBB = 0x800 bytes)
+ *
+ *Addr: 0x6000000   | 0x6004000  | 0x6008000 | 0x600C000
+ *   SBB:   0 - 7   | 8-15       | 16-23     | 24-31
  *
  *   @param tiles memory containing BG tiles 
  *   @param tiles_len length in bytes of all total tiles
@@ -124,154 +131,60 @@ void Background::loadMapRearange(const unsigned int* tiles,
  *   @param map_len length in bytes of all map pieces
  *   @param palette color pallet for all backgrounds
  *   @param palette_len length in bytes for the pallet to load
+ *   @param priority priority of this backgrounds drawing order
+ *   @param color_mode BG_256_COLOR or BG_16_COLOR
+ *   @param size_mode The size and mode of the background, 
+ *      eg BG_REG_64x64
  */
 
 void Background::loadMap(const unsigned int* tiles, 
     int tiles_len, const unsigned short* map, int map_len,
-    const unsigned short* palette, int palette_len, int bg_number)
+    const unsigned short* palette, int palette_len, int bg_number,
+    int priority, int color_mode, int size_mode)
 {
 
   // initialize a background
-  REG_BG0CNT= BG_CBB(CBB_0) | BG_SBB(SBB_0) | BG_REG_32x32 |BG_4BPP;
-  REG_BG0HOFS= 0;
-  REG_BG0VOFS= 0;
+  BGCTRL[bg_number]= BG_CBB(bg_number) | BG_SBB(SBB_0) | 
+    size_mode |BG_4BPP |
+    (BG_PRIORITY(priority) & BG_PRIO_MASK) | color_mode;
+
+  setOffset(0,0);
 
   // Load the tiles: 
-  memcpy(&tile_mem[0][0], tiles, tiles_len);
+  memcpy(&tile_mem[bg_number][0], tiles, tiles_len);
 
-  //HALF_SBB* tiles = (HALF_SBB*)tile_rows;
-  //    for(int i = 0; 
-  //        i < TEST_MAP_HEIGHT/TEST_MAP_WIDTH; i++)
-  //    {
-  //
-  //        tile_mem[CBB_0][i]= tiles[i];
-  //
-  //        //        if(i == 4)
-  //        //        {
-  //        //
-  //        //            //u32* tile_t = (u32*)&(tile_mem[CBB_0][i]);
-  //        //            u32* tile_t = (u32*)&(tiles[i]);
-  //        //            Debug::printSetup();	     
-  //        //
-  //        //            iprintf("\x1b[1;0H Tile %d:",i );
-  //        //            iprintf("\x1b[2;0H 0x%08x", tile_t[0]);
-  //        //            iprintf("\x1b[3;0H 0x%08x", tile_t[1]);
-  //        //            iprintf("\x1b[4;0H 0x%08x", tile_t[2]);
-  //        //            iprintf("\x1b[5;0H 0x%08x", tile_t[3]);
-  //        //            iprintf("\x1b[6;0H 0x%08x", tile_t[4]);
-  //        //            iprintf("\x1b[7;0H 0x%08x", tile_t[5]);
-  //        //            iprintf("\x1b[8;0H 0x%08x", tile_t[6]);
-  //        //            iprintf("\x1b[9;0H 0x%08x", tile_t[7]);
-  //        //
-  //        //            iprintf("\x1b[10;0H Prev Tile Address 0x%08x:",&tile_mem[CBB_0][i-1] );
-  //        //            iprintf("\x1b[11;0H Tile Address 0x%08x:",&tile_mem[CBB_0][i] );
-  //        //            iprintf("\x1b[12;0H BG0_map Address 0x%08x:",bg0_map);
-  //        //            while(1);
-  //        //        }
-  //
-  //    }
+  if(color_mode == BG_16_COLOR)
+  {
 
-  //  // create a palette
-  //  for(int i = 0; i  < 256; i++)
-  //  {
-  //
-  //    // Convert Gimp colors from 8bit to 4bit (255 to 31 max)
-  //    //   Equivalent to the following, but using more efficient shifts
-  //    //        // Red
-  //    //        int color0 = (int)(test_map_pallet[i][0]*(32.0/256.0);
-  //    //        // Green
-  //    //        int color1 = (int)(test_map_pallet[i][1]*(32.0/256.0);
-  //    //        // Blue 
-  //    //        int color2 = (int)(test_map_pallet[i][2]*(32.0/256.0);
-  //    int color0 = test_map_pallet[i][0] >> 3;
-  //    int color1 = test_map_pallet[i][1] >> 3;
-  //    int color2 = test_map_pallet[i][2] >> 3;
-  //
-  //    pal_bg_bank[0][i]= RGB15(color0, color1,color2);
-  //
-  //  }
+    memcpy(&(pal_bg_bank[bg_number][0]), palette, palette_len);
 
-  memcpy(&(pal_bg_bank[0][0]), palette, palette_len);
+  }
+  else
+  {
 
-  //    // create a palette
-  //    pal_bg_bank[0][0]= RGB15((int)(31/2),  0,  0);
-  //    pal_bg_bank[0][1]= RGB15(31,  0,  0);
-  //    pal_bg_bank[0][2]= RGB15( 0, 31,  0);
-  //    pal_bg_bank[0][3]= RGB15( 0,  0, 31);
-  //    pal_bg_bank[0][4]= RGB15(16, 16, 16);
+    memcpy(&(pal_bg_bank[0][0]), palette, palette_len);
+  
+  }
 
-  //  // Create a map: four contingent blocks of 
-  //  //   0x0000, 0x1000, 0x2000, 0x3000.
-  //  //SCR_ENTRY *pse = bg0_map;
-  //  u16 tile_map[TEST_MAP_SIZE];
-  //
-  //  for(int i = 0; i < TEST_MAP_SIZE; i++)
-  //  {
-  //
-  //    //pse[i] = ((u16)TEST_MAP[i] ) | SE_PALBANK(0) ;
-  //    tile_map[i] = ((u16)TEST_MAP[i] ) | SE_PALBANK(0) ;
-  //
-  //    if(i & 0x0001)
-  //    {
-  //
-  //      //*pse |= SE_VFLIP;
-  //      //*pse |= SE_HFLIP;
-  //
-  //    }
-  //
-  //    //        if(TEST_MAP[i] > 1)
-  //    //        {
-  //    //
-  //    //            Debug::printSetup();	     
-  //    //
-  //    //            iprintf("\x1b[1;0H Tile was %d:",TEST_MAP[i] );
-  //    //
-  //    //
-  //    //        }
-  //
-  //  }
-
-  //     HALF_SBB* src = (HALF_SBB*)tile_map;
-  //     HALF_SBB* dst0 = (HALF_SBB*)se_mem[SBB_0+0];
-  //     HALF_SBB* dst1 = (HALF_SBB*)se_mem[SBB_0+1];
-  //     HALF_SBB* dst2 = (HALF_SBB*)se_mem[SBB_0+2];
-  //     HALF_SBB* dst3 = (HALF_SBB*)se_mem[SBB_0+3];
-  //
-  //     // For each row copy to the appropriate SBB
-  //     for(int i = 0; i < 32; i++)
-  //     {
-  //
-  //         *(dst0++) = *(src++); 
-  //         *(dst0++) = *(src++); 
-  //
-  //         *(dst1++) = *(src++); 
-  //         *(dst1++) = *(src++); 
-  //
-  //     }
-  //
-  //     // For each row copy to the appropriate SBB
-  //     for(int i = 0; i < 32; i++)
-  //     {
-  //
-  //
-  //         *(dst2++) = *(src++); 
-  //         *(dst2++) = *(src++); 
-  //
-  //         *(dst3++) = *(src++); 
-  //         *(dst3++) = *(src++); 
-  //
-  //
-  //     }
-
-
-  //memcpy(&se_mem[SBB_0][0], tile_map, TEST_MAP_SIZE*sizeof(u16));
-  //memcpy(&se_mem[SBB_0][0], brinMap, brinMapLen);
   memcpy(&se_mem[SBB_0][0], map, map_len);
 
-  //    for(ii=0; ii<4; ii++)
-  //                for(jj=0; jj<32*32; jj++)
-  //                            *pse++= SE_PALBANK(ii) ;
-  //| 0;
+  this->bg_number = bg_number;
+
+}
+
+//********************************************************************
+/**
+ *   Set the background offset (scrolling) for the 
+ *   given bg this represents.
+ *
+ *   @param x x offset
+ *   @param y y offset
+ */
+void Background::setOffset(int x, int y)
+{
+
+  BG_OFFSET[bg_number].x = x;
+  BG_OFFSET[bg_number].y = y;
 
 }
 

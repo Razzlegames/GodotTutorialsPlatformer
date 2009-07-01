@@ -15,19 +15,35 @@ typedef TILE HALF_SBB;
 
 /**
  *  Information (pallet, tiles, tile_map) the hardware needs
- *    to display a proper background
+ *    to display a proper background, and supporting functions to load 
+ *    and keep track of these backgrounds.
  */
 
 class Background
 {
 
-void loadMap(const unsigned int* tiles, 
-    int tiles_len, const unsigned short* map, int map_len,
-    const unsigned short* palette, int palette_len, int bg_number);
+  public:
 
-void loadMapRearange(const unsigned int* tiles, 
-    int tiles_len, const unsigned short* map, int map_len,
-    const unsigned short* palette, int palette_len, int bg_number);
+    /// The background number on the GBA 
+    ///         *0-3 possible in mode 0,
+    ///         *0-2 possible in mode 1,
+    ///         *2-3 possible in mode 2 (affine)
+    int bg_number;
+
+    ///  Background will be Either 256 or 16 color mode
+    int mode;
+
+    void setOffset(int x, int y);
+
+    void loadMap(const unsigned int* tiles, 
+        int tiles_len, const unsigned short* map, int map_len,
+        const unsigned short* palette, int palette_len, int bg_number,
+        int priority, int color_mode, int size_mode);
+
+    void loadMapRearange(const unsigned int* tiles, 
+        int tiles_len, const unsigned short* map, int map_len,
+        const unsigned short* palette, int palette_len, int bg_number,
+        int priority, int color_mode, int size_mode);
 
 };
 
