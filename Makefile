@@ -290,7 +290,8 @@ music: Makefile $(KRAWALL_FILES)
 #	makedepend ./*{cpp,c} ./include/*h
 
 run: all
-	vbam -f 13 *.gba
+	vbam -O 1 -f 13 *.gba
+	#gvbam *.gba
 #xterm -e "VisualBoyAdvance -3 *.gba" &
 
 runwin: all

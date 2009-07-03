@@ -5,7 +5,9 @@
 
 #include "toolbox.h"
 #define CBB_0  0
-#define SBB_0 28
+#define SBB_0 28-4
+#define SBB_1 SBB_0 + 4
+#define SBB_2 SBB_1 + 4
 
 #define CROSS_TX 15
 #define CROSS_TY 10
