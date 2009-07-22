@@ -45,6 +45,12 @@ class Background
         const unsigned short* palette, int palette_len, int bg_number,
         int priority, int color_mode, int size_mode);
 
+    inline static void addBackgroundPallet(const unsigned short* palette, int palette_len,
+        int palette_number);
+
+    static void addBackgoundTiles(const unsigned int* tiles, int tiles_len,
+    int cbb);
+
 };
 
 

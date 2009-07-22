@@ -964,7 +964,20 @@ int main()
   Background background;
   background.loadMap(gimp_gridTiles, gimp_gridTilesLen,
       gimp_gridMap, gimp_gridMapLen, gimp_gridPal, gimp_gridPalLen,
-      0, 0, BG_16_COLOR, BG_REG_64x64);
+      1, 0, BG_16_COLOR, BG_REG_64x64);
+
+  Background::addBackgoundTiles(gimp_gridTiles, gimp_gridTilesLen, 0);
+
+  // initialize a background
+  BGCTRL[0]= 
+    BG_4BPP |
+    (BG_PRIORITY(1) & BG_PRIO_MASK) ;
+
+  SetMode(MODE_0 | OBJ_ENABLE | OBJ_1D_MAP 
+      | BG1_ENABLE
+      | BG0_ENABLE
+      );
+
 
   //  Background background2;
   //  background2.loadMap(puzzle_bezelTiles, puzzle_bezelTilesLen,
@@ -973,8 +986,12 @@ int main()
 
   //init_map();
 
-  REG_DISPCNT= DCNT_MODE0 | DCNT_BG0 | DCNT_OBJ
-    | DCNT_BG1;
+  //  REG_DISPCNT= DCNT_MODE0  
+  //    | DCNT_BG0  
+  //    | DCNT_OBJ  
+  //    | DCNT_BG1  
+  //    //| DCNT_BG2
+  //    ;
 
   // Install the krawall +1 interrupt
   irqSet(IRQ_TIMER1, kradInterrupt);
@@ -1087,7 +1104,6 @@ int main()
   //    iprintf("\x1b[14;0H heart_position(%d,%d)", 
   //            heart->position.x,heart->position.y);
 
-  SetMode(MODE_0 | OBJ_ENABLE | OBJ_1D_MAP | BG0_ENABLE);
 
   //REG_BG0CNT |=  BG_256_COLOR;
 
@@ -1115,7 +1131,7 @@ int main()
     if(x & 0x0001)
         background.setOffset(x,y);
 
-    x++;
+    //x++;
     //y++;
 
     //iprintf("\x1b[11;0H gummy_v(%d,%d)", 

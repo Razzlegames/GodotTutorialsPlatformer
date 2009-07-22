@@ -1,0 +1,459 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<head profile="http://gmpg.org/xfn/11">
+  <meta http-equiv="Content-Type"
+    content="text/html; charset=UTF-8" />
+
+  <title>Coranac &raquo; 2009 &raquo; April</title>
+
+  <!-- leave this for stats please -->
+    <meta name="generator" content="WordPress 2.7.1" />
+
+  <style type="text/css">
+    @import url( http://www.coranac.com/wordpress/wp-content/themes/crn/style.css );
+  </style>
+
+  <script language="JavaScript" type="text/javascript" src="http://www.coranac.com/crn.js"></script>
+
+  <link rel="alternate" type="application/rss+xml" title="RSS 2.0"
+    href="http://www.coranac.com/feed/" />
+  <link rel="alternate" type="text/xml" title="RSS .92"
+    href="http://www.coranac.com/feed/rss/" />
+  <link rel="alternate" type="application/atom+xml" title="Atom 0.3"
+    href="http://www.coranac.com/feed/atom/" />
+
+  <link rel="pingback" href="http://www.coranac.com/wordpress/xmlrpc.php" />
+		<link rel='archives' title='June 2009' href='http://www.coranac.com/2009/06/' />
+	<link rel='archives' title='May 2009' href='http://www.coranac.com/2009/05/' />
+	<link rel='archives' title='April 2009' href='http://www.coranac.com/2009/04/' />
+	<link rel='archives' title='February 2009' href='http://www.coranac.com/2009/02/' />
+	<link rel='archives' title='December 2008' href='http://www.coranac.com/2008/12/' />
+	<link rel='archives' title='November 2008' href='http://www.coranac.com/2008/11/' />
+	<link rel='archives' title='September 2008' href='http://www.coranac.com/2008/09/' />
+	<link rel='archives' title='August 2008' href='http://www.coranac.com/2008/08/' />
+	<link rel='archives' title='June 2008' href='http://www.coranac.com/2008/06/' />
+	<link rel='archives' title='May 2008' href='http://www.coranac.com/2008/05/' />
+	<link rel='archives' title='April 2008' href='http://www.coranac.com/2008/04/' />
+	<link rel='archives' title='February 2008' href='http://www.coranac.com/2008/02/' />
+	<link rel='archives' title='January 2008' href='http://www.coranac.com/2008/01/' />
+	<link rel='archives' title='December 2007' href='http://www.coranac.com/2007/12/' />
+	<link rel='archives' title='November 2007' href='http://www.coranac.com/2007/11/' />
+	<link rel='archives' title='October 2007' href='http://www.coranac.com/2007/10/' />
+	<link rel='archives' title='June 2007' href='http://www.coranac.com/2007/06/' />
+	<link rel='archives' title='April 2007' href='http://www.coranac.com/2007/04/' />
+	<link rel='archives' title='March 2007' href='http://www.coranac.com/2007/03/' />
+	<link rel='archives' title='February 2007' href='http://www.coranac.com/2007/02/' />
+	<link rel='archives' title='January 2007' href='http://www.coranac.com/2007/01/' />
+	<link rel='archives' title='August 2006' href='http://www.coranac.com/2006/08/' />
+		<link rel="stylesheet" href="http://www.coranac.com/wordpress/wp-content/plugins/codesnippet/codesnippet.css" type="text/css" />
+<style type="text/css">
+.codesnip-container	{border:1px solid #ccc; background:#eee; padding: 5px;margin:10px;}
+</style>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.coranac.com/wordpress/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.coranac.com/wordpress/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 2.7.1" />
+
+</head>
+
+<body onload="main();">
+<div id="rap">
+<h1 id="header">
+	<a href="http://www.coranac.com/">Coranac</a>
+</h1>
+
+<div id="content">
+<!-- end header -->
+
+<div class="post" id="post-67">
+	<div class="storyheader">
+		<h3 class="storytitle"><a href="http://www.coranac.com/2009/04/19/mode-7-addendum/" rel="bookmark">
+		mode 7 addendum</a></h3>
+		<div class="meta">
+		2009-04-19 &ndash; 18:32 | <ul class="post-categories">
+	<li><a href="http://www.coranac.com/category/code/" title="View all posts in code" rel="category tag">code</a></li>
+	<li><a href="http://www.coranac.com/category/proj/tonc/" title="View all posts in tonc" rel="category tag">tonc</a></li></ul>. 
+		</div>
+	</div>
+	<div class="storycontent">
+		<p>
+Okay. Apparently, I am an idiot who can't do math.
+</p><div>&nbsp;</div>
+
+<p>
+One of the longer chapters in Tonc is 
+<a href="/tonc/text/mode7ex.htm">Mode 7 part 2</a>, which covers 
+pretty much all the hairy details of producing mode 7 effects on the 
+GBA. The money shot for in terms of code is the following functions, 
+which calculates the affine parameters of the background for each 
+scanline in section <a href="/tonc/text/mode7ex.htm#ssec-code-bg">21.7.3</a>.
+</p>
+
+<div class="cpp"><div class="cpp proglist" style=" ">IWRAM_CODE <span class="kw1">void</span> m7_prep_affines(M7_LEVEL *level)<br />
+{<br />
+&nbsp; &nbsp; <span class="kw1">if</span>(level-&gt;horizon &gt;= SCREEN_HEIGHT)<br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">return</span>;<br />
+<br />
+&nbsp; &nbsp; <span class="kw1">int</span> ii, ii0= (level-&gt;horizon&gt;=<span class="nu0">0</span> ? level-&gt;horizon : <span class="nu0">0</span>);<br />
+<br />
+&nbsp; &nbsp; M7_CAM *cam= level-&gt;camera;<br />
+&nbsp; &nbsp; FIXED xc= cam-&gt;pos.x, yc= cam-&gt;pos.y, zc=cam-&gt;pos.z;<br />
+<br />
+&nbsp; &nbsp; BG_AFFINE *bga= &amp;level-&gt;bgaff[ii0];<br />
+<br />
+&nbsp; &nbsp; FIXED yb, zb; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="co1">// b' = Rx(theta) * &nbsp;(L, ys, -D)</span><br />
+&nbsp; &nbsp; FIXED cf, sf, ct, st; &nbsp; <span class="co1">// sines and cosines</span><br />
+&nbsp; &nbsp; FIXED lam, lcf, lsf; &nbsp; &nbsp;<span class="co1">// scale and scaled (co)sine(phi)</span><br />
+&nbsp; &nbsp; cf= cam-&gt;u.x; &nbsp; &nbsp; &nbsp;sf= cam-&gt;u.z;<br />
+&nbsp; &nbsp; ct= cam-&gt;v.y; &nbsp; &nbsp; &nbsp;st= cam-&gt;w.y;<br />
+&nbsp; &nbsp; <span class="kw1">for</span>(ii= ii0; ii&lt;SCREEN_HEIGHT; ii++)<br />
+&nbsp; &nbsp; {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; yb= (ii-M7_TOP)*ct + M7_D*st;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; lam= DivSafe( yc&lt;&lt;<span class="nu0">12</span>, &nbsp;yb); &nbsp; &nbsp; <span class="co1">// .12f &nbsp; &nbsp;&lt;- OI!!!</span><br />
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; lcf= lam*cf&gt;&gt;<span class="nu0">8</span>; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="co1">// .12f</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; lsf= lam*sf&gt;&gt;<span class="nu0">8</span>; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="co1">// .12f</span><br />
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; bga-&gt;pa= lcf&gt;&gt;<span class="nu0">4</span>; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="co1">// .8f</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; bga-&gt;pc= lsf&gt;&gt;<span class="nu0">4</span>; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="co1">// .8f</span><br />
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="co1">// lambda·Rx·b</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; zb= (ii-M7_TOP)*st - M7_D*ct; &nbsp; <span class="co1">// .8f</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; bga-&gt;dx= xc + (lcf&gt;&gt;<span class="nu0">4</span>)*M7_LEFT - (lsf*zb&gt;&gt;<span class="nu0">12</span>); &nbsp;<span class="co1">// .8f</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; bga-&gt;dy= zc + (lsf&gt;&gt;<span class="nu0">4</span>)*M7_LEFT + (lcf*zb&gt;&gt;<span class="nu0">12</span>); &nbsp;<span class="co1">// .8f</span><br />
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="co1">// hack that I need for fog. pb and pd are unused anyway</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; bga-&gt;pb= lam;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; bga++;<br />
+&nbsp; &nbsp; }<br />
+&nbsp; &nbsp; level-&gt;bgaff[SCREEN_HEIGHT]= level-&gt;bgaff[<span class="nu0">0</span>];<br />
+}</div></div>
+
+<p>
+For details on what all the terms mean, go the page in question. 
+For now, just note that call to <code>DivSafe()</code> to calculate 
+the scaling factor &lambda; and recall that division on the GBA is
+pretty slow. In <a href="/tonc/text/mode7.htm">Mode 7 part 1</a>, 
+I used a LUT, but here I figured that since the <code>yb</code> term 
+can be anything thanks to the pitch you can't do that. After helping 
+Ruben with his mode 7 demo, it turns out that you can.
+</p><div>&nbsp;</div>
+
+<div class="cpt" style="width:320px;">
+  <a href="http://www.coranac.com/img/post/m7_crd_c2p2.png" target="_blank">  <img src="http://www.coranac.com/img/post/m7_crd_c2p2.png" id="img-crd-c2p2"
+    alt="" width="320" /></a><br />
+  <b>Fig&nbsp;1. </b>Sideview of the camera and floor. The camera is tilted slightly 
+  down by angle &theta;.
+</div>
+
+
+<p>
+Fig&nbsp;1 shows the situation. There is a camera 
+(the black triangle) that is tilted down by pitch angle &theta;. I've 
+put the origin at the back of the camera because it makes things 
+easier to read. The 
+front of the camera is the projection plane, which is essentially 
+the screen. A ray is cast from the back of the camera on to the floor
+and this ray intersects the projection plane. The coordinates 
+of this point are <b>x</b><sub>p</sub> = 
+(<i>y</i><sub>p</sub>, <i>D</i>) in projection plane space, which 
+corresponds to point (<i>y</i><sub>b</sub>, <i>z</i><sub>b</sub>) in 
+world space. This is simply rotating point <b>x</b><sub>p</sub> by
+&theta;. The scaling factor is the ratio between the <i>y</i> or 
+<i>z</i> coordinates of the points on the floor and on the projection 
+plane, so that's:
+</p>
+
+<table class="eqtbl">
+<tr>
+<td class="eqnrcell"></td>
+  <td class="eqcell">
+<img src='http://www.coranac.com/cgi-bin/mimetex.cgi?%5Clambda%20%3D%20y_c%20%2F%20y_b%2C'
+	title="\lambda = y_c / y_b,"
+	alt="\lambda = y_c / y_b," />
+</td>
+</tr>
+</table>
+
+<p>
+and for <i>y</i><sub>b</sub> the rotation gives us:
+</p>
+
+<table class="eqtbl">
+<tr>
+<td class="eqnrcell"></td>
+  <td class="eqcell">
+<img src='http://www.coranac.com/cgi-bin/mimetex.cgi?y_b%20%3D%20y_p%20cos%20%5Ctheta%20%2B%20D%20sin%20%5Ctheta%2C'
+	title="y_b = y_p cos \theta + D sin \theta,"
+	alt="y_b = y_p cos \theta + D sin \theta," />
+</td>
+</tr>
+</table>
+
+<p>
+where <i>y</i><sub>c</sub> is the camera height, 
+<i>y</i><sub>p</sub> is a scanline offset (measured from the center of the screen) and <i>D</i> is the focus 
+length.
+</p>
+<p>
+Now, the point is that while <i>y</i><sub>b</sub> is variable 
+and non-integral when &theta; &ne; 0, it is still bounded! What's more, 
+you can easily calculate its maximum value, since it's simply the 
+maximum length of <b>x</b><sub>p</sub>. Calling this factor <i>R</i>, 
+we get: 
+</p>
+
+<table class="eqtbl">
+<tr>
+<td class="eqnrcell"></td>
+  <td class="eqcell">
+<img src='http://www.coranac.com/cgi-bin/mimetex.cgi?R%20%3D%20%5Csqrt%7Bmax%28y_p%29%5E2%20%2B%20D%5E2%7D'
+	title="R = \sqrt{max(y_p)^2 + D^2}"
+	alt="R = \sqrt{max(y_p)^2 + D^2}" />
+</td>
+</tr>
+</table>
+
+<p>
+This factor <i>R</i>, rounded up, is the size of the required LUT. 
+In my particular case, I've used <i>y</i><sub>p</sub>= scanline&minus;80 
+and <i>D</i> = 256, which gives 
+<i>R</i>&nbsp;=&nbsp;sqrt((160&minus;80)&sup2;&nbsp;+&nbsp;256&sup2;) 
+= 268.2. In other words, I need a division LUT with 269 entries. Using .16 
+fixed point numbers for this LUT, the replacement code is essentially:
+</p>
+
+<div class="cpp"><div class="cpp proglist" style=" "><span class="co1">// The new division LUT. For 1/0 and 1/1, 0xFFFF is used.</span><br />
+u16 m7_div_lut[<span class="nu0">270</span>]= <br />
+{<br />
+&nbsp; &nbsp; <span class="nu0">0xFFFF</span>, <span class="nu0">0xFFFF</span>, <span class="nu0">0x8000</span>, <span class="nu0">0x5556</span>, ...<br />
+};<br />
+<br />
+<br />
+<span class="co1">// Inside the function</span><br />
+&nbsp; &nbsp; <span class="kw1">for</span>(ii= ii0; ii&lt;SCREEN_HEIGHT; ii++)<br />
+&nbsp; &nbsp; {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; yb= (ii-M7_TOP)*ct + M7_D*st; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="co1">// .8</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; lam= (yc*m7_div_lut[yb&gt;&gt;<span class="nu0">8</span>])&gt;&gt;<span class="nu0">12</span>;&nbsp; &nbsp; &nbsp; &nbsp; <span class="co1">// .8*.16/.12 = .12</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <br />
+&nbsp; &nbsp; &nbsp; &nbsp; ... <span class="co1">// business as usual</span><br />
+&nbsp; &nbsp; }</div></div>
+
+<p>
+At this point, several questions may arise.
+</p>
+
+<ul>
+  <li>
+    <b>What about negative <i>y</i><sub>b</sub>?</b> The beauty here 
+    is that while <i>y</i><sub>b</sub> may be negative in principle, 
+    such values would correspond to lines above the horizon and we don't 
+    calculate those anyway.
+  </li>
+  <li>
+    <b>Won't non-integral <i>y</i><sub>b</sub> cause inaccurate look-ups?</b> 
+    True, <i>y</i><sub>b</sub> will have a fractional part that 
+    is simply cut off during a simple look-up and some sort of 
+    interpolation would be better. However, in testing there were no 
+    noticeable differences between direct look-up, lerped look-up or 
+    using <code>Div()</code>, so the simplest method suffices.
+  </li>
+  <li>
+    <b>Are .16 fixed point numbers enough?</b>. Yes, apparently so.
+  </li>
+  <li>
+    <b>ZOMG OVERFLOW! Are .16 fixed point numbers too high?</b> 
+    Technically, yes, there is a risk of overflow when the camera height 
+    gets too high. However, at high altitudes the map is going to look 
+    like crap anyway due to the low resolution of the screen. 
+    Furthermore, the hardware only uses 8.8 fixeds, so scales above 
+    256.0 wouldn't work anyway.
+  </li>
+</ul>
+
+<p>
+And finally:
+</p>
+
+<ul>
+  <li>
+  <b>What do I win?</b> 
+  With <code>Div()</code> <code>m7_prep_affines()</code> takes 
+  about 51k cycles. With the direct look-up this reduces to about 13k:
+  a speed increase by a factor of 4. 
+  </li>
+</ul><div>&nbsp;</div>
+
+<p>
+So yeah, this is what I <i>should</i> have figured out years ago, but 
+somehow kept overlooking it. I'm not sure if I'll add this whole thing to 
+Tonc's text and code, but I'll at least put up a link to here. Thanks 
+Ruben, for showing me how to do this properly.
+</p>
+
+	</div>
+	<div class="feedback">
+		<a href="http://www.coranac.com/2009/04/19/mode-7-addendum/#respond" title="Comment on mode 7 addendum">Comments (0)</a>	</div>
+</div>
+
+
+
+
+
+<!-- begin footer -->
+</div>
+
+<!-- begin sidebar -->
+<div id="menu">
+
+<ul>
+	<li class="pagenav">Pages:<ul><li class="page_item page-item-2"><a href="http://www.coranac.com/about/" title="About">About</a></li>
+<li class="page_item page-item-6"><a href="http://www.coranac.com/documents/" title="Documents">Documents</a></li>
+<li class="page_item page-item-10"><a href="http://www.coranac.com/links/" title="links">links</a></li>
+<li class="page_item page-item-21"><a href="http://www.coranac.com/projects/" title="Projects">Projects</a></li>
+</ul></li>	<li id="linkcat-2" class="linkcat">Blogroll
+	<ul class='xoxo blogroll'>
+<li><a href="http://www.badastronomy.com/" title="Astronomy related news debunking of heavenly myths.">Bad Astronomy</a></li>
+<li><a href="http://www.codinghorror.com/blog/" title="Programming and human factors">Coding Horror</a></li>
+<li><a href="http://www.scienceblogs.com/pharyngula/" title="Evolution, development, and random biological ejaculations from a godless liberal">pharyngula</a></li>
+<li><a href="http://skeptico.blogs.com/" title="Critical thinking for an irrational world.">Skeptico</a></li>
+<li><a href="http://worsethanfailure.com/Default.aspx" title="Curious perversions in information technology">Worse than failure</a></li>
+
+	</ul>
+</li>
+<li id="linkcat-11" class="linkcat">Internal
+	<ul class='xoxo blogroll'>
+<li><a href="http://www.coranac.com">home</a></li>
+<li><a href="http://www.coranac.com/tonc/text/" title="Tonc hub">Tonc</a></li>
+
+	</ul>
+</li>
+	<li class="categories">Post categories:<ul>	<li class="cat-item cat-item-58"><a href="http://www.coranac.com/category/blag/" title="View all posts filed under blag">blag</a> (1)
+</li>
+	<li class="cat-item cat-item-22"><a href="http://www.coranac.com/category/code/" title="Assorted code snippets.">code</a> (11)
+</li>
+	<li class="cat-item cat-item-3"><a href="http://www.coranac.com/category/doc/" title="View all posts filed under documents">documents</a> (4)
+</li>
+	<li class="cat-item cat-item-30"><a href="http://www.coranac.com/category/math/" title="View all posts filed under math">math</a> (3)
+</li>
+	<li class="cat-item cat-item-35"><a href="http://www.coranac.com/category/nds/" title="View all posts filed under nds">nds</a> (3)
+</li>
+	<li class="cat-item cat-item-4"><a href="http://www.coranac.com/category/proj/" title="View all posts filed under projects">projects</a> (23)
+<ul class='children'>
+	<li class="cat-item cat-item-7"><a href="http://www.coranac.com/category/proj/grit/" title="The GBA Raster Image Transmogrifier. An open source graphics converter for GBA/NDS. Can convert from almost any image type to any NDS/GBA format. Comes in two flavors: command-line interface (multi-platform) and GUI (windows only).">grit</a> (11)
+</li>
+	<li class="cat-item cat-item-5"><a href="http://www.coranac.com/category/proj/tonc/" title="A detailed look into GBA programming. Tonc&#039;s text comes in html, chm and pdf. The library code, tonclib, is a mix of C and assembly. The many examples come in C and their binaries are runnable on emulators and hardware.">tonc</a> (12)
+</li>
+	<li class="cat-item cat-item-6"><a href="http://www.coranac.com/category/proj/usenti/" title="A (usually) simple to use editor for paletted images. It can handle bmp, pcx, png and tga files, has a number of useful palette manipulating tools and can export to GBA/NDS graphics formats.">usenti</a> (4)
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-29"><a href="http://www.coranac.com/category/tainment/" title="View all posts filed under tainment">tainment</a> (6)
+</li>
+	<li class="cat-item cat-item-1"><a href="http://www.coranac.com/category/uncategorized/" title="View all posts filed under Uncategorized">Uncategorized</a> (6)
+</li>
+</ul></li>  <li id="archives">Archives:
+	  <select name="cb-archive" style="width:90%;"
+	    onChange='document.location.href=this.options[this.selectedIndex].value;'>
+	    <option value="">
+		  Select Month	    </option>
+			<option value='http://www.coranac.com/2009/06/'> June 2009 &nbsp;(2)</option>
+	<option value='http://www.coranac.com/2009/05/'> May 2009 &nbsp;(1)</option>
+	<option value='http://www.coranac.com/2009/04/'> April 2009 &nbsp;(1)</option>
+	<option value='http://www.coranac.com/2009/02/'> February 2009 &nbsp;(2)</option>
+	<option value='http://www.coranac.com/2008/12/'> December 2008 &nbsp;(1)</option>
+	<option value='http://www.coranac.com/2008/11/'> November 2008 &nbsp;(1)</option>
+	<option value='http://www.coranac.com/2008/09/'> September 2008 &nbsp;(4)</option>
+	<option value='http://www.coranac.com/2008/08/'> August 2008 &nbsp;(2)</option>
+	<option value='http://www.coranac.com/2008/06/'> June 2008 &nbsp;(1)</option>
+	<option value='http://www.coranac.com/2008/05/'> May 2008 &nbsp;(5)</option>
+	<option value='http://www.coranac.com/2008/04/'> April 2008 &nbsp;(3)</option>
+	<option value='http://www.coranac.com/2008/02/'> February 2008 &nbsp;(4)</option>
+	<option value='http://www.coranac.com/2008/01/'> January 2008 &nbsp;(2)</option>
+	<option value='http://www.coranac.com/2007/12/'> December 2007 &nbsp;(5)</option>
+	<option value='http://www.coranac.com/2007/11/'> November 2007 &nbsp;(3)</option>
+	<option value='http://www.coranac.com/2007/10/'> October 2007 &nbsp;(4)</option>
+	<option value='http://www.coranac.com/2007/06/'> June 2007 &nbsp;(2)</option>
+	<option value='http://www.coranac.com/2007/04/'> April 2007 &nbsp;(1)</option>
+	<option value='http://www.coranac.com/2007/03/'> March 2007 &nbsp;(2)</option>
+	<option value='http://www.coranac.com/2007/02/'> February 2007 &nbsp;(1)</option>
+	<option value='http://www.coranac.com/2007/01/'> January 2007 &nbsp;(1)</option>
+	<option value='http://www.coranac.com/2006/08/'> August 2006 &nbsp;(1)</option>
+	  </select>
+  </li>
+  <li id="search">
+    <label for="s">Search:</label>
+    <form id="searchform" method="get" action="http://www.coranac.com">
+	<div>
+		<input type="text" name="s" id="s" size="16" /><br />
+		<input type="submit" value="Search" />
+	</div>
+	</form>
+  </li>
+  <li id="meta">Meta:
+	<ul>
+				<li><a href="http://www.coranac.com/wordpress/wp-login.php">Log in</a></li>
+		<li><a href="http://www.coranac.com/feed/" title="Syndicate this site using RSS"><abbr title="Really Simple Syndication">RSS</abbr></a></li>
+		<li><a href="http://www.coranac.com/comments/feed/" title="The latest comments to all posts in RSS">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+<!--
+		<li><a href="http://validator.w3.org/check/referer" title="This page validates as XHTML 1.0 Transitional">Valid <abbr title="eXtensible HyperText Markup Language">XHTML</abbr></a></li>
+		<li><a href="http://gmpg.org/xfn/"><abbr title="XHTML Friends Network">XFN</abbr></a></li>
+		<li><a href="http://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform."><abbr title="WordPress">WP</abbr></a></li>
+-->
+			</ul>
+ </li>
+
+</ul>
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_s-xclick" />
+<input type="image" src="https://www.paypal.com/en_US/i/btn/x-click-but11.gif" name="submit"
+  alt="Please leave a contribution in the leetle box :)" />
+<img src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1"  alt=""/>
+<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+" />
+</form>
+
+<div>&nbsp;</div>
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-9716169502604225";
+/* 120x600 home 20080922 */
+google_ad_slot = "0748086420";
+google_ad_width = 120;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+</div>
+<!-- end sidebar -->
+
+<p class="credit"><!--19 queries. 0.394 seconds. --> <cite>Powered by <a href='http://wordpress.org/' title='Powered by WordPress, state-of-the-art semantic personal publishing platform.'><strong>WordPress</strong></a></cite></p>
+
+</div>
+
+</body>
+</html>
+<!--
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+<head>
+</head>
+<body>
+<p>
+My database has called in sick. Please imagine some 
+annoying elevator tune till he gets back.
+</p>
+<p>
+<small>[[Doo-di-doo tooo. Dum-di-dum-di-doo-dooo.]]</small>
+</p>
+</body>
+</html>
+
+-->
