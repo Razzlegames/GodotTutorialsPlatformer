@@ -1,0 +1,14 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.7	//
+BIN	Makefile	/^BIN=tutorial$/;"	m
+CC	Makefile	/^CC=g++$/;"	m
+CPPFLAGS	Makefile	/^CPPFLAGS= -Wall -g -export-dynamic `pkg-config --cflags --libs gtk+-2.0`$/;"	m
+OBJS	Makefile	/^OBJS= $(patsubst %.cpp,%.o,$(wildcard *.cpp)) \\$/;"	m
+draw_brush	main.cpp	/^static void draw_brush (GtkWidget *widget, gdouble x, gdouble y)$/;"	f	file:	signature:(GtkWidget *widget, gdouble x, gdouble y)
+drawingarea1_button_press_event_cb	main.cpp	/^extern "C" void drawingarea1_button_press_event_cb(GtkWidget* widget, $/;"	f	signature:(GtkWidget* widget, GdkEventButton* event)
+main	main.cpp	/^int main (int argc, char *argv[])$/;"	f	signature:(int argc, char *argv[])
+on_window_destroy	main.cpp	/^extern "C" void on_window_destroy (GtkObject *object, gpointer user_data)$/;"	f	signature:(GtkObject *object, gpointer user_data)
