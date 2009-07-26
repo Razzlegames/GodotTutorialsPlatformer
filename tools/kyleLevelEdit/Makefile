@@ -1,5 +1,6 @@
 CC=g++
-CPPFLAGS= -Wall -g -export-dynamic `pkg-config --cflags --libs gtk+-2.0`
+CPPFLAGS= -Wall -g -export-dynamic `pkg-config --cflags --libs gtk+-2.0` 
+LIBS= -lfreeimage
 BIN=tutorial
 
 OBJS= $(patsubst %.cpp,%.o,$(wildcard *.cpp)) \
@@ -7,7 +8,7 @@ OBJS= $(patsubst %.cpp,%.o,$(wildcard *.cpp)) \
 
 
 all: $(OBJS)
-	$(CC) $(CPPFLAGS) $(OBJS) -o $(BIN) 
+	$(CC) $(CPPFLAGS) $(OBJS) $(LIBS) -o $(BIN) 
 
 
 %.o: %.cpp

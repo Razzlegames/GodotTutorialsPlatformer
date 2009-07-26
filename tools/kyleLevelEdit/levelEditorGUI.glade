@@ -344,10 +344,22 @@
               </packing>
             </child>
             <child>
-              <object class="GtkDrawingArea" id="tile_drawingarea1">
+              <object class="GtkVBox" id="tile_vbox">
                 <property name="visible">True</property>
+                <property name="orientation">vertical</property>
+                <child>
+                  <placeholder/>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
               </object>
               <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
                 <property name="position">1</property>
               </packing>
             </child>

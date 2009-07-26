@@ -1,6 +1,8 @@
 /* vim: set filetype=cpp.doxygen : */
 
 #include <gtk/gtk.h>
+#include <FreeImage.h>
+#include "ImageHandling.h"
 
 /* Backing pixmap for drawing area */
 static GdkPixmap *pixmap = NULL;
@@ -166,9 +168,11 @@ extern "C" void drawingarea1_button_press_event_cb(GtkWidget* widget,
 int main (int argc, char *argv[])
 {
 
-  GtkBuilder              *builder;
-  GtkWidget               *window;
-  GtkWidget               *tile_window;
+  FreeImage_Initialise();
+
+  GtkBuilder* builder;
+  GtkWidget* window;
+  GtkWidget* tile_window;
 
   gtk_init (&argc, &argv);
 
@@ -178,6 +182,18 @@ int main (int argc, char *argv[])
   window = GTK_WIDGET (gtk_builder_get_object (builder, "window"));
   tile_window = GTK_WIDGET (gtk_builder_get_object (builder, "tile_window"));
 
+  GtkWidget* tile_vbox = 
+    GTK_WIDGET (gtk_builder_get_object (builder, "tile_vbox"));
+
+  GtkWidget* image1 = gtk_image_new_from_file("ball_green.bmp");
+  gtk_container_add(GTK_CONTAINER(tile_vbox), image1);
+  gtk_widget_show (image1);       
+
+  image1 = gtk_image_new_from_file("ball_yellow.bmp");
+  gtk_container_add(GTK_CONTAINER(tile_vbox), image1);
+  gtk_widget_show (image1);       
+
+
   gtk_builder_connect_signals (builder, NULL);          
   g_object_unref (G_OBJECT (builder));
 
@@ -185,7 +201,10 @@ int main (int argc, char *argv[])
 
   gtk_widget_show (tile_window);       
   gtk_widget_show (window);       
+  gtk_widget_show (tile_vbox);       
   gtk_main ();
+
+  FreeImage_DeInitialise();
 
   return 0;
 
