@@ -46,14 +46,14 @@ int SBB_OFFSET( int size_code)
 
   }
 
-  if(size_code == BG_REG_32x32)
+  else if(size_code == BG_REG_32x32)
   {
 
     return 1 ;
 
   }
 
-  if(size_code == BG_REG_32x64 ||
+  else if(size_code == BG_REG_32x64 ||
       size_code == BG_REG_64x32)
   {
 
@@ -220,6 +220,7 @@ void Background::loadMapRearange(const unsigned int* tiles,
  *   @param color_mode BG_256_COLOR or BG_16_COLOR
  *   @param size_mode The size and mode of the background, 
  *      eg BG_REG_64x64
+ *
  */
 
 void Background::loadMap(const unsigned int* tiles, 

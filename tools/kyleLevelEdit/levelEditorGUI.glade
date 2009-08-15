@@ -202,14 +202,9 @@
     <property name="type_hint">toolbar</property>
     <property name="transient_for">window</property>
     <child>
-      <object class="GtkScrolledWindow" id="tiles_scrolledwindow">
+      <object class="GtkVBox" id="vbox1">
         <property name="visible">True</property>
-        <property name="can_focus">True</property>
-        <property name="extension_events">all</property>
-        <property name="border_width">6</property>
-        <property name="hscrollbar_policy">automatic</property>
-        <property name="vscrollbar_policy">automatic</property>
-        <property name="shadow_type">etched-out</property>
+        <property name="orientation">vertical</property>
         <child>
           <object class="GtkVBox" id="vbox2">
             <property name="visible">True</property>
@@ -344,26 +339,41 @@
               </packing>
             </child>
             <child>
-              <object class="GtkVBox" id="tile_vbox">
+              <object class="GtkScrolledWindow" id="scrolledwindow1">
                 <property name="visible">True</property>
-                <property name="orientation">vertical</property>
+                <property name="can_focus">True</property>
+                <property name="hscrollbar_policy">automatic</property>
+                <property name="vscrollbar_policy">automatic</property>
                 <child>
-                  <placeholder/>
-                </child>
-                <child>
-                  <placeholder/>
-                </child>
-                <child>
-                  <placeholder/>
+                  <object class="GtkViewport" id="viewport1">
+                    <property name="visible">True</property>
+                    <property name="resize_mode">queue</property>
+                    <child>
+                      <object class="GtkVBox" id="tile_vbox">
+                        <property name="visible">True</property>
+                        <property name="orientation">vertical</property>
+                        <child>
+                          <placeholder/>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
                 </child>
               </object>
               <packing>
-                <property name="expand">False</property>
-                <property name="fill">False</property>
                 <property name="position">1</property>
               </packing>
             </child>
           </object>
+          <packing>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+        <child>
+          <placeholder/>
         </child>
       </object>
     </child>

@@ -177,7 +177,7 @@ int main (int argc, char *argv[])
   gtk_init (&argc, &argv);
 
   builder = gtk_builder_new();
-  gtk_builder_add_from_file (builder, "./levelEditorGUI.glade", NULL);
+  gtk_builder_add_from_file (builder, "levelEditorGUI.glade", NULL);
 
   window = GTK_WIDGET (gtk_builder_get_object (builder, "window"));
   tile_window = GTK_WIDGET (gtk_builder_get_object (builder, "tile_window"));
@@ -185,14 +185,21 @@ int main (int argc, char *argv[])
   GtkWidget* tile_vbox = 
     GTK_WIDGET (gtk_builder_get_object (builder, "tile_vbox"));
 
-  GtkWidget* image1 = gtk_image_new_from_file("ball_green.bmp");
-  gtk_container_add(GTK_CONTAINER(tile_vbox), image1);
-  gtk_widget_show (image1);       
+  GtkWidget* image1;
+
+  int i;
+  for(i = 0; i < 30; i++)
+  {
+
+    GtkWidget* image1 = gtk_image_new_from_file("ball_green.bmp");
+    gtk_container_add(GTK_CONTAINER(tile_vbox), image1);
+    gtk_widget_show (image1);       
+
+  }
 
   image1 = gtk_image_new_from_file("ball_yellow.bmp");
   gtk_container_add(GTK_CONTAINER(tile_vbox), image1);
   gtk_widget_show (image1);       
-
 
   gtk_builder_connect_signals (builder, NULL);          
   g_object_unref (G_OBJECT (builder));

@@ -1,0 +1,661 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif\r\n"
+    "#include ""..\\res\\wingrit.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "..\\res\\wingrit.ico"
+IDR_WINGRITTYPE         ICON    DISCARDABLE     "..\\res\\wingritDoc.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP  MOVEABLE PURE   "..\\res\\Toolbar.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR DISCARDABLE  16, 16
+BEGIN
+    BUTTON      ID_FILE_NEW
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_FILE_SAVE
+    SEPARATOR
+    BUTTON      ID_VIEW_GBAEXPORT
+    SEPARATOR
+    BUTTON      ID_EDIT_CUT
+    BUTTON      ID_EDIT_COPY
+    BUTTON      ID_EDIT_PASTE
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New\tCtrl+N",                ID_FILE_NEW
+        MENUITEM "&Open...\tCtrl+O",            ID_FILE_OPEN
+        MENUITEM "&Save\tCtrl+S",               ID_FILE_SAVE
+        MENUITEM "Save &As...",                 ID_FILE_SAVE_AS
+        MENUITEM SEPARATOR
+        MENUITEM "Recent File",                 ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&Undo\tCtrl+Z",               ID_EDIT_UNDO
+        MENUITEM SEPARATOR
+        MENUITEM "Cu&t\tCtrl+X",                ID_EDIT_CUT
+        MENUITEM "&Copy\tCtrl+C",               ID_EDIT_COPY
+        MENUITEM "&Paste\tCtrl+V",              ID_EDIT_PASTE
+        MENUITEM SEPARATOR
+        MENUITEM "&Wu Quantize",                ID_EDIT_QUANT_WU
+        MENUITEM "&NN Quantize",                ID_EDIT_QUANT_NN
+        MENUITEM "Con&vert to 555",             ID_EDIT_CONVERTTO555
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+        MENUITEM SEPARATOR
+        MENUITEM "&Palette Viewer ...",         ID_VIEW_PAL
+        MENUITEM "GBA E&xport ..",              ID_VIEW_GBAEXPORT
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About wingrit...",           ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL, NOINVERT
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL, NOINVERT
+    "P",            ID_VIEW_PAL,            VIRTKEY, NOINVERT
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL, NOINVERT
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL, NOINVERT
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT, NOINVERT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT, NOINVERT
+    "X",            ID_VIEW_GBAEXPORT,      VIRTKEY, NOINVERT
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL, NOINVERT
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 154, 79
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About Wingrit"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "wingrit v0.7.1",IDC_STATIC,65,15,41,8,SS_NOPREFIX
+    LTEXT           "J Vijn, 2006-2008",IDC_STATIC,55,43,56,8
+    DEFPUSHBUTTON   "OK",IDOK,62,58,32,14,WS_GROUP
+    LTEXT           "Build 20081209",IDC_STATIC,58,26,50,8
+END
+
+IDD_PAL_VIEW DIALOGEX 0, 0, 100, 127
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Palette Viewer"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Apply",ID_APPLY_NOW,7,106,32,14,WS_DISABLED
+    PUSHBUTTON      "Exit",IDCANCEL,47,106,32,14
+    CONTROL         "",IDC_PAL_VIEW,"Static",SS_SIMPLE | SS_SUNKEN | 
+                    WS_GROUP,7,21,86,77,WS_EX_TRANSPARENT
+    CONTROL         "r0, g0, b0",IDC_PAL_VAL,"Static",SS_LEFTNOWORDWRAP | 
+                    SS_SUNKEN | WS_GROUP,32,7,61,10
+    CONTROL         "00h",IDC_PAL_ID,"Static",SS_LEFTNOWORDWRAP | SS_SUNKEN | 
+                    WS_GROUP,7,7,20,10
+END
+
+IDD_XP_GBA DIALOGEX 0, 0, 371, 214
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "GBA Exporter (don't panic!)"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "    ",IDC_STATIC,8,7,72,88
+    CONTROL         "&Gfx",IDC_IMG_CHK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    16,7,27,10
+    COMBOBOX        IDC_IMG_MODE,17,22,52,53,CBS_DROPDOWNLIST | WS_TABSTOP
+    LTEXT           "bpp",IDC_STATIC,17,41,16,8
+    COMBOBOX        IDC_IMG_BPP,33,40,36,56,CBS_DROPDOWNLIST | WS_GROUP | 
+                    WS_TABSTOP
+    LTEXT           "cprs",IDC_STATIC,16,59,14,8
+    COMBOBOX        IDC_IMG_CPRS,33,58,36,57,CBS_DROPDOWNLIST | WS_GROUP | 
+                    WS_TABSTOP
+    LTEXT           "trans",IDC_STATIC,15,77,16,8
+    EDITTEXT        IDC_IMG_TRANS,33,76,36,12,ES_RIGHT | ES_AUTOHSCROLL
+    GROUPBOX        "    ",IDC_STATIC,86,7,110,74
+    CONTROL         "&Map",IDC_MAP_CHK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    94,7,30,10
+    CONTROL         "flat",IDC_MAP_FLAT,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP,94,20,25,10
+    CONTROL         "sbb",IDC_MAP_SBB,"Button",BS_AUTORADIOBUTTON,94,31,27,
+                    10
+    CONTROL         "affine",IDC_MAP_AFF,"Button",BS_AUTORADIOBUTTON,94,42,
+                    33,10
+    GROUPBOX        "  ",IDC_STATIC,128,17,62,23,WS_GROUP
+    CONTROL         "&reduce",IDC_MAP_RDX,"Button",BS_AUTOCHECKBOX | 
+                    WS_GROUP | WS_TABSTOP,136,16,38,10
+    CONTROL         "pal",IDC_MAP_RDX_PAL,"Button",BS_AUTOCHECKBOX | 
+                    BS_LEFTTEXT | WS_TABSTOP,132,27,25,10
+    CONTROL         "flip",IDC_MAP_RDX_FLIP,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,160,27,25,10
+    CONTROL         "meta-tile pal",IDC_META_PAL,"Button",BS_AUTOCHECKBOX | 
+                    WS_GROUP | WS_TABSTOP,134,44,53,10
+    LTEXT           "cprs",IDC_STATIC,94,63,14,8
+    COMBOBOX        IDC_MAP_CPRS,112,61,36,53,CBS_DROPDOWNLIST | WS_GROUP | 
+                    WS_TABSTOP
+    EDITTEXT        IDC_MAP_OFS,154,61,20,12,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_NUMBER | WS_GROUP
+    LTEXT           "ofs",IDC_STATIC,178,63,10,8
+    GROUPBOX        "Meta/&Obj",IDC_STATIC,202,7,104,74
+    CONTROL         "sqr",IDC_OBJ_SQR,"Button",BS_AUTORADIOBUTTON | 
+                    BS_PUSHLIKE | WS_GROUP | WS_TABSTOP,211,28,19,18
+    CONTROL         "wide",IDC_OBJ_WIDE,"Button",BS_AUTORADIOBUTTON | 
+                    BS_PUSHLIKE,211,46,19,11
+    CONTROL         "tall",IDC_OBJ_TALL,"Button",BS_AUTORADIOBUTTON | 
+                    BS_PUSHLIKE | BS_MULTILINE,230,28,10,29
+    CONTROL         "1",IDC_OBJ_8,"Button",BS_AUTORADIOBUTTON | BS_PUSHLIKE | 
+                    WS_GROUP | WS_TABSTOP,243,23,14,11
+    CONTROL         "2",IDC_OBJ_16,"Button",BS_AUTORADIOBUTTON | BS_PUSHLIKE,
+                    243,34,14,11
+    CONTROL         "4",IDC_OBJ_32,"Button",BS_AUTORADIOBUTTON | BS_PUSHLIKE,
+                    243,45,14,11
+    CONTROL         "8",IDC_OBJ_64,"Button",BS_AUTORADIOBUTTON | BS_PUSHLIKE,
+                    243,56,14,11
+    CONTROL         "cstm",IDC_OBJ_CUSTOM,"Button",BS_AUTOCHECKBOX | 
+                    WS_GROUP | WS_TABSTOP,267,25,31,10
+    LTEXT           "n&x",IDC_STATIC,265,40,8,8,0,WS_EX_RIGHT
+    EDITTEXT        IDC_OBJ_HORZ,279,39,20,12,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_NUMBER | WS_GROUP
+    LTEXT           "n&y",IDC_STATIC,265,56,8,8,0,WS_EX_RIGHT
+    EDITTEXT        IDC_OBJ_VERT,279,55,20,12,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    GROUPBOX        "    ",IDC_STATIC,312,7,52,74
+    CONTROL         "&Pal",IDC_PAL_CHK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    320,7,26,10
+    LTEXT           "start",IDC_STATIC,320,23,14,8
+    EDITTEXT        IDC_START,340,23,18,12,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    LTEXT           "num",IDC_STATIC,320,42,14,8
+    EDITTEXT        IDC_COUNT,340,42,18,12,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    LTEXT           "trans",IDC_STATIC,318,63,16,8
+    EDITTEXT        IDC_PAL_TRANS,340,63,18,12,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    GROUPBOX        "&Area",IDC_STATIC,7,97,108,76
+    CONTROL         "custom",IDC_AREA_CSM,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP,22,110,39,10,WS_EX_RIGHT
+    CONTROL         "as img",IDC_AREA_IMG,"Button",BS_AUTORADIOBUTTON,66,110,
+                    36,10
+    CONTROL         "as sel",IDC_AREA_SEL,"Button",BS_AUTORADIOBUTTON | 
+                    WS_DISABLED,66,121,34,10
+    LTEXT           "&left",IDC_STATIC,15,127,10,8
+    EDITTEXT        IDC_LEFT,28,126,24,12,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_NUMBER | WS_GROUP
+    LTEXT           "&top",IDC_STATIC,14,146,11,8
+    EDITTEXT        IDC_TOP,28,145,24,12,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    LTEXT           "&width",IDC_STATIC,60,137,18,8
+    EDITTEXT        IDC_WIDTH,82,137,24,12,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    LTEXT           "&height",IDC_STATIC,58,153,20,8
+    EDITTEXT        IDC_HEIGHT,82,153,24,12,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    GROUPBOX        "&File ",IDC_STATIC,124,85,240,121
+    EDITTEXT        IDC_FILE_PATH,130,96,197,12,ES_AUTOHSCROLL | WS_GROUP
+    PUSHBUTTON      "...",IDC_FILE_BROWSE,334,95,18,12
+    LTEXT           "type",IDC_STATIC,131,115,14,8
+    COMBOBOX        IDC_FILE_TYPE,147,112,61,57,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_GROUP | WS_TABSTOP
+    CONTROL         "u8",IDC_VAR_8,"Button",BS_AUTORADIOBUTTON | BS_CENTER | 
+                    BS_PUSHLIKE | WS_GROUP | WS_TABSTOP,213,114,18,11,
+                    WS_EX_RIGHT
+    CONTROL         "u16",IDC_VAR_16,"Button",BS_AUTORADIOBUTTON | BS_CENTER | 
+                    BS_PUSHLIKE,213,125,18,11
+    CONTROL         "u32",IDC_VAR_32,"Button",BS_AUTORADIOBUTTON | BS_CENTER | 
+                    BS_PUSHLIKE,213,136,18,11
+    CONTROL         "h file",IDC_FILE_HDR,"Button",BS_AUTOCHECKBOX | 
+                    BS_RIGHT | WS_GROUP | WS_TABSTOP,131,129,31,10,
+                    WS_EX_RIGHT
+    CONTROL         "append",IDC_FILE_CAT,"Button",BS_AUTOCHECKBOX | 
+                    WS_GROUP | WS_TABSTOP,166,129,40,10
+    CONTROL         "riff",IDC_RIFF_CHK,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,166,140,33,11
+    CONTROL         "&name",IDC_VAR_CHK,"Button",BS_AUTOCHECKBOX | WS_GROUP | 
+                    WS_TABSTOP,130,144,33,10
+    EDITTEXT        IDC_VAR_NAME,130,157,101,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SUMMARY,237,113,120,62,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_READONLY | NOT WS_BORDER | WS_VSCROLL | WS_GROUP,
+                    WS_EX_STATICEDGE
+    DEFPUSHBUTTON   "OK",IDOK,10,183,32,14
+    PUSHBUTTON      "Cancel",IDCANCEL,46,183,32,14
+    PUSHBUTTON      "Validate",ID_APPLY_NOW,82,183,32,14
+    EDITTEXT        IDC_TILESET_PATH,130,187,197,12,ES_AUTOHSCROLL | 
+                    WS_GROUP
+    PUSHBUTTON      "...",IDC_TILESET_BROWSE,334,187,18,12
+    CONTROL         "e&xt tileset",IDC_TILESET_CHK,"Button",BS_AUTOCHECKBOX | 
+                    WS_GROUP | WS_TABSTOP,130,175,45,10
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "wingrit MFC Application\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "wingrit\0"
+            VALUE "LegalCopyright", "Copyright (C) 1903\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "wingrit.EXE\0"
+            VALUE "ProductName", "wingrit Application\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 147
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 72
+    END
+
+    IDD_PAL_VIEW, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 93
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 120
+    END
+
+    IDD_XP_GBA, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 364
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 207
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_XP_GBA DLGINIT
+BEGIN
+    IDC_IMG_MODE, 0x403, 5, 0
+0x6974, 0x656c, "\000" 
+    IDC_IMG_MODE, 0x403, 13, 0
+0x6962, 0x6d74, 0x7061, 0x2820, 0x4247, 0x2941, "\000" 
+    IDC_IMG_MODE, 0x403, 13, 0
+0x6962, 0x6d74, 0x7061, 0x2820, 0x444e, 0x2953, "\000" 
+    IDC_IMG_MODE, 0x403, 13, 0
+0x6962, 0x6d74, 0x7061, 0x612b, 0x706c, 0x6168, "\000" 
+    IDC_IMG_BPP, 0x403, 2, 0
+0x0031, 
+    IDC_IMG_BPP, 0x403, 2, 0
+0x0032, 
+    IDC_IMG_BPP, 0x403, 2, 0
+0x0034, 
+    IDC_IMG_BPP, 0x403, 2, 0
+0x0038, 
+    IDC_IMG_BPP, 0x403, 3, 0
+0x3631, "\000" 
+    IDC_IMG_CPRS, 0x403, 4, 0
+0x666f, 0x0066, 
+    IDC_IMG_CPRS, 0x403, 5, 0
+0x7a6c, 0x3737, "\000" 
+    IDC_IMG_CPRS, 0x403, 5, 0
+0x7568, 0x6666, "\000" 
+    IDC_IMG_CPRS, 0x403, 4, 0
+0x6c72, 0x0065, 
+    IDC_IMG_CPRS, 0x403, 8, 0
+0x666f, 0x2b66, 0x6468, 0x0072, 
+    IDC_MAP_CPRS, 0x403, 4, 0
+0x666f, 0x0066, 
+    IDC_MAP_CPRS, 0x403, 5, 0
+0x7a6c, 0x3737, "\000" 
+    IDC_MAP_CPRS, 0x403, 5, 0
+0x7568, 0x6666, "\000" 
+    IDC_MAP_CPRS, 0x403, 4, 0
+0x6c72, 0x0065, 
+    IDC_MAP_CPRS, 0x403, 8, 0
+0x666f, 0x2b66, 0x6468, 0x0072, 
+    IDC_FILE_TYPE, 0x403, 8, 0
+0x2043, 0x2a28, 0x632e, 0x0029, 
+    IDC_FILE_TYPE, 0x403, 10, 0
+0x4147, 0x2053, 0x2a28, 0x732e, 0x0029, 
+    IDC_FILE_TYPE, 0x403, 15, 0
+0x6942, 0x616e, 0x7972, 0x2820, 0x2e2a, 0x6962, 0x296e, "\000" 
+    IDC_FILE_TYPE, 0x403, 14, 0
+0x4247, 0x5346, 0x2820, 0x2e2a, 0x6267, 0x7366, 0x0029, 
+    IDC_FILE_TYPE, 0x403, 13, 0
+0x4952, 0x4646, 0x2820, 0x2e2a, 0x7267, 0x2966, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "wingrit\n\nwingrit\n\n\nWingrit.Document\nWingrit Document"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "wingrit"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_NEW             "Create a new document\nNew"
+    ID_FILE_OPEN            "Open an existing document\nOpen"
+    ID_FILE_CLOSE           "Close the active document\nClose"
+    ID_FILE_SAVE            "Save the active document\nSave"
+    ID_FILE_SAVE_AS         "Save the active document with a new name\nSave As"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "Open this document"
+    ID_FILE_MRU_FILE2       "Open this document"
+    ID_FILE_MRU_FILE3       "Open this document"
+    ID_FILE_MRU_FILE4       "Open this document"
+    ID_FILE_MRU_FILE5       "Open this document"
+    ID_FILE_MRU_FILE6       "Open this document"
+    ID_FILE_MRU_FILE7       "Open this document"
+    ID_FILE_MRU_FILE8       "Open this document"
+    ID_FILE_MRU_FILE9       "Open this document"
+    ID_FILE_MRU_FILE10      "Open this document"
+    ID_FILE_MRU_FILE11      "Open this document"
+    ID_FILE_MRU_FILE12      "Open this document"
+    ID_FILE_MRU_FILE13      "Open this document"
+    ID_FILE_MRU_FILE14      "Open this document"
+    ID_FILE_MRU_FILE15      "Open this document"
+    ID_FILE_MRU_FILE16      "Open this document"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_CLEAR           "Erase the selection\nErase"
+    ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
+    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
+    ID_EDIT_FIND            "Find the specified text\nFind"
+    ID_EDIT_PASTE           "Insert Clipboard contents\nPaste"
+    ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
+    ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
+    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
+    ID_EDIT_UNDO            "Undo the last action\nUndo"
+    ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle ToolBar"
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_FLTR_GBA            "GBA data (*.c;*.s;*.o;*.bin)|*.c;*.s;*.o;*.bin|"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_STDERR_TEST          "test standard error"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.K.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENG)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_UK
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_XPLOG DIALOG DISCARDABLE  0, 0, 272, 212
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Export Log"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,191,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,66,191,50,14
+    EDITTEXT        IDC_SUMMARY,7,7,258,179,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_AUTOHSCROLL | ES_READONLY
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_XPLOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 265
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 205
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.K.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif
+#include "..\res\wingrit.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

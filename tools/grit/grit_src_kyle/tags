@@ -1,0 +1,1501 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.7	//
+AFX_DLGS_H__06717BD8_84A4_486B_	./srcwingrit/gritdlg.h	2;"	d
+AFX_LOGDLG_H__4CBA2449_010E_41D7_A194_C2D74D97A387__INCLUDED_	./srcwingrit/LogDlg.h	2;"	d
+AFX_MAINFRM_H__D39DD970_12BD_4D94_89B4_479D10F9DA05__INCLUDED_	./srcwingrit/MainFrm.h	6;"	d
+AFX_MODELESSDLG_H__F75BEA02_8D91_11D8_8A36_004095358525__INCLUDED_	./srcwingrit/ModelessDlg.h	2;"	d
+AFX_PALVIEWDLG_H__170E72A2_C0AF_469F_94BD_2E385C047900__INCLUDED_	./srcwingrit/PalViewDlg.h	2;"	d
+AFX_STDAFX_H__CEB8E3CC_C648_4A55_AAB2_5801F51E2F29__INCLUDED_	./srcwingrit/StdAfx.h	7;"	d
+AFX_WINGITDOC_H__8CF00F0C_BE87_472A_8B24_992F3326A3D7__INCLUDED_	./srcwingrit/wingritDoc.h	6;"	d
+AFX_WINGITVIEW_H__C9C68B24_E8A1_4C20_8813_286350AFF5B6__INCLUDED_	./srcwingrit/wingritView.h	6;"	d
+AFX_WINGRIT_H__B576776F_1933_46EB_A84A_C015F29A42B0__INCLUDED_	./srcwingrit/wingrit.h	5;"	d
+ALIGN4	./cldib/cldib_core.h	211;"	d
+ALIGN4	./libgrit/pathfun.cpp	42;"	d	file:
+APP_BUILD	./srcgrit/grit_main.cpp	71;"	d	file:
+APP_VERSION	./srcgrit/grit_main.cpp	70;"	d	file:
+Apply	./srcwingrit/ModelessDlg.cpp	/^void CModelessDlg::Apply()$/;"	f	class:CModelessDlg
+Apply	./srcwingrit/PalViewDlg.cpp	/^void CPalViewDlg::Apply() $/;"	f	class:CPalViewDlg
+AssertValid	./srcwingrit/MainFrm.cpp	/^void CMainFrame::AssertValid() const$/;"	f	class:CMainFrame
+AssertValid	./srcwingrit/wingritDoc.cpp	/^void CWingritDoc::AssertValid() const$/;"	f	class:CWingritDoc
+AssertValid	./srcwingrit/wingritView.cpp	/^void CWingritView::AssertValid() const$/;"	f	class:CWingritView
+Attach	./cldib/cldib_img.cpp	/^CLDIB *CImgFile::Attach(CLDIB *dib)$/;"	f	class:CImgFile
+BIG_ENDIAN	./cldib/winglue.h	33;"	d
+BITMAPINFO	./extlib/FreeImage.h	/^} BITMAPINFO, *PBITMAPINFO;$/;"	t	typeref:struct:tagBITMAPINFO
+BITMAPINFOHEADER	./extlib/FreeImage.h	/^} BITMAPINFOHEADER, *PBITMAPINFOHEADER; $/;"	t	typeref:struct:tagBITMAPINFOHEADER
+BMIH_SIZE	./cldib/cldib_core.h	41;"	d
+BMP_DEFAULT	./extlib/FreeImage.h	594;"	d
+BMP_SAVE_RLE	./extlib/FreeImage.h	595;"	d
+BMP_TYPE	./cldib/cldib_bmp.cpp	10;"	d	file:
+BOOL	./extlib/FreeImage.h	/^typedef int32_t BOOL;$/;"	t
+BOOL	./extlib/FreeImage.h	/^typedef long BOOL;$/;"	t
+BUP_BASE0	./cldib/cldib_tools.h	/^	BUP_BASE0= (1<<31)	\/\/!< Offset applies to 0 chunks too.$/;"	e	enum:eBUP
+BUP_BEBIT	./cldib/cldib_tools.h	/^	BUP_BEBIT= (1<<30),	\/\/!< Bit-chunks inside bytes are grouped big-endian.$/;"	e	enum:eBUP
+BYTE	./extlib/FreeImage.h	/^typedef uint8_t BYTE;$/;"	t
+BYTE	./extlib/FreeImage.h	/^typedef unsigned char BYTE;$/;"	t
+BYTE_ORDER	./cldib/winglue.h	35;"	d
+Bottom	./cldib/cldib_wu.cpp	/^WuQuantizer::Bottom(Box *cube, BYTE dir, LONG *mmt)$/;"	f	class:WuQuantizer
+Box	./cldib/cldib_quant.h	/^} Box;$/;"	t	class:WuQuantizer	typeref:struct:WuQuantizer::tagBox
+CAboutDlg	./srcwingrit/wingrit.cpp	/^CAboutDlg::CAboutDlg() : CDialog(CAboutDlg::IDD)$/;"	f	class:CAboutDlg
+CAboutDlg	./srcwingrit/wingrit.cpp	/^class CAboutDlg : public CDialog$/;"	c	file:
+CBmpFile	./cldib/cldib_files.h	/^	CBmpFile() : CImgFile() {}$/;"	f	class:CBmpFile
+CBmpFile	./cldib/cldib_files.h	/^class CBmpFile : public CImgFile$/;"	c
+CCE_ALPHA	./cldib/cldib_core.h	/^	CCE_ALPHA= 0x08,	\/\/<! Act on alpha field$/;"	e	enum:eClrChannel
+CCE_BLUE	./cldib/cldib_core.h	/^	CCE_BLUE = 0x01,	\/\/<! Act on blue.$/;"	e	enum:eClrChannel
+CCE_GREEN	./cldib/cldib_core.h	/^	CCE_GREEN= 0x02,	\/\/<! Act on green.$/;"	e	enum:eClrChannel
+CCE_RED	./cldib/cldib_core.h	/^	CCE_RED  = 0x04,	\/\/<! Act on red.$/;"	e	enum:eClrChannel
+CCE_RGB	./cldib/cldib_core.h	/^	CCE_RGB  = 0x07,	\/\/<! Act on red,Gree,Blue.$/;"	e	enum:eClrChannel
+CCE_RGBA	./cldib/cldib_core.h	/^	CCE_RGBA = 0x0F		\/\/<! Act on all fields$/;"	e	enum:eClrChannel
+CCID_ALPHA	./cldib/cldib_core.h	104;"	d
+CCID_ALPHA	./cldib/cldib_core.h	109;"	d
+CCID_BLUE	./cldib/cldib_core.h	103;"	d
+CCID_BLUE	./cldib/cldib_core.h	108;"	d
+CCID_GREEN	./cldib/cldib_core.h	102;"	d
+CCID_GREEN	./cldib/cldib_core.h	107;"	d
+CCID_RED	./cldib/cldib_core.h	101;"	d
+CCID_RED	./cldib/cldib_core.h	106;"	d
+CFileFilter	./srcwingrit/FileFilter.cpp	/^CFileFilter::CFileFilter(int type, const CString &name)$/;"	f	class:CFileFilter
+CFileFilter	./srcwingrit/FileFilter.h	/^class CFileFilter$/;"	c
+CImgFile	./cldib/cldib_files.h	/^	CImgFile() : mbActive(false), mpMsg(NULL), $/;"	f	class:CImgFile
+CImgFile	./cldib/cldib_files.h	/^class CImgFile$/;"	c
+CLDIB	./cldib/cldib_core.h	/^typedef struct CLDIB$/;"	s
+CLDIB	./cldib/cldib_core.h	/^} CLDIB;$/;"	t	typeref:struct:CLDIB
+CLDIB	./srcwingrit/gritdlg.h	/^typedef struct CLDIB	CLDIB;$/;"	t	typeref:struct:CLDIB
+CLDIB	./srcwingrit/wingritDoc.h	/^typedef struct CLDIB CLDIB;$/;"	t	typeref:struct:CLDIB
+CLDIB_BMP	./cldib/cldib_files.h	/^	CLDIB_BMP= 0,	CLDIB_PAL,	CLDIB_PCX,	CLDIB_PNG, $/;"	e	enum:eCldibID
+CLDIB_DIR	./Makefile	/^CLDIB_DIR	:=	cldib$/;"	m
+CLDIB_PAL	./cldib/cldib_files.h	/^	CLDIB_BMP= 0,	CLDIB_PAL,	CLDIB_PCX,	CLDIB_PNG, $/;"	e	enum:eCldibID
+CLDIB_PCX	./cldib/cldib_files.h	/^	CLDIB_BMP= 0,	CLDIB_PAL,	CLDIB_PCX,	CLDIB_PNG, $/;"	e	enum:eCldibID
+CLDIB_PNG	./cldib/cldib_files.h	/^	CLDIB_BMP= 0,	CLDIB_PAL,	CLDIB_PCX,	CLDIB_PNG, $/;"	e	enum:eCldibID
+CLDIB_TGA	./cldib/cldib_files.h	/^	CLDIB_TGA$/;"	e	enum:eCldibID
+CLDIB_UNK	./cldib/cldib_files.h	/^	CLDIB_UNK= -1,	$/;"	e	enum:eCldibID
+CLI_BOOL	./srcgrit/cli.h	11;"	d
+CLI_INT	./srcgrit/cli.h	12;"	d
+CLI_STR	./srcgrit/cli.h	13;"	d
+CLogDlg	./srcwingrit/LogDlg.cpp	/^CLogDlg::CLogDlg(CWnd* pParent \/*=NULL*\/)$/;"	f	class:CLogDlg
+CLogDlg	./srcwingrit/LogDlg.h	/^class CLogDlg : public CDialog$/;"	c
+CMainFrame	./srcwingrit/MainFrm.cpp	/^CMainFrame::CMainFrame()$/;"	f	class:CMainFrame
+CMainFrame	./srcwingrit/MainFrm.h	/^class CMainFrame : public CFrameWnd$/;"	c
+CModelessDlg	./srcwingrit/ModelessDlg.cpp	/^CModelessDlg::CModelessDlg() : CDialog()$/;"	f	class:CModelessDlg
+CModelessDlg	./srcwingrit/ModelessDlg.h	/^class CModelessDlg : public CDialog$/;"	c
+COLOR	./libgrit/grit_core.h	/^typedef u16 COLOR;$/;"	t
+COLORREF	./cldib/winglue.h	/^typedef DWORD COLORREF;$/;"	t
+CPPFLAGS	./Makefile	/^CPPFLAGS	:=	-g -O3 -Icldib -Ilibgit$/;"	m
+CPRS_END	./srcwingrit/gritdlg.h	/^{	CPRS_NONE=0, CPRS_LZ, CPRS_HUFF, CPRS_RLE, CPRS_HDR, CPRS_END };$/;"	e	enum:eCprs
+CPRS_FAKE_TAG	./libgrit/cprs.h	/^	CPRS_FAKE_TAG	= 0x00,		\/\/<! No compression.$/;"	e	enum:ECprsTag
+CPRS_HDR	./srcwingrit/gritdlg.h	/^{	CPRS_NONE=0, CPRS_LZ, CPRS_HUFF, CPRS_RLE, CPRS_HDR, CPRS_END };$/;"	e	enum:eCprs
+CPRS_HUFF	./srcwingrit/gritdlg.h	/^{	CPRS_NONE=0, CPRS_LZ, CPRS_HUFF, CPRS_RLE, CPRS_HDR, CPRS_END };$/;"	e	enum:eCprs
+CPRS_HUFF8_TAG	./libgrit/cprs.h	/^	CPRS_HUFF8_TAG	= 0x28,		\/\/<! GBA Huffman, 8bit.$/;"	e	enum:ECprsTag
+CPRS_HUFF_TAG	./libgrit/cprs.h	/^	CPRS_HUFF_TAG	= 0x20, $/;"	e	enum:ECprsTag
+CPRS_LZ	./srcwingrit/gritdlg.h	/^{	CPRS_NONE=0, CPRS_LZ, CPRS_HUFF, CPRS_RLE, CPRS_HDR, CPRS_END };$/;"	e	enum:eCprs
+CPRS_LZ77_TAG	./libgrit/cprs.h	/^	CPRS_LZ77_TAG	= 0x10,		\/\/<! GBA LZ77 compression.$/;"	e	enum:ECprsTag
+CPRS_NONE	./srcwingrit/gritdlg.h	/^{	CPRS_NONE=0, CPRS_LZ, CPRS_HUFF, CPRS_RLE, CPRS_HDR, CPRS_END };$/;"	e	enum:eCprs
+CPRS_RLE	./srcwingrit/gritdlg.h	/^{	CPRS_NONE=0, CPRS_LZ, CPRS_HUFF, CPRS_RLE, CPRS_HDR, CPRS_END };$/;"	e	enum:eCprs
+CPRS_RLE_TAG	./libgrit/cprs.h	/^	CPRS_RLE_TAG	= 0x30,		\/\/<! GBA RLE compression.$/;"	e	enum:ECprsTag
+CPalFile	./cldib/cldib_files.h	/^class CPalFile : public CImgFile$/;"	c
+CPalFile	./cldib/cldib_pal.cpp	/^CPalFile::CPalFile() : CImgFile()$/;"	f	class:CPalFile
+CPalViewDlg	./srcwingrit/PalViewDlg.cpp	/^CPalViewDlg::CPalViewDlg()  : CModelessDlg()$/;"	f	class:CPalViewDlg
+CPalViewDlg	./srcwingrit/PalViewDlg.h	/^class CPalViewDlg : public CModelessDlg$/;"	c
+CPcxFile	./cldib/cldib_files.h	/^	CPcxFile() : CImgFile(), mbGray(false) {}$/;"	f	class:CPcxFile
+CPcxFile	./cldib/cldib_files.h	/^class CPcxFile : public CImgFile$/;"	c
+CPngFile	./cldib/cldib_files.h	/^	CPngFile() : CImgFile(), mbTrans(false), mClrTrans(0) {}$/;"	f	class:CPngFile
+CPngFile	./cldib/cldib_files.h	/^class CPngFile : public CImgFile$/;"	c
+CTgaFile	./cldib/cldib_files.h	/^	CTgaFile() : CImgFile() {}$/;"	f	class:CTgaFile
+CTgaFile	./cldib/cldib_files.h	/^class CTgaFile : public CImgFile$/;"	c
+CUT_DEFAULT	./extlib/FreeImage.h	596;"	d
+CWingritApp	./srcwingrit/wingrit.cpp	/^CWingritApp::CWingritApp()$/;"	f	class:CWingritApp
+CWingritApp	./srcwingrit/wingrit.h	/^class CWingritApp : public CWinApp$/;"	c
+CWingritDoc	./srcwingrit/wingritDoc.cpp	/^CWingritDoc::CWingritDoc()$/;"	f	class:CWingritDoc
+CWingritDoc	./srcwingrit/wingritDoc.h	/^class CWingritDoc : public CDocument$/;"	c
+CWingritView	./srcwingrit/wingritView.cpp	/^CWingritView::CWingritView() : mZoom(1<<8), mptOrg(0,0), $/;"	f	class:CWingritView
+CWingritView	./srcwingrit/wingritView.h	/^class CWingritView : public CView$/;"	c
+Clear	./cldib/cldib_img.cpp	/^void CImgFile::Clear() $/;"	f	class:CImgFile
+CompressLZ77	./libgrit/cprs_lz.cpp	/^void CompressLZ77(void)$/;"	f
+Create	./srcwingrit/ModelessDlg.cpp	/^BOOL CModelessDlg::Create(UINT nIDTemplate, CWnd* pParent \/*=NULL*\/, $/;"	f	class:CModelessDlg
+Create	./srcwingrit/PalViewDlg.cpp	/^BOOL CPalViewDlg::Create(CWnd* pParent, CDocument *pDoc)$/;"	f	class:CPalViewDlg
+Cut	./cldib/cldib_wu.cpp	/^WuQuantizer::Cut(Box *set1, Box *set2) $/;"	f	class:WuQuantizer
+CxpGbaDlg	./srcwingrit/gritdlg.cpp	/^CxpGbaDlg::CxpGbaDlg(CWnd* pParent \/*=NULL*\/)$/;"	f	class:CxpGbaDlg
+CxpGbaDlg	./srcwingrit/gritdlg.h	/^class CxpGbaDlg : public CDialog$/;"	c
+DDS_DEFAULT	./extlib/FreeImage.h	597;"	d
+DDX_IntHack	./srcwingrit/gritdlg.cpp	/^static void AFXAPI DDX_IntHack(CDataExchange* pDX, int nIDC, int& value)$/;"	f	file:
+DEPENDS	./Makefile	/^DEPENDS		:=	$(GRIT_OBJ:.o=.d) $(LIBCLDIB_OBJ:.o=.d) $(LIBGRIT_OBJ:.o=.d)$/;"	m
+DIR_SEP	./libgrit/pathfun.h	30;"	d
+DIR_SEP	./libgrit/pathfun.h	33;"	d
+DIR_SEP_UNIX	./libgrit/pathfun.h	26;"	d
+DIR_SEP_WIN	./libgrit/pathfun.h	23;"	d
+DLL_API	./extlib/FreeImage.h	58;"	d
+DLL_API	./extlib/FreeImage.h	70;"	d
+DLL_API	./extlib/FreeImage.h	72;"	d
+DLL_CALLCONV	./extlib/FreeImage.h	59;"	d
+DLL_CALLCONV	./extlib/FreeImage.h	62;"	d
+DWORD	./extlib/FreeImage.h	/^typedef uint32_t DWORD;$/;"	t
+DWORD	./extlib/FreeImage.h	/^typedef unsigned long DWORD;$/;"	t
+DataItem	./libgrit/grit_xp.cpp	/^	DataItem() : procMode(GRIT_EXCLUDE), dataType(GRIT_U16), $/;"	f	class:DataItem
+DataItem	./libgrit/grit_xp.cpp	/^class DataItem$/;"	c	file:
+DeleteNode	./libgrit/cprs_lz.cpp	/^void DeleteNode(int p)  $/;"	f
+Destroy	./cldib/cldib_img.cpp	/^void CImgFile::Destroy()$/;"	f	class:CImgFile
+Destroy	./srcwingrit/FileFilter.cpp	/^void CFileFilter::Destroy()$/;"	f	class:CFileFilter
+Detach	./cldib/cldib_img.cpp	/^CLDIB *CImgFile::Detach()$/;"	f	class:CImgFile
+DoDataExchange	./srcwingrit/LogDlg.cpp	/^void CLogDlg::DoDataExchange(CDataExchange* pDX)$/;"	f	class:CLogDlg
+DoDataExchange	./srcwingrit/PalViewDlg.cpp	/^void CPalViewDlg::DoDataExchange(CDataExchange* pDX)$/;"	f	class:CPalViewDlg
+DoDataExchange	./srcwingrit/gritdlg.cpp	/^void CxpGbaDlg::DoDataExchange(CDataExchange* pDX)$/;"	f	class:CxpGbaDlg
+DoDataExchange	./srcwingrit/wingrit.cpp	/^void CAboutDlg::DoDataExchange(CDataExchange* pDX)$/;"	f	class:CAboutDlg
+DoPromptFilePath	./srcwingrit/FileFilter.cpp	/^int CFileFilter::DoPromptFilePath(CString &fpath, BOOL bOpen)$/;"	f	class:CFileFilter
+DrawPalView	./srcwingrit/PalViewDlg.cpp	/^void CPalViewDlg::DrawPalView(CDC *pdc)$/;"	f	class:CPalViewDlg
+Dump	./srcwingrit/MainFrm.cpp	/^void CMainFrame::Dump(CDumpContext& dc) const$/;"	f	class:CMainFrame
+Dump	./srcwingrit/wingritDoc.cpp	/^void CWingritDoc::Dump(CDumpContext& dc) const$/;"	f	class:CWingritDoc
+Dump	./srcwingrit/wingritView.cpp	/^void CWingritView::Dump(CDumpContext& dc) const$/;"	f	class:CWingritView
+ECprsTag	./libgrit/cprs.h	/^enum ECprsTag$/;"	g
+EGritCompression	./libgrit/grit_core.h	/^enum EGritCompression$/;"	g
+EGritDataProcMode	./libgrit/grit_core.h	/^enum EGritDataProcMode$/;"	g
+EGritDataType	./libgrit/grit_core.h	/^enum EGritDataType$/;"	g
+EGritFileType	./libgrit/grit_core.h	/^enum EGritFileType$/;"	g
+EGritGraphicsMode	./libgrit/grit_core.h	/^enum EGritGraphicsMode$/;"	g
+EGritItem	./libgrit/grit_core.h	/^enum EGritItem$/;"	g
+EGritMapLayout	./libgrit/grit_core.h	/^enum EGritMapLayout$/;"	g
+EGritMapRedux	./libgrit/grit_core.h	/^enum EGritMapRedux$/;"	g
+EGrsMode	./libgrit/grit_core.h	/^enum EGrsMode$/;"	g
+ELogger	./libgrit/logger.h	/^enum ELogger$/;"	g
+ERR_ALLOC	./cldib/cldib_files.h	/^	ERR_NONE=0, ERR_GENERAL, ERR_ALLOC, ERR_NO_FILE, $/;"	e	enum:eDibMsgs
+ERR_BMP_CPRS	./cldib/cldib_bmp.cpp	/^{	ERR_BMP_PLANES=0, ERR_BMP_CPRS, ERR_BMP_MAX	};$/;"	e	enum:eBmpErrs	file:
+ERR_BMP_MAX	./cldib/cldib_bmp.cpp	/^{	ERR_BMP_PLANES=0, ERR_BMP_CPRS, ERR_BMP_MAX	};$/;"	e	enum:eBmpErrs	file:
+ERR_BMP_PLANES	./cldib/cldib_bmp.cpp	/^{	ERR_BMP_PLANES=0, ERR_BMP_CPRS, ERR_BMP_MAX	};$/;"	e	enum:eBmpErrs	file:
+ERR_BPP	./cldib/cldib_files.h	/^	ERR_IOERROR, ERR_FORMAT, ERR_BPP, ERR_COLORS_MAXED, ERR_MAX$/;"	e	enum:eDibMsgs
+ERR_COLORS_MAXED	./cldib/cldib_files.h	/^	ERR_IOERROR, ERR_FORMAT, ERR_BPP, ERR_COLORS_MAXED, ERR_MAX$/;"	e	enum:eDibMsgs
+ERR_FORMAT	./cldib/cldib_files.h	/^	ERR_IOERROR, ERR_FORMAT, ERR_BPP, ERR_COLORS_MAXED, ERR_MAX$/;"	e	enum:eDibMsgs
+ERR_GENERAL	./cldib/cldib_files.h	/^	ERR_NONE=0, ERR_GENERAL, ERR_ALLOC, ERR_NO_FILE, $/;"	e	enum:eDibMsgs
+ERR_IOERROR	./cldib/cldib_files.h	/^	ERR_IOERROR, ERR_FORMAT, ERR_BPP, ERR_COLORS_MAXED, ERR_MAX$/;"	e	enum:eDibMsgs
+ERR_MAX	./cldib/cldib_files.h	/^	ERR_IOERROR, ERR_FORMAT, ERR_BPP, ERR_COLORS_MAXED, ERR_MAX$/;"	e	enum:eDibMsgs
+ERR_NONE	./cldib/cldib_files.h	/^	ERR_NONE=0, ERR_GENERAL, ERR_ALLOC, ERR_NO_FILE, $/;"	e	enum:eDibMsgs
+ERR_NO_FILE	./cldib/cldib_files.h	/^	ERR_NONE=0, ERR_GENERAL, ERR_ALLOC, ERR_NO_FILE, $/;"	e	enum:eDibMsgs
+ERR_PAL_BPS	./cldib/cldib_pal.cpp	/^{	ERR_PAL_BPS=0, ERR_PAL_NOPAL, ERR_PAL_MAX	};$/;"	e	enum:ePalErrs	file:
+ERR_PAL_MAX	./cldib/cldib_pal.cpp	/^{	ERR_PAL_BPS=0, ERR_PAL_NOPAL, ERR_PAL_MAX	};$/;"	e	enum:ePalErrs	file:
+ERR_PAL_NOPAL	./cldib/cldib_pal.cpp	/^{	ERR_PAL_BPS=0, ERR_PAL_NOPAL, ERR_PAL_MAX	};$/;"	e	enum:ePalErrs	file:
+ERR_PCX_MAX	./cldib/cldib_pcx.cpp	/^{	ERR_PCX_PLANES=0, ERR_PCX_MAX	};$/;"	e	enum:ePcxErrs	file:
+ERR_PCX_PLANES	./cldib/cldib_pcx.cpp	/^{	ERR_PCX_PLANES=0, ERR_PCX_MAX	};$/;"	e	enum:ePcxErrs	file:
+ERR_PNG_BPP_16	./cldib/cldib_png.cpp	/^	ERR_PNG_BPP_2, ERR_PNG_GRAY_ALPHA, ERR_PNG_BPP_16, ERR_PNG_MAX$/;"	e	enum:ePngErrs	file:
+ERR_PNG_BPP_2	./cldib/cldib_png.cpp	/^	ERR_PNG_BPP_2, ERR_PNG_GRAY_ALPHA, ERR_PNG_BPP_16, ERR_PNG_MAX$/;"	e	enum:ePngErrs	file:
+ERR_PNG_GRAY_ALPHA	./cldib/cldib_png.cpp	/^	ERR_PNG_BPP_2, ERR_PNG_GRAY_ALPHA, ERR_PNG_BPP_16, ERR_PNG_MAX$/;"	e	enum:ePngErrs	file:
+ERR_PNG_INVALID	./cldib/cldib_png.cpp	/^	ERR_PNG_NO_PNG=0, ERR_PNG_NO_INFO, ERR_PNG_INVALID, $/;"	e	enum:ePngErrs	file:
+ERR_PNG_MAX	./cldib/cldib_png.cpp	/^	ERR_PNG_BPP_2, ERR_PNG_GRAY_ALPHA, ERR_PNG_BPP_16, ERR_PNG_MAX$/;"	e	enum:ePngErrs	file:
+ERR_PNG_NO_INFO	./cldib/cldib_png.cpp	/^	ERR_PNG_NO_PNG=0, ERR_PNG_NO_INFO, ERR_PNG_INVALID, $/;"	e	enum:ePngErrs	file:
+ERR_PNG_NO_PNG	./cldib/cldib_png.cpp	/^	ERR_PNG_NO_PNG=0, ERR_PNG_NO_INFO, ERR_PNG_INVALID, $/;"	e	enum:ePngErrs	file:
+ERR_TGA_BADPAL	./cldib/cldib_tga.cpp	/^	ERR_TGA_VERSION=0, ERR_TGA_BADPAL, ERR_TGA_PALBPP, $/;"	e	enum:eTgaErrs	file:
+ERR_TGA_IMGBPP	./cldib/cldib_tga.cpp	/^	ERR_TGA_IMGBPP, ERR_TGA_MAX$/;"	e	enum:eTgaErrs	file:
+ERR_TGA_MAX	./cldib/cldib_tga.cpp	/^	ERR_TGA_IMGBPP, ERR_TGA_MAX$/;"	e	enum:eTgaErrs	file:
+ERR_TGA_PALBPP	./cldib/cldib_tga.cpp	/^	ERR_TGA_VERSION=0, ERR_TGA_BADPAL, ERR_TGA_PALBPP, $/;"	e	enum:eTgaErrs	file:
+ERR_TGA_VERSION	./cldib/cldib_tga.cpp	/^	ERR_TGA_VERSION=0, ERR_TGA_BADPAL, ERR_TGA_PALBPP, $/;"	e	enum:eTgaErrs	file:
+EScreenFlags	./libgrit/grit_core.h	/^enum EScreenFlags$/;"	g
+EXEEXT	./Makefile	/^	EXEEXT		:=	.exe$/;"	m
+EXEEXT	./Makefile	/^	EXEEXT		:= .exe$/;"	m
+EXTLIB_DIR	./Makefile	/^EXTLIB_DIR	:= extlib$/;"	m
+EXTRAINSTALL	./Makefile	/^	EXTRAINSTALL := extlib\/FreeImage.dll$/;"	m
+EXTRATAR	./Makefile	/^	EXTRATAR	:= -C extlib FreeImage.dll$/;"	m
+EXTRATAR	./Makefile	/^	EXTRATAR 	:=	-C extlib FreeImage.dll$/;"	m
+E_AFX_BMP	./libgrit/grit_core.h	/^	E_AFX_BMP	,		\/\/!< Bitmap graphics$/;"	e	enum:eAffix
+E_AFX_GRF	./libgrit/grit_core.h	/^	E_AFX_GRF	,		\/\/!< GRIF format$/;"	e	enum:eAffix
+E_AFX_MAP	./libgrit/grit_core.h	/^	E_AFX_MAP	,		\/\/!< Tilemap$/;"	e	enum:eAffix
+E_AFX_MAX	./libgrit/grit_core.h	/^	E_AFX_MAX$/;"	e	enum:eAffix
+E_AFX_MMAP	./libgrit/grit_core.h	/^	E_AFX_MMAP	,		\/\/!< Metamap$/;"	e	enum:eAffix
+E_AFX_MTILE	./libgrit/grit_core.h	/^	E_AFX_MTILE	,		\/\/!< Meta-tiles$/;"	e	enum:eAffix
+E_AFX_PAL	./libgrit/grit_core.h	/^	E_AFX_PAL	,		\/\/!< Palette$/;"	e	enum:eAffix
+E_AFX_TILE	./libgrit/grit_core.h	/^	E_AFX_TILE	=0,		\/\/!< Tiled graphics$/;"	e	enum:eAffix
+E_U16	./libgrit/grit_core.h	/^{	E_U8=1, E_U16=2, E_U32=4	};$/;"	e	enum:eTypes
+E_U32	./libgrit/grit_core.h	/^{	E_U8=1, E_U16=2, E_U32=4	};$/;"	e	enum:eTypes
+E_U8	./libgrit/grit_core.h	/^{	E_U8=1, E_U16=2, E_U32=4	};$/;"	e	enum:eTypes
+FALSE	./cldib/winglue.h	71;"	d
+FALSE	./extlib/FreeImage.h	112;"	d
+FAXG3_DEFAULT	./extlib/FreeImage.h	598;"	d
+FF_BAD	./srcwingrit/FileFilter.h	19;"	d
+FF_CANCEL	./srcwingrit/FileFilter.h	20;"	d
+FI16_555_BLUE_MASK	./extlib/FreeImage.h	298;"	d
+FI16_555_BLUE_SHIFT	./extlib/FreeImage.h	301;"	d
+FI16_555_GREEN_MASK	./extlib/FreeImage.h	297;"	d
+FI16_555_GREEN_SHIFT	./extlib/FreeImage.h	300;"	d
+FI16_555_RED_MASK	./extlib/FreeImage.h	296;"	d
+FI16_555_RED_SHIFT	./extlib/FreeImage.h	299;"	d
+FI16_565_BLUE_MASK	./extlib/FreeImage.h	304;"	d
+FI16_565_BLUE_SHIFT	./extlib/FreeImage.h	307;"	d
+FI16_565_GREEN_MASK	./extlib/FreeImage.h	303;"	d
+FI16_565_GREEN_SHIFT	./extlib/FreeImage.h	306;"	d
+FI16_565_RED_MASK	./extlib/FreeImage.h	302;"	d
+FI16_565_RED_SHIFT	./extlib/FreeImage.h	305;"	d
+FICOMPLEX	./extlib/FreeImage.h	/^} FICOMPLEX;$/;"	t	typeref:struct:tagFICOMPLEX
+FIICC_COLOR_IS_CMYK	./extlib/FreeImage.h	312;"	d
+FIICC_DEFAULT	./extlib/FreeImage.h	311;"	d
+FILEFILTER_H	./srcwingrit/FileFilter.h	8;"	d
+FIRGB16	./extlib/FreeImage.h	/^} FIRGB16;$/;"	t	typeref:struct:tagFIRGB16
+FIRGBA16	./extlib/FreeImage.h	/^} FIRGBA16;$/;"	t	typeref:struct:tagFIRGBA16
+FIRGBAF	./extlib/FreeImage.h	/^} FIRGBAF;$/;"	t	typeref:struct:tagFIRGBAF
+FIRGBF	./extlib/FreeImage.h	/^} FIRGBF;$/;"	t	typeref:struct:tagFIRGBF
+FI_CloseProc	./extlib/FreeImage.h	/^typedef void (DLL_CALLCONV *FI_CloseProc)(FreeImageIO *io, fi_handle handle, void *data);$/;"	t
+FI_DEFAULT	./extlib/FreeImage.h	92;"	d
+FI_DEFAULT	./extlib/FreeImage.h	96;"	d
+FI_DescriptionProc	./extlib/FreeImage.h	/^typedef const char *(DLL_CALLCONV *FI_DescriptionProc) ();$/;"	t
+FI_ENUM	./extlib/FreeImage.h	/^FI_ENUM(FREE_IMAGE_COLOR_CHANNEL) {$/;"	f
+FI_ENUM	./extlib/FreeImage.h	/^FI_ENUM(FREE_IMAGE_COLOR_TYPE) {$/;"	f
+FI_ENUM	./extlib/FreeImage.h	/^FI_ENUM(FREE_IMAGE_DITHER) {$/;"	f
+FI_ENUM	./extlib/FreeImage.h	/^FI_ENUM(FREE_IMAGE_FILTER) {$/;"	f
+FI_ENUM	./extlib/FreeImage.h	/^FI_ENUM(FREE_IMAGE_FORMAT) {$/;"	f
+FI_ENUM	./extlib/FreeImage.h	/^FI_ENUM(FREE_IMAGE_JPEG_OPERATION) {$/;"	f
+FI_ENUM	./extlib/FreeImage.h	/^FI_ENUM(FREE_IMAGE_MDMODEL) {$/;"	f
+FI_ENUM	./extlib/FreeImage.h	/^FI_ENUM(FREE_IMAGE_MDTYPE) {$/;"	f
+FI_ENUM	./extlib/FreeImage.h	/^FI_ENUM(FREE_IMAGE_QUANTIZE) {$/;"	f
+FI_ENUM	./extlib/FreeImage.h	/^FI_ENUM(FREE_IMAGE_TMO) {$/;"	f
+FI_ENUM	./extlib/FreeImage.h	/^FI_ENUM(FREE_IMAGE_TYPE) {$/;"	f
+FI_ENUM	./extlib/FreeImage.h	93;"	d
+FI_ENUM	./extlib/FreeImage.h	97;"	d
+FI_ENUM	./extlib/fi.h	/^FI_ENUM(FI_SUPPORT_MODE)$/;"	f
+FI_ExtensionListProc	./extlib/FreeImage.h	/^typedef const char *(DLL_CALLCONV *FI_ExtensionListProc) ();$/;"	t
+FI_FormatProc	./extlib/FreeImage.h	/^typedef const char *(DLL_CALLCONV *FI_FormatProc) ();$/;"	t
+FI_InitProc	./extlib/FreeImage.h	/^typedef void (DLL_CALLCONV *FI_InitProc)(Plugin *plugin, int format_id);$/;"	t
+FI_LoadProc	./extlib/FreeImage.h	/^typedef FIBITMAP *(DLL_CALLCONV *FI_LoadProc)(FreeImageIO *io, fi_handle handle, int page, int flags, void *data);$/;"	t
+FI_MimeProc	./extlib/FreeImage.h	/^typedef const char *(DLL_CALLCONV *FI_MimeProc) ();$/;"	t
+FI_OpenProc	./extlib/FreeImage.h	/^typedef void *(DLL_CALLCONV *FI_OpenProc)(FreeImageIO *io, fi_handle handle, BOOL read);$/;"	t
+FI_PageCapabilityProc	./extlib/FreeImage.h	/^typedef int (DLL_CALLCONV *FI_PageCapabilityProc)(FreeImageIO *io, fi_handle handle, void *data);$/;"	t
+FI_PageCountProc	./extlib/FreeImage.h	/^typedef int (DLL_CALLCONV *FI_PageCountProc)(FreeImageIO *io, fi_handle handle, void *data);$/;"	t
+FI_RGBA_ALPHA	./extlib/FreeImage.h	267;"	d
+FI_RGBA_ALPHA	./extlib/FreeImage.h	281;"	d
+FI_RGBA_ALPHA_MASK	./extlib/FreeImage.h	271;"	d
+FI_RGBA_ALPHA_MASK	./extlib/FreeImage.h	285;"	d
+FI_RGBA_ALPHA_SHIFT	./extlib/FreeImage.h	275;"	d
+FI_RGBA_ALPHA_SHIFT	./extlib/FreeImage.h	289;"	d
+FI_RGBA_BLUE	./extlib/FreeImage.h	266;"	d
+FI_RGBA_BLUE	./extlib/FreeImage.h	280;"	d
+FI_RGBA_BLUE_MASK	./extlib/FreeImage.h	270;"	d
+FI_RGBA_BLUE_MASK	./extlib/FreeImage.h	284;"	d
+FI_RGBA_BLUE_SHIFT	./extlib/FreeImage.h	274;"	d
+FI_RGBA_BLUE_SHIFT	./extlib/FreeImage.h	288;"	d
+FI_RGBA_GREEN	./extlib/FreeImage.h	265;"	d
+FI_RGBA_GREEN	./extlib/FreeImage.h	279;"	d
+FI_RGBA_GREEN_MASK	./extlib/FreeImage.h	269;"	d
+FI_RGBA_GREEN_MASK	./extlib/FreeImage.h	283;"	d
+FI_RGBA_GREEN_SHIFT	./extlib/FreeImage.h	273;"	d
+FI_RGBA_GREEN_SHIFT	./extlib/FreeImage.h	287;"	d
+FI_RGBA_RED	./extlib/FreeImage.h	264;"	d
+FI_RGBA_RED	./extlib/FreeImage.h	278;"	d
+FI_RGBA_RED_MASK	./extlib/FreeImage.h	268;"	d
+FI_RGBA_RED_MASK	./extlib/FreeImage.h	282;"	d
+FI_RGBA_RED_SHIFT	./extlib/FreeImage.h	272;"	d
+FI_RGBA_RED_SHIFT	./extlib/FreeImage.h	286;"	d
+FI_RGBA_RGB_MASK	./extlib/FreeImage.h	292;"	d
+FI_ReadProc	./extlib/FreeImage.h	/^typedef unsigned (DLL_CALLCONV *FI_ReadProc) (void *buffer, unsigned size, unsigned count, fi_handle handle);$/;"	t
+FI_RegExprProc	./extlib/FreeImage.h	/^typedef const char *(DLL_CALLCONV *FI_RegExprProc) ();$/;"	t
+FI_STRUCT	./extlib/FreeImage.h	/^FI_STRUCT (FIBITMAP) { void *data; };$/;"	f
+FI_STRUCT	./extlib/FreeImage.h	/^FI_STRUCT (FIICCPROFILE) { $/;"	f
+FI_STRUCT	./extlib/FreeImage.h	/^FI_STRUCT (FIMEMORY) { void *data; };$/;"	f
+FI_STRUCT	./extlib/FreeImage.h	/^FI_STRUCT (FIMETADATA) { void *data; };$/;"	f
+FI_STRUCT	./extlib/FreeImage.h	/^FI_STRUCT (FIMULTIBITMAP) { void *data; };$/;"	f
+FI_STRUCT	./extlib/FreeImage.h	/^FI_STRUCT (FITAG) { void *data; };$/;"	f
+FI_STRUCT	./extlib/FreeImage.h	/^FI_STRUCT (Plugin) {$/;"	f
+FI_STRUCT	./extlib/FreeImage.h	/^FI_STRUCT(FreeImageIO) {$/;"	f
+FI_STRUCT	./extlib/FreeImage.h	94;"	d
+FI_STRUCT	./extlib/FreeImage.h	98;"	d
+FI_SaveProc	./extlib/FreeImage.h	/^typedef BOOL (DLL_CALLCONV *FI_SaveProc)(FreeImageIO *io, FIBITMAP *dib, fi_handle handle, int page, int flags, void *data);$/;"	t
+FI_SeekProc	./extlib/FreeImage.h	/^typedef int (DLL_CALLCONV *FI_SeekProc) (fi_handle handle, long offset, int origin);$/;"	t
+FI_SupportsExportBPPProc	./extlib/FreeImage.h	/^typedef BOOL (DLL_CALLCONV *FI_SupportsExportBPPProc)(int bpp);$/;"	t
+FI_SupportsExportTypeProc	./extlib/FreeImage.h	/^typedef BOOL (DLL_CALLCONV *FI_SupportsExportTypeProc)(FREE_IMAGE_TYPE type);$/;"	t
+FI_SupportsICCProfilesProc	./extlib/FreeImage.h	/^typedef BOOL (DLL_CALLCONV *FI_SupportsICCProfilesProc)();$/;"	t
+FI_TellProc	./extlib/FreeImage.h	/^typedef long (DLL_CALLCONV *FI_TellProc) (fi_handle handle);$/;"	t
+FI_ValidateProc	./extlib/FreeImage.h	/^typedef BOOL (DLL_CALLCONV *FI_ValidateProc)(FreeImageIO *io, fi_handle handle);$/;"	t
+FI_WriteProc	./extlib/FreeImage.h	/^typedef unsigned (DLL_CALLCONV *FI_WriteProc) (void *buffer, unsigned size, unsigned count, fi_handle handle);$/;"	t
+FMT_BIN	./srcwingrit/gritdlg.h	/^{	FMT_C=0, FMT_GAS, FMT_BIN, FMT_GBFS, FMT_GRF, \/*FMT_O,*\/ FMT_END };$/;"	e	enum:eFileTypes
+FMT_C	./srcwingrit/gritdlg.h	/^{	FMT_C=0, FMT_GAS, FMT_BIN, FMT_GBFS, FMT_GRF, \/*FMT_O,*\/ FMT_END };$/;"	e	enum:eFileTypes
+FMT_END	./srcwingrit/gritdlg.h	/^{	FMT_C=0, FMT_GAS, FMT_BIN, FMT_GBFS, FMT_GRF, \/*FMT_O,*\/ FMT_END };$/;"	e	enum:eFileTypes
+FMT_GAS	./srcwingrit/gritdlg.h	/^{	FMT_C=0, FMT_GAS, FMT_BIN, FMT_GBFS, FMT_GRF, \/*FMT_O,*\/ FMT_END };$/;"	e	enum:eFileTypes
+FMT_GBFS	./srcwingrit/gritdlg.h	/^{	FMT_C=0, FMT_GAS, FMT_BIN, FMT_GBFS, FMT_GRF, \/*FMT_O,*\/ FMT_END };$/;"	e	enum:eFileTypes
+FMT_GRF	./srcwingrit/gritdlg.h	/^{	FMT_C=0, FMT_GAS, FMT_BIN, FMT_GBFS, FMT_GRF, \/*FMT_O,*\/ FMT_END };$/;"	e	enum:eFileTypes
+FRAME_MAX	./libgrit/cprs_lz.cpp	95;"	d	file:
+FREEIMAGE_BIGENDIAN	./extlib/FreeImage.h	81;"	d
+FREEIMAGE_H	./extlib/FreeImage.h	45;"	d
+FREEIMAGE_IO	./extlib/FreeImage.h	514;"	d
+FREEIMAGE_MAJOR_VERSION	./extlib/FreeImage.h	49;"	d
+FREEIMAGE_MINOR_VERSION	./extlib/FreeImage.h	50;"	d
+FREEIMAGE_RELEASE_SERIAL	./extlib/FreeImage.h	51;"	d
+FreeImage_OutputMessageFunction	./extlib/FreeImage.h	/^typedef void (*FreeImage_OutputMessageFunction)(FREE_IMAGE_FORMAT fif, const char *msg);$/;"	t
+GBA_BASETYPES	./libgrit/grit_core.h	33;"	d
+GBA_BLUE_MASK	./libgrit/grit_core.h	179;"	d
+GBA_BLUE_SHIFT	./libgrit/grit_core.h	180;"	d
+GBA_GREEN_MASK	./libgrit/grit_core.h	177;"	d
+GBA_GREEN_SHIFT	./libgrit/grit_core.h	178;"	d
+GBA_RED_MASK	./libgrit/grit_core.h	175;"	d
+GBA_RED_SHIFT	./libgrit/grit_core.h	176;"	d
+GBA_RGB16	./libgrit/grit_core.h	354;"	d
+GBEN_SIZE	./libgrit/grit_xp.cpp	91;"	d	file:
+GBFL_SIZE	./libgrit/grit_xp.cpp	90;"	d	file:
+GBFS_ENTRY	./libgrit/grit_xp.cpp	/^typedef struct GBFS_ENTRY$/;"	s	file:
+GBFS_ENTRY	./libgrit/grit_xp.cpp	/^} GBFS_ENTRY;$/;"	t	typeref:struct:GBFS_ENTRY	file:
+GBFS_FILE	./libgrit/grit_xp.cpp	/^typedef struct GBFS_FILE$/;"	s	file:
+GBFS_FILE	./libgrit/grit_xp.cpp	/^} GBFS_FILE;$/;"	t	typeref:struct:GBFS_FILE	file:
+GBFS_magic	./libgrit/grit_xp.cpp	/^static const char GBFS_magic[] = "PinEightGBFS\\r\\n\\032\\n";$/;"	v	file:
+GFX_MODE_BMP	./srcwingrit/gritdlg.h	/^{	GFX_MODE_TILE=0, GFX_MODE_BMP, GFX_MODE_BMP_A, GFX_MODE_BMP_T	};$/;"	e	enum:eGfxModes
+GFX_MODE_BMP_A	./srcwingrit/gritdlg.h	/^{	GFX_MODE_TILE=0, GFX_MODE_BMP, GFX_MODE_BMP_A, GFX_MODE_BMP_T	};$/;"	e	enum:eGfxModes
+GFX_MODE_BMP_T	./srcwingrit/gritdlg.h	/^{	GFX_MODE_TILE=0, GFX_MODE_BMP, GFX_MODE_BMP_A, GFX_MODE_BMP_T	};$/;"	e	enum:eGfxModes
+GFX_MODE_TILE	./srcwingrit/gritdlg.h	/^{	GFX_MODE_TILE=0, GFX_MODE_BMP, GFX_MODE_BMP_A, GFX_MODE_BMP_T	};$/;"	e	enum:eGfxModes
+GIF_DEFAULT	./extlib/FreeImage.h	599;"	d
+GIF_LOAD256	./extlib/FreeImage.h	600;"	d
+GIF_PLAYBACK	./extlib/FreeImage.h	601;"	d
+GRIT_BUILD	./Makefile	/^GRIT_BUILD		:=	20080512$/;"	m
+GRIT_BUILD	./srcgrit/grit_main.cpp	64;"	d	file:
+GRIT_CPRS_HEADER	./libgrit/grit_core.h	/^	GRIT_CPRS_HEADER= 4,	\/\/!< Header word for symmetry `-{t}z0'$/;"	e	enum:EGritCompression
+GRIT_CPRS_HUFF	./libgrit/grit_core.h	/^	GRIT_CPRS_HUFF	= 2,	\/\/!< 8bit Huffman compression (might be buggy). `-{t}zh'$/;"	e	enum:EGritCompression
+GRIT_CPRS_LZ77	./libgrit/grit_core.h	/^	GRIT_CPRS_LZ77	= 1,	\/\/!< LZ77 compression (LZ77UnCompVram compatible). `-{t}zl'$/;"	e	enum:EGritCompression
+GRIT_CPRS_MAX	./libgrit/grit_core.h	/^	GRIT_CPRS_MAX$/;"	e	enum:EGritCompression
+GRIT_CPRS_OFF	./libgrit/grit_core.h	/^	GRIT_CPRS_OFF	= 0,	\/\/!< No compression. `-{t}z!'$/;"	e	enum:EGritCompression
+GRIT_CPRS_RLE	./libgrit/grit_core.h	/^	GRIT_CPRS_RLE	= 3,	\/\/!< 8bit RLE compression. `-{t}zr'	$/;"	e	enum:EGritCompression
+GRIT_DIR	./Makefile	/^GRIT_DIR	:=	srcgrit$/;"	m
+GRIT_EXCLUDE	./libgrit/grit_core.h	/^	GRIT_EXCLUDE	= 0,	\/\/!< Ignore. `-{t}!'$/;"	e	enum:EGritDataProcMode
+GRIT_EXPORT	./libgrit/grit_core.h	/^	GRIT_EXPORT		= 3,	\/\/!< Process and export `-{t}'$/;"	e	enum:EGritDataProcMode
+GRIT_FTYPE_BIN	./libgrit/grit_core.h	/^	GRIT_FTYPE_BIN	= 2,	\/\/<! Output in raw binary `-ftb'$/;"	e	enum:EGritFileType
+GRIT_FTYPE_C	./libgrit/grit_core.h	/^	GRIT_FTYPE_C	= 0,	\/\/<! Output in C arrays `-ftc'$/;"	e	enum:EGritFileType
+GRIT_FTYPE_GBFS	./libgrit/grit_core.h	/^	GRIT_FTYPE_GBFS	= 3,	\/\/<! Output in GBFS archive `-ftg'$/;"	e	enum:EGritFileType
+GRIT_FTYPE_GRF	./libgrit/grit_core.h	/^	GRIT_FTYPE_GRF	= 4,	\/\/!< Output in RIFF format (chunked) `-ftr'$/;"	e	enum:EGritFileType
+GRIT_FTYPE_MAX	./libgrit/grit_core.h	/^	GRIT_FTYPE_MAX$/;"	e	enum:EGritFileType
+GRIT_FTYPE_S	./libgrit/grit_core.h	/^	GRIT_FTYPE_S	= 1,	\/\/<! Output in GAS source arrays `-fts'$/;"	e	enum:EGritFileType
+GRIT_GFX_BMP	./libgrit/grit_core.h	/^	GRIT_GFX_BMP	= 1,	\/\/!< Bitmap graphics `-gb'$/;"	e	enum:EGritGraphicsMode
+GRIT_GFX_BMP_A	./libgrit/grit_core.h	/^	GRIT_GFX_BMP_A	= 2,	\/\/!< Full alpha-bit ` -gb -gT!' $/;"	e	enum:EGritGraphicsMode
+GRIT_GFX_TILE	./libgrit/grit_core.h	/^	GRIT_GFX_TILE	= 0,	\/\/!< 8x8 Tiled graphics `-gt'$/;"	e	enum:EGritGraphicsMode
+GRIT_ITEM_GFX	./libgrit/grit_core.h	/^	GRIT_ITEM_GFX		= 0,		\/\/!< Graphics stuff$/;"	e	enum:EGritItem
+GRIT_ITEM_MAP	./libgrit/grit_core.h	/^	GRIT_ITEM_MAP		= 1,		\/\/!< Tilemap stuff$/;"	e	enum:EGritItem
+GRIT_ITEM_MAX	./libgrit/grit_core.h	/^	GRIT_ITEM_MAX	$/;"	e	enum:EGritItem
+GRIT_ITEM_METAMAP	./libgrit/grit_core.h	/^	GRIT_ITEM_METAMAP	= 2,		\/\/!< Metamap stuff$/;"	e	enum:EGritItem
+GRIT_ITEM_PAL	./libgrit/grit_core.h	/^	GRIT_ITEM_PAL		= 3,		\/\/!< Palette stuff$/;"	e	enum:EGritItem
+GRIT_MAP_AFFINE	./libgrit/grit_core.h	/^	GRIT_MAP_AFFINE	= 2,	\/\/!< Affine tilemap layout -mLa'$/;"	e	enum:EGritMapLayout
+GRIT_MAP_FLAT	./libgrit/grit_core.h	/^	GRIT_MAP_FLAT	= 0,	\/\/!< Flat regular tilemap layout -mLf'$/;"	e	enum:EGritMapLayout
+GRIT_MAP_REG	./libgrit/grit_core.h	/^	GRIT_MAP_REG	= 1,	\/\/!< Screenblocked regular tilemap layout -mLs'$/;"	e	enum:EGritMapLayout
+GRIT_META_PAL	./libgrit/grit_core.h	/^	GRIT_META_PAL	= 0x10,$/;"	e	enum:EGritMapRedux
+GRIT_OBJ	./Makefile	/^GRIT_OBJ	:=	$(addprefix build\/, $(GRIT_SRC:.cpp=.o))$/;"	m
+GRIT_OUTPUT	./libgrit/grit_core.h	/^	GRIT_OUTPUT		= 2,	\/\/!< Output only.$/;"	e	enum:EGritDataProcMode
+GRIT_PROCESS	./libgrit/grit_core.h	/^	GRIT_PROCESS	= 1,	\/\/!< Process data, but do not export.$/;"	e	enum:EGritDataProcMode
+GRIT_RDX_AFF	./libgrit/grit_core.h	/^	GRIT_RDX_AFF	= 0x01,	\/\/!< Recommended rdx flags for affine bgs  `-mRa' (= -mRt)$/;"	e	enum:EGritMapRedux
+GRIT_RDX_FLIP	./libgrit/grit_core.h	/^	GRIT_RDX_FLIP	= 0x04,	\/\/!< Reduce for flipped tiles `-mRf'$/;"	e	enum:EGritMapRedux
+GRIT_RDX_OFF	./libgrit/grit_core.h	/^	GRIT_RDX_OFF	= 0,	\/\/!< No tile reduction (not advised) -mR!'$/;"	e	enum:EGritMapRedux
+GRIT_RDX_PAL	./libgrit/grit_core.h	/^	GRIT_RDX_PAL	= 0x08,	\/\/!< Reduce for palette-swapped tiles `-mRp'$/;"	e	enum:EGritMapRedux
+GRIT_RDX_REG4	./libgrit/grit_core.h	/^	GRIT_RDX_REG4	= 0x0D,	\/\/!< Recommended rdx flags for 4bpp reg bgs `-mR4' (= -mRtfp)$/;"	e	enum:EGritMapRedux
+GRIT_RDX_REG8	./libgrit/grit_core.h	/^	GRIT_RDX_REG8	= 0x05,	\/\/!< Recommended rdx flags for 8bpp reg bgs `-mR8' (= -mRtf)$/;"	e	enum:EGritMapRedux
+GRIT_RDX_TILE	./libgrit/grit_core.h	/^	GRIT_RDX_TILE	= 0x01,	\/\/!< Reduce for all tiles `-mRt'$/;"	e	enum:EGritMapRedux
+GRIT_SRC	./Makefile	/^GRIT_SRC	:=	grit_main.cpp cli.cpp fi.cpp$/;"	m
+GRIT_U16	./libgrit/grit_core.h	/^	GRIT_U16		= 1,	\/\/!< Export as halfword array. `-{t}u16'$/;"	e	enum:EGritDataType
+GRIT_U32	./libgrit/grit_core.h	/^	GRIT_U32		= 2,	\/\/!< Export as word array. `-{t}u32'$/;"	e	enum:EGritDataType
+GRIT_U8	./libgrit/grit_core.h	/^	GRIT_U8			= 0,	\/\/!< Export as byte array. `-{t}u8'$/;"	e	enum:EGritDataType
+GRIT_VERSION	./Makefile	/^GRIT_VERSION	:=	0.8.1$/;"	m
+GRIT_VERSION	./srcgrit/grit_main.cpp	60;"	d	file:
+GRS_MULTI	./libgrit/grit_core.h	/^	GRS_MULTI			= 1,	\/\/!< Multiple files$/;"	e	enum:EGrsMode
+GRS_MULTI_SHARED	./libgrit/grit_core.h	/^	GRS_MULTI_SHARED	= 3		\/\/!< Multiple files, shared data.$/;"	e	enum:EGrsMode
+GRS_SHARED	./libgrit/grit_core.h	/^	GRS_SHARED			= 2,	\/\/!, Shared data.$/;"	e	enum:EGrsMode
+GRS_SINGLE	./libgrit/grit_core.h	/^	GRS_SINGLE			= 0,	\/\/!< Single file$/;"	e	enum:EGrsMode
+GRS_SINGLE_SHARED	./libgrit/grit_core.h	/^	GRS_SINGLE_SHARED	= 2,	\/\/!< Single file, shared data.$/;"	e	enum:EGrsMode
+GetBValue	./cldib/winglue.h	/^static inline BYTE GetBValue( COLORREF color )$/;"	f
+GetBpp	./cldib/cldib_files.h	/^	int GetBpp() const			{ return mBpp;		}$/;"	f	class:CImgFile
+GetCurrFilterID	./srcwingrit/FileFilter.h	/^	int GetCurrFilterID() const		{	return mCurrID;		}$/;"	f	class:CFileFilter
+GetDesc	./cldib/cldib_files.h	/^	virtual const char *GetDesc() const		{ return ""; }$/;"	f	class:CImgFile
+GetDesc	./cldib/cldib_files.h	/^	virtual const char *GetDesc() const		{ return "Palette Files"; }$/;"	f	class:CPalFile
+GetDesc	./cldib/cldib_files.h	/^	virtual const char *GetDesc() const		{ return "Portable Network Graphics"; }$/;"	f	class:CPngFile
+GetDesc	./cldib/cldib_files.h	/^	virtual const char *GetDesc() const		{ return "Truevision Targa"; }$/;"	f	class:CTgaFile
+GetDesc	./cldib/cldib_files.h	/^	virtual const char *GetDesc() const		{ return "Windows Bitmap"; }$/;"	f	class:CBmpFile
+GetDesc	./cldib/cldib_files.h	/^	virtual const char *GetDesc() const		{ return "ZSoft Paintbrush"; }$/;"	f	class:CPcxFile
+GetDib	./srcwingrit/wingritDoc.h	/^	CLDIB *GetDib() const {	return mDib;	}$/;"	f	class:CWingritDoc
+GetDlgName	./srcwingrit/FileFilter.h	/^	const CString &GetDlgName() const	{	return mDlgName;	}$/;"	f	class:CFileFilter
+GetDlgType	./srcwingrit/FileFilter.h	/^	int GetDlgType() const				{	return mDlgType;	}$/;"	f	class:CFileFilter
+GetDocument	./srcwingrit/ModelessDlg.h	/^	CDocument *GetDocument()	{	return mpDoc;		}$/;"	f	class:CModelessDlg
+GetDocument	./srcwingrit/wingritView.cpp	/^CWingritDoc* CWingritView::GetDocument() \/\/ non-debug version is inline$/;"	f	class:CWingritView
+GetDocument	./srcwingrit/wingritView.h	/^inline CWingritDoc* CWingritView::GetDocument()$/;"	f	class:CWingritView
+GetExt	./cldib/cldib_files.h	/^	virtual const char *GetExt() const		{ return ""; }$/;"	f	class:CImgFile
+GetExt	./cldib/cldib_files.h	/^	virtual const char *GetExt() const		{ return "bmp"; }$/;"	f	class:CBmpFile
+GetExt	./cldib/cldib_files.h	/^	virtual const char *GetExt() const		{ return "pal"; }$/;"	f	class:CPalFile
+GetExt	./cldib/cldib_files.h	/^	virtual const char *GetExt() const		{ return "pcx"; }$/;"	f	class:CPcxFile
+GetExt	./cldib/cldib_files.h	/^	virtual const char *GetExt() const		{ return "png"; }$/;"	f	class:CPngFile
+GetExt	./cldib/cldib_files.h	/^	virtual const char *GetExt() const		{ return "tga,targa"; }$/;"	f	class:CTgaFile
+GetFileDir	./srcwingrit/FileFilter.cpp	/^BOOL CFileFilter::GetFileDir(const CString &fpath, CString &fdir)$/;"	f	class:CFileFilter
+GetFileExt	./srcwingrit/FileFilter.cpp	/^BOOL CFileFilter::GetFileExt(const CString &fpath, CString &fext)$/;"	f	class:CFileFilter
+GetFileName	./srcwingrit/FileFilter.cpp	/^BOOL CFileFilter::GetFileName(const CString &fpath, CString &fname)$/;"	f	class:CFileFilter
+GetFileTitle	./srcwingrit/FileFilter.cpp	/^BOOL CFileFilter::GetFileTitle(const CString &fpath, CString &ftitle)$/;"	f	class:CFileFilter
+GetFilterExt	./srcwingrit/FileFilter.cpp	/^CString CFileFilter::GetFilterExt(int id) const$/;"	f	class:CFileFilter
+GetFilterID	./srcwingrit/FileFilter.cpp	/^int CFileFilter::GetFilterID(const CString &fext, $/;"	f	class:CFileFilter
+GetFilterSize	./srcwingrit/FileFilter.h	/^	int GetFilterSize() const			{	return mFilterSize;	}$/;"	f	class:CFileFilter
+GetFormat	./cldib/cldib_files.h	/^	virtual const char *GetFormat() const	{ return ""; }$/;"	f	class:CImgFile
+GetFormat	./cldib/cldib_files.h	/^	virtual const char *GetFormat() const	{ return "BMP"; }$/;"	f	class:CBmpFile
+GetFormat	./cldib/cldib_files.h	/^	virtual const char *GetFormat() const	{ return "PAL"; }$/;"	f	class:CPalFile
+GetFormat	./cldib/cldib_files.h	/^	virtual const char *GetFormat() const	{ return "PCX"; }$/;"	f	class:CPcxFile
+GetFormat	./cldib/cldib_files.h	/^	virtual const char *GetFormat() const	{ return "PNG"; }$/;"	f	class:CPngFile
+GetFormat	./cldib/cldib_files.h	/^	virtual const char *GetFormat() const	{ return "targa"; }$/;"	f	class:CTgaFile
+GetGValue	./cldib/winglue.h	/^static inline BYTE GetGValue( COLORREF color )$/;"	f
+GetLongPath	./srcwingrit/FileFilter.cpp	/^BOOL CFileFilter::GetLongPath(CString &fpath, CString *pflong)$/;"	f	class:CFileFilter
+GetMsg	./cldib/cldib_files.h	/^	const char *GetMsg() const	{ return mpMsg;		}$/;"	f	class:CImgFile
+GetPath	./cldib/cldib_files.h	/^	const char *GetPath() const	{ return mPath;		}$/;"	f	class:CImgFile
+GetRValue	./cldib/winglue.h	/^static inline BYTE GetRValue( COLORREF color )$/;"	f
+GetRootDir	./srcwingrit/wingrit.cpp	/^void GetRootDir(CString &str)$/;"	f
+GetType	./cldib/cldib_files.h	/^	virtual int GetType() const				{ return CLDIB_BMP; }$/;"	f	class:CBmpFile
+GetType	./cldib/cldib_files.h	/^	virtual int GetType() const				{ return CLDIB_PAL; }$/;"	f	class:CPalFile
+GetType	./cldib/cldib_files.h	/^	virtual int GetType() const				{ return CLDIB_PCX; }$/;"	f	class:CPcxFile
+GetType	./cldib/cldib_files.h	/^	virtual int GetType() const				{ return CLDIB_PNG; }$/;"	f	class:CPngFile
+GetType	./cldib/cldib_files.h	/^	virtual int GetType() const				{ return CLDIB_TGA; }$/;"	f	class:CTgaFile
+GetType	./cldib/cldib_files.h	/^	virtual int GetType() const				{ return CLDIB_UNK; }$/;"	f	class:CImgFile
+GrfHeader	./libgrit/grit_xp.cpp	/^struct GrfHeader$/;"	s	file:
+GritRec	./libgrit/grit_core.h	/^struct GritRec $/;"	s
+GritRec	./srcwingrit/gritdlg.h	/^typedef struct GritRec	GritRec;$/;"	t	typeref:struct:GritRec
+GritShared	./libgrit/grit_core.h	/^struct GritShared$/;"	s
+HDR_DEFAULT	./extlib/FreeImage.h	602;"	d
+Hist3D	./cldib/cldib_wu.cpp	/^WuQuantizer::Hist3D(LONG *vwt, LONG *vmr, LONG *vmg, LONG *vmb, float *m2)$/;"	f	class:WuQuantizer
+ICO_DEFAULT	./extlib/FreeImage.h	603;"	d
+ICO_MAKEALPHA	./extlib/FreeImage.h	604;"	d
+IDC_AREA_CSM	./srcwingrit/resource.h	52;"	d
+IDC_AREA_IMG	./srcwingrit/resource.h	53;"	d
+IDC_AREA_SEL	./srcwingrit/resource.h	54;"	d
+IDC_COUNT	./srcwingrit/resource.h	17;"	d
+IDC_FILE_BROWSE	./srcwingrit/resource.h	19;"	d
+IDC_FILE_CAT	./srcwingrit/resource.h	57;"	d
+IDC_FILE_HDR	./srcwingrit/resource.h	56;"	d
+IDC_FILE_PATH	./srcwingrit/resource.h	18;"	d
+IDC_FILE_TYPE	./srcwingrit/resource.h	55;"	d
+IDC_HEIGHT	./srcwingrit/resource.h	15;"	d
+IDC_IMG_BPP	./srcwingrit/resource.h	29;"	d
+IDC_IMG_CHK	./srcwingrit/resource.h	27;"	d
+IDC_IMG_CPRS	./srcwingrit/resource.h	30;"	d
+IDC_IMG_MODE	./srcwingrit/resource.h	28;"	d
+IDC_IMG_TRANS	./srcwingrit/resource.h	31;"	d
+IDC_LEFT	./srcwingrit/resource.h	12;"	d
+IDC_MAP_AFF	./srcwingrit/resource.h	45;"	d
+IDC_MAP_CHK	./srcwingrit/resource.h	42;"	d
+IDC_MAP_CPRS	./srcwingrit/resource.h	50;"	d
+IDC_MAP_FLAT	./srcwingrit/resource.h	43;"	d
+IDC_MAP_OFS	./srcwingrit/resource.h	51;"	d
+IDC_MAP_RDX	./srcwingrit/resource.h	46;"	d
+IDC_MAP_RDX_FLIP	./srcwingrit/resource.h	48;"	d
+IDC_MAP_RDX_PAL	./srcwingrit/resource.h	47;"	d
+IDC_MAP_SBB	./srcwingrit/resource.h	44;"	d
+IDC_META_PAL	./srcwingrit/resource.h	49;"	d
+IDC_OBJ_16	./srcwingrit/resource.h	37;"	d
+IDC_OBJ_32	./srcwingrit/resource.h	38;"	d
+IDC_OBJ_64	./srcwingrit/resource.h	39;"	d
+IDC_OBJ_8	./srcwingrit/resource.h	36;"	d
+IDC_OBJ_CUSTOM	./srcwingrit/resource.h	32;"	d
+IDC_OBJ_HORZ	./srcwingrit/resource.h	40;"	d
+IDC_OBJ_SQR	./srcwingrit/resource.h	33;"	d
+IDC_OBJ_TALL	./srcwingrit/resource.h	35;"	d
+IDC_OBJ_VERT	./srcwingrit/resource.h	41;"	d
+IDC_OBJ_WIDE	./srcwingrit/resource.h	34;"	d
+IDC_PAL_CHK	./srcwingrit/resource.h	25;"	d
+IDC_PAL_ID	./srcwingrit/resource.h	21;"	d
+IDC_PAL_MODE	./srcwingrit/resource.h	20;"	d
+IDC_PAL_TRANS	./srcwingrit/resource.h	26;"	d
+IDC_PAL_VAL	./srcwingrit/resource.h	22;"	d
+IDC_PAL_VIEW	./srcwingrit/resource.h	23;"	d
+IDC_RIFF_CHK	./srcwingrit/resource.h	58;"	d
+IDC_START	./srcwingrit/resource.h	16;"	d
+IDC_SUMMARY	./srcwingrit/resource.h	67;"	d
+IDC_TILESET_BROWSE	./srcwingrit/resource.h	66;"	d
+IDC_TILESET_CHK	./srcwingrit/resource.h	64;"	d
+IDC_TILESET_PATH	./srcwingrit/resource.h	65;"	d
+IDC_TOP	./srcwingrit/resource.h	13;"	d
+IDC_VAR_16	./srcwingrit/resource.h	62;"	d
+IDC_VAR_32	./srcwingrit/resource.h	63;"	d
+IDC_VAR_8	./srcwingrit/resource.h	61;"	d
+IDC_VAR_CHK	./srcwingrit/resource.h	59;"	d
+IDC_VAR_NAME	./srcwingrit/resource.h	60;"	d
+IDC_WIDTH	./srcwingrit/resource.h	14;"	d
+IDD	./srcwingrit/LogDlg.h	/^	enum { IDD = IDD_XPLOG };$/;"	e	enum:CLogDlg::__anon3
+IDD	./srcwingrit/PalViewDlg.h	/^	enum { IDD = IDD_PAL_VIEW };$/;"	e	enum:CPalViewDlg::__anon4
+IDD	./srcwingrit/gritdlg.h	/^	enum { IDD = IDD_XP_GBA };$/;"	e	enum:CxpGbaDlg::__anon1
+IDD	./srcwingrit/wingrit.cpp	/^	enum { IDD = IDD_ABOUTBOX };$/;"	e	enum:CAboutDlg::__anon2	file:
+IDD_ABOUTBOX	./srcwingrit/resource.h	5;"	d
+IDD_PAL_VIEW	./srcwingrit/resource.h	11;"	d
+IDD_XPLOG	./srcwingrit/resource.h	10;"	d
+IDD_XP_GBA	./srcwingrit/resource.h	9;"	d
+IDM_DOC_UPDATE	./srcwingrit/resource.h	68;"	d
+IDR_MAINFRAME	./srcwingrit/resource.h	6;"	d
+IDR_TEXTBAR	./srcwingrit/resource.h	8;"	d
+IDR_WINGRITTYPE	./srcwingrit/resource.h	7;"	d
+IDS_FLTR_GBA	./srcwingrit/resource.h	24;"	d
+ID_EDIT_CONVERTTO555	./srcwingrit/resource.h	72;"	d
+ID_EDIT_QUANT_NN	./srcwingrit/resource.h	71;"	d
+ID_EDIT_QUANT_WU	./srcwingrit/resource.h	70;"	d
+ID_STDERR_TEST	./srcwingrit/resource.h	74;"	d
+ID_VIEW_GBAEXPORT	./srcwingrit/resource.h	69;"	d
+ID_VIEW_PAL	./srcwingrit/resource.h	73;"	d
+IFF_DEFAULT	./extlib/FreeImage.h	605;"	d
+IMG_LOAD_DEF	./cldib/cldib_files.h	26;"	d
+IMG_SAVE_DEF	./cldib/cldib_files.h	30;"	d
+INCDIRS	./Makefile	/^INCDIRS	:= $(CLDIB_DIR) $(LIBGRIT_DIR) $(EXTLIB_DIR)$/;"	m
+INCLUDE	./Makefile	/^INCLUDE		:= $(foreach dir, $(INCDIRS), -I$(dir))$/;"	m
+INDEX	./cldib/cldib_wu.cpp	45;"	d	file:
+INLINE	./cldib/cldib_core.h	33;"	d
+InBuf	./libgrit/cprs_lz.cpp	/^static BYTE *InBuf, *OutBuf;$/;"	v	file:
+InChar	./libgrit/cprs_lz.cpp	/^int InChar()$/;"	f
+InOffset	./libgrit/cprs_lz.cpp	/^static int InSize, OutSize, InOffset;$/;"	v	file:
+InSize	./libgrit/cprs_lz.cpp	/^static int InSize, OutSize, InOffset;$/;"	v	file:
+InitInstance	./srcwingrit/wingrit.cpp	/^BOOL CWingritApp::InitInstance()$/;"	f	class:CWingritApp
+InitTree	./libgrit/cprs_lz.cpp	/^void InitTree(void)$/;"	f
+Initialize	./srcwingrit/ModelessDlg.cpp	/^void CModelessDlg::Initialize()$/;"	f	class:CModelessDlg
+Initialize	./srcwingrit/PalViewDlg.cpp	/^void CPalViewDlg::Initialize()$/;"	f	class:CPalViewDlg
+InsertNode	./libgrit/cprs_lz.cpp	/^void InsertNode(int r)$/;"	f
+IsActive	./cldib/cldib_files.h	/^	bool IsActive() const		{ return mbActive;	}$/;"	f	class:CImgFile
+IsAreaCstm	./srcwingrit/gritdlg.h	/^	BOOL IsAreaCstm() const		{	return moAreaSize==0;				}$/;"	f	class:CxpGbaDlg
+IsMap	./srcwingrit/gritdlg.h	/^	BOOL IsMap() const			{	return IsTiled() && mbMap==TRUE;	}$/;"	f	class:CxpGbaDlg
+IsObjCstm	./srcwingrit/gritdlg.h	/^	BOOL IsObjCstm() const		{	return mbObjCustom;					}$/;"	f	class:CxpGbaDlg
+IsRdx	./srcwingrit/gritdlg.h	/^	BOOL IsRdx() const			{	return IsMap() && mbMapRdx==TRUE;	}$/;"	f	class:CxpGbaDlg
+IsRiffable	./srcwingrit/gritdlg.h	/^	BOOL IsRiffable() const$/;"	f	class:CxpGbaDlg
+IsRiffed	./srcwingrit/gritdlg.h	/^	BOOL IsRiffed() const		$/;"	f	class:CxpGbaDlg
+IsTiled	./srcwingrit/gritdlg.h	/^	BOOL IsTiled() const		{	return mGfxMode==GFX_MODE_TILE;		}$/;"	f	class:CxpGbaDlg
+IsVisible	./srcwingrit/ModelessDlg.h	/^	BOOL IsVisible()			{	return mbVisible;	}$/;"	f	class:CModelessDlg
+JPEG_ACCURATE	./extlib/FreeImage.h	608;"	d
+JPEG_CMYK	./extlib/FreeImage.h	609;"	d
+JPEG_DEFAULT	./extlib/FreeImage.h	606;"	d
+JPEG_FAST	./extlib/FreeImage.h	607;"	d
+JPEG_PROGRESSIVE	./extlib/FreeImage.h	615;"	d
+JPEG_QUALITYAVERAGE	./extlib/FreeImage.h	613;"	d
+JPEG_QUALITYBAD	./extlib/FreeImage.h	614;"	d
+JPEG_QUALITYGOOD	./extlib/FreeImage.h	611;"	d
+JPEG_QUALITYNORMAL	./extlib/FreeImage.h	612;"	d
+JPEG_QUALITYSUPERB	./extlib/FreeImage.h	610;"	d
+KOALA_DEFAULT	./extlib/FreeImage.h	616;"	d
+LBM_DEFAULT	./extlib/FreeImage.h	617;"	d
+LDFLAGS	./Makefile	/^LDFLAGS		:=	-g$/;"	m
+LIBCLDIB	./Makefile	/^LIBCLDIB	:=	libcldib.a$/;"	m
+LIBCLDIB_OBJ	./Makefile	/^LIBCLDIB_OBJ	:=	$(addprefix build\/, $(LIBCLDIB_SRC:.cpp=.o))$/;"	m
+LIBCLDIB_SRC	./Makefile	/^LIBCLDIB_SRC	:=				\\$/;"	m
+LIBDIRS	./Makefile	/^LIBDIRS	:= . $(EXTLIB_DIR)$/;"	m
+LIBGRIT	./Makefile	/^LIBGRIT		:=	libgrit.a$/;"	m
+LIBGRIT_BUILD	./libgrit/grit_core.h	58;"	d
+LIBGRIT_DIR	./Makefile	/^LIBGRIT_DIR	:=	libgrit$/;"	m
+LIBGRIT_OBJ	./Makefile	/^LIBGRIT_OBJ	:=	$(addprefix build\/, $(LIBGRIT_SRC:.cpp=.o))$/;"	m
+LIBGRIT_SRC	./Makefile	/^LIBGRIT_SRC	:=				\\$/;"	m
+LIBGRIT_VERSION	./libgrit/grit_core.h	54;"	d
+LIBPATHS	./Makefile	/^LIBPATHS	:= $(foreach dir, $(LIBDIRS), -L$(dir))$/;"	m
+LINE_MAX	./libgrit/pathfun.h	38;"	d
+LITTLE_ENDIAN	./cldib/winglue.h	34;"	d
+LOAD_DECL	./cldib/cldib_core.h	194;"	d
+LOG_ERROR	./libgrit/logger.h	/^	LOG_ERROR,		\/\/!< Fatal error$/;"	e	enum:ELogger
+LOG_MAX	./libgrit/logger.h	/^	LOG_MAX$/;"	e	enum:ELogger
+LOG_NONE	./libgrit/logger.h	/^	LOG_NONE= 0,	\/\/!< No logging (default)$/;"	e	enum:ELogger
+LOG_STATUS	./libgrit/logger.h	/^	LOG_STATUS,		\/\/!< General status message$/;"	e	enum:ELogger
+LOG_WARNING	./libgrit/logger.h	/^	LOG_WARNING,	\/\/!< Non-fatal problem$/;"	e	enum:ELogger
+LONG	./extlib/FreeImage.h	/^typedef int32_t LONG;$/;"	t
+LONG	./extlib/FreeImage.h	/^typedef long LONG;$/;"	t
+Load	./cldib/cldib_bmp.cpp	/^bool CBmpFile::Load(const char *fpath)$/;"	f	class:CBmpFile
+Load	./cldib/cldib_pal.cpp	/^bool CPalFile::Load(const char *fpath)$/;"	f	class:CPalFile
+Load	./cldib/cldib_pcx.cpp	/^bool CPcxFile::Load(const char *fpath)$/;"	f	class:CPcxFile
+Load	./cldib/cldib_png.cpp	/^bool CPngFile::Load(const char *fpath)$/;"	f	class:CPngFile
+Load	./cldib/cldib_tga.cpp	/^bool CTgaFile::Load(const char *fpath)$/;"	f	class:CTgaFile
+LoadClr	./cldib/cldib_pal.cpp	/^CLDIB *CPalFile::LoadClr(const char *fpath)$/;"	f	class:CPalFile
+LoadJasc	./cldib/cldib_pal.cpp	/^CLDIB *CPalFile::LoadJasc(const char *fpath)$/;"	f	class:CPalFile
+LoadRiff	./cldib/cldib_pal.cpp	/^CLDIB *CPalFile::LoadRiff(const char *fpath)$/;"	f	class:CPalFile
+M3D	./cldib/cldib_wu.cpp	/^WuQuantizer::M3D(LONG *vwt, LONG *vmr, LONG *vmg, LONG *vmb, float *m2)$/;"	f	class:WuQuantizer
+MAX	./cldib/cldib_core.h	50;"	d
+MAXPATHLEN	./cldib/winglue.h	37;"	d
+MAXPATHLEN	./libgrit/pathfun.cpp	29;"	d	file:
+ME_FLIP_MASK	./cldib/cldib_tmap.h	32;"	d
+ME_FLIP_SHIFT	./cldib/cldib_tmap.h	33;"	d
+ME_HFLIP	./cldib/cldib_tmap.h	27;"	d
+ME_ID_MASK	./cldib/cldib_tmap.h	30;"	d
+ME_ID_SHIFT	./cldib/cldib_tmap.h	31;"	d
+ME_PBANK_MASK	./cldib/cldib_tmap.h	34;"	d
+ME_PBANK_SHIFT	./cldib/cldib_tmap.h	35;"	d
+ME_VFLIP	./cldib/cldib_tmap.h	28;"	d
+MIN	./cldib/cldib_core.h	55;"	d
+MLS_REINIT	./srcwingrit/ModelessDlg.h	11;"	d
+MNG_DEFAULT	./extlib/FreeImage.h	618;"	d
+Mark	./cldib/cldib_wu.cpp	/^WuQuantizer::Mark(Box *cube, int label, BYTE *tag) $/;"	f	class:WuQuantizer
+Maximize	./cldib/cldib_wu.cpp	/^WuQuantizer::Maximize(Box *cube, BYTE dir, int first, int last, int *cut, $/;"	f	class:WuQuantizer
+ModifyFlags	./srcwingrit/ModelessDlg.cpp	/^DWORD CModelessDlg::ModifyFlags(DWORD dwRemove, DWORD dwAdd)$/;"	f	class:CModelessDlg
+NDS_ALPHA	./libgrit/grit_core.h	182;"	d
+NIL	./libgrit/cprs_lz.cpp	98;"	d	file:
+NMASK	./libgrit/cprs_lz.cpp	100;"	d	file:
+NULL	./extlib/FreeImage.h	118;"	d
+OFS_BASE0	./libgrit/grit_core.h	158;"	d
+OS	./Makefile	/^	OS	:=	Linux$/;"	m
+OS	./Makefile	/^	OS	:=	OSX$/;"	m
+OS	./Makefile	/^	OS	:=	win32$/;"	m
+OS	./Makefile	/^	OS	:= win32$/;"	m
+OnAppAbout	./srcwingrit/wingrit.cpp	/^void CWingritApp::OnAppAbout()$/;"	f	class:CWingritApp
+OnApplyNow	./srcwingrit/ModelessDlg.cpp	/^void CModelessDlg::OnApplyNow()$/;"	f	class:CModelessDlg
+OnAreaFormat	./srcwingrit/gritdlg.cpp	/^void CxpGbaDlg::OnAreaFormat(int nID)$/;"	f	class:CxpGbaDlg
+OnCancel	./srcwingrit/ModelessDlg.cpp	/^void CModelessDlg::OnCancel()$/;"	f	class:CModelessDlg
+OnCommand	./srcwingrit/gritdlg.cpp	/^BOOL CxpGbaDlg::OnCommand(WPARAM wParam, LPARAM lParam) $/;"	f	class:CxpGbaDlg
+OnCreate	./srcwingrit/MainFrm.cpp	/^int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)$/;"	f	class:CMainFrame
+OnDestroy	./srcwingrit/MainFrm.cpp	/^void CMainFrame::OnDestroy() $/;"	f	class:CMainFrame
+OnDocUpdate	./srcwingrit/MainFrm.cpp	/^void CMainFrame::OnDocUpdate()$/;"	f	class:CMainFrame
+OnDraw	./srcwingrit/wingritView.cpp	/^void CWingritView::OnDraw(CDC* pdc)$/;"	f	class:CWingritView
+OnEditConvertto555	./srcwingrit/wingritDoc.cpp	/^void CWingritDoc::OnEditConvertto555() $/;"	f	class:CWingritDoc
+OnEditQuantNn	./srcwingrit/wingritDoc.cpp	/^void CWingritDoc::OnEditQuantNn() $/;"	f	class:CWingritDoc
+OnEditQuantWu	./srcwingrit/wingritDoc.cpp	/^void CWingritDoc::OnEditQuantWu() $/;"	f	class:CWingritDoc
+OnFileBrowse	./srcwingrit/gritdlg.cpp	/^void CxpGbaDlg::OnFileBrowse() $/;"	f	class:CxpGbaDlg
+OnFileOpen	./srcwingrit/wingritDoc.cpp	/^void CWingritDoc::OnFileOpen() $/;"	f	class:CWingritDoc
+OnGbaExport	./srcwingrit/wingritDoc.cpp	/^void CWingritDoc::OnGbaExport() $/;"	f	class:CWingritDoc
+OnGfxChk	./srcwingrit/gritdlg.cpp	/^void CxpGbaDlg::OnGfxChk() $/;"	f	class:CxpGbaDlg
+OnInitDialog	./srcwingrit/PalViewDlg.cpp	/^BOOL CPalViewDlg::OnInitDialog() $/;"	f	class:CPalViewDlg
+OnInitDialog	./srcwingrit/gritdlg.cpp	/^BOOL CxpGbaDlg::OnInitDialog() $/;"	f	class:CxpGbaDlg
+OnMButtonDown	./srcwingrit/wingritView.cpp	/^void CWingritView::OnMButtonDown(UINT nFlags, CPoint point) $/;"	f	class:CWingritView
+OnMButtonUp	./srcwingrit/wingritView.cpp	/^void CWingritView::OnMButtonUp(UINT nFlags, CPoint point) $/;"	f	class:CWingritView
+OnMapChk	./srcwingrit/gritdlg.cpp	/^void CxpGbaDlg::OnMapChk() $/;"	f	class:CxpGbaDlg
+OnMapRdx	./srcwingrit/gritdlg.cpp	/^void CxpGbaDlg::OnMapRdx() $/;"	f	class:CxpGbaDlg
+OnMouseMove	./srcwingrit/PalViewDlg.cpp	/^void CPalViewDlg::OnMouseMove(UINT nFlags, CPoint pt) $/;"	f	class:CPalViewDlg
+OnMouseMove	./srcwingrit/wingritView.cpp	/^void CWingritView::OnMouseMove(UINT nFlags, CPoint point) $/;"	f	class:CWingritView
+OnMouseWheel	./srcwingrit/wingritView.cpp	/^BOOL CWingritView::OnMouseWheel(UINT nFlags, short zDelta, CPoint pt) $/;"	f	class:CWingritView
+OnNewDocument	./srcwingrit/wingritDoc.cpp	/^BOOL CWingritDoc::OnNewDocument()$/;"	f	class:CWingritDoc
+OnOK	./srcwingrit/ModelessDlg.cpp	/^void CModelessDlg::OnOK()$/;"	f	class:CModelessDlg
+OnOK	./srcwingrit/gritdlg.cpp	/^void CxpGbaDlg::OnOK() $/;"	f	class:CxpGbaDlg
+OnObjCustom	./srcwingrit/gritdlg.cpp	/^void CxpGbaDlg::OnObjCustom() $/;"	f	class:CxpGbaDlg
+OnOpenDocument	./srcwingrit/wingritDoc.cpp	/^BOOL CWingritDoc::OnOpenDocument(LPCTSTR lpszPathName) $/;"	f	class:CWingritDoc
+OnPaint	./srcwingrit/PalViewDlg.cpp	/^void CPalViewDlg::OnPaint() $/;"	f	class:CPalViewDlg
+OnPalChk	./srcwingrit/gritdlg.cpp	/^void CxpGbaDlg::OnPalChk() $/;"	f	class:CxpGbaDlg
+OnReInit	./srcwingrit/ModelessDlg.cpp	/^void CModelessDlg::OnReInit()$/;"	f	class:CModelessDlg
+OnRiffChk	./srcwingrit/gritdlg.cpp	/^void CxpGbaDlg::OnRiffChk() $/;"	f	class:CxpGbaDlg
+OnSelendokFileType	./srcwingrit/gritdlg.cpp	/^void CxpGbaDlg::OnSelendokFileType() $/;"	f	class:CxpGbaDlg
+OnSelendokGfxMode	./srcwingrit/gritdlg.cpp	/^void CxpGbaDlg::OnSelendokGfxMode() $/;"	f	class:CxpGbaDlg
+OnTextNotify	./srcwingrit/wingritView.cpp	/^void CWingritView::OnTextNotify(UINT iMsg, UINT nID)$/;"	f	class:CWingritView
+OnTilesetBrowse	./srcwingrit/gritdlg.cpp	/^void CxpGbaDlg::OnTilesetBrowse() $/;"	f	class:CxpGbaDlg
+OnTilesetChk	./srcwingrit/gritdlg.cpp	/^void CxpGbaDlg::OnTilesetChk() $/;"	f	class:CxpGbaDlg
+OnUpdateGbaExport	./srcwingrit/wingritDoc.cpp	/^void CWingritDoc::OnUpdateGbaExport(CCmdUI* pCmdUI) $/;"	f	class:CWingritDoc
+OnValidate	./srcwingrit/gritdlg.cpp	/^void CxpGbaDlg::OnValidate() $/;"	f	class:CxpGbaDlg
+OnVarChk	./srcwingrit/gritdlg.cpp	/^void CxpGbaDlg::OnVarChk() $/;"	f	class:CxpGbaDlg
+OnViewPal	./srcwingrit/MainFrm.cpp	/^void CMainFrame::OnViewPal() $/;"	f	class:CMainFrame
+OutBuf	./libgrit/cprs_lz.cpp	/^static BYTE *InBuf, *OutBuf;$/;"	v	file:
+OutSize	./libgrit/cprs_lz.cpp	/^static int InSize, OutSize, InOffset;$/;"	v	file:
+PAL_MAX	./cldib/cldib_core.h	45;"	d
+PATH_MAX	./cldib/winglue.h	23;"	d
+PATH_MAX	./libgrit/pathfun.cpp	25;"	d	file:
+PBITMAPINFO	./extlib/FreeImage.h	/^} BITMAPINFO, *PBITMAPINFO;$/;"	t	typeref:struct:tagBITMAPINFO
+PBITMAPINFOHEADER	./extlib/FreeImage.h	/^} BITMAPINFOHEADER, *PBITMAPINFOHEADER; $/;"	t	typeref:struct:tagBITMAPINFOHEADER
+PCD_BASE	./extlib/FreeImage.h	620;"	d
+PCD_BASEDIV16	./extlib/FreeImage.h	622;"	d
+PCD_BASEDIV4	./extlib/FreeImage.h	621;"	d
+PCD_DEFAULT	./extlib/FreeImage.h	619;"	d
+PCXHDR	./cldib/cldib_pcx.cpp	/^} PCXHDR;$/;"	t	typeref:struct:tagPCXHDR	file:
+PCXRGBTRIPLE	./cldib/cldib_pcx.cpp	/^} PCXRGBTRIPLE;$/;"	t	typeref:struct:tagPCXRGBTRIPLE	file:
+PCX_ALIGN	./cldib/cldib_pcx.cpp	53;"	d	file:
+PCX_DEFAULT	./extlib/FreeImage.h	623;"	d
+PCX_RLEFLAG	./cldib/cldib_pcx.cpp	/^static const BYTE PCX_RLEFLAG= 0xc0;$/;"	v	file:
+PCX_RLEMAX	./cldib/cldib_pcx.cpp	/^static const BYTE PCX_RLEMAX=  0x3f;$/;"	v	file:
+PCX_TYPE	./cldib/cldib_pcx.cpp	10;"	d	file:
+PLUGINS	./extlib/FreeImage.h	551;"	d
+PNG_DEFAULT	./extlib/FreeImage.h	624;"	d
+PNG_IGNOREGAMMA	./extlib/FreeImage.h	625;"	d
+PNM_DEFAULT	./extlib/FreeImage.h	626;"	d
+PNM_SAVE_ASCII	./extlib/FreeImage.h	628;"	d
+PNM_SAVE_RAW	./extlib/FreeImage.h	627;"	d
+PSD_DEFAULT	./extlib/FreeImage.h	629;"	d
+PostNcDestroy	./srcwingrit/ModelessDlg.cpp	/^void CModelessDlg::PostNcDestroy()$/;"	f	class:CModelessDlg
+PreCreateWindow	./srcwingrit/MainFrm.cpp	/^BOOL CMainFrame::PreCreateWindow(CREATESTRUCT& cs)$/;"	f	class:CMainFrame
+PreCreateWindow	./srcwingrit/wingritView.cpp	/^BOOL CWingritView::PreCreateWindow(CREATESTRUCT& cs)$/;"	f	class:CWingritView
+Qadd	./cldib/cldib_quant.h	/^	WORD *Qadd;$/;"	m	class:WuQuantizer
+Quantize	./cldib/cldib_wu.cpp	/^WuQuantizer::Quantize(int PalSize)$/;"	f	class:WuQuantizer
+RAS_DEFAULT	./extlib/FreeImage.h	630;"	d
+RECORD	./cldib/cldib_core.h	/^typedef struct RECORD$/;"	s
+RECORD	./cldib/cldib_core.h	/^} RECORD;$/;"	t	typeref:struct:RECORD
+RECT	./cldib/winglue.h	/^} RECT;$/;"	t	typeref:struct:_RECT
+RGB	./cldib/winglue.h	/^static inline COLORREF RGB( BYTE red, BYTE green, BYTE blue )$/;"	f
+RGB16	./cldib/cldib_core.h	/^INLINE WORD RGB16(BYTE rr, BYTE gg, BYTE bb)$/;"	f
+RGBQUAD	./extlib/FreeImage.h	/^} RGBQUAD;$/;"	t	typeref:struct:tagRGBQUAD
+RGBTRIPLE	./extlib/FreeImage.h	/^} RGBTRIPLE;$/;"	t	typeref:struct:tagRGBTRIPLE
+RGB_SIZE	./cldib/cldib_core.h	42;"	d
+RING_MAX	./libgrit/cprs_lz.cpp	94;"	d	file:
+SAFE_DELETE	./cldib/cldib_core.h	205;"	d
+SAFE_DELETE_ARRAY	./cldib/cldib_core.h	208;"	d
+SAFE_FREE	./cldib/cldib_core.h	202;"	d
+SAVE_DECL	./cldib/cldib_core.h	198;"	d
+SEEK_CUR	./extlib/FreeImage.h	123;"	d
+SEEK_END	./extlib/FreeImage.h	124;"	d
+SEEK_SET	./extlib/FreeImage.h	122;"	d
+SE_FLIP_MASK	./libgrit/grit_core.h	/^	SE_FLIP_MASK	=	0x0C00,$/;"	e	enum:EScreenFlags
+SE_FLIP_SHIFT	./libgrit/grit_core.h	/^	SE_FLIP_SHIFT	=		10,$/;"	e	enum:EScreenFlags
+SE_HFLIP	./libgrit/grit_core.h	/^	SE_HFLIP		=	0x0400,	\/\/!< Horizontal flip flag$/;"	e	enum:EScreenFlags
+SE_ID_MASK	./libgrit/grit_core.h	/^	SE_ID_MASK		=	0x03FF,$/;"	e	enum:EScreenFlags
+SE_ID_SHIFT	./libgrit/grit_core.h	/^	SE_ID_SHIFT		=		 0,$/;"	e	enum:EScreenFlags
+SE_PBANK_MASK	./libgrit/grit_core.h	/^	SE_PBANK_MASK	=	0xF000,$/;"	e	enum:EScreenFlags
+SE_PBANK_SHIFT	./libgrit/grit_core.h	/^	SE_PBANK_SHIFT	=		12,$/;"	e	enum:EScreenFlags
+SE_VFLIP	./libgrit/grit_core.h	/^	SE_VFLIP		=	0x0800,	\/\/!< Vertical flip flag$/;"	e	enum:EScreenFlags
+SGI_DEFAULT	./extlib/FreeImage.h	631;"	d
+SMake	./cldib/cldib_files.h	/^	static CBmpFile *SMake()	{ return new CBmpFile;	}$/;"	f	class:CBmpFile
+SMake	./cldib/cldib_files.h	/^	static CImgFile *SMake()	{ return NULL;		}$/;"	f	class:CImgFile
+SMake	./cldib/cldib_files.h	/^	static CPalFile *SMake()	{ return new CPalFile;	}$/;"	f	class:CPalFile
+SMake	./cldib/cldib_files.h	/^	static CPcxFile *SMake()	{ return new CPcxFile;	}$/;"	f	class:CPcxFile
+SMake	./cldib/cldib_files.h	/^	static CPngFile *SMake()	{ return new CPngFile;	}$/;"	f	class:CPngFile
+SMake	./cldib/cldib_files.h	/^	static CTgaFile *SMake()	{ return new CTgaFile;	}$/;"	f	class:CTgaFile
+SRCDIRS	./Makefile	/^SRCDIRS	:= $(CLDIB_DIR) $(LIBGRIT_DIR) $(GRIT_DIR) $(EXTLIB_DIR)$/;"	m
+STRICT	./cldib/cldib_core.h	17;"	d
+SWAP2	./cldib/cldib_core.h	59;"	d
+SWAP3	./cldib/cldib_core.h	62;"	d
+Save	./cldib/cldib_bmp.cpp	/^bool CBmpFile::Save(const char *fpath)$/;"	f	class:CBmpFile
+Save	./cldib/cldib_pal.cpp	/^bool CPalFile::Save(const char *fpath)$/;"	f	class:CPalFile
+Save	./cldib/cldib_pcx.cpp	/^bool CPcxFile::Save(const char *fpath)$/;"	f	class:CPcxFile
+Save	./cldib/cldib_png.cpp	/^bool CPngFile::Save(const char *fpath)$/;"	f	class:CPngFile
+Save	./cldib/cldib_tga.cpp	/^bool CTgaFile::Save(const char *fpath)$/;"	f	class:CTgaFile
+Serialize	./srcwingrit/wingritDoc.cpp	/^void CWingritDoc::Serialize(CArchive& ar)$/;"	f	class:CWingritDoc
+SetBpp	./cldib/cldib_files.h	/^	void SetBpp(int bpp)		{ mBpp= bpp;		}$/;"	f	class:CImgFile
+SetCurrFilterID	./srcwingrit/FileFilter.cpp	/^void CFileFilter::SetCurrFilterID(int id)$/;"	f	class:CFileFilter
+SetDib	./srcwingrit/gritdlg.h	/^	void SetDib(CLDIB *dib)	{	mpDib= dib;	}$/;"	f	class:CxpGbaDlg
+SetDlgName	./srcwingrit/FileFilter.cpp	/^void CFileFilter::SetDlgName(const CString &name)$/;"	f	class:CFileFilter
+SetDstPath	./srcwingrit/gritdlg.cpp	/^void CxpGbaDlg::SetDstPath(const char *path)$/;"	f	class:CxpGbaDlg
+SetFilters	./srcwingrit/FileFilter.cpp	/^BOOL CFileFilter::SetFilters(const char *filters)$/;"	f	class:CFileFilter
+SetFilters	./srcwingrit/FileFilter.cpp	/^BOOL CFileFilter::SetFilters(int nSize, const CString *filters)$/;"	f	class:CFileFilter
+SetFilters	./srcwingrit/FileFilter.cpp	/^BOOL CFileFilter::SetFilters(int nSize, const UINT *filters)$/;"	f	class:CFileFilter
+SetMsg	./cldib/cldib_img.cpp	/^const char *CImgFile::SetMsg(const char *msg)$/;"	f	class:CImgFile
+SetPath	./cldib/cldib_img.cpp	/^void CImgFile::SetPath(const char *path)$/;"	f	class:CImgFile
+SetText	./srcwingrit/LogDlg.cpp	/^void CLogDlg::SetText(const CString &str)$/;"	f	class:CLogDlg
+SetTextFromFile	./srcwingrit/LogDlg.cpp	/^void CLogDlg::SetTextFromFile(const CString &fpath)$/;"	f	class:CLogDlg
+SetTitle	./srcwingrit/wingritDoc.cpp	/^void CWingritDoc::SetTitle(LPCTSTR lpszTitle) $/;"	f	class:CWingritDoc
+Show	./srcwingrit/ModelessDlg.cpp	/^BOOL CModelessDlg::Show(BOOL bVisible)$/;"	f	class:CModelessDlg
+TARGA_DEFAULT	./extlib/FreeImage.h	632;"	d
+TARGA_LOAD_RGB888	./extlib/FreeImage.h	633;"	d
+TARGET	./Makefile	/^TARGET	:=	grit$(EXEEXT)$/;"	m
+TEXT_BUF_CLEAR	./libgrit/cprs_lz.cpp	99;"	d	file:
+TGAHDR	./cldib/cldib_tga.cpp	/^} TGAHDR;	\/\/ == 18b$/;"	t	typeref:struct:tagTGAHDR	file:
+TGA_BGR	./cldib/cldib_tga.cpp	/^} TGA_BGR;$/;"	t	typeref:struct:tagTGA_BGR	file:
+TGA_BGRA	./cldib/cldib_tga.cpp	/^} TGA_BGRA;$/;"	t	typeref:struct:tagTGA_BGRA	file:
+TGA_BW	./cldib/cldib_tga.cpp	33;"	d	file:
+TGA_BW_RLE	./cldib/cldib_tga.cpp	36;"	d	file:
+TGA_PAL	./cldib/cldib_tga.cpp	31;"	d	file:
+TGA_PAL_RLE	./cldib/cldib_tga.cpp	34;"	d	file:
+TGA_VFLIP	./cldib/cldib_tga.cpp	39;"	d	file:
+TGA_true	./cldib/cldib_tga.cpp	32;"	d	file:
+TGA_true_RLE	./cldib/cldib_tga.cpp	35;"	d	file:
+THIS_FILE	./srcwingrit/FileFilter.cpp	/^static char THIS_FILE[] = __FILE__;$/;"	v	file:
+THIS_FILE	./srcwingrit/FileFilter.cpp	9;"	d	file:
+THIS_FILE	./srcwingrit/LogDlg.cpp	/^static char THIS_FILE[] = __FILE__;$/;"	v	file:
+THIS_FILE	./srcwingrit/LogDlg.cpp	12;"	d	file:
+THIS_FILE	./srcwingrit/MainFrm.cpp	/^static char THIS_FILE[] = __FILE__;$/;"	v	file:
+THIS_FILE	./srcwingrit/MainFrm.cpp	15;"	d	file:
+THIS_FILE	./srcwingrit/ModelessDlg.cpp	/^static char THIS_FILE[] = __FILE__;$/;"	v	file:
+THIS_FILE	./srcwingrit/ModelessDlg.cpp	9;"	d	file:
+THIS_FILE	./srcwingrit/PalViewDlg.cpp	/^static char THIS_FILE[] = __FILE__;$/;"	v	file:
+THIS_FILE	./srcwingrit/PalViewDlg.cpp	13;"	d	file:
+THIS_FILE	./srcwingrit/gritdlg.cpp	/^static char THIS_FILE[] = __FILE__;$/;"	v	file:
+THIS_FILE	./srcwingrit/gritdlg.cpp	24;"	d	file:
+THIS_FILE	./srcwingrit/wingrit.cpp	/^static char THIS_FILE[] = __FILE__;$/;"	v	file:
+THIS_FILE	./srcwingrit/wingrit.cpp	15;"	d	file:
+THIS_FILE	./srcwingrit/wingritDoc.cpp	/^static char THIS_FILE[] = __FILE__;$/;"	v	file:
+THIS_FILE	./srcwingrit/wingritDoc.cpp	18;"	d	file:
+THIS_FILE	./srcwingrit/wingritView.cpp	/^static char THIS_FILE[] = __FILE__;$/;"	v	file:
+THIS_FILE	./srcwingrit/wingritView.cpp	15;"	d	file:
+THRESHOLD	./libgrit/cprs_lz.cpp	96;"	d	file:
+TIFF_ADOBE_DEFLATE	./extlib/FreeImage.h	638;"	d
+TIFF_CCITTFAX3	./extlib/FreeImage.h	640;"	d
+TIFF_CCITTFAX4	./extlib/FreeImage.h	641;"	d
+TIFF_CMYK	./extlib/FreeImage.h	635;"	d
+TIFF_DEFAULT	./extlib/FreeImage.h	634;"	d
+TIFF_DEFLATE	./extlib/FreeImage.h	637;"	d
+TIFF_JPEG	./extlib/FreeImage.h	643;"	d
+TIFF_LZW	./extlib/FreeImage.h	642;"	d
+TIFF_NONE	./extlib/FreeImage.h	639;"	d
+TIFF_PACKBITS	./extlib/FreeImage.h	636;"	d
+TMAP_DFLT	./cldib/cldib_tmap.h	45;"	d
+TMAP_DFLT_4	./cldib/cldib_tmap.h	46;"	d
+TMAP_FLIP	./cldib/cldib_tmap.h	42;"	d
+TMAP_PALSWAP	./cldib/cldib_tmap.h	43;"	d
+TMAP_TYPE_BITMAP	./cldib/cldib_tmap.h	40;"	d
+TMAP_TYPE_META	./cldib/cldib_tmap.h	41;"	d
+TMapEntry	./cldib/cldib_tmap.h	/^typedef struct TMapEntry$/;"	s
+TMapEntry	./cldib/cldib_tmap.h	/^} TMapEntry;$/;"	t	typeref:struct:TMapEntry
+TRUE	./cldib/winglue.h	75;"	d
+TRUE	./extlib/FreeImage.h	115;"	d
+TTileMap	./cldib/cldib_tmap.h	/^typedef struct TTileMap$/;"	s
+TTilemap	./cldib/cldib_tmap.h	/^} TTilemap;$/;"	t	typeref:struct:TTileMap
+Top	./cldib/cldib_wu.cpp	/^WuQuantizer::Top(Box *cube, BYTE dir, int pos, LONG *mmt)$/;"	f	class:WuQuantizer
+UCHAR	./cldib/winglue.h	/^typedef unsigned char UCHAR;$/;"	t
+UINT	./cldib/winglue.h	/^typedef unsigned long UINT;$/;"	t
+UNAME	./Makefile	/^UNAME	:=	$(shell uname -s)$/;"	m
+USHORT	./cldib/winglue.h	/^typedef unsigned short USHORT;$/;"	t
+Update	./srcwingrit/ModelessDlg.cpp	/^void CModelessDlg::Update()$/;"	f	class:CModelessDlg
+Update	./srcwingrit/PalViewDlg.cpp	/^void CPalViewDlg::Update()$/;"	f	class:CPalViewDlg
+UpdateArea	./srcwingrit/gritdlg.cpp	/^void CxpGbaDlg::UpdateArea()$/;"	f	class:CxpGbaDlg
+UpdateGfx	./srcwingrit/gritdlg.cpp	/^void CxpGbaDlg::UpdateGfx()$/;"	f	class:CxpGbaDlg
+UpdateGritRec	./srcwingrit/gritdlg.cpp	/^BOOL CxpGbaDlg::UpdateGritRec(BOOL b2gr)$/;"	f	class:CxpGbaDlg
+UpdateMainWnd	./srcwingrit/wingritDoc.cpp	/^void CWingritDoc::UpdateMainWnd()$/;"	f	class:CWingritDoc
+UpdateMap	./srcwingrit/gritdlg.cpp	/^void CxpGbaDlg::UpdateMap()$/;"	f	class:CxpGbaDlg
+UpdateObj	./srcwingrit/gritdlg.cpp	/^void CxpGbaDlg::UpdateObj()$/;"	f	class:CxpGbaDlg
+UpdateOptString	./srcwingrit/gritdlg.cpp	/^void CxpGbaDlg::UpdateOptString()$/;"	f	class:CxpGbaDlg
+UpdatePal	./srcwingrit/gritdlg.cpp	/^void CxpGbaDlg::UpdatePal()$/;"	f	class:CxpGbaDlg
+UpdateRdx	./srcwingrit/gritdlg.cpp	/^void CxpGbaDlg::UpdateRdx()$/;"	f	class:CxpGbaDlg
+UpdateRiff	./srcwingrit/gritdlg.cpp	/^void CxpGbaDlg::UpdateRiff()$/;"	f	class:CxpGbaDlg
+UpdateSummary	./srcwingrit/gritdlg.cpp	/^void CxpGbaDlg::UpdateSummary()$/;"	f	class:CxpGbaDlg
+VC_EXTRALEAN	./srcwingrit/StdAfx.h	13;"	d
+VGADefPal	./cldib/cldib_pcx.cpp	/^static const PCXRGBTRIPLE VGADefPal[16] = {$/;"	v	file:
+VMake	./cldib/cldib_files.h	/^	virtual CImgFile *VMake()	{ return SMake();		}$/;"	f	class:CBmpFile
+VMake	./cldib/cldib_files.h	/^	virtual CImgFile *VMake()	{ return SMake();		}$/;"	f	class:CPalFile
+VMake	./cldib/cldib_files.h	/^	virtual CImgFile *VMake()	{ return SMake();		}$/;"	f	class:CPcxFile
+VMake	./cldib/cldib_files.h	/^	virtual CImgFile *VMake()	{ return SMake();		}$/;"	f	class:CPngFile
+VMake	./cldib/cldib_files.h	/^	virtual CImgFile *VMake()	{ return SMake();		}$/;"	f	class:CTgaFile
+VMake	./cldib/cldib_files.h	/^	virtual CImgFile *VMake()	{ return SMake();	}$/;"	f	class:CImgFile
+VOL_SEP	./libgrit/pathfun.h	31;"	d
+VOL_SEP	./libgrit/pathfun.h	34;"	d
+VOL_SEP_UNIX	./libgrit/pathfun.h	27;"	d
+VOL_SEP_WIN	./libgrit/pathfun.h	24;"	d
+VPATH	./Makefile	/^VPATH		:= $(foreach dir, $(SRCDIRS), $(dir))$/;"	m
+Validate	./srcwingrit/gritdlg.cpp	/^BOOL CxpGbaDlg::Validate()$/;"	f	class:CxpGbaDlg
+Var	./cldib/cldib_wu.cpp	/^WuQuantizer::Var(Box *cube)$/;"	f	class:WuQuantizer
+Vol	./cldib/cldib_wu.cpp	/^WuQuantizer::Vol( Box *cube, LONG *mmt ) $/;"	f	class:WuQuantizer
+WBMP_DEFAULT	./extlib/FreeImage.h	644;"	d
+WINDOWS_LEAN_AND_MEAN	./libgrit/pathfun.cpp	315;"	d	file:
+WORD	./extlib/FreeImage.h	/^typedef uint16_t WORD;$/;"	t
+WORD	./extlib/FreeImage.h	/^typedef unsigned short WORD;$/;"	t
+WuQuantizer	./cldib/cldib_quant.h	/^class WuQuantizer$/;"	c
+WuQuantizer	./cldib/cldib_wu.cpp	/^WuQuantizer::WuQuantizer(CLDIB *dib)$/;"	f	class:WuQuantizer
+XBM_DEFAULT	./extlib/FreeImage.h	645;"	d
+XPM_DEFAULT	./extlib/FreeImage.h	646;"	d
+_APS_3D_CONTROLS	./srcwingrit/resource.h	80;"	d
+_APS_NEXT_COMMAND_VALUE	./srcwingrit/resource.h	82;"	d
+_APS_NEXT_CONTROL_VALUE	./srcwingrit/resource.h	83;"	d
+_APS_NEXT_RESOURCE_VALUE	./srcwingrit/resource.h	81;"	d
+_APS_NEXT_SYMED_VALUE	./srcwingrit/resource.h	84;"	d
+_CLI_PARSER_H_	./srcgrit/cli.h	4;"	d
+_RECT	./cldib/winglue.h	/^typedef struct _RECT$/;"	s
+_SYS_PARAM_H	./cldib/winglue.h	28;"	d
+_WINDOWS_	./extlib/FreeImage.h	109;"	d
+__CLDIB_CORE_H__	./cldib/cldib_core.h	14;"	d
+__CLDIB_FILES_H__	./cldib/cldib_files.h	6;"	d
+__CLDIB_H__	./cldib/cldib.h	8;"	d
+__CLDIB_QUANT_H__	./cldib/cldib_quant.h	7;"	d
+__CLDIB_TMAP_H__	./cldib/cldib_tmap.h	11;"	d
+__CLDIB_TOOLS_H__	./cldib/cldib_tools.h	8;"	d
+__FI_EX_H__	./extlib/fi.h	15;"	d
+__GRIT_COMPRESSION__	./libgrit/cprs.h	16;"	d
+__GRIT_CORE_H__	./libgrit/grit_core.h	20;"	d
+__GRIT_H__	./libgrit/grit.h	11;"	d
+__LOGGER_H__	./libgrit/logger.h	10;"	d
+__PATHFUN_H__	./libgrit/pathfun.h	11;"	d
+__WINGLUE_H__	./cldib/winglue.h	11;"	d
+__grit_app_string	./libgrit/grit_core.cpp	/^static const char __grit_app_string[]=$/;"	v	file:
+__log_fp	./libgrit/logger.cpp	/^FILE *__log_fp= stderr;$/;"	v
+__log_level	./libgrit/logger.cpp	/^int __log_level= 0;	$/;"	v
+__log_prefix	./libgrit/logger.cpp	/^const char *__log_prefix[LOG_MAX+1]= $/;"	v
+_dib	./libgrit/grit_core.h	/^	CLDIB	*_dib;		\/\/!< Internal work bitmap$/;"	m	struct:GritRec
+_gfxRec	./libgrit/grit_core.h	/^	RECORD	 _gfxRec;	\/\/!< Output graphics data$/;"	m	struct:GritRec
+_mapRec	./libgrit/grit_core.h	/^	RECORD	 _mapRec;	\/\/!< Output tilemap data$/;"	m	struct:GritRec
+_metaRec	./libgrit/grit_core.h	/^	RECORD	 _metaRec;	\/\/!< Output metatile data$/;"	m	struct:GritRec
+_palRec	./libgrit/grit_core.h	/^	RECORD	 _palRec;	\/\/!< Output palette data$/;"	m	struct:GritRec
+align	./cldib/cldib_core.h	/^INLINE unsigned int align(unsigned int x, unsigned int size)$/;"	f
+alpha	./cldib/cldib_tga.cpp	/^	BYTE alpha;$/;"	m	struct:tagTGA_BGRA	file:
+alpha	./extlib/FreeImage.h	/^	WORD alpha;$/;"	m	struct:tagFIRGBA16
+alpha	./extlib/FreeImage.h	/^	float alpha;$/;"	m	struct:tagFIRGBAF
+appHelpText	./srcgrit/grit_main.cpp	/^const char appHelpText[]= $/;"	v
+appIdent	./srcgrit/grit_main.cpp	/^const char appIdent[]= "grit v" GRIT_VERSION;$/;"	v
+areaBottom	./libgrit/grit_core.h	/^	int		 areaBottom;	\/\/!< Export rect, bottom (-ab {number} ).$/;"	m	struct:GritRec
+areaLeft	./libgrit/grit_core.h	/^	int		 areaLeft;		\/\/!< Export rect, left (-al {number} ).$/;"	m	struct:GritRec
+areaRight	./libgrit/grit_core.h	/^	int		 areaRight;		\/\/!< Export rect, right (-ar {number} ).$/;"	m	struct:GritRec
+areaTop	./libgrit/grit_core.h	/^	int		 areaTop;		\/\/!< Export rect, top (-at {number} ).$/;"	m	struct:GritRec
+args_gather	./srcgrit/grit_main.cpp	/^void args_gather(strvec &args, int argc, char **argv)$/;"	f
+args_set_mode	./srcgrit/grit_main.cpp	/^void args_set_mode(GritShared *grs, const strvec &args, const strvec &paths)$/;"	f
+args_validate	./srcgrit/grit_main.cpp	/^bool args_validate(const strvec &args, const strvec &fpaths)$/;"	f
+attr	./cldib/cldib_tmap.h	/^		WORD attr;			\/\/!< Tile attributes (ME_FLAGS)$/;"	m	union:TMapEntry::__anon7
+attrs	./libgrit/grit_xp.cpp	/^		u8 attrs[4];$/;"	m	union:GrfHeader::__anon5	file:
+b0	./cldib/cldib_quant.h	/^    int b0, b1;$/;"	m	struct:WuQuantizer::tagBox
+b1	./cldib/cldib_quant.h	/^    int b0, b1;$/;"	m	struct:WuQuantizer::tagBox
+bAppend	./libgrit/grit_core.h	/^	bool	 bAppend;		\/\/!< Append to existing file (-fa).$/;"	m	struct:GritRec
+bColMajor	./libgrit/grit_core.h	/^	bool	 bColMajor;		\/\/!< Tiles are arranged in column-major order (-tc).$/;"	m	struct:GritRec
+bExport	./libgrit/grit_core.h	/^	bool	 bExport;		\/\/!< Global export toggle (?).$/;"	m	struct:GritRec
+bHeader	./libgrit/grit_core.h	/^	bool	 bHeader;		\/\/!< Create header file (-fh[!] ).$/;"	m	struct:GritRec
+bRiff	./libgrit/grit_core.h	/^	bool	 bRiff;			\/\/!< RIFFed data.$/;"	m	struct:GritRec
+biBitCount	./extlib/FreeImage.h	/^  WORD  biBitCount;$/;"	m	struct:tagBITMAPINFOHEADER
+biClrImportant	./extlib/FreeImage.h	/^  DWORD biClrImportant;$/;"	m	struct:tagBITMAPINFOHEADER
+biClrUsed	./extlib/FreeImage.h	/^  DWORD biClrUsed; $/;"	m	struct:tagBITMAPINFOHEADER
+biCompression	./extlib/FreeImage.h	/^  DWORD biCompression; $/;"	m	struct:tagBITMAPINFOHEADER
+biHeight	./extlib/FreeImage.h	/^  LONG  biHeight; $/;"	m	struct:tagBITMAPINFOHEADER
+biPlanes	./extlib/FreeImage.h	/^  WORD  biPlanes; $/;"	m	struct:tagBITMAPINFOHEADER
+biSize	./extlib/FreeImage.h	/^  DWORD biSize;$/;"	m	struct:tagBITMAPINFOHEADER
+biSizeImage	./extlib/FreeImage.h	/^  DWORD biSizeImage; $/;"	m	struct:tagBITMAPINFOHEADER
+biWidth	./extlib/FreeImage.h	/^  LONG  biWidth; $/;"	m	struct:tagBITMAPINFOHEADER
+biXPelsPerMeter	./extlib/FreeImage.h	/^  LONG  biXPelsPerMeter; $/;"	m	struct:tagBITMAPINFOHEADER
+biYPelsPerMeter	./extlib/FreeImage.h	/^  LONG  biYPelsPerMeter; $/;"	m	struct:tagBITMAPINFOHEADER
+blue	./cldib/cldib_pcx.cpp	/^	BYTE blue;$/;"	m	struct:tagPCXRGBTRIPLE	file:
+blue	./cldib/cldib_tga.cpp	/^	BYTE blue;$/;"	m	struct:tagTGA_BGR	file:
+blue	./cldib/cldib_tga.cpp	/^	BYTE blue;$/;"	m	struct:tagTGA_BGRA	file:
+blue	./extlib/FreeImage.h	/^	WORD blue;$/;"	m	struct:tagFIRGB16
+blue	./extlib/FreeImage.h	/^	WORD blue;$/;"	m	struct:tagFIRGBA16
+blue	./extlib/FreeImage.h	/^	float blue;$/;"	m	struct:tagFIRGBAF
+blue	./extlib/FreeImage.h	/^	float blue;$/;"	m	struct:tagFIRGBF
+bmiColors	./extlib/FreeImage.h	/^  RGBQUAD          bmiColors[1];$/;"	m	struct:tagBITMAPINFO
+bmiHeader	./extlib/FreeImage.h	/^  BITMAPINFOHEADER bmiHeader; $/;"	m	struct:tagBITMAPINFO
+bottom	./cldib/winglue.h	/^	LONG bottom;$/;"	m	struct:_RECT
+bpp	./cldib/cldib_pcx.cpp	/^	BYTE	bpp;				\/\/ 1, 2, 4, or 8$/;"	m	struct:tagPCXHDR	file:
+bytesPerLine	./cldib/cldib_pcx.cpp	/^	WORD	bytesPerLine;		\/\/ number of bytes per scanline per plane! (even)$/;"	m	struct:tagPCXHDR	file:
+cAffix	./libgrit/grit_core.cpp	/^const char *cAffix[E_AFX_MAX]= $/;"	v
+cCTypes	./libgrit/pathfun.cpp	/^const char *cCTypes[]= { "", "char", "short", "", "int" };$/;"	v
+cCprs	./libgrit/grit_core.cpp	/^const char *cCprs[GRIT_CPRS_MAX]= { "not", "lz77", "huf", "rle", "fake" };$/;"	v
+cFileTypes	./libgrit/grit_core.cpp	/^const char *cFileTypes[GRIT_FTYPE_MAX]= {"c", "s", "bin", "gbfs", "grf" \/*, "o"*\/};$/;"	v
+cGasTypes	./libgrit/pathfun.cpp	/^const char *cGasTypes[]= { "", ".byte", ".hword", "", ".word" };$/;"	v
+cObjSizes	./srcwingrit/gritdlg.cpp	/^const int cObjSizes[12][2]= $/;"	v
+cTypeSpec	./libgrit/pathfun.cpp	/^const char cTypeSpec[]= "extern const unsigned";$/;"	v
+cTypes	./libgrit/grit_core.cpp	/^const char *cTypes[3]= { "u8", "u16", "u32" };$/;"	v
+chunk_create	./libgrit/grit_xp.cpp	/^chunk_t *chunk_create(const char *id, const RECORD *rec)$/;"	f
+chunk_create	./libgrit/grit_xp.cpp	/^chunk_t *chunk_create(const char *id, const void *data, uint size)$/;"	f
+chunk_free	./libgrit/grit_xp.cpp	/^void chunk_free(chunk_t *chunk)$/;"	f
+chunk_merge	./libgrit/grit_xp.cpp	/^chunk_t *chunk_merge(const char *id, chunk_t *cklist[], uint count, const char *groupID)$/;"	f
+chunk_t	./libgrit/grit_xp.cpp	/^struct chunk_t$/;"	s	file:
+clamp	./cldib/cldib_core.h	/^INLINE int clamp(int x, int min, int max)$/;"	f
+clamp	./libgrit/logger.cpp	/^inline int clamp(int x, int mn, int mx)$/;"	f
+cldib_load	./extlib/fi.cpp	/^CLDIB *cldib_load(const char *fpath, void *extra)$/;"	f
+cldib_save	./extlib/fi.cpp	/^bool cldib_save(const CLDIB *dib, const char *fpath, void *extra)$/;"	f
+cli_bool	./srcgrit/cli.cpp	/^bool cli_bool(const char *key, const strvec &args)$/;"	f
+cli_find_key	./srcgrit/cli.cpp	/^int cli_find_key(const char *key, const strvec &args)$/;"	f
+cli_int	./srcgrit/cli.cpp	/^int cli_int(const char *key, const strvec &args, int dflt)$/;"	f
+cli_str	./srcgrit/cli.cpp	/^char *cli_str(const char *key, const strvec &args, char *dflt)$/;"	f
+clr2rgb	./cldib/cldib_core.h	/^INLINE RGBQUAD clr2rgb(COLORREF clr)$/;"	f
+codesize	./libgrit/cprs_lz.cpp	/^static unsigned long int codesize = 0;  \/\/ code size counter$/;"	v	file:
+compression	./libgrit/grit_xp.cpp	/^	echar	compression;$/;"	m	class:DataItem	file:
+countof	./cldib/cldib_core.h	37;"	d
+cprs_compress	./libgrit/cprs.cpp	/^bool cprs_compress(RECORD *dst, const RECORD *src, ECprsTag tag)$/;"	f
+cprs_create_header	./libgrit/cprs.cpp	/^u32	cprs_create_header(uint size, u8 tag)$/;"	f
+cprs_decompress	./libgrit/cprs.cpp	/^bool cprs_decompress(RECORD *dst, const RECORD *src)$/;"	f
+cprs_proc_t	./libgrit/cprs.h	/^typedef bool (*cprs_proc_t)(RECORD *dst, const RECORD *src);$/;"	t
+dad	./libgrit/cprs_lz.cpp	/^static int lson[RING_MAX+1], rson[RING_MAX+256+1], dad[RING_MAX+1];  $/;"	v	file:
+data	./cldib/cldib_core.h	/^	BYTE *data;		\/\/!< Binary data.$/;"	m	struct:RECORD
+data	./cldib/cldib_core.h	/^	BYTE *data;$/;"	m	struct:CLDIB
+data	./cldib/cldib_tmap.h	/^	TMapEntry *data;	\/\/!< Tile data.$/;"	m	struct:TTileMap
+data	./libgrit/grit_xp.cpp	/^	u8		data[1];$/;"	m	struct:chunk_t	file:
+dataType	./libgrit/grit_xp.cpp	/^	echar	dataType;$/;"	m	class:DataItem	file:
+data_8_to_true	./cldib/cldib_conv.cpp	/^bool data_8_to_true(void *dstv, const void *srcv, int srcS, $/;"	f
+data_adjust	./cldib/cldib_adjust.cpp	/^bool data_adjust(BYTE *data, BYTE lut[], enum eClrChannel cce, int nn, int ofs)$/;"	f
+data_bit_pack	./cldib/cldib_conv.cpp	/^bool data_bit_pack(void *dstv, const void *srcv, $/;"	f
+data_bit_rev	./cldib/cldib_conv.cpp	/^bool data_bit_rev(void *dstv, const void *srcv, int len, int bpp)$/;"	f
+data_bit_unpack	./cldib/cldib_conv.cpp	/^bool data_bit_unpack(void *dstv, const void *srcv, $/;"	f
+data_byte_rev	./cldib/cldib_conv.cpp	/^bool data_byte_rev(void *dstv, const void *srcv, int len, int chunk)$/;"	f
+data_offset	./libgrit/grit_xp.cpp	/^  u32  data_offset;  \/* in bytes from beginning of file *\/$/;"	m	struct:GBFS_ENTRY	file:
+data_redim	./cldib/cldib_tools.cpp	/^bool data_redim(const RECORD *src, RECORD *dst, int tileH, int tileN)$/;"	f
+data_true_to_true	./cldib/cldib_conv.cpp	/^bool data_true_to_true(void *dstv, const void *srcv, int srcS, $/;"	f
+dib	./libgrit/grit_core.h	/^	CLDIB	*dib;			\/\/!< External tileset DIB (can be NULL)$/;"	m	struct:GritShared
+dib2fi	./extlib/fi.cpp	/^FIBITMAP *dib2fi(CLDIB *dib)$/;"	f
+dib_8_to_true	./cldib/cldib_conv.cpp	/^bool dib_8_to_true(CLDIB *dib, int dstB)$/;"	f
+dib_8_to_true_copy	./cldib/cldib_conv.cpp	/^CLDIB *dib_8_to_true_copy(CLDIB *src, int dstB)$/;"	f
+dib_adjust	./cldib/cldib_adjust.cpp	/^bool dib_adjust(CLDIB *dib, BYTE lut[], enum eClrChannel cce)$/;"	f
+dib_align	./cldib/cldib_core.h	/^INLINE int dib_align(int width, int bpp)$/;"	f
+dib_alloc	./cldib/cldib_core.cpp	/^CLDIB *dib_alloc(int width, int height, int bpp, const BYTE *data,$/;"	f
+dib_bit_unpack	./cldib/cldib_conv.cpp	/^bool dib_bit_unpack(CLDIB *dib, int dstB, DWORD base)$/;"	f
+dib_bit_unpack_copy	./cldib/cldib_conv.cpp	/^CLDIB *dib_bit_unpack_copy(CLDIB *src, int dstB, DWORD base)$/;"	f
+dib_blit	./cldib/cldib_core.cpp	/^int dib_blit(HDC hdc, int dX, int dY, int dW, int dH, $/;"	f
+dib_clone	./cldib/cldib_core.cpp	/^CLDIB *dib_clone(CLDIB *src)$/;"	f
+dib_convert	./cldib/cldib_conv.cpp	/^bool dib_convert(CLDIB *dib, int dstB, DWORD base)$/;"	f
+dib_convert_copy	./cldib/cldib_conv.cpp	/^CLDIB *dib_convert_copy(CLDIB *src, int dstB, DWORD base)$/;"	f
+dib_copy	./cldib/cldib_core.cpp	/^CLDIB *dib_copy(CLDIB *src, int ll, int tt, int rr, int bb, bool bClip)$/;"	f
+dib_find	./cldib/cldib_tmap.cpp	/^TMapEntry dib_find(CLDIB *dib, CLDIB *tileset, int tileN, DWORD flags)$/;"	f
+dib_free	./cldib/cldib_core.cpp	/^void dib_free(CLDIB *dib)$/;"	f
+dib_from_hbm	./cldib/cldib_core.cpp	/^CLDIB *dib_from_hbm(HBITMAP hbm)$/;"	f
+dib_get_attr	./cldib/cldib_core.cpp	/^bool dib_get_attr(CLDIB *dib, int *width, int *height, int *bpp, int *pitch)$/;"	f
+dib_get_bpp	./cldib/cldib_core.h	/^INLINE int dib_get_bpp(CLDIB *dib)$/;"	f
+dib_get_hdr	./cldib/cldib_core.h	/^INLINE BITMAPINFOHEADER *dib_get_hdr(CLDIB *dib)$/;"	f
+dib_get_height	./cldib/cldib_core.h	/^INLINE int dib_get_height(CLDIB *dib)$/;"	f
+dib_get_height2	./cldib/cldib_core.h	/^INLINE int dib_get_height2(CLDIB *dib)$/;"	f
+dib_get_img	./cldib/cldib_core.h	/^INLINE BYTE *dib_get_img(CLDIB *dib)$/;"	f
+dib_get_img_at	./cldib/cldib_core.cpp	/^BYTE *dib_get_img_at(CLDIB *dib, int x, int y)$/;"	f
+dib_get_info	./cldib/cldib_core.h	/^INLINE BITMAPINFO *dib_get_info(CLDIB *dib)$/;"	f
+dib_get_nclrs	./cldib/cldib_core.h	/^INLINE int dib_get_nclrs(CLDIB *dib)$/;"	f
+dib_get_pal	./cldib/cldib_core.h	/^INLINE RGBQUAD *dib_get_pal(CLDIB *dib)$/;"	f
+dib_get_pbank	./cldib/cldib_tmap.cpp	/^int dib_get_pbank(CLDIB *dib)$/;"	f
+dib_get_pitch	./cldib/cldib_core.h	/^INLINE int dib_get_pitch(CLDIB *dib)$/;"	f
+dib_get_size	./cldib/cldib_core.h	/^INLINE int dib_get_size(CLDIB *dib)$/;"	f
+dib_get_size_img	./cldib/cldib_core.h	/^INLINE int dib_get_size_img(CLDIB *dib)$/;"	f
+dib_get_width	./cldib/cldib_core.h	/^INLINE int dib_get_width(CLDIB *dib)$/;"	f
+dib_hflip	./cldib/cldib_core.cpp	/^bool dib_hflip(CLDIB *dib)$/;"	f
+dib_invert	./cldib/cldib_adjust.cpp	/^bool dib_invert(CLDIB *dib)$/;"	f
+dib_is_topdown	./cldib/cldib_core.h	/^INLINE bool dib_is_topdown(CLDIB *dib)$/;"	f
+dib_load	./cldib/cldib_tools.cpp	/^fnDibLoad dib_load= dib_load_dflt;	\/\/!< File reader function pointer$/;"	v
+dib_load_dflt	./cldib/cldib_tools.cpp	/^CLDIB *dib_load_dflt(const char *fpath, void *extra)$/;"	f
+dib_lut_brightness	./cldib/cldib_adjust.cpp	/^bool dib_lut_brightness(BYTE lut[], double perc)$/;"	f
+dib_lut_contrast	./cldib/cldib_adjust.cpp	/^bool dib_lut_contrast(BYTE lut[], double perc)$/;"	f
+dib_lut_gamma	./cldib/cldib_adjust.cpp	/^bool dib_lut_gamma(BYTE lut[], double gamma)$/;"	f
+dib_lut_intensity	./cldib/cldib_adjust.cpp	/^bool dib_lut_intensity(BYTE lut[], double perc)$/;"	f
+dib_lut_invert	./cldib/cldib_adjust.cpp	/^bool dib_lut_invert(BYTE lut[])$/;"	f
+dib_lut_linear	./cldib/cldib_adjust.cpp	/^bool dib_lut_linear(BYTE lut[], double a, double b)$/;"	f
+dib_mov	./cldib/cldib_core.cpp	/^bool dib_mov(CLDIB *dst, CLDIB *src)$/;"	f
+dib_padding	./cldib/cldib_core.h	/^INLINE int dib_padding(CLDIB *dib)$/;"	f
+dib_pal_cpy	./cldib/cldib_core.h	/^INLINE RGBQUAD *dib_pal_cpy(CLDIB *dst, CLDIB *src)$/;"	f
+dib_pal_reduce	./cldib/cldib_tools.cpp	/^int dib_pal_reduce(CLDIB *dib, RECORD *extPal)$/;"	f
+dib_pal_replace	./cldib/cldib_adjust.cpp	/^bool dib_pal_replace(CLDIB *dib, DWORD *dst, DWORD *src, int nn)$/;"	f
+dib_paste	./cldib/cldib_core.cpp	/^bool dib_paste(CLDIB *dst, CLDIB *src, int dstX, int dstY)$/;"	f
+dib_pixel_replace	./cldib/cldib_adjust.cpp	/^bool dib_pixel_replace(CLDIB *dib, DWORD dst[], DWORD src[], int nn)$/;"	f
+dib_redim	./cldib/cldib_tools.cpp	/^bool dib_redim(CLDIB *dib, int dstW, int tileH, int tileN)$/;"	f
+dib_redim_copy	./cldib/cldib_tools.cpp	/^CLDIB *dib_redim_copy(CLDIB *src, int dstW, int tileH, int tileN)$/;"	f
+dib_save	./cldib/cldib_tools.cpp	/^fnDibSave dib_save= dib_save_dflt;	\/\/!< File writer function pointer$/;"	v
+dib_save_dflt	./cldib/cldib_tools.cpp	/^bool dib_save_dflt(const CLDIB *dib, const char *fpath, void *extra)$/;"	f
+dib_set_load_proc	./cldib/cldib_tools.cpp	/^fnDibLoad dib_set_load_proc(fnDibLoad proc)$/;"	f
+dib_set_pbank	./cldib/cldib_tmap.cpp	/^bool dib_set_pbank(CLDIB *dib, int pbank)$/;"	f
+dib_set_save_proc	./cldib/cldib_tools.cpp	/^fnDibSave dib_set_save_proc(fnDibSave proc)$/;"	f
+dib_swap_rgb	./cldib/cldib_adjust.cpp	/^CLDIB *dib_swap_rgb(CLDIB *dib)$/;"	f
+dib_tilecmp	./cldib/cldib_tmap.cpp	/^bool dib_tilecmp(CLDIB *dib, CLDIB *tileset, int tid, DWORD mask)$/;"	f
+dib_to_hbm	./cldib/cldib_core.cpp	/^HBITMAP dib_to_hbm(CLDIB *dib)$/;"	f
+dib_to_hdc	./cldib/cldib_core.cpp	/^int dib_to_hdc(HDC hdc, const RECT *rectDst, $/;"	f
+dib_true_to_8	./cldib/cldib_conv.cpp	/^bool dib_true_to_8(CLDIB *dib, int nclrs)$/;"	f
+dib_true_to_8_copy	./cldib/cldib_conv.cpp	/^CLDIB *dib_true_to_8_copy(CLDIB *src, int nclrs)$/;"	f
+dib_true_to_true	./cldib/cldib_conv.cpp	/^bool dib_true_to_true(CLDIB *dib, int dstB)$/;"	f
+dib_true_to_true_copy	./cldib/cldib_conv.cpp	/^CLDIB *dib_true_to_true_copy(CLDIB *src, int dstB)$/;"	f
+dib_vflip	./cldib/cldib_core.cpp	/^bool dib_vflip(CLDIB *dib)$/;"	f
+dib_vflip2	./cldib/cldib_core.cpp	/^bool dib_vflip2(CLDIB *dib)$/;"	f
+dir_nmemb	./libgrit/grit_xp.cpp	/^  u16  dir_nmemb;    \/* number of files *\/$/;"	m	struct:GBFS_FILE	file:
+dir_off	./libgrit/grit_xp.cpp	/^  u16  dir_off;      \/* offset in bytes to directory *\/$/;"	m	struct:GBFS_FILE	file:
+dstPath	./libgrit/grit_core.h	/^	char	*dstPath;		\/\/!< Output path directory (-o {name} ).$/;"	m	struct:GritRec
+eAffix	./libgrit/grit_core.h	/^enum eAffix$/;"	g
+eBUP	./cldib/cldib_tools.h	/^typedef enum eBUP$/;"	g
+eBUP	./cldib/cldib_tools.h	/^} eBUP;$/;"	t	typeref:enum:eBUP
+eBmpErrs	./cldib/cldib_bmp.cpp	/^enum eBmpErrs$/;"	g	file:
+eCldibID	./cldib/cldib_files.h	/^enum eCldibID$/;"	g
+eClrChannel	./cldib/cldib_core.h	/^enum eClrChannel$/;"	g
+eCprs	./srcwingrit/gritdlg.h	/^enum eCprs$/;"	g
+eDibMsgs	./cldib/cldib_files.h	/^enum eDibMsgs$/;"	g
+eFileTypes	./srcwingrit/gritdlg.h	/^enum eFileTypes$/;"	g
+eGfxModes	./srcwingrit/gritdlg.h	/^enum eGfxModes$/;"	g
+ePalErrs	./cldib/cldib_pal.cpp	/^enum ePalErrs$/;"	g	file:
+ePcxErrs	./cldib/cldib_pcx.cpp	/^enum ePcxErrs$/;"	g	file:
+ePngErrs	./cldib/cldib_png.cpp	/^enum ePngErrs$/;"	g	file:
+eTgaErrs	./cldib/cldib_tga.cpp	/^enum eTgaErrs$/;"	g	file:
+eTypes	./libgrit/grit_core.h	/^enum eTypes$/;"	g
+echar	./libgrit/grit_core.h	/^typedef unsigned char  u8 , uchar, echar;$/;"	t
+eint	./libgrit/grit_core.h	/^typedef unsigned int   u32, uint, eint;$/;"	t
+encode	./cldib/cldib_pcx.cpp	/^	BYTE	encode;				\/\/ 1 = PCX RLE$/;"	m	struct:tagPCXHDR	file:
+eshort	./libgrit/grit_core.h	/^typedef unsigned short u16, ushort, eshort;$/;"	t
+fake_compress	./libgrit/cprs.cpp	/^uint fake_compress(RECORD *dst, const RECORD *src)$/;"	f
+fake_decompress	./libgrit/cprs.cpp	/^uint fake_decompress(RECORD *dst, const RECORD *src)$/;"	f
+fi2dib	./extlib/fi.cpp	/^CLDIB *fi2dib(FIBITMAP *fi)$/;"	f
+fiFillOfnFilter	./extlib/fi.cpp	/^int fiFillOfnFilter(char *szFilter, FI_SUPPORT_MODE fsm, $/;"	f
+fiGetSupportModes	./extlib/fi.cpp	/^FI_SUPPORT_MODE fiGetSupportModes(FREE_IMAGE_FORMAT fif)$/;"	f
+fiInit	./extlib/fi.cpp	/^void fiInit()$/;"	f
+fi_handle	./extlib/FreeImage.h	/^typedef void* fi_handle;$/;"	t
+fi_load	./extlib/fi.cpp	/^FIBITMAP *fi_load(const char *fpath)$/;"	f
+fi_save	./extlib/fi.cpp	/^bool fi_save(FIBITMAP *fi, const char *fpath)$/;"	f
+fileType	./libgrit/grit_core.h	/^	u8		 fileType;		\/\/!< Output file type (-ft{type} ).$/;"	m	struct:GritRec
+file_copy	./libgrit/pathfun.cpp	/^long file_copy(FILE *fout, FILE *fin, long size)$/;"	f
+file_exists	./libgrit/pathfun.cpp	/^bool file_exists(const char *fpath)$/;"	f
+file_find_tag	./libgrit/pathfun.cpp	/^long file_find_tag(FILE *fout, FILE *fin, const char *tag)$/;"	f
+file_size	./libgrit/pathfun.cpp	/^long file_size(FILE *fp)$/;"	f
+file_size	./libgrit/pathfun.cpp	/^long file_size(const char *fpath)$/;"	f
+file_write_cmt	./libgrit/pathfun.cpp	/^void file_write_cmt(FILE *fp, const char *cmt, const char *text)$/;"	f
+filler	./cldib/cldib_pcx.cpp	/^	BYTE	filler[54];$/;"	m	struct:tagPCXHDR	file:
+flags	./cldib/cldib_tmap.h	/^	DWORD flags;		\/\/!< Tilemap flags.$/;"	m	struct:TTileMap
+fnDibLoad	./cldib/cldib_tools.h	/^typedef CLDIB *(*fnDibLoad)(const char *fpath, void *extra);$/;"	t
+fnDibSave	./cldib/cldib_tools.h	/^typedef bool (*fnDibSave)(const CLDIB *dib, const char *fpath, void *extra);$/;"	t
+fn_png_error	./cldib/cldib_png.cpp	/^static void fn_png_error(png_struct *png_ptr, const char *error)$/;"	f	file:
+fn_png_warn	./cldib/cldib_png.cpp	/^static void fn_png_warn(png_struct *png_ptr, const char *warning)$/;"	f	file:
+fn_read	./cldib/cldib_png.cpp	/^static void fn_read(png_struct *png_ptr, unsigned char *data, unsigned int size)$/;"	f	file:
+fn_write	./cldib/cldib_png.cpp	/^static void fn_write(png_struct *png_ptr, unsigned char *data, unsigned int size)$/;"	f	file:
+g0	./cldib/cldib_quant.h	/^    int g0, g1;  $/;"	m	struct:WuQuantizer::tagBox
+g1	./cldib/cldib_quant.h	/^    int g0, g1;  $/;"	m	struct:WuQuantizer::tagBox
+gPalViewDlg	./srcwingrit/MainFrm.cpp	/^static CPalViewDlg *gPalViewDlg= NULL;$/;"	v	file:
+gbfs_namecmp	./libgrit/grit_xp.cpp	/^int gbfs_namecmp(const void *a, const void *b)$/;"	f
+gdad	./libgrit/cprs_huff.cpp	/^static int *gdad, *glson, *grson;$/;"	v	file:
+gfxAlphaColor	./libgrit/grit_core.h	/^	RGBQUAD	 gfxAlphaColor;	\/\/!< Transparent color (-gT {num} ). $/;"	m	struct:GritRec
+gfxAttr	./libgrit/grit_xp.cpp	/^			u8	gfxAttr, mapAttr, mmapAttr, palAttr;$/;"	m	struct:GrfHeader::__anon5::__anon6	file:
+gfxBpp	./libgrit/grit_core.h	/^	u8		 gfxBpp;		\/\/!< Bitdepth for shared graphics (unused for now)$/;"	m	struct:GritShared
+gfxBpp	./libgrit/grit_core.h	/^	u8		 gfxBpp;		\/\/!< Output bitdepth (-gB{num} ).$/;"	m	struct:GritRec
+gfxCompression	./libgrit/grit_core.h	/^	echar	 gfxCompression;	\/\/!< Graphics compression type$/;"	m	struct:GritRec
+gfxDataType	./libgrit/grit_core.h	/^	echar	 gfxDataType;	\/\/!< Graphics data type (-gu{num} ).$/;"	m	struct:GritRec
+gfxHasAlpha	./libgrit/grit_core.h	/^	bool	 gfxHasAlpha;	\/\/!< Input image has transparent color.$/;"	m	struct:GritRec
+gfxHeight	./libgrit/grit_xp.cpp	/^	u32	gfxWidth, gfxHeight;$/;"	m	struct:GrfHeader	file:
+gfxIsShared	./libgrit/grit_core.h	/^	bool	 gfxIsShared;	\/\/!< Graphics are shared (-gS).$/;"	m	struct:GritRec
+gfxMode	./libgrit/grit_core.h	/^	echar	 gfxMode;		\/\/!< Graphics mode (tile, bmp, bmpA).$/;"	m	struct:GritRec
+gfxOffset	./libgrit/grit_core.h	/^	u32		 gfxOffset;		\/\/!< Pixel value offset (-ga {num}).$/;"	m	struct:GritRec
+gfxProcMode	./libgrit/grit_core.h	/^	echar	 gfxProcMode;	\/\/!< Graphics process mode.$/;"	m	struct:GritRec
+gfxWidth	./libgrit/grit_xp.cpp	/^	u32	gfxWidth, gfxHeight;$/;"	m	struct:GrfHeader	file:
+gids	./libgrit/cprs_huff.cpp	/^static u32 *gids, *gprobs, *gtiers;$/;"	v	file:
+glson	./libgrit/cprs_huff.cpp	/^static int *gdad, *glson, *grson;$/;"	v	file:
+gm2	./cldib/cldib_quant.h	/^    float *gm2;$/;"	m	class:WuQuantizer
+gprobs	./libgrit/cprs_huff.cpp	/^static u32 *gids, *gprobs, *gtiers;$/;"	v	file:
+green	./cldib/cldib_pcx.cpp	/^	BYTE green;$/;"	m	struct:tagPCXRGBTRIPLE	file:
+green	./cldib/cldib_tga.cpp	/^	BYTE green;$/;"	m	struct:tagTGA_BGR	file:
+green	./cldib/cldib_tga.cpp	/^	BYTE green;$/;"	m	struct:tagTGA_BGRA	file:
+green	./extlib/FreeImage.h	/^	WORD green;$/;"	m	struct:tagFIRGB16
+green	./extlib/FreeImage.h	/^	WORD green;$/;"	m	struct:tagFIRGBA16
+green	./extlib/FreeImage.h	/^	float green;$/;"	m	struct:tagFIRGBAF
+green	./extlib/FreeImage.h	/^	float green;$/;"	m	struct:tagFIRGBF
+grit_alloc	./libgrit/grit_core.cpp	/^GritRec *grit_alloc()$/;"	f
+grit_app_string	./libgrit/grit_core.cpp	/^const char *grit_app_string= __grit_app_string;$/;"	v
+grit_clear	./libgrit/grit_core.cpp	/^void grit_clear(GritRec *gr)$/;"	f
+grit_compress	./libgrit/grit_misc.cpp	/^bool grit_compress(RECORD *dst, const RECORD *src, uint mode)$/;"	f
+grit_copy_options	./libgrit/grit_core.cpp	/^void grit_copy_options(GritRec *dst, const GritRec *src)$/;"	f
+grit_copy_strings	./libgrit/grit_core.cpp	/^void grit_copy_strings(GritRec *dst, const GritRec *src)$/;"	f
+grit_dump	./libgrit/grit_core.cpp	/^void grit_dump(GritRec *gr, FILE *fp)$/;"	f
+grit_dump_short	./libgrit/grit_core.cpp	/^void grit_dump_short(GritRec *gr, FILE *fp, const char *pre)$/;"	f
+grit_export	./libgrit/grit_xp.cpp	/^bool grit_export(GritRec *gr)$/;"	f
+grit_find_tile_pal	./libgrit/grit_prep.cpp	/^u16 grit_find_tile_pal(BYTE *tileD)$/;"	f
+grit_free	./libgrit/grit_core.cpp	/^void grit_free(GritRec *gr)$/;"	f
+grit_gbfs_entry_init	./libgrit/grit_xp.cpp	/^int grit_gbfs_entry_init(GBFS_ENTRY *gben, const RECORD *rec, $/;"	f
+grit_init	./libgrit/grit_core.cpp	/^void grit_init(GritRec *gr)$/;"	f
+grit_init_from_dib	./libgrit/grit_core.cpp	/^bool grit_init_from_dib(GritRec *gr)$/;"	f
+grit_is_bmp	./libgrit/grit_core.h	/^INLINE bool grit_is_bmp(const GritRec *gr)$/;"	f
+grit_is_metatiled	./libgrit/grit_core.h	/^INLINE bool grit_is_metatiled(const GritRec *gr)$/;"	f
+grit_is_tiled	./libgrit/grit_core.h	/^INLINE bool grit_is_tiled(const GritRec *gr)$/;"	f
+grit_load_ext_tiles	./srcgrit/grit_main.cpp	/^bool grit_load_ext_tiles(GritRec *gr)$/;"	f
+grit_meta_reduce	./libgrit/grit_prep.cpp	/^RECORD *grit_meta_reduce(RECORD *dst, const RECORD *src, int tileN, u32 flags)$/;"	f
+grit_parse	./srcgrit/grit_main.cpp	/^bool grit_parse(GritRec *gr, const strvec &args)$/;"	f
+grit_parse_cprs	./srcgrit/grit_main.cpp	/^int grit_parse_cprs(const char *key, const strvec &args)$/;"	f
+grit_parse_file	./srcgrit/grit_main.cpp	/^bool grit_parse_file(GritRec *gr, const strvec &args)$/;"	f
+grit_parse_gfx	./srcgrit/grit_main.cpp	/^bool grit_parse_gfx(GritRec *gr, const strvec &args)$/;"	f
+grit_parse_log	./srcgrit/grit_main.cpp	/^int grit_parse_log(GritRec *gr, const strvec &args)$/;"	f
+grit_parse_map	./srcgrit/grit_main.cpp	/^bool grit_parse_map(GritRec *gr, const strvec &args)$/;"	f
+grit_parse_pal	./srcgrit/grit_main.cpp	/^bool grit_parse_pal(GritRec *gr, const strvec &args)$/;"	f
+grit_parse_shared	./srcgrit/grit_main.cpp	/^bool grit_parse_shared(GritRec *gr, const strvec &args)$/;"	f
+grit_preface	./libgrit/grit_xp.cpp	/^bool grit_preface(GritRec *gr, FILE *fp, const char *cmt)$/;"	f
+grit_prep	./libgrit/grit_prep.cpp	/^bool grit_prep(GritRec *gr)$/;"	f
+grit_prep_gfx	./libgrit/grit_prep.cpp	/^bool grit_prep_gfx(GritRec *gr)$/;"	f
+grit_prep_grf	./libgrit/grit_xp.cpp	/^chunk_t *grit_prep_grf(GritRec *gr)$/;"	f
+grit_prep_item	./libgrit/grit_xp.cpp	/^bool grit_prep_item(GritRec *gr, eint id, DataItem *item)$/;"	f
+grit_prep_map	./libgrit/grit_prep.cpp	/^bool grit_prep_map(GritRec *gr)$/;"	f
+grit_prep_pal	./libgrit/grit_prep.cpp	/^bool grit_prep_pal(GritRec *gr)$/;"	f
+grit_prep_tiles	./libgrit/grit_prep.cpp	/^bool grit_prep_tiles(GritRec *gr)$/;"	f
+grit_prep_work_dib	./libgrit/grit_prep.cpp	/^bool grit_prep_work_dib(GritRec *gr)$/;"	f
+grit_run	./libgrit/grit_core.cpp	/^bool grit_run(GritRec *gr)$/;"	f
+grit_save_ext_tiles	./srcgrit/grit_main.cpp	/^bool grit_save_ext_tiles(GritRec *gr)$/;"	f
+grit_tile_cmp	./libgrit/grit_prep.cpp	/^bool grit_tile_cmp(BYTE *test, BYTE *base, u32 x_xor, u32 y_xor, BYTE mask)$/;"	f
+grit_tile_reduce	./libgrit/grit_prep.cpp	/^CLDIB *grit_tile_reduce(RECORD *dst, CLDIB *srcDib, u32 flags, CLDIB *extDib)$/;"	f
+grit_type_size	./libgrit/grit_core.h	/^INLINE int grit_type_size(u8 type)$/;"	f
+grit_validate	./libgrit/grit_core.cpp	/^bool grit_validate(GritRec *gr)$/;"	f
+grit_validate_area	./libgrit/grit_core.cpp	/^bool grit_validate_area(GritRec *gr)$/;"	f
+grit_validate_paths	./libgrit/grit_core.cpp	/^bool grit_validate_paths(GritRec *gr)$/;"	f
+grit_xp_bin	./libgrit/grit_xp.cpp	/^bool grit_xp_bin(GritRec *gr)$/;"	f
+grit_xp_c	./libgrit/grit_xp.cpp	/^bool grit_xp_c(GritRec *gr)$/;"	f
+grit_xp_decl	./libgrit/grit_xp.cpp	/^void grit_xp_decl(FILE *fp, DataItem *item)$/;"	f
+grit_xp_decl	./libgrit/grit_xp.cpp	/^void grit_xp_decl(FILE *fp, int dtype, const char *name, int affix, int len)$/;"	f
+grit_xp_gas	./libgrit/grit_xp.cpp	/^bool grit_xp_gas(GritRec *gr)$/;"	f
+grit_xp_gbfs	./libgrit/grit_xp.cpp	/^bool grit_xp_gbfs(GritRec *gr)$/;"	f
+grit_xp_grf	./libgrit/grit_xp.cpp	/^bool grit_xp_grf(GritRec *gr)$/;"	f
+grit_xp_h	./libgrit/grit_xp.cpp	/^bool grit_xp_h(GritRec *gr)$/;"	f
+grit_xp_o	./libgrit/grit_xp.cpp	/^bool grit_xp_o(GritRec *gr)$/;"	f
+grit_xp_size	./libgrit/grit_xp.cpp	/^uint grit_xp_size(GritRec *gr)$/;"	f
+grs_alloc	./libgrit/grit_shared.cpp	/^GritShared *grs_alloc()$/;"	f
+grs_clear	./libgrit/grit_shared.cpp	/^void grs_clear(GritShared *grs)$/;"	f
+grs_free	./libgrit/grit_shared.cpp	/^void grs_free(GritShared *grs)$/;"	f
+grs_run	./libgrit/grit_shared.cpp	/^void grs_run(GritShared *grs, GritRec *gr_base)$/;"	f
+grson	./libgrit/cprs_huff.cpp	/^static int *gdad, *glson, *grson;$/;"	v	file:
+gtable	./libgrit/cprs_huff.cpp	/^static BYTE *gtable;$/;"	v	file:
+gtiers	./libgrit/cprs_huff.cpp	/^static u32 *gids, *gprobs, *gtiers;$/;"	v	file:
+hScreenSize	./cldib/cldib_pcx.cpp	/^	WORD	hScreenSize;		\/\/ Horizontal Screen Size$/;"	m	struct:tagPCXHDR	file:
+has_table	./cldib/cldib_tga.cpp	/^	BYTE has_table;$/;"	m	struct:tagTGAHDR	file:
+hbm_blit	./cldib/cldib_core.cpp	/^int hbm_blit(HDC hdc, int dX, int dY, int dW, int dH, $/;"	f
+height	./cldib/cldib_core.h	/^	int height;		\/\/!< Height of data \/ Length of data$/;"	m	struct:RECORD
+height	./cldib/cldib_tga.cpp	/^	WORD height;$/;"	m	struct:tagTGAHDR	file:
+height	./cldib/cldib_tmap.h	/^	int height;			\/\/!< Map Height.$/;"	m	struct:TTileMap
+hflip	./cldib/cldib_tmap.h	/^			WORD hflip	: 1;$/;"	m	struct:TMapEntry::__anon7::__anon8
+horzDpi	./cldib/cldib_pcx.cpp	/^	WORD	horzDpi;			\/\/ Horizontal dots per inch$/;"	m	struct:tagPCXHDR	file:
+hufapp	./libgrit/cprs_huff.cpp	/^static void hufapp(u32 ids[], const u32 probs[], u32 nn, u32 ii)$/;"	f	file:
+huff_init_freqs	./libgrit/cprs_huff.cpp	/^static void huff_init_freqs(u32 freqs[], const void *srcv, int srcS, int srcB)$/;"	f	file:
+huff_table_fill	./libgrit/cprs_huff.cpp	/^static void huff_table_fill(int id, int tier)$/;"	f	file:
+huffgba_compress	./libgrit/cprs_huff.cpp	/^uint huffgba_compress(RECORD *dst, const RECORD *src, int srcB)$/;"	f
+i	./extlib/FreeImage.h	/^    double i;$/;"	m	struct:tagFICOMPLEX
+id	./libgrit/grit_xp.cpp	/^	char	id[4];$/;"	m	struct:chunk_t	file:
+id2title	./doc/html/tonc.js	/^function id2title()$/;"	f
+id_len	./cldib/cldib_tga.cpp	/^	BYTE id_len;$/;"	m	struct:tagTGAHDR	file:
+ifl_filter_list	./cldib/cldib_img.cpp	/^int ifl_filter_list(CImgFile **list, char *str_filter)$/;"	f
+ifl_from_path	./cldib/cldib_img.cpp	/^CImgFile *ifl_from_path(CImgFile **list, const char *fpath)$/;"	f
+img_bpp	./cldib/cldib_tga.cpp	/^	BYTE img_bpp;$/;"	m	struct:tagTGAHDR	file:
+img_desc	./cldib/cldib_tga.cpp	/^	BYTE img_desc;$/;"	m	struct:tagTGAHDR	file:
+index	./cldib/cldib_tmap.h	/^	WORD index;				\/\/!< Tile index$/;"	m	struct:TMapEntry
+indicators	./srcwingrit/MainFrm.cpp	/^static UINT indicators[] =$/;"	v	file:
+isempty	./libgrit/pathfun.h	/^inline int isempty(const char *str)$/;"	f
+junk	./cldib/cldib_pcx.cpp	/^	BYTE	junk;$/;"	m	struct:tagPCXHDR	file:
+left	./cldib/winglue.h	/^	LONG left;$/;"	m	struct:_RECT
+len	./libgrit/grit_xp.cpp	/^  u32  len;          \/* length of object in bytes *\/$/;"	m	struct:GBFS_ENTRY	file:
+logMode	./libgrit/grit_core.h	/^	echar	 logMode;		\/\/!< Logging level$/;"	m	struct:GritShared
+log_exit	./libgrit/logger.cpp	/^void log_exit()$/;"	f
+log_get_level	./libgrit/logger.cpp	/^int log_get_level()$/;"	f
+log_get_stream	./libgrit/logger.cpp	/^FILE *log_get_stream()$/;"	f
+log_init	./libgrit/logger.cpp	/^void log_init(int level, FILE *fp)$/;"	f
+log_set_level	./libgrit/logger.cpp	/^void log_set_level(int level)$/;"	f
+log_set_stream	./libgrit/logger.cpp	/^void log_set_stream(FILE *fp)$/;"	f
+lprintf	./libgrit/logger.cpp	/^int lprintf(int level, const char *format, ...)$/;"	f
+lson	./libgrit/cprs_lz.cpp	/^static int lson[RING_MAX+1], rson[RING_MAX+256+1], dad[RING_MAX+1];  $/;"	v	file:
+lz77gba_compress	./libgrit/cprs_lz.cpp	/^uint lz77gba_compress(RECORD *dst, const RECORD *src)$/;"	f
+lz77gba_decompress	./libgrit/cprs_lz.cpp	/^uint lz77gba_decompress(RECORD *dst, const RECORD *src)$/;"	f
+mAreaHeight	./srcwingrit/gritdlg.h	/^	int		mAreaHeight;$/;"	m	class:CxpGbaDlg
+mAreaLeft	./srcwingrit/gritdlg.h	/^	int		mAreaLeft;$/;"	m	class:CxpGbaDlg
+mAreaTop	./srcwingrit/gritdlg.h	/^	int		mAreaTop;$/;"	m	class:CxpGbaDlg
+mAreaWidth	./srcwingrit/gritdlg.h	/^	int		mAreaWidth;$/;"	m	class:CxpGbaDlg
+mBpp	./cldib/cldib_files.h	/^	int mBpp;$/;"	m	class:CImgFile
+mClrTrans	./cldib/cldib_files.h	/^	COLORREF mClrTrans;$/;"	m	class:CPngFile
+mCurrID	./srcwingrit/FileFilter.h	/^	int mCurrID;$/;"	m	class:CFileFilter
+mDib	./cldib/cldib_files.h	/^	CLDIB *mDib;$/;"	m	class:CImgFile
+mDib	./cldib/cldib_quant.h	/^	CLDIB *mDib;$/;"	m	class:WuQuantizer
+mDib	./srcwingrit/wingritDoc.h	/^	CLDIB *mDib;$/;"	m	class:CWingritDoc
+mDlgName	./srcwingrit/FileFilter.h	/^	CString mDlgName;$/;"	m	class:CFileFilter
+mDlgType	./srcwingrit/FileFilter.h	/^	int mDlgType;$/;"	m	class:CFileFilter
+mDstDir	./srcwingrit/gritdlg.h	/^	CString mDstDir;$/;"	m	class:CxpGbaDlg
+mDstPath	./srcwingrit/gritdlg.h	/^	CString	mDstPath;$/;"	m	class:CxpGbaDlg
+mDstTitle	./srcwingrit/gritdlg.h	/^	CString mDstTitle;$/;"	m	class:CxpGbaDlg
+mFileType	./srcwingrit/gritdlg.h	/^	int		mFileType;$/;"	m	class:CxpGbaDlg
+mFilterSize	./srcwingrit/FileFilter.h	/^	int mFilterSize;$/;"	m	class:CFileFilter
+mFilters	./srcwingrit/FileFilter.h	/^	CString *mFilters;$/;"	m	class:CFileFilter
+mFlags	./srcwingrit/ModelessDlg.h	/^	DWORD mFlags;$/;"	m	class:CModelessDlg
+mGfxBpp	./srcwingrit/gritdlg.h	/^	int		mGfxBpp;$/;"	m	class:CxpGbaDlg
+mGfxCprs	./srcwingrit/gritdlg.h	/^	int		mGfxCprs;$/;"	m	class:CxpGbaDlg
+mGfxMode	./srcwingrit/gritdlg.h	/^	int		mGfxMode;$/;"	m	class:CxpGbaDlg
+mGfxTransStr	./srcwingrit/gritdlg.h	/^	CString	mGfxTransStr;$/;"	m	class:CxpGbaDlg
+mHeight	./cldib/cldib_quant.h	/^	WORD mWidth, mHeight, mPitch;$/;"	m	class:WuQuantizer
+mMapCprs	./srcwingrit/gritdlg.h	/^	int		mMapCprs;$/;"	m	class:CxpGbaDlg
+mMapOffset	./srcwingrit/gritdlg.h	/^	int		mMapOffset;$/;"	m	class:CxpGbaDlg
+mObjHorz	./srcwingrit/gritdlg.h	/^	int		mObjHorz;$/;"	m	class:CxpGbaDlg
+mObjVert	./srcwingrit/gritdlg.h	/^	int		mObjVert;$/;"	m	class:CxpGbaDlg
+mPalCount	./srcwingrit/gritdlg.h	/^	int		mPalCount;$/;"	m	class:CxpGbaDlg
+mPalInfoId	./srcwingrit/PalViewDlg.h	/^	CStatic mPalInfoId;$/;"	m	class:CPalViewDlg
+mPalInfoVal	./srcwingrit/PalViewDlg.h	/^	CStatic mPalInfoVal;$/;"	m	class:CPalViewDlg
+mPalStart	./srcwingrit/gritdlg.h	/^	int		mPalStart;$/;"	m	class:CxpGbaDlg
+mPalTrans	./srcwingrit/gritdlg.h	/^	BYTE	mPalTrans;$/;"	m	class:CxpGbaDlg
+mPalView	./srcwingrit/PalViewDlg.h	/^	CStatic mPalView;$/;"	m	class:CPalViewDlg
+mPath	./cldib/cldib_files.h	/^	char *mPath;$/;"	m	class:CImgFile
+mPitch	./cldib/cldib_quant.h	/^	WORD mWidth, mHeight, mPitch;$/;"	m	class:WuQuantizer
+mSummary	./srcwingrit/LogDlg.h	/^	CString	mSummary;$/;"	m	class:CLogDlg
+mSummary	./srcwingrit/gritdlg.h	/^	CString	mSummary;$/;"	m	class:CxpGbaDlg
+mSymName	./srcwingrit/gritdlg.h	/^	CString	mSymName;$/;"	m	class:CxpGbaDlg
+mTilesetPath	./srcwingrit/gritdlg.h	/^	CString	mTilesetPath;$/;"	m	class:CxpGbaDlg
+mType	./cldib/cldib_files.h	/^	char mType[8];$/;"	m	class:CPalFile
+mWidth	./cldib/cldib_quant.h	/^	WORD mWidth, mHeight, mPitch;$/;"	m	class:WuQuantizer
+mZoom	./srcwingrit/wingritView.h	/^	int mZoom;	\/\/ NOTE: .8 fixed point!$/;"	m	class:CWingritView
+m_wndStatusBar	./srcwingrit/MainFrm.h	/^	CStatusBar  m_wndStatusBar;$/;"	m	class:CMainFrame
+m_wndToolBar	./srcwingrit/MainFrm.h	/^	CToolBar    m_wndToolBar;$/;"	m	class:CMainFrame
+magic	./libgrit/grit_xp.cpp	/^  char magic[16];    \/* "PinEightGBFS\\r\\n\\032\\n" *\/$/;"	m	struct:GBFS_FILE	file:
+main	./doc/html/tonc.js	/^function main()$/;"	f
+main	./srcgrit/grit_main.cpp	/^int main(int argc, char **argv)$/;"	f
+mapAttr	./libgrit/grit_xp.cpp	/^			u8	gfxAttr, mapAttr, mmapAttr, palAttr;$/;"	m	struct:GrfHeader::__anon5::__anon6	file:
+mapCompression	./libgrit/grit_core.h	/^	echar	 mapCompression;	\/\/!< Map compression type (-mz{char} ).$/;"	m	struct:GritRec
+mapDataType	./libgrit/grit_core.h	/^	echar	 mapDataType;	\/\/!< Map data type (-mu {num} ).$/;"	m	struct:GritRec
+mapLayout	./libgrit/grit_core.h	/^	echar	 mapLayout;		\/\/!< Map layout mode (-mL{char} ).$/;"	m	struct:GritRec
+mapOffset	./libgrit/grit_core.h	/^	u32		 mapOffset;		\/\/!< Map-entry tile-value offset (-ma {num}).$/;"	m	struct:GritRec
+mapProcMode	./libgrit/grit_core.h	/^	echar	 mapProcMode;	\/\/!< Map process mode (-m).$/;"	m	struct:GritRec
+mapRedux	./libgrit/grit_core.h	/^	echar	 mapRedux;		\/\/!< Map tile-reduction mode (-mR[tpf,48a] ).$/;"	m	struct:GritRec
+match_length	./libgrit/cprs_lz.cpp	/^static int match_length;  \/\/ global string match length$/;"	v	file:
+match_position	./libgrit/cprs_lz.cpp	/^static int match_position;  \/\/ global string match position$/;"	v	file:
+maxX	./cldib/cldib_pcx.cpp	/^	WORD	maxX;$/;"	m	struct:tagPCXHDR	file:
+maxY	./cldib/cldib_pcx.cpp	/^	WORD	maxY;$/;"	m	struct:tagPCXHDR	file:
+mb	./cldib/cldib_quant.h	/^	LONG *wt, *mr, *mg, *mb;$/;"	m	class:WuQuantizer
+mbActive	./cldib/cldib_files.h	/^	bool mbActive;$/;"	m	class:CImgFile
+mbAppend	./srcwingrit/gritdlg.h	/^	BOOL	mbAppend;$/;"	m	class:CxpGbaDlg
+mbBusy	./srcwingrit/gritdlg.h	/^	BOOL mbBusy;$/;"	m	class:CxpGbaDlg
+mbDown	./srcwingrit/wingritView.h	/^	BOOL mbDown;$/;"	m	class:CWingritView
+mbGfx	./srcwingrit/gritdlg.h	/^	BOOL	mbGfx;$/;"	m	class:CxpGbaDlg
+mbGray	./cldib/cldib_files.h	/^	bool mbGray;$/;"	m	class:CPcxFile
+mbHeader	./srcwingrit/gritdlg.h	/^	BOOL	mbHeader;$/;"	m	class:CxpGbaDlg
+mbMap	./srcwingrit/gritdlg.h	/^	BOOL	mbMap;$/;"	m	class:CxpGbaDlg
+mbMapRdx	./srcwingrit/gritdlg.h	/^	BOOL	mbMapRdx;$/;"	m	class:CxpGbaDlg
+mbMapRdxFlip	./srcwingrit/gritdlg.h	/^	BOOL	mbMapRdxFlip;$/;"	m	class:CxpGbaDlg
+mbMapRdxPal	./srcwingrit/gritdlg.h	/^	BOOL	mbMapRdxPal;$/;"	m	class:CxpGbaDlg
+mbMetaPal	./srcwingrit/gritdlg.h	/^	BOOL	mbMetaPal;$/;"	m	class:CxpGbaDlg
+mbObjCustom	./srcwingrit/gritdlg.h	/^	BOOL	mbObjCustom;$/;"	m	class:CxpGbaDlg
+mbPal	./srcwingrit/gritdlg.h	/^	BOOL	mbPal;$/;"	m	class:CxpGbaDlg
+mbRiff	./srcwingrit/gritdlg.h	/^	BOOL	mbRiff;$/;"	m	class:CxpGbaDlg
+mbSymChk	./srcwingrit/gritdlg.h	/^	BOOL	mbSymChk;$/;"	m	class:CxpGbaDlg
+mbTileset	./srcwingrit/gritdlg.h	/^	BOOL	mbTileset;$/;"	m	class:CxpGbaDlg
+mbTrans	./cldib/cldib_files.h	/^	bool mbTrans;$/;"	m	class:CPngFile
+mbVisible	./srcwingrit/ModelessDlg.h	/^	BOOL mbVisible;$/;"	m	class:CModelessDlg
+metaHeight	./libgrit/grit_core.h	/^	u8		 metaHeight;	\/\/!< Meta-tile\/object height (in tiles) (-Mh{num} ).$/;"	m	struct:GritRec
+metaHeight	./libgrit/grit_xp.cpp	/^	u8	metaWidth, metaHeight;$/;"	m	struct:GrfHeader	file:
+metaWidth	./libgrit/grit_core.h	/^	u8		 metaWidth;		\/\/!< Meta-tile\/object width (in tiles) (-Mw{num} ).$/;"	m	struct:GritRec
+metaWidth	./libgrit/grit_xp.cpp	/^	u8	metaWidth, metaHeight;$/;"	m	struct:GrfHeader	file:
+mg	./cldib/cldib_quant.h	/^	LONG *wt, *mr, *mg, *mb;$/;"	m	class:WuQuantizer
+mgr	./srcwingrit/gritdlg.h	/^	GritRec *mgr;$/;"	m	class:CxpGbaDlg
+minX	./cldib/cldib_pcx.cpp	/^	WORD	minX;				\/\/ Window dimensions$/;"	m	struct:tagPCXHDR	file:
+minY	./cldib/cldib_pcx.cpp	/^	WORD	minY;$/;"	m	struct:tagPCXHDR	file:
+mmapAttr	./libgrit/grit_xp.cpp	/^			u8	gfxAttr, mapAttr, mmapAttr, palAttr;$/;"	m	struct:GrfHeader::__anon5::__anon6	file:
+moAreaSize	./srcwingrit/gritdlg.h	/^	int		moAreaSize;$/;"	m	class:CxpGbaDlg
+moMapFormat	./srcwingrit/gritdlg.h	/^	int		moMapFormat;$/;"	m	class:CxpGbaDlg
+moObjShape	./srcwingrit/gritdlg.h	/^	int		moObjShape;$/;"	m	class:CxpGbaDlg
+moObjSize	./srcwingrit/gritdlg.h	/^	int		moObjSize;$/;"	m	class:CxpGbaDlg
+moVarChunk	./srcwingrit/gritdlg.h	/^	int		moVarChunk;$/;"	m	class:CxpGbaDlg
+mpDib	./srcwingrit/gritdlg.h	/^	CLDIB *mpDib;$/;"	m	class:CxpGbaDlg
+mpDoc	./srcwingrit/ModelessDlg.h	/^	CDocument *mpDoc;$/;"	m	class:CModelessDlg
+mpFidib	./srcwingrit/wingritDoc.h	/^	FIBITMAP *mpFidib;$/;"	m	class:CWingritDoc
+mpMsg	./cldib/cldib_files.h	/^	const char *mpMsg;		\/\/ pointer to error msg on save\/load$/;"	m	class:CImgFile
+mpText	./srcwingrit/MainFrm.h	/^	CTextWnd   *mpText;$/;"	m	class:CMainFrame
+mptLast	./srcwingrit/wingritView.h	/^	CPoint mptLast;$/;"	m	class:CWingritView
+mptOrg	./srcwingrit/wingritView.h	/^	CPoint mptOrg;$/;"	m	class:CWingritView
+mr	./cldib/cldib_quant.h	/^	LONG *wt, *mr, *mg, *mb;$/;"	m	class:WuQuantizer
+name	./libgrit/grit_xp.cpp	/^	char	*name;			\/\/!< Symbol name.$/;"	m	class:DataItem	file:
+name	./libgrit/grit_xp.cpp	/^  char name[24];     \/* filename, nul-padded *\/$/;"	m	struct:GBFS_ENTRY	file:
+new	./srcwingrit/FileFilter.cpp	8;"	d	file:
+new	./srcwingrit/LogDlg.cpp	11;"	d	file:
+new	./srcwingrit/MainFrm.cpp	14;"	d	file:
+new	./srcwingrit/ModelessDlg.cpp	8;"	d	file:
+new	./srcwingrit/PalViewDlg.cpp	12;"	d	file:
+new	./srcwingrit/gritdlg.cpp	23;"	d	file:
+new	./srcwingrit/wingrit.cpp	14;"	d	file:
+new	./srcwingrit/wingritDoc.cpp	17;"	d	file:
+new	./srcwingrit/wingritView.cpp	14;"	d	file:
+operator =	./cldib/cldib_bmp.cpp	/^CBmpFile &CBmpFile::operator=(const CBmpFile &rhs)$/;"	f	class:CBmpFile
+operator =	./cldib/cldib_img.cpp	/^CImgFile &CImgFile::operator=(const CImgFile &rhs)$/;"	f	class:CImgFile
+operator =	./cldib/cldib_pal.cpp	/^CPalFile &CPalFile::operator=(const CPalFile &rhs)$/;"	f	class:CPalFile
+operator =	./cldib/cldib_pcx.cpp	/^CPcxFile &CPcxFile::operator=(const CPcxFile &rhs)$/;"	f	class:CPcxFile
+operator =	./cldib/cldib_png.cpp	/^CPngFile &CPngFile::operator=(const CPngFile &rhs)$/;"	f	class:CPngFile
+operator =	./cldib/cldib_tga.cpp	/^CTgaFile &CTgaFile::operator=(const CTgaFile &rhs)$/;"	f	class:CTgaFile
+pRec	./libgrit/grit_xp.cpp	/^	RECORD	*pRec;			\/\/!< Pointer to external data-record.$/;"	m	class:DataItem	file:
+pal	./cldib/cldib_tmap.h	/^			WORD pal	: 4;$/;"	m	struct:TMapEntry::__anon7::__anon8
+pal1	./cldib/cldib_pcx.cpp	/^	PCXRGBTRIPLE pal1[16];		\/\/ palette$/;"	m	struct:tagPCXHDR	file:
+palAlphaId	./libgrit/grit_core.h	/^	u32		 palAlphaId;	\/\/!< Transparent palette entry$/;"	m	struct:GritRec
+palAttr	./libgrit/grit_xp.cpp	/^			u8	gfxAttr, mapAttr, mmapAttr, palAttr;$/;"	m	struct:GrfHeader::__anon5::__anon6	file:
+palCompression	./libgrit/grit_core.h	/^	echar	 palCompression;	\/\/!< Palette compression type.$/;"	m	struct:GritRec
+palDataType	./libgrit/grit_core.h	/^	echar	 palDataType;	\/\/!< Palette data type.$/;"	m	struct:GritRec
+palEnd	./libgrit/grit_core.h	/^	int		 palEnd;		\/\/!< Final palette entry to export (exclusive)$/;"	m	struct:GritRec
+palHasAlpha	./libgrit/grit_core.h	/^	bool	 palHasAlpha;	\/\/!< Has special transparency index.$/;"	m	struct:GritRec
+palIsShared	./libgrit/grit_core.h	/^	bool	 palIsShared;	\/\/!< Shared palette (-pS),$/;"	m	struct:GritRec
+palProcMode	./libgrit/grit_core.h	/^	echar	 palProcMode;	\/\/!< Palette process mode (-p).$/;"	m	struct:GritRec
+palRec	./libgrit/grit_core.h	/^	RECORD	 palRec;		\/\/!< Shared palette (unused for now)$/;"	m	struct:GritShared
+palStart	./libgrit/grit_core.h	/^	int		 palStart;		\/\/!< First palette entry to export.$/;"	m	struct:GritRec
+pal_bpp	./cldib/cldib_tga.cpp	/^	BYTE pal_bpp;$/;"	m	struct:tagTGAHDR	file:
+pal_len	./cldib/cldib_tga.cpp	/^	WORD pal_len;$/;"	m	struct:tagTGAHDR	file:
+pal_start	./cldib/cldib_tga.cpp	/^	WORD pal_start;$/;"	m	struct:tagTGAHDR	file:
+paltype	./cldib/cldib_pcx.cpp	/^	WORD	paltype;			\/\/ 1 = Color, 2 = GrayScale$/;"	m	struct:tagPCXHDR	file:
+path_add_dir_sep	./libgrit/pathfun.cpp	/^void path_add_dir_sep(char *path)$/;"	f
+path_fix_sep	./libgrit/pathfun.cpp	/^char *path_fix_sep(char *path)$/;"	f
+path_get_dir	./libgrit/pathfun.cpp	/^char *path_get_dir(char *dst, const char *path, int size)$/;"	f
+path_get_ext	./libgrit/pathfun.cpp	/^char *path_get_ext(const char *path)$/;"	f
+path_get_longname	./libgrit/pathfun.cpp	/^char *path_get_longname(char *dst, const char *path, int size)$/;"	f
+path_get_name	./libgrit/pathfun.cpp	/^char *path_get_name(const char *path)$/;"	f
+path_get_title	./libgrit/pathfun.cpp	/^char *path_get_title(char *dst, const char *path, int size)$/;"	f
+path_get_vol	./libgrit/pathfun.cpp	/^int path_get_vol(const char *path)$/;"	f
+path_get_xext	./libgrit/pathfun.cpp	/^char *path_get_xext(const char *path)$/;"	f
+path_get_xtitle	./libgrit/pathfun.cpp	/^char *path_get_xtitle(char *dst, const char *path, int size)$/;"	f
+path_getting_rid_of_those_braindead_msdos_mangled_short_filenames_the_fucking_hard_way_because_theres_no_alternative	./libgrit/pathfun.cpp	337;"	d	file:
+path_repl_ext	./libgrit/pathfun.cpp	/^char *path_repl_ext(char *dst, const char *path, const char *ext, int size)$/;"	f
+pcx_readline	./cldib/cldib_pcx.cpp	/^static int pcx_readline(BYTE *src, BYTE *dest, int width)$/;"	f	file:
+pcx_writeline	./cldib/cldib_pcx.cpp	/^static int pcx_writeline(BYTE *src, BYTE *dest, int width)$/;"	f	file:
+planes	./cldib/cldib_pcx.cpp	/^	BYTE	planes;				\/\/ number of color planes$/;"	m	struct:tagPCXHDR	file:
+procMode	./libgrit/grit_xp.cpp	/^	echar	procMode;$/;"	m	class:DataItem	file:
+r	./extlib/FreeImage.h	/^	double r;$/;"	m	struct:tagFICOMPLEX
+r0	./cldib/cldib_quant.h	/^    int r0, r1;		\/\/ (min, max]$/;"	m	struct:WuQuantizer::tagBox
+r1	./cldib/cldib_quant.h	/^    int r0, r1;		\/\/ (min, max]$/;"	m	struct:WuQuantizer::tagBox
+read16be	./cldib/cldib_core.h	/^INLINE DWORD read16be(const BYTE *src)$/;"	f
+read16le	./cldib/cldib_core.h	/^INLINE DWORD read16le(const BYTE *src)$/;"	f
+read32be	./cldib/cldib_core.h	/^INLINE DWORD read32be(const BYTE *src)$/;"	f
+read32le	./cldib/cldib_core.h	/^INLINE DWORD read32le(const BYTE *src)$/;"	f
+rec_alias	./cldib/cldib_core.h	/^INLINE RECORD *rec_alias(RECORD *dst, const RECORD *src)$/;"	f
+rec_attach	./cldib/cldib_core.h	/^INLINE void rec_attach(RECORD *dst, const void *data, int width, int height)$/;"	f
+rec_size	./cldib/cldib_core.h	/^INLINE int rec_size(const RECORD *rec)$/;"	f
+red	./cldib/cldib_pcx.cpp	/^	BYTE red;$/;"	m	struct:tagPCXRGBTRIPLE	file:
+red	./cldib/cldib_tga.cpp	/^	BYTE red;$/;"	m	struct:tagTGA_BGR	file:
+red	./cldib/cldib_tga.cpp	/^	BYTE red;$/;"	m	struct:tagTGA_BGRA	file:
+red	./extlib/FreeImage.h	/^	WORD red;$/;"	m	struct:tagFIRGB16
+red	./extlib/FreeImage.h	/^	WORD red;$/;"	m	struct:tagFIRGBA16
+red	./extlib/FreeImage.h	/^	float red;$/;"	m	struct:tagFIRGBAF
+red	./extlib/FreeImage.h	/^	float red;$/;"	m	struct:tagFIRGBF
+reflect	./cldib/cldib_core.h	/^INLINE int reflect(int x, int min, int max)$/;"	f
+reserved	./libgrit/grit_xp.cpp	/^  char reserved[8];  \/* for future use *\/$/;"	m	struct:GBFS_FILE	file:
+rgb2clr	./cldib/cldib_core.h	/^INLINE COLORREF rgb2clr(RGBQUAD rgb)$/;"	f
+rgbBlue	./extlib/FreeImage.h	/^  BYTE rgbBlue;$/;"	m	struct:tagRGBQUAD
+rgbGreen	./extlib/FreeImage.h	/^  BYTE rgbGreen;$/;"	m	struct:tagRGBQUAD
+rgbRed	./extlib/FreeImage.h	/^  BYTE rgbRed;$/;"	m	struct:tagRGBQUAD
+rgbReserved	./extlib/FreeImage.h	/^  BYTE rgbReserved;$/;"	m	struct:tagRGBQUAD
+rgb_dist	./cldib/cldib_tools.cpp	/^DWORD rgb_dist(const RGBQUAD *a, const RGBQUAD *b)$/;"	f
+rgbtBlue	./extlib/FreeImage.h	/^  BYTE rgbtBlue;$/;"	m	struct:tagRGBTRIPLE
+rgbtGreen	./extlib/FreeImage.h	/^  BYTE rgbtGreen;$/;"	m	struct:tagRGBTRIPLE
+rgbtRed	./extlib/FreeImage.h	/^  BYTE rgbtRed;$/;"	m	struct:tagRGBTRIPLE
+right	./cldib/winglue.h	/^	LONG right;$/;"	m	struct:_RECT
+rle8gba_compress	./libgrit/cprs_rle.cpp	/^uint rle8gba_compress(RECORD *dst, const RECORD *src)$/;"	f
+rle8gba_decompress	./libgrit/cprs_rle.cpp	/^uint rle8gba_decompress(RECORD *dst, const RECORD *src)$/;"	f
+rson	./libgrit/cprs_lz.cpp	/^static int lson[RING_MAX+1], rson[RING_MAX+256+1], dad[RING_MAX+1];  $/;"	v	file:
+run_individual	./srcgrit/grit_main.cpp	/^int run_individual(GritRec *gr, const strvec &args, const strvec &fpaths)$/;"	f
+run_main	./srcgrit/grit_main.cpp	/^int run_main(int argc, char **argv)$/;"	f
+run_prep	./srcgrit/grit_main.cpp	/^bool run_prep(GritRec *gr, const char *fpath)$/;"	f
+run_shared	./srcgrit/grit_main.cpp	/^int run_shared(GritRec *gr, const strvec &args, const strvec &fpaths)$/;"	f
+s16	./libgrit/grit_core.h	/^typedef signed short s16; $/;"	t
+s32	./libgrit/grit_core.h	/^typedef signed int   s32;$/;"	t
+s8	./libgrit/grit_core.h	/^typedef signed char  s8;$/;"	t
+sMsgs	./cldib/cldib_bmp.cpp	/^const char *CBmpFile::sMsgs[]= $/;"	m	class:CBmpFile	file:
+sMsgs	./cldib/cldib_files.h	/^	static const char *sMsgs[];$/;"	m	class:CBmpFile
+sMsgs	./cldib/cldib_files.h	/^	static const char *sMsgs[];$/;"	m	class:CImgFile
+sMsgs	./cldib/cldib_files.h	/^	static const char *sMsgs[];$/;"	m	class:CPalFile
+sMsgs	./cldib/cldib_files.h	/^	static const char *sMsgs[];$/;"	m	class:CPcxFile
+sMsgs	./cldib/cldib_files.h	/^	static const char *sMsgs[];$/;"	m	class:CPngFile
+sMsgs	./cldib/cldib_files.h	/^	static const char *sMsgs[];$/;"	m	class:CTgaFile
+sMsgs	./cldib/cldib_img.cpp	/^const char *CImgFile::sMsgs[]= $/;"	m	class:CImgFile	file:
+sMsgs	./cldib/cldib_pal.cpp	/^const char *CPalFile::sMsgs[]= $/;"	m	class:CPalFile	file:
+sMsgs	./cldib/cldib_pcx.cpp	/^const char *CPcxFile::sMsgs[]= $/;"	m	class:CPcxFile	file:
+sMsgs	./cldib/cldib_png.cpp	/^const char *CPngFile::sMsgs[]= $/;"	m	class:CPngFile	file:
+sMsgs	./cldib/cldib_tga.cpp	/^const char *CTgaFile::sMsgs[]=$/;"	m	class:CTgaFile	file:
+shared	./libgrit/grit_core.h	/^	GritShared	*shared;$/;"	m	struct:GritRec
+sharedMode	./libgrit/grit_core.h	/^	echar	 sharedMode;	\/\/!< Main mode.$/;"	m	struct:GritShared
+size	./libgrit/grit_xp.cpp	/^	u32		size;$/;"	m	struct:chunk_t	file:
+srcDib	./libgrit/grit_core.h	/^	CLDIB	*srcDib;		\/\/!< Source bitmap.$/;"	m	struct:GritRec
+srcPath	./libgrit/grit_core.h	/^	char	*srcPath;		\/\/!< Path to source bitmap.$/;"	m	struct:GritRec
+str2rgb	./cldib/cldib_conv.cpp	/^RGBQUAD str2rgb(const char *str)$/;"	f
+str_fix_ident	./libgrit/pathfun.cpp	/^char *str_fix_ident(char *dst, const char *src, int size)$/;"	f
+strcasecmp	./cldib/winglue.h	41;"	d
+strrepl	./libgrit/pathfun.cpp	/^char *strrepl(char **dst, const char *src)$/;"	f
+strtrim	./libgrit/pathfun.cpp	/^char *strtrim(char *dst, const char *src)$/;"	f
+strupr	./libgrit/pathfun.cpp	/^char *strupr(char *str)$/;"	f
+strvec	./srcgrit/cli.h	/^typedef std::vector<char*> strvec;$/;"	t
+swap_dword	./cldib/cldib_tools.h	/^INLINE DWORD swap_dword(DWORD xx)$/;"	f
+swap_rgb16	./cldib/cldib_core.h	/^INLINE WORD swap_rgb16(WORD clr)$/;"	f
+swap_rgb24	./cldib/cldib_core.h	/^INLINE RGBTRIPLE swap_rgb24(RGBTRIPLE clr)$/;"	f
+swap_rgb32	./cldib/cldib_core.h	/^INLINE RGBQUAD swap_rgb32(RGBQUAD clr)$/;"	f
+swap_word	./cldib/cldib_tools.h	/^INLINE WORD swap_word(WORD xx)$/;"	f
+symName	./libgrit/grit_core.h	/^	char	*symName;		\/\/!< Output symbol name (-s {name} ).$/;"	m	struct:GritRec
+tagBITMAPINFO	./extlib/FreeImage.h	/^typedef struct tagBITMAPINFO { $/;"	s
+tagBITMAPINFOHEADER	./extlib/FreeImage.h	/^typedef struct tagBITMAPINFOHEADER{$/;"	s
+tagBox	./cldib/cldib_quant.h	/^typedef struct tagBox $/;"	s	class:WuQuantizer
+tagFICOMPLEX	./extlib/FreeImage.h	/^typedef struct tagFICOMPLEX {$/;"	s
+tagFIRGB16	./extlib/FreeImage.h	/^typedef struct tagFIRGB16 {$/;"	s
+tagFIRGBA16	./extlib/FreeImage.h	/^typedef struct tagFIRGBA16 {$/;"	s
+tagFIRGBAF	./extlib/FreeImage.h	/^typedef struct tagFIRGBAF {$/;"	s
+tagFIRGBF	./extlib/FreeImage.h	/^typedef struct tagFIRGBF {$/;"	s
+tagPCXHDR	./cldib/cldib_pcx.cpp	/^typedef struct tagPCXHDR {$/;"	s	file:
+tagPCXRGBTRIPLE	./cldib/cldib_pcx.cpp	/^typedef struct tagPCXRGBTRIPLE$/;"	s	file:
+tagRGBQUAD	./extlib/FreeImage.h	/^typedef struct tagRGBQUAD {$/;"	s
+tagRGBTRIPLE	./extlib/FreeImage.h	/^typedef struct tagRGBTRIPLE {$/;"	s
+tagTGAHDR	./cldib/cldib_tga.cpp	/^typedef struct tagTGAHDR$/;"	s	file:
+tagTGA_BGR	./cldib/cldib_tga.cpp	/^typedef struct tagTGA_BGR$/;"	s	file:
+tagTGA_BGRA	./cldib/cldib_tga.cpp	/^typedef struct tagTGA_BGRA$/;"	s	file:
+test_bit_rev	./cldib/cldib_test.cpp	/^void test_bit_rev()$/;"	f
+test_bup	./cldib/cldib_test.cpp	/^void test_bup()$/;"	f
+test_byte_rev	./cldib/cldib_test.cpp	/^void test_byte_rev()$/;"	f
+test_main	./cldib/cldib_test.cpp	/^void test_main()$/;"	f
+test_pack	./cldib/cldib_test.cpp	/^void test_pack()$/;"	f
+test_pcx	./cldib/cldib_test.cpp	/^void test_pcx()$/;"	f
+test_png	./cldib/cldib_test.cpp	/^void test_png()$/;"	f
+test_quant	./cldib/cldib_test.cpp	/^void test_quant()$/;"	f
+test_redim	./cldib/cldib_test.cpp	/^void test_redim()$/;"	f
+test_tga	./cldib/cldib_test.cpp	/^void test_tga()$/;"	f
+text_buf	./libgrit/cprs_lz.cpp	/^static BYTE text_buf[RING_MAX + FRAME_MAX - 1];$/;"	v	file:
+tga_read_pal	./cldib/cldib_tga.cpp	/^static bool tga_read_pal(CLDIB *dib, const TGAHDR *hdr, $/;"	f	file:
+tga_unrle	./cldib/cldib_tga.cpp	/^void tga_unrle(CLDIB *dib, TGAHDR *hdr, FILE *fp)$/;"	f
+theApp	./srcwingrit/wingrit.cpp	/^CWingritApp theApp;$/;"	v
+tile	./cldib/cldib_tmap.h	/^			WORD tile	:10;$/;"	m	struct:TMapEntry::__anon7::__anon8
+tileHeight	./libgrit/grit_core.h	/^	u8		 tileHeight;	\/\/!< Tile height (in pixels) (-th{num} ).$/;"	m	struct:GritRec
+tileHeight	./libgrit/grit_xp.cpp	/^	u8	tileWidth, tileHeight;$/;"	m	struct:GrfHeader	file:
+tilePath	./libgrit/grit_core.h	/^	char	*tilePath;		\/\/!< Path to external tileset (can be NULL)$/;"	m	struct:GritShared
+tileWidth	./libgrit/grit_core.h	/^	u8		 tileWidth;		\/\/!< Tile width (in pixels) (-tw{num} ).$/;"	m	struct:GritRec
+tileWidth	./libgrit/grit_xp.cpp	/^	u8	tileWidth, tileHeight;$/;"	m	struct:GrfHeader	file:
+tile_height	./cldib/cldib_tmap.h	/^	int tile_height;	\/\/!< Tile height.$/;"	m	struct:TTileMap
+tile_width	./cldib/cldib_tmap.h	/^	int tile_width;		\/\/!< Tile width.$/;"	m	struct:TTileMap
+tiles	./cldib/cldib_tmap.h	/^	CLDIB *tiles;		\/\/!< Tileset.$/;"	m	struct:TTileMap
+tmap_alloc	./cldib/cldib_tmap.cpp	/^TTileMap *tmap_alloc()$/;"	f
+tmap_attach	./cldib/cldib_tmap.cpp	/^CLDIB *tmap_attach(TTileMap *tmap, CLDIB *dib)$/;"	f
+tmap_free	./cldib/cldib_tmap.cpp	/^void tmap_free(TTileMap *tmap)$/;"	f
+tmap_init	./cldib/cldib_tmap.cpp	/^void tmap_init(TTileMap *tmap, int mapW, int mapH, $/;"	f
+tmap_init_from_dib	./cldib/cldib_tmap.cpp	/^bool tmap_init_from_dib(TTileMap *tmap, CLDIB *dib, int tileW, int tileH, $/;"	f
+tmap_render	./cldib/cldib_tmap.cpp	/^CLDIB *tmap_render(TTileMap *tmap, const RECT *rect)$/;"	f
+top	./cldib/winglue.h	/^	LONG top;$/;"	m	struct:_RECT
+total_len	./libgrit/grit_xp.cpp	/^  u32  total_len;    \/* total length of archive *\/$/;"	m	struct:GBFS_FILE	file:
+type	./cldib/cldib_pcx.cpp	/^	BYTE	type;				\/\/ PCX tag ; 10 == ZSoft$/;"	m	struct:tagPCXHDR	file:
+type	./cldib/cldib_tga.cpp	/^	BYTE type;$/;"	m	struct:tagTGAHDR	file:
+u16	./libgrit/grit_core.h	/^typedef unsigned short u16, ushort, eshort;$/;"	t
+u32	./libgrit/grit_core.h	/^typedef unsigned int   u32, uint, eint;$/;"	t
+u8	./libgrit/grit_core.h	/^typedef unsigned char  u8 , uchar, echar;$/;"	t
+uchar	./libgrit/grit_core.h	/^typedef unsigned char  u8 , uchar, echar;$/;"	t
+uint	./libgrit/grit_core.h	/^typedef unsigned int   u32, uint, eint;$/;"	t
+ushort	./libgrit/grit_core.h	/^typedef unsigned short u16, ushort, eshort;$/;"	t
+vScreenSize	./cldib/cldib_pcx.cpp	/^	WORD	vScreenSize;		\/\/ Vertical Screen Size$/;"	m	struct:tagPCXHDR	file:
+version	./cldib/cldib_pcx.cpp	/^	BYTE	version;			\/\/ 0 = Paintbrush 2.5$/;"	m	struct:tagPCXHDR	file:
+vertDpi	./cldib/cldib_pcx.cpp	/^	WORD	vertDpi;			\/\/ Vertical dots per inch$/;"	m	struct:tagPCXHDR	file:
+vflip	./cldib/cldib_tmap.h	/^			WORD vflip	: 1;$/;"	m	struct:TMapEntry::__anon7::__anon8
+vol	./cldib/cldib_quant.h	/^    int vol;$/;"	m	struct:WuQuantizer::tagBox
+width	./cldib/cldib_core.h	/^	int width;		\/\/!< Width of \\a data \/ datatype$/;"	m	struct:RECORD
+width	./cldib/cldib_tga.cpp	/^	WORD width;$/;"	m	struct:tagTGAHDR	file:
+width	./cldib/cldib_tmap.h	/^	int width;			\/\/!< Map width.$/;"	m	struct:TTileMap
+wrap	./cldib/cldib_core.h	/^INLINE int wrap(int x, int min, int max)$/;"	f
+write16be	./cldib/cldib_core.h	/^INLINE void write16be(BYTE *dst, WORD src)$/;"	f
+write16le	./cldib/cldib_core.h	/^INLINE void write16le(BYTE *dst, WORD src)$/;"	f
+write32be	./cldib/cldib_core.h	/^INLINE void write32be(BYTE *dst, DWORD src)$/;"	f
+write32le	./cldib/cldib_core.h	/^INLINE void write32le(BYTE *dst, DWORD src)$/;"	f
+wt	./cldib/cldib_quant.h	/^	LONG *wt, *mr, *mg, *mb;$/;"	m	class:WuQuantizer
+xorg	./cldib/cldib_tga.cpp	/^	WORD xorg;$/;"	m	struct:tagTGAHDR	file:
+xp_array_c	./libgrit/pathfun.cpp	/^bool xp_array_c(FILE *fp, const char *symname, $/;"	f
+xp_array_gas	./libgrit/pathfun.cpp	/^bool xp_array_gas(FILE *fp, const char *symname, $/;"	f
+xp_data_bin	./libgrit/pathfun.cpp	/^bool xp_data_bin(const char *fname, const void *data, int len, const char *fmode)$/;"	f
+xp_data_c	./libgrit/pathfun.cpp	/^bool xp_data_c(FILE *fp, const void *_data, int len, int chunk)$/;"	f
+xp_data_gas	./libgrit/pathfun.cpp	/^bool xp_data_gas(FILE *fp, const void *_data, int len, int chunk)$/;"	f
+yorg	./cldib/cldib_tga.cpp	/^	WORD yorg;$/;"	m	struct:tagTGAHDR	file:
+~CFileFilter	./srcwingrit/FileFilter.cpp	/^CFileFilter::~CFileFilter()$/;"	f	class:CFileFilter
+~CImgFile	./cldib/cldib_files.h	/^	virtual ~CImgFile()			{	Clear();			}$/;"	f	class:CImgFile
+~CMainFrame	./srcwingrit/MainFrm.cpp	/^CMainFrame::~CMainFrame()$/;"	f	class:CMainFrame
+~CWingritDoc	./srcwingrit/wingritDoc.cpp	/^CWingritDoc::~CWingritDoc()$/;"	f	class:CWingritDoc
+~CWingritView	./srcwingrit/wingritView.cpp	/^CWingritView::~CWingritView()$/;"	f	class:CWingritView
+~CxpGbaDlg	./srcwingrit/gritdlg.cpp	/^CxpGbaDlg::~CxpGbaDlg()$/;"	f	class:CxpGbaDlg
+~DataItem	./libgrit/grit_xp.cpp	/^	~DataItem()	{	free(name);	}$/;"	f	class:DataItem
+~WuQuantizer	./cldib/cldib_wu.cpp	/^WuQuantizer::~WuQuantizer()$/;"	f	class:WuQuantizer
