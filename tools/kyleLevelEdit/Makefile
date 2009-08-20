@@ -14,7 +14,13 @@ all: $(OBJS)
 %.o: %.cpp
 	$(CC) $(CPPFLAGS) -c $*.cpp
 
+%.o: %.c
+	$(CC) $(CPPFLAGS) -c $*.c
+
 
 run: all
 	./$(BIN)
+
+clean:
+	rm -f *o $(BIN)
 
