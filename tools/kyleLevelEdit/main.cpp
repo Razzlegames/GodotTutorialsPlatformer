@@ -23,6 +23,7 @@ extern void init_map_size_dialog();
 
 //****************************************************************     
 /* Draw a rectangle on the screen */
+
 static void draw_brush (GtkWidget *widget, gdouble x, gdouble y)
 {
 
@@ -44,6 +45,7 @@ static void draw_brush (GtkWidget *widget, gdouble x, gdouble y)
 }
 
 //****************************************************************     
+
 extern "C"  gboolean button_press_event( GtkWidget *widget, GdkEventButton *event )
 {
 
@@ -80,6 +82,7 @@ extern "C"  gboolean button_press_event( GtkWidget *widget, GdkEventButton *even
 
 //****************************************************************     
 /* Redraw the screen from the backing pixmap */
+
 extern "C" gboolean expose_event( GtkWidget *widget, GdkEventExpose *event )
 {
 
@@ -101,7 +104,6 @@ extern "C"  gboolean configure_event( GtkWidget *widget, GdkEventConfigure *even
 
   printf("captured configure event!\n");
   fflush(stdout);
-
 
   //  if (pixmap)
   //      g_object_unref(pixmap);
@@ -130,7 +132,6 @@ extern "C"  gboolean realize_drawingarea( GtkWidget *widget, GdkEventConfigure *
 
   printf("realize event!\n");
   fflush(stdout);
-
 
   if (pixmap)
       g_object_unref(pixmap);

@@ -598,6 +598,7 @@
   <object class="GtkWindow" id="map_size_window">
     <property name="border_width">5</property>
     <property name="title" translatable="yes">Choose a Map Size</property>
+    <property name="resizable">False</property>
     <property name="window_position">center-on-parent</property>
     <property name="default_width">287</property>
     <property name="default_height">100</property>

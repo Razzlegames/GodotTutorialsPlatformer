@@ -26,20 +26,29 @@ extern GtkWidget* image1;
   error_dialog(temp2); }
 
 
+//****************************************************************     
+/**
+ */
+
 void error_dialog(const char* str)
 {
 
-
   GtkWidget* dlg;
-  GtkWidget* label1;
 
-  dlg= gtk_dialog_new( );
-  label1= gtk_label_new( str);
+  dlg= 
+    gtk_message_dialog_new (
+        NULL,
+        GTK_DIALOG_DESTROY_WITH_PARENT,
+        GTK_MESSAGE_ERROR,
+        GTK_BUTTONS_CLOSE,
+        str
+        );
 
-  gtk_box_pack_start( GTK_BOX( GTK_DIALOG( dlg )->vbox ), label1, TRUE, TRUE, 0 );
+  // Destroy the popup when the user cancels or closes the window
+  g_signal_connect_swapped(dlg, "response", G_CALLBACK(gtk_widget_destroy), dlg);
 
-  gtk_widget_show( label1 );
   gtk_widget_show( dlg );
+
   return;
 
 }
@@ -108,7 +117,8 @@ extern "C" gboolean cancel_map_size_event( GtkWidget *widget,
 
 //****************************************************************     
 /**
- * Create a new map
+ * Commit map changes from map change dialog window
+ *
  */
 
 extern "C" gboolean commit_map_size_event( GtkWidget *widget, 
