@@ -199,7 +199,6 @@
     <property name="window_position">mouse</property>
     <property name="default_width">221</property>
     <property name="default_height">443</property>
-    <property name="type_hint">toolbar</property>
     <property name="transient_for">window</property>
     <child>
       <object class="GtkVBox" id="vbox1">
@@ -584,7 +583,13 @@
           </packing>
         </child>
         <child>
-          <placeholder/>
+          <object class="GtkImage" id="current_tile_image">
+            <property name="visible">True</property>
+            <property name="stock">gtk-missing-image</property>
+          </object>
+          <packing>
+            <property name="position">2</property>
+          </packing>
         </child>
       </object>
     </child>

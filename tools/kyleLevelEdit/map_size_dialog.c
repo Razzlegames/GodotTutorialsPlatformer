@@ -7,11 +7,13 @@
 
 #include <FreeImage.h>
 #include "ImageHandling.h"
+#include "map_edit_window.h"
 
 extern GtkBuilder* builder;
 extern GtkWidget* window;
 extern GtkWidget* tile_window;
-extern GtkWidget* map_edit_window;
+
+extern MapEditWindow map_edit_window;
 extern GtkWidget* map_size_window;
 extern GtkWidget* map_tile_table;
 
@@ -158,7 +160,7 @@ extern "C" gboolean commit_map_size_event( GtkWidget *widget,
 
   }
 
-  printf("Map resized to: %dx%d\n",width, height);
+  printf("Map resized to: %dx%d tiles\n",width, height);
   fflush(stdout);
 
   gtk_table_resize(GTK_TABLE(map_tile_table), height, width);

@@ -4,6 +4,11 @@
 #include <FreeImage.h>
 #include "ImageHandling.h"
 
+extern "C"
+{
+#include "map_edit_window.h"
+}
+
 /* Backing pixmap for drawing area */
 static GdkPixmap *pixmap = NULL;
 const int DEFAULT_PIXMAP_WIDTH = 600;
@@ -12,7 +17,7 @@ const int DEFAULT_PIXMAP_HEIGHT = 600;
 GtkBuilder* builder;
 GtkWidget* window;
 GtkWidget* tile_window;
-GtkWidget* map_edit_window;
+extern MapEditWindow map_edit_window;
 GtkWidget* map_size_window;
 GtkWidget* tile_vbox;
 GtkWidget* map_tile_table;
@@ -20,6 +25,7 @@ GtkWidget* map_tile_table;
 GdkPixbuf** map_tiles_pix;
 GtkWidget* image1 ;
 extern void init_map_size_dialog();
+extern void setupMapWindow();
 
 //****************************************************************     
 /* Draw a rectangle on the screen */
@@ -194,7 +200,9 @@ int main (int argc, char *argv[])
   // Create a reference to all needed widgets
   window = GTK_WIDGET (gtk_builder_get_object (builder, "window"));
   tile_window = GTK_WIDGET (gtk_builder_get_object (builder, "tile_window"));
-  map_edit_window = GTK_WIDGET (gtk_builder_get_object (builder, "map_edit_window"));
+
+  setupMapWindow();
+
   map_size_window = GTK_WIDGET (gtk_builder_get_object (builder, "map_size_window"));
   map_tile_table = GTK_WIDGET (gtk_builder_get_object (builder, "map_tile_table"));
   tile_vbox = 
@@ -208,26 +216,26 @@ int main (int argc, char *argv[])
   for(i = 0; i < 30; i++)
   {
 
-    image1 = gtk_image_new_from_file("ball_green.bmp");
+    if(i % 2)
+        image1 = gtk_image_new_from_file("ball_green.bmp");
+    else
+        image1 = gtk_image_new_from_file("ball_yellow.bmp");
+
     gtk_container_add(GTK_CONTAINER(tile_vbox), image1);
     gtk_widget_show (image1);       
 
   }
 
-  image1 = gtk_image_new_from_file("ball_yellow.bmp");
-  gtk_container_add(GTK_CONTAINER(tile_vbox), image1);
-  gtk_widget_show (image1);       
 
   gtk_builder_connect_signals (builder, NULL);          
   g_object_unref (G_OBJECT (builder));
 
   //gtk_drawing_area_size(drawingarea1, 600, 600);
 
-
   gtk_widget_show (window);       
   gtk_widget_show (tile_window);       
   gtk_widget_show (tile_vbox);       
-  gtk_widget_show (map_edit_window);       
+  gtk_widget_show (map_edit_window.window);       
 
   gtk_main ();
 
