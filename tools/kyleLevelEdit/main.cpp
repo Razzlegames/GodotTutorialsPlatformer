@@ -3,11 +3,14 @@
 #include <gtk/gtk.h>
 #include <FreeImage.h>
 #include "ImageHandling.h"
+#include "map_edit_window.h"
 
 extern "C"
 {
 #include "map_edit_window.h"
 }
+#include "map_size_dialog.h"
+#include "error_dialogs.h"
 
 /* Backing pixmap for drawing area */
 static GdkPixmap *pixmap = NULL;
@@ -24,8 +27,9 @@ GtkWidget* map_tile_table;
 
 GdkPixbuf** map_tiles_pix;
 GtkWidget* image1 ;
-extern void init_map_size_dialog();
-extern void setupMapWindow();
+
+/// Map data, tile index only
+unsigned short* tile_index_data = NULL;
 
 //****************************************************************     
 /* Draw a rectangle on the screen */
@@ -133,7 +137,8 @@ extern "C"  gboolean configure_event( GtkWidget *widget, GdkEventConfigure *even
 //****************************************************************     
 /* Create a new backing pixmap of the appropriate size */
 
-extern "C"  gboolean realize_drawingarea( GtkWidget *widget, GdkEventConfigure *event )
+extern "C"  gboolean realize_drawingarea( GtkWidget *widget, 
+    GdkEventConfigure *event )
 {
 
   printf("realize event!\n");
@@ -212,6 +217,7 @@ int main (int argc, char *argv[])
 
   //GtkWidget* image1;
 
+
   int i;
   for(i = 0; i < 30; i++)
   {
@@ -231,6 +237,7 @@ int main (int argc, char *argv[])
   g_object_unref (G_OBJECT (builder));
 
   //gtk_drawing_area_size(drawingarea1, 600, 600);
+
 
   gtk_widget_show (window);       
   gtk_widget_show (tile_window);       

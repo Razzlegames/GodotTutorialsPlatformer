@@ -24,3 +24,5 @@ run: all
 clean:
 	rm -f *o $(BIN)
 
+ctags:
+	ctags -R /usr/include/gtk-2.0/ ./ /usr/include/FreeImage.h

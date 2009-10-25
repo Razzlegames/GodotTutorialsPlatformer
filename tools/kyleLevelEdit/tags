@@ -4,9 +4,168 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.7	//
-BIN	Makefile	/^BIN=tutorial$/;"	m
-CC	Makefile	/^CC=g++$/;"	m
-CPPFLAGS	Makefile	/^CPPFLAGS= -Wall -g -export-dynamic `pkg-config --cflags --libs gtk+-2.0`$/;"	m
+BIN	./Makefile	/^BIN=tutorial$/;"	m
+BITMAPINFO	/usr/include/FreeImage.h	/^} BITMAPINFO, *PBITMAPINFO;$/;"	t	typeref:struct:tagBITMAPINFO
+BITMAPINFOHEADER	/usr/include/FreeImage.h	/^} BITMAPINFOHEADER, *PBITMAPINFOHEADER; $/;"	t	typeref:struct:tagBITMAPINFOHEADER
+BMP_DEFAULT	/usr/include/FreeImage.h	665;"	d
+BMP_SAVE_RLE	/usr/include/FreeImage.h	666;"	d
+BOOL	/usr/include/FreeImage.h	/^typedef int32_t BOOL;$/;"	t
+BOOL	/usr/include/FreeImage.h	/^typedef long BOOL;$/;"	t
+BYTE	/usr/include/FreeImage.h	/^typedef uint8_t BYTE;$/;"	t
+BYTE	/usr/include/FreeImage.h	/^typedef unsigned char BYTE;$/;"	t
+CC	./Makefile	/^CC=g++$/;"	m
+CPPFLAGS	./Makefile	/^CPPFLAGS= -Wall -g -export-dynamic `pkg-config --cflags --libs gtk+-2.0` $/;"	m
+CUT_DEFAULT	/usr/include/FreeImage.h	667;"	d
+DDS_DEFAULT	/usr/include/FreeImage.h	668;"	d
+DEFAULT_PIXMAP_HEIGHT	./main.cpp	/^const int DEFAULT_PIXMAP_HEIGHT = 600;$/;"	v
+DEFAULT_PIXMAP_WIDTH	./main.cpp	/^const int DEFAULT_PIXMAP_WIDTH = 600;$/;"	v
+DLL_API	/usr/include/FreeImage.h	58;"	d
+DLL_API	/usr/include/FreeImage.h	70;"	d
+DLL_API	/usr/include/FreeImage.h	72;"	d
+DLL_API	/usr/include/FreeImage.h	83;"	d
+DLL_API	/usr/include/FreeImage.h	85;"	d
+DLL_CALLCONV	/usr/include/FreeImage.h	59;"	d
+DLL_CALLCONV	/usr/include/FreeImage.h	62;"	d
+DLL_CALLCONV	/usr/include/FreeImage.h	81;"	d
+DWORD	/usr/include/FreeImage.h	/^typedef uint32_t DWORD;$/;"	t
+DWORD	/usr/include/FreeImage.h	/^typedef unsigned long DWORD;$/;"	t
+ERROR_DIALOG	./map_size_dialog.c	26;"	d	file:
+EXR_B44	/usr/include/FreeImage.h	675;"	d
+EXR_DEFAULT	/usr/include/FreeImage.h	669;"	d
+EXR_FLOAT	/usr/include/FreeImage.h	670;"	d
+EXR_LC	/usr/include/FreeImage.h	676;"	d
+EXR_NONE	/usr/include/FreeImage.h	671;"	d
+EXR_PIZ	/usr/include/FreeImage.h	673;"	d
+EXR_PXR24	/usr/include/FreeImage.h	674;"	d
+EXR_ZIP	/usr/include/FreeImage.h	672;"	d
+FALSE	/usr/include/FreeImage.h	135;"	d
+FAXG3_DEFAULT	/usr/include/FreeImage.h	677;"	d
+FI16_555_BLUE_MASK	/usr/include/FreeImage.h	353;"	d
+FI16_555_BLUE_SHIFT	/usr/include/FreeImage.h	356;"	d
+FI16_555_GREEN_MASK	/usr/include/FreeImage.h	352;"	d
+FI16_555_GREEN_SHIFT	/usr/include/FreeImage.h	355;"	d
+FI16_555_RED_MASK	/usr/include/FreeImage.h	351;"	d
+FI16_555_RED_SHIFT	/usr/include/FreeImage.h	354;"	d
+FI16_565_BLUE_MASK	/usr/include/FreeImage.h	359;"	d
+FI16_565_BLUE_SHIFT	/usr/include/FreeImage.h	362;"	d
+FI16_565_GREEN_MASK	/usr/include/FreeImage.h	358;"	d
+FI16_565_GREEN_SHIFT	/usr/include/FreeImage.h	361;"	d
+FI16_565_RED_MASK	/usr/include/FreeImage.h	357;"	d
+FI16_565_RED_SHIFT	/usr/include/FreeImage.h	360;"	d
+FICOMPLEX	/usr/include/FreeImage.h	/^} FICOMPLEX;$/;"	t	typeref:struct:tagFICOMPLEX
+FIICC_COLOR_IS_CMYK	/usr/include/FreeImage.h	367;"	d
+FIICC_DEFAULT	/usr/include/FreeImage.h	366;"	d
+FIRGB16	/usr/include/FreeImage.h	/^} FIRGB16;$/;"	t	typeref:struct:tagFIRGB16
+FIRGBA16	/usr/include/FreeImage.h	/^} FIRGBA16;$/;"	t	typeref:struct:tagFIRGBA16
+FIRGBAF	/usr/include/FreeImage.h	/^} FIRGBAF;$/;"	t	typeref:struct:tagFIRGBAF
+FIRGBF	/usr/include/FreeImage.h	/^} FIRGBF;$/;"	t	typeref:struct:tagFIRGBF
+FI_CloseProc	/usr/include/FreeImage.h	/^typedef void (DLL_CALLCONV *FI_CloseProc)(FreeImageIO *io, fi_handle handle, void *data);$/;"	t
+FI_DEFAULT	/usr/include/FreeImage.h	115;"	d
+FI_DEFAULT	/usr/include/FreeImage.h	119;"	d
+FI_DescriptionProc	/usr/include/FreeImage.h	/^typedef const char *(DLL_CALLCONV *FI_DescriptionProc) ();$/;"	t
+FI_ENUM	/usr/include/FreeImage.h	/^FI_ENUM(FREE_IMAGE_COLOR_CHANNEL) {$/;"	f
+FI_ENUM	/usr/include/FreeImage.h	/^FI_ENUM(FREE_IMAGE_COLOR_TYPE) {$/;"	f
+FI_ENUM	/usr/include/FreeImage.h	/^FI_ENUM(FREE_IMAGE_DITHER) {$/;"	f
+FI_ENUM	/usr/include/FreeImage.h	/^FI_ENUM(FREE_IMAGE_FILTER) {$/;"	f
+FI_ENUM	/usr/include/FreeImage.h	/^FI_ENUM(FREE_IMAGE_FORMAT) {$/;"	f
+FI_ENUM	/usr/include/FreeImage.h	/^FI_ENUM(FREE_IMAGE_MDMODEL) {$/;"	f
+FI_ENUM	/usr/include/FreeImage.h	/^FI_ENUM(FREE_IMAGE_MDTYPE) {$/;"	f
+FI_ENUM	/usr/include/FreeImage.h	/^FI_ENUM(FREE_IMAGE_QUANTIZE) {$/;"	f
+FI_ENUM	/usr/include/FreeImage.h	/^FI_ENUM(FREE_IMAGE_TMO) {$/;"	f
+FI_ENUM	/usr/include/FreeImage.h	/^FI_ENUM(FREE_IMAGE_TYPE) {$/;"	f
+FI_ENUM	/usr/include/FreeImage.h	116;"	d
+FI_ENUM	/usr/include/FreeImage.h	120;"	d
+FI_ExtensionListProc	/usr/include/FreeImage.h	/^typedef const char *(DLL_CALLCONV *FI_ExtensionListProc) ();$/;"	t
+FI_FormatProc	/usr/include/FreeImage.h	/^typedef const char *(DLL_CALLCONV *FI_FormatProc) ();$/;"	t
+FI_InitProc	/usr/include/FreeImage.h	/^typedef void (DLL_CALLCONV *FI_InitProc)(Plugin *plugin, int format_id);$/;"	t
+FI_LoadProc	/usr/include/FreeImage.h	/^typedef FIBITMAP *(DLL_CALLCONV *FI_LoadProc)(FreeImageIO *io, fi_handle handle, int page, int flags, void *data);$/;"	t
+FI_MimeProc	/usr/include/FreeImage.h	/^typedef const char *(DLL_CALLCONV *FI_MimeProc) ();$/;"	t
+FI_OpenProc	/usr/include/FreeImage.h	/^typedef void *(DLL_CALLCONV *FI_OpenProc)(FreeImageIO *io, fi_handle handle, BOOL read);$/;"	t
+FI_PageCapabilityProc	/usr/include/FreeImage.h	/^typedef int (DLL_CALLCONV *FI_PageCapabilityProc)(FreeImageIO *io, fi_handle handle, void *data);$/;"	t
+FI_PageCountProc	/usr/include/FreeImage.h	/^typedef int (DLL_CALLCONV *FI_PageCountProc)(FreeImageIO *io, fi_handle handle, void *data);$/;"	t
+FI_RGBA_ALPHA	/usr/include/FreeImage.h	291;"	d
+FI_RGBA_ALPHA	/usr/include/FreeImage.h	305;"	d
+FI_RGBA_ALPHA	/usr/include/FreeImage.h	321;"	d
+FI_RGBA_ALPHA	/usr/include/FreeImage.h	335;"	d
+FI_RGBA_ALPHA_MASK	/usr/include/FreeImage.h	295;"	d
+FI_RGBA_ALPHA_MASK	/usr/include/FreeImage.h	309;"	d
+FI_RGBA_ALPHA_MASK	/usr/include/FreeImage.h	325;"	d
+FI_RGBA_ALPHA_MASK	/usr/include/FreeImage.h	339;"	d
+FI_RGBA_ALPHA_SHIFT	/usr/include/FreeImage.h	299;"	d
+FI_RGBA_ALPHA_SHIFT	/usr/include/FreeImage.h	313;"	d
+FI_RGBA_ALPHA_SHIFT	/usr/include/FreeImage.h	329;"	d
+FI_RGBA_ALPHA_SHIFT	/usr/include/FreeImage.h	343;"	d
+FI_RGBA_BLUE	/usr/include/FreeImage.h	290;"	d
+FI_RGBA_BLUE	/usr/include/FreeImage.h	304;"	d
+FI_RGBA_BLUE	/usr/include/FreeImage.h	320;"	d
+FI_RGBA_BLUE	/usr/include/FreeImage.h	334;"	d
+FI_RGBA_BLUE_MASK	/usr/include/FreeImage.h	294;"	d
+FI_RGBA_BLUE_MASK	/usr/include/FreeImage.h	308;"	d
+FI_RGBA_BLUE_MASK	/usr/include/FreeImage.h	324;"	d
+FI_RGBA_BLUE_MASK	/usr/include/FreeImage.h	338;"	d
+FI_RGBA_BLUE_SHIFT	/usr/include/FreeImage.h	298;"	d
+FI_RGBA_BLUE_SHIFT	/usr/include/FreeImage.h	312;"	d
+FI_RGBA_BLUE_SHIFT	/usr/include/FreeImage.h	328;"	d
+FI_RGBA_BLUE_SHIFT	/usr/include/FreeImage.h	342;"	d
+FI_RGBA_GREEN	/usr/include/FreeImage.h	289;"	d
+FI_RGBA_GREEN	/usr/include/FreeImage.h	303;"	d
+FI_RGBA_GREEN	/usr/include/FreeImage.h	319;"	d
+FI_RGBA_GREEN	/usr/include/FreeImage.h	333;"	d
+FI_RGBA_GREEN_MASK	/usr/include/FreeImage.h	293;"	d
+FI_RGBA_GREEN_MASK	/usr/include/FreeImage.h	307;"	d
+FI_RGBA_GREEN_MASK	/usr/include/FreeImage.h	323;"	d
+FI_RGBA_GREEN_MASK	/usr/include/FreeImage.h	337;"	d
+FI_RGBA_GREEN_SHIFT	/usr/include/FreeImage.h	297;"	d
+FI_RGBA_GREEN_SHIFT	/usr/include/FreeImage.h	311;"	d
+FI_RGBA_GREEN_SHIFT	/usr/include/FreeImage.h	327;"	d
+FI_RGBA_GREEN_SHIFT	/usr/include/FreeImage.h	341;"	d
+FI_RGBA_RED	/usr/include/FreeImage.h	288;"	d
+FI_RGBA_RED	/usr/include/FreeImage.h	302;"	d
+FI_RGBA_RED	/usr/include/FreeImage.h	318;"	d
+FI_RGBA_RED	/usr/include/FreeImage.h	332;"	d
+FI_RGBA_RED_MASK	/usr/include/FreeImage.h	292;"	d
+FI_RGBA_RED_MASK	/usr/include/FreeImage.h	306;"	d
+FI_RGBA_RED_MASK	/usr/include/FreeImage.h	322;"	d
+FI_RGBA_RED_MASK	/usr/include/FreeImage.h	336;"	d
+FI_RGBA_RED_SHIFT	/usr/include/FreeImage.h	296;"	d
+FI_RGBA_RED_SHIFT	/usr/include/FreeImage.h	310;"	d
+FI_RGBA_RED_SHIFT	/usr/include/FreeImage.h	326;"	d
+FI_RGBA_RED_SHIFT	/usr/include/FreeImage.h	340;"	d
+FI_RGBA_RGB_MASK	/usr/include/FreeImage.h	347;"	d
+FI_ReadProc	/usr/include/FreeImage.h	/^typedef unsigned (DLL_CALLCONV *FI_ReadProc) (void *buffer, unsigned size, unsigned count, fi_handle handle);$/;"	t
+FI_RegExprProc	/usr/include/FreeImage.h	/^typedef const char *(DLL_CALLCONV *FI_RegExprProc) ();$/;"	t
+FI_STRUCT	/usr/include/FreeImage.h	/^FI_STRUCT (FIBITMAP) { void *data; };$/;"	f
+FI_STRUCT	/usr/include/FreeImage.h	/^FI_STRUCT (FIICCPROFILE) { $/;"	f
+FI_STRUCT	/usr/include/FreeImage.h	/^FI_STRUCT (FIMEMORY) { void *data; };$/;"	f
+FI_STRUCT	/usr/include/FreeImage.h	/^FI_STRUCT (FIMETADATA) { void *data; };$/;"	f
+FI_STRUCT	/usr/include/FreeImage.h	/^FI_STRUCT (FIMULTIBITMAP) { void *data; };$/;"	f
+FI_STRUCT	/usr/include/FreeImage.h	/^FI_STRUCT (FITAG) { void *data; };$/;"	f
+FI_STRUCT	/usr/include/FreeImage.h	/^FI_STRUCT (Plugin) {$/;"	f
+FI_STRUCT	/usr/include/FreeImage.h	/^FI_STRUCT(FreeImageIO) {$/;"	f
+FI_STRUCT	/usr/include/FreeImage.h	117;"	d
+FI_STRUCT	/usr/include/FreeImage.h	121;"	d
+FI_SaveProc	/usr/include/FreeImage.h	/^typedef BOOL (DLL_CALLCONV *FI_SaveProc)(FreeImageIO *io, FIBITMAP *dib, fi_handle handle, int page, int flags, void *data);$/;"	t
+FI_SeekProc	/usr/include/FreeImage.h	/^typedef int (DLL_CALLCONV *FI_SeekProc) (fi_handle handle, long offset, int origin);$/;"	t
+FI_SupportsExportBPPProc	/usr/include/FreeImage.h	/^typedef BOOL (DLL_CALLCONV *FI_SupportsExportBPPProc)(int bpp);$/;"	t
+FI_SupportsExportTypeProc	/usr/include/FreeImage.h	/^typedef BOOL (DLL_CALLCONV *FI_SupportsExportTypeProc)(FREE_IMAGE_TYPE type);$/;"	t
+FI_SupportsICCProfilesProc	/usr/include/FreeImage.h	/^typedef BOOL (DLL_CALLCONV *FI_SupportsICCProfilesProc)();$/;"	t
+FI_TellProc	/usr/include/FreeImage.h	/^typedef long (DLL_CALLCONV *FI_TellProc) (fi_handle handle);$/;"	t
+FI_ValidateProc	/usr/include/FreeImage.h	/^typedef BOOL (DLL_CALLCONV *FI_ValidateProc)(FreeImageIO *io, fi_handle handle);$/;"	t
+FI_WriteProc	/usr/include/FreeImage.h	/^typedef unsigned (DLL_CALLCONV *FI_WriteProc) (void *buffer, unsigned size, unsigned count, fi_handle handle);$/;"	t
+FREEIMAGE_BIGENDIAN	/usr/include/FreeImage.h	95;"	d
+FREEIMAGE_COLORORDER	/usr/include/FreeImage.h	102;"	d
+FREEIMAGE_COLORORDER	/usr/include/FreeImage.h	104;"	d
+FREEIMAGE_COLORORDER_BGR	/usr/include/FreeImage.h	99;"	d
+FREEIMAGE_COLORORDER_RGB	/usr/include/FreeImage.h	100;"	d
+FREEIMAGE_H	/usr/include/FreeImage.h	45;"	d
+FREEIMAGE_IO	/usr/include/FreeImage.h	585;"	d
+FREEIMAGE_MAJOR_VERSION	/usr/include/FreeImage.h	49;"	d
+FREEIMAGE_MINOR_VERSION	/usr/include/FreeImage.h	50;"	d
+FREEIMAGE_RELEASE_SERIAL	/usr/include/FreeImage.h	51;"	d
+FreeImageErrorHandler	./ImageHandling.cpp	/^void FreeImageErrorHandler(FREE_IMAGE_FORMAT fif, const char *message) {$/;"	f
+FreeImage_OutputMessageFunction	/usr/include/FreeImage.h	/^typedef void (*FreeImage_OutputMessageFunction)(FREE_IMAGE_FORMAT fif, const char *msg);$/;"	t
+FreeImage_OutputMessageFunctionStdCall	/usr/include/FreeImage.h	/^typedef void (DLL_CALLCONV *FreeImage_OutputMessageFunctionStdCall)(FREE_IMAGE_FORMAT fif, const char *msg); $/;"	t
+GCC_HASCLASSVISIBILITY	/usr/include/FreeImage.h	78;"	d
 GDKVAR	/usr/include/gtk-2.0/gdk/gdktypes.h	42;"	d
 GDKVAR	/usr/include/gtk-2.0/gdk/gdktypes.h	44;"	d
 GDKVAR	/usr/include/gtk-2.0/gdk/gdktypes.h	47;"	d
@@ -2685,6 +2844,9 @@ GDK_zcaron	/usr/include/gtk-2.0/gdk/gdkkeysyms.h	570;"	d
 GDK_zerosubscript	/usr/include/gtk-2.0/gdk/gdkkeysyms.h	1730;"	d
 GDK_zerosuperior	/usr/include/gtk-2.0/gdk/gdkkeysyms.h	1723;"	d
 GDK_zstroke	/usr/include/gtk-2.0/gdk/gdkkeysyms.h	1610;"	d
+GIF_DEFAULT	/usr/include/FreeImage.h	678;"	d
+GIF_LOAD256	/usr/include/FreeImage.h	679;"	d
+GIF_PLAYBACK	/usr/include/FreeImage.h	680;"	d
 GTKMAIN_C_VAR	/usr/include/gtk-2.0/gtk/gtkmain.h	70;"	d
 GTKMAIN_C_VAR	/usr/include/gtk-2.0/gtk/gtkmain.h	72;"	d
 GTKMAIN_C_VAR	/usr/include/gtk-2.0/gtk/gtkmain.h	75;"	d
@@ -5667,7 +5829,56 @@ GtkWindowKeysForeachFunc	/usr/include/gtk-2.0/gtk/gtkwindow.h	/^typedef void (*G
 GtkWindowPosition	/usr/include/gtk-2.0/gtk/gtkenums.h	/^} GtkWindowPosition;$/;"	t	typeref:enum:__anon102
 GtkWindowType	/usr/include/gtk-2.0/gtk/gtkenums.h	/^} GtkWindowType;$/;"	t	typeref:enum:__anon103
 GtkWrapMode	/usr/include/gtk-2.0/gtk/gtkenums.h	/^} GtkWrapMode;$/;"	t	typeref:enum:__anon104
-OBJS	Makefile	/^OBJS= $(patsubst %.cpp,%.o,$(wildcard *.cpp)) \\$/;"	m
+HDR_DEFAULT	/usr/include/FreeImage.h	681;"	d
+ICO_DEFAULT	/usr/include/FreeImage.h	682;"	d
+ICO_MAKEALPHA	/usr/include/FreeImage.h	683;"	d
+IFF_DEFAULT	/usr/include/FreeImage.h	684;"	d
+IMAGEHANDLING_H	./ImageHandling.h	3;"	d
+J2K_DEFAULT	/usr/include/FreeImage.h	685;"	d
+JP2_DEFAULT	/usr/include/FreeImage.h	686;"	d
+JPEG_ACCURATE	/usr/include/FreeImage.h	689;"	d
+JPEG_CMYK	/usr/include/FreeImage.h	690;"	d
+JPEG_DEFAULT	/usr/include/FreeImage.h	687;"	d
+JPEG_FAST	/usr/include/FreeImage.h	688;"	d
+JPEG_PROGRESSIVE	/usr/include/FreeImage.h	696;"	d
+JPEG_QUALITYAVERAGE	/usr/include/FreeImage.h	694;"	d
+JPEG_QUALITYBAD	/usr/include/FreeImage.h	695;"	d
+JPEG_QUALITYGOOD	/usr/include/FreeImage.h	692;"	d
+JPEG_QUALITYNORMAL	/usr/include/FreeImage.h	693;"	d
+JPEG_QUALITYSUPERB	/usr/include/FreeImage.h	691;"	d
+JPEG_SUBSAMPLING_411	/usr/include/FreeImage.h	697;"	d
+JPEG_SUBSAMPLING_420	/usr/include/FreeImage.h	698;"	d
+JPEG_SUBSAMPLING_422	/usr/include/FreeImage.h	699;"	d
+JPEG_SUBSAMPLING_444	/usr/include/FreeImage.h	700;"	d
+KOALA_DEFAULT	/usr/include/FreeImage.h	701;"	d
+LBM_DEFAULT	/usr/include/FreeImage.h	702;"	d
+LIBS	./Makefile	/^LIBS= -lfreeimage$/;"	m
+LONG	/usr/include/FreeImage.h	/^typedef int32_t LONG;$/;"	t
+LONG	/usr/include/FreeImage.h	/^typedef long LONG;$/;"	t
+MAP_EDIT_WINDOW_H	./map_edit_window.h	3;"	d
+MNG_DEFAULT	/usr/include/FreeImage.h	703;"	d
+MapEditWindow	./map_edit_window.h	/^typedef struct MapEditWindow_ MapEditWindow;$/;"	t	typeref:struct:MapEditWindow_
+MapEditWindow_	./map_edit_window.h	/^struct MapEditWindow_$/;"	s
+NULL	/usr/include/FreeImage.h	141;"	d
+OBJS	./Makefile	/^OBJS= $(patsubst %.cpp,%.o,$(wildcard *.cpp)) \\$/;"	m
+PBITMAPINFO	/usr/include/FreeImage.h	/^} BITMAPINFO, *PBITMAPINFO;$/;"	t	typeref:struct:tagBITMAPINFO
+PBITMAPINFOHEADER	/usr/include/FreeImage.h	/^} BITMAPINFOHEADER, *PBITMAPINFOHEADER; $/;"	t	typeref:struct:tagBITMAPINFOHEADER
+PCD_BASE	/usr/include/FreeImage.h	705;"	d
+PCD_BASEDIV16	/usr/include/FreeImage.h	707;"	d
+PCD_BASEDIV4	/usr/include/FreeImage.h	706;"	d
+PCD_DEFAULT	/usr/include/FreeImage.h	704;"	d
+PCX_DEFAULT	/usr/include/FreeImage.h	708;"	d
+PLUGINS	/usr/include/FreeImage.h	622;"	d
+PNG_DEFAULT	/usr/include/FreeImage.h	709;"	d
+PNG_IGNOREGAMMA	/usr/include/FreeImage.h	710;"	d
+PNG_INTERLACED	/usr/include/FreeImage.h	715;"	d
+PNG_Z_BEST_COMPRESSION	/usr/include/FreeImage.h	713;"	d
+PNG_Z_BEST_SPEED	/usr/include/FreeImage.h	711;"	d
+PNG_Z_DEFAULT_COMPRESSION	/usr/include/FreeImage.h	712;"	d
+PNG_Z_NO_COMPRESSION	/usr/include/FreeImage.h	714;"	d
+PNM_DEFAULT	/usr/include/FreeImage.h	716;"	d
+PNM_SAVE_ASCII	/usr/include/FreeImage.h	718;"	d
+PNM_SAVE_RAW	/usr/include/FreeImage.h	717;"	d
 PRIVATE_GTK_ALLOC_NEEDED	/usr/include/gtk-2.0/gtk/gtkprivate.h	/^  PRIVATE_GTK_ALLOC_NEEDED      = 1 <<  12,  \/* If we we should allocate even if the allocation is the same *\/$/;"	e	enum:__anon135
 PRIVATE_GTK_ANCHORED	/usr/include/gtk-2.0/gtk/gtkprivate.h	/^  PRIVATE_GTK_ANCHORED          = 1 <<  9,   \/* If widget has a GtkWindow ancestor *\/$/;"	e	enum:__anon135
 PRIVATE_GTK_CHILD_VISIBLE	/usr/include/gtk-2.0/gtk/gtkprivate.h	/^  PRIVATE_GTK_CHILD_VISIBLE     = 1 <<  10,  \/* If widget should be mapped when parent is mapped *\/$/;"	e	enum:__anon135
@@ -5681,9 +5892,35 @@ PRIVATE_GTK_REQUEST_NEEDED	/usr/include/gtk-2.0/gtk/gtkprivate.h	/^  PRIVATE_GTK
 PRIVATE_GTK_RESIZE_PENDING	/usr/include/gtk-2.0/gtk/gtkprivate.h	/^  PRIVATE_GTK_RESIZE_PENDING	= 1 <<  2,$/;"	e	enum:__anon135
 PRIVATE_GTK_SHADOWED	/usr/include/gtk-2.0/gtk/gtkprivate.h	/^  PRIVATE_GTK_SHADOWED		= 1 <<  4,   \/* If there is a grab in effect shadowing the widget *\/$/;"	e	enum:__anon135
 PRIVATE_GTK_USER_STYLE	/usr/include/gtk-2.0/gtk/gtkprivate.h	/^  PRIVATE_GTK_USER_STYLE	= 1 <<  0,$/;"	e	enum:__anon135
+PSD_DEFAULT	/usr/include/FreeImage.h	719;"	d
+RAS_DEFAULT	/usr/include/FreeImage.h	720;"	d
+RGBQUAD	/usr/include/FreeImage.h	/^} RGBQUAD;$/;"	t	typeref:struct:tagRGBQUAD
+RGBTRIPLE	/usr/include/FreeImage.h	/^} RGBTRIPLE;$/;"	t	typeref:struct:tagRGBTRIPLE
+SEEK_CUR	/usr/include/FreeImage.h	146;"	d
+SEEK_END	/usr/include/FreeImage.h	147;"	d
+SEEK_SET	/usr/include/FreeImage.h	145;"	d
+SGI_DEFAULT	/usr/include/FreeImage.h	721;"	d
+TARGA_DEFAULT	/usr/include/FreeImage.h	722;"	d
+TARGA_LOAD_RGB888	/usr/include/FreeImage.h	723;"	d
+TIFF_ADOBE_DEFLATE	/usr/include/FreeImage.h	728;"	d
+TIFF_CCITTFAX3	/usr/include/FreeImage.h	730;"	d
+TIFF_CCITTFAX4	/usr/include/FreeImage.h	731;"	d
+TIFF_CMYK	/usr/include/FreeImage.h	725;"	d
+TIFF_DEFAULT	/usr/include/FreeImage.h	724;"	d
+TIFF_DEFLATE	/usr/include/FreeImage.h	727;"	d
+TIFF_JPEG	/usr/include/FreeImage.h	733;"	d
+TIFF_LZW	/usr/include/FreeImage.h	732;"	d
+TIFF_NONE	/usr/include/FreeImage.h	729;"	d
+TIFF_PACKBITS	/usr/include/FreeImage.h	726;"	d
+TRUE	/usr/include/FreeImage.h	138;"	d
+WBMP_DEFAULT	/usr/include/FreeImage.h	734;"	d
+WORD	/usr/include/FreeImage.h	/^typedef uint16_t WORD;$/;"	t
+WORD	/usr/include/FreeImage.h	/^typedef unsigned short WORD;$/;"	t
+XBM_DEFAULT	/usr/include/FreeImage.h	735;"	d
 XLIB_RGB_DITHER_MAX	/usr/include/gtk-2.0/gdk-pixbuf-xlib/gdk-pixbuf-xlibrgb.h	/^  XLIB_RGB_DITHER_MAX$/;"	e	enum:__anon48
 XLIB_RGB_DITHER_NONE	/usr/include/gtk-2.0/gdk-pixbuf-xlib/gdk-pixbuf-xlibrgb.h	/^  XLIB_RGB_DITHER_NONE,$/;"	e	enum:__anon48
 XLIB_RGB_DITHER_NORMAL	/usr/include/gtk-2.0/gdk-pixbuf-xlib/gdk-pixbuf-xlibrgb.h	/^  XLIB_RGB_DITHER_NORMAL,$/;"	e	enum:__anon48
+XPM_DEFAULT	/usr/include/FreeImage.h	736;"	d
 XlibRgbCmap	/usr/include/gtk-2.0/gdk-pixbuf-xlib/gdk-pixbuf-xlibrgb.h	/^typedef struct _XlibRgbCmap XlibRgbCmap;$/;"	t	typeref:struct:_XlibRgbCmap
 XlibRgbDither	/usr/include/gtk-2.0/gdk-pixbuf-xlib/gdk-pixbuf-xlibrgb.h	/^} XlibRgbDither;$/;"	t	typeref:enum:__anon48
 _GDK_MAKE_ATOM	/usr/include/gtk-2.0/gdk/gdktypes.h	85;"	d
@@ -6172,6 +6409,7 @@ _GtkWindow	/usr/include/gtk-2.0/gtk/gtkwindow.h	/^struct _GtkWindow$/;"	s
 _GtkWindowClass	/usr/include/gtk-2.0/gtk/gtkwindow.h	/^struct _GtkWindowClass$/;"	s
 _GtkWindowGroup	/usr/include/gtk-2.0/gtk/gtkwindow.h	/^struct _GtkWindowGroup$/;"	s
 _GtkWindowGroupClass	/usr/include/gtk-2.0/gtk/gtkwindow.h	/^struct _GtkWindowGroupClass$/;"	s
+_WINDOWS_	/usr/include/FreeImage.h	132;"	d
 _XlibRgbCmap	/usr/include/gtk-2.0/gdk-pixbuf-xlib/gdk-pixbuf-xlibrgb.h	/^struct _XlibRgbCmap {$/;"	s
 __GDK_APP_LAUNCH_CONTEXT_H__	/usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h	28;"	d
 __GDK_CAIRO_H__	/usr/include/gtk-2.0/gdk/gdkcairo.h	25;"	d
@@ -6954,6 +7192,8 @@ advance	/usr/include/gtk-2.0/gdk-pixbuf/gdk-pixbuf-animation.h	/^        gboolea
 age	/usr/include/gtk-2.0/gtk/gtkrecentfilter.h	/^  gint age;$/;"	m	struct:_GtkRecentFilterInfo
 allocate_child	/usr/include/gtk-2.0/gtk/gtktextlayout.h	/^  void (*allocate_child)        (GtkTextLayout     *layout,$/;"	m	struct:_GtkTextLayoutClass
 allocation	/usr/include/gtk-2.0/gtk/gtktable.h	/^  guint16 allocation;$/;"	m	struct:_GtkTableRowCol
+alpha	/usr/include/FreeImage.h	/^	WORD alpha;$/;"	m	struct:tagFIRGBA16
+alpha	/usr/include/FreeImage.h	/^	float alpha;$/;"	m	struct:tagFIRGBAF
 anchor	/usr/include/gtk-2.0/gtk/gtkclist.h	/^  gint anchor;$/;"	m	struct:_GtkCList
 anchor	/usr/include/gtk-2.0/gtk/gtklist.h	/^  gint anchor;$/;"	m	struct:_GtkList
 anchor_state	/usr/include/gtk-2.0/gtk/gtkclist.h	/^  GtkStateType anchor_state;$/;"	m	struct:_GtkCList
@@ -7019,6 +7259,17 @@ bg_pixmap_name	/usr/include/gtk-2.0/gtk/gtkrc.h	/^  gchar *bg_pixmap_name[5];$/;
 bg_set	/usr/include/gtk-2.0/gtk/gtkclist.h	/^  guint bg_set     : 1;$/;"	m	struct:_GtkCListRow
 bg_stipple	/usr/include/gtk-2.0/gtk/gtktexttag.h	/^  GdkBitmap *bg_stipple;$/;"	m	struct:_GtkTextAppearance
 bg_stipple_set	/usr/include/gtk-2.0/gtk/gtktexttag.h	/^  guint bg_stipple_set : 1;$/;"	m	struct:_GtkTextTag
+biBitCount	/usr/include/FreeImage.h	/^  WORD  biBitCount;$/;"	m	struct:tagBITMAPINFOHEADER
+biClrImportant	/usr/include/FreeImage.h	/^  DWORD biClrImportant;$/;"	m	struct:tagBITMAPINFOHEADER
+biClrUsed	/usr/include/FreeImage.h	/^  DWORD biClrUsed; $/;"	m	struct:tagBITMAPINFOHEADER
+biCompression	/usr/include/FreeImage.h	/^  DWORD biCompression; $/;"	m	struct:tagBITMAPINFOHEADER
+biHeight	/usr/include/FreeImage.h	/^  LONG  biHeight; $/;"	m	struct:tagBITMAPINFOHEADER
+biPlanes	/usr/include/FreeImage.h	/^  WORD  biPlanes; $/;"	m	struct:tagBITMAPINFOHEADER
+biSize	/usr/include/FreeImage.h	/^  DWORD biSize;$/;"	m	struct:tagBITMAPINFOHEADER
+biSizeImage	/usr/include/FreeImage.h	/^  DWORD biSizeImage; $/;"	m	struct:tagBITMAPINFOHEADER
+biWidth	/usr/include/FreeImage.h	/^  LONG  biWidth; $/;"	m	struct:tagBITMAPINFOHEADER
+biXPelsPerMeter	/usr/include/FreeImage.h	/^  LONG  biXPelsPerMeter; $/;"	m	struct:tagBITMAPINFOHEADER
+biYPelsPerMeter	/usr/include/FreeImage.h	/^  LONG  biYPelsPerMeter; $/;"	m	struct:tagBITMAPINFOHEADER
 bin	/usr/include/gtk-2.0/gtk/gtkalignment.h	/^  GtkBin bin;$/;"	m	struct:_GtkAlignment
 bin	/usr/include/gtk-2.0/gtk/gtkbutton.h	/^  GtkBin bin;$/;"	m	struct:_GtkButton
 bin	/usr/include/gtk-2.0/gtk/gtkeventbox.h	/^  GtkBin bin;$/;"	m	struct:_GtkEventBox
@@ -7034,10 +7285,16 @@ bits_per_rgb	/usr/include/gtk-2.0/gdk/gdkvisual.h	/^  gint bits_per_rgb;$/;"	m	s
 black	/usr/include/gtk-2.0/gtk/gtkstyle.h	/^  GdkColor black;$/;"	m	struct:_GtkStyle
 black_gc	/usr/include/gtk-2.0/gtk/gtkstyle.h	/^  GdkGC *black_gc;$/;"	m	struct:_GtkStyle
 block_cursor	/usr/include/gtk-2.0/gtk/gtktextlayout.h	/^  GdkRectangle block_cursor;$/;"	m	struct:_GtkTextLineDisplay
+blue	/usr/include/FreeImage.h	/^	WORD blue;$/;"	m	struct:tagFIRGB16
+blue	/usr/include/FreeImage.h	/^	WORD blue;$/;"	m	struct:tagFIRGBA16
+blue	/usr/include/FreeImage.h	/^	float blue;$/;"	m	struct:tagFIRGBAF
+blue	/usr/include/FreeImage.h	/^	float blue;$/;"	m	struct:tagFIRGBF
 blue	/usr/include/gtk-2.0/gdk/gdkcolor.h	/^  guint16 blue;$/;"	m	struct:_GdkColor
 blue_mask	/usr/include/gtk-2.0/gdk/gdkvisual.h	/^  guint32 blue_mask;$/;"	m	struct:_GdkVisual
 blue_prec	/usr/include/gtk-2.0/gdk/gdkvisual.h	/^  gint blue_prec;$/;"	m	struct:_GdkVisual
 blue_shift	/usr/include/gtk-2.0/gdk/gdkvisual.h	/^  gint blue_shift;$/;"	m	struct:_GdkVisual
+bmiColors	/usr/include/FreeImage.h	/^  RGBQUAD          bmiColors[1];$/;"	m	struct:tagBITMAPINFO
+bmiHeader	/usr/include/FreeImage.h	/^  BITMAPINFOHEADER bmiHeader; $/;"	m	struct:tagBITMAPINFO
 bool_data	/usr/include/gtk-2.0/gtk/gtktypeutils.h	/^    gboolean bool_data;$/;"	m	union:_GtkArg::__anon168
 bottom	/usr/include/gtk-2.0/gtk/gtkstyle.h	/^  gint bottom;$/;"	m	struct:_GtkBorder
 bottom_attach	/usr/include/gtk-2.0/gtk/gtktable.h	/^  guint16 bottom_attach;$/;"	m	struct:_GtkTableChild
@@ -7053,6 +7310,7 @@ buffer	/usr/include/gtk-2.0/gtk/gtktextlayout.h	/^  GtkTextBuffer *buffer;$/;"	m
 buffer_height	/usr/include/gtk-2.0/gtk/gtkpreview.h	/^  guint16 buffer_height;$/;"	m	struct:_GtkPreview
 buffer_width	/usr/include/gtk-2.0/gtk/gtkpreview.h	/^  guint16 buffer_width;$/;"	m	struct:_GtkPreview
 build_insensitive	/usr/include/gtk-2.0/gtk/gtkpixmap.h	/^  guint build_insensitive : 1;$/;"	m	struct:_GtkPixmap
+builder	./main.cpp	/^GtkBuilder* builder;$/;"	v
 button	/usr/include/gtk-2.0/gdk/gdkevents.h	/^  GdkEventButton	    button;$/;"	m	union:_GdkEvent
 button	/usr/include/gtk-2.0/gdk/gdkevents.h	/^  guint button;$/;"	m	struct:_GdkEventButton
 button	/usr/include/gtk-2.0/gtk/gtkclist.h	/^  GtkWidget *button;$/;"	m	struct:_GtkCListColumn
@@ -7069,6 +7327,7 @@ button_box	/usr/include/gtk-2.0/gtk/gtkvbbox.h	/^  GtkButtonBox button_box;$/;"	
 button_click_time	/usr/include/gtk-2.0/gdk/gdkdisplay.h	/^  guint32 button_click_time[2];	\/* The last 2 button click times. *\/$/;"	m	struct:_GdkDisplay
 button_number	/usr/include/gtk-2.0/gdk/gdkdisplay.h	/^  gint button_number[2];        \/* The last 2 buttons to be pressed. *\/$/;"	m	struct:_GdkDisplay
 button_passive	/usr/include/gtk-2.0/gtk/gtkclist.h	/^  guint button_passive : 1;$/;"	m	struct:_GtkCListColumn
+button_press_event	./main.cpp	/^extern "C"  gboolean button_press_event( GtkWidget *widget, GdkEventButton *event )$/;"	f
 button_press_event	/usr/include/gtk-2.0/gtk/gtkstatusicon.h	/^  gboolean (* button_press_event)   (GtkStatusIcon  *status_icon,$/;"	m	struct:_GtkStatusIconClass
 button_press_event	/usr/include/gtk-2.0/gtk/gtkwidget.h	/^  gboolean (* button_press_event)	(GtkWidget	     *widget,$/;"	m	struct:_GtkWidgetClass
 button_release_event	/usr/include/gtk-2.0/gtk/gtkstatusicon.h	/^  gboolean (* button_release_event) (GtkStatusIcon  *status_icon,$/;"	m	struct:_GtkStatusIconClass
@@ -7091,6 +7350,7 @@ can_activate_accel	/usr/include/gtk-2.0/gtk/gtkwidget.h	/^  gboolean     (*can_a
 cancel	/usr/include/gtk-2.0/gtk/gtkassistant.h	/^  void (* cancel)  (GtkAssistant *assistant);$/;"	m	struct:_GtkAssistantClass
 cancel	/usr/include/gtk-2.0/gtk/gtkmenushell.h	/^  void (*cancel)           (GtkMenuShell *menu_shell);$/;"	m	struct:_GtkMenuShellClass
 cancel_button	/usr/include/gtk-2.0/gtk/gtkfilesel.h	/^  GtkWidget *cancel_button;$/;"	m	struct:_GtkFileSelection
+cancel_map_size_event	./map_size_dialog.c	/^extern "C" gboolean cancel_map_size_event( GtkWidget *widget, $/;"	f
 cancel_position	/usr/include/gtk-2.0/gtk/gtkpaned.h	/^  gboolean (* cancel_position)     (GtkPaned	  *paned);$/;"	m	struct:_GtkPanedClass
 cap_style	/usr/include/gtk-2.0/gdk/gdkgc.h	/^  GdkCapStyle	    cap_style;$/;"	m	struct:_GdkGCValues
 case_sensitive	/usr/include/gtk-2.0/gtk/gtkcombo.h	/^	guint case_sensitive:1;$/;"	m	struct:_GtkCombo
@@ -7178,6 +7438,7 @@ column_title_area	/usr/include/gtk-2.0/gtk/gtkclist.h	/^  GdkRectangle column_ti
 columns	/usr/include/gtk-2.0/gtk/gtkclist.h	/^  gint columns;$/;"	m	struct:_GtkCList
 columns_changed	/usr/include/gtk-2.0/gtk/gtktreeview.h	/^  void     (* columns_changed)            (GtkTreeView       *tree_view);$/;"	m	struct:_GtkTreeViewClass
 commit	/usr/include/gtk-2.0/gtk/gtkimcontext.h	/^  void     (*commit)               (GtkIMContext *context, const gchar *str);$/;"	m	struct:_GtkIMContextClass
+commit_map_size_event	./map_size_dialog.c	/^extern "C" gboolean commit_map_size_event( GtkWidget *widget, $/;"	f
 compare	/usr/include/gtk-2.0/gtk/gtkclist.h	/^  GtkCListCompareFunc compare;$/;"	m	struct:_GtkCList
 composite_name	/usr/include/gtk-2.0/gtk/gtkcontainer.h	/^  gchar*  (*composite_name)	(GtkContainer	 *container,$/;"	m	struct:_GtkContainerClass
 composited	/usr/include/gtk-2.0/gdk/gdkwindow.h	/^  guint composited : 1;$/;"	m	struct:_GdkWindowObject
@@ -7185,6 +7446,7 @@ composited_changed	/usr/include/gtk-2.0/gdk/gdkscreen.h	/^  void (*composited_ch
 composited_changed	/usr/include/gtk-2.0/gtk/gtkwidget.h	/^  void         (* composited_changed) (GtkWidget *widget);$/;"	m	struct:_GtkWidgetClass
 compute_child_allocation	/usr/include/gtk-2.0/gtk/gtkframe.h	/^  void (*compute_child_allocation) (GtkFrame *frame, GtkAllocation *allocation);$/;"	m	struct:_GtkFrameClass
 configure	/usr/include/gtk-2.0/gdk/gdkevents.h	/^  GdkEventConfigure	    configure;$/;"	m	union:_GdkEvent
+configure_event	./main.cpp	/^extern "C"  gboolean configure_event( GtkWidget *widget, GdkEventConfigure *event )$/;"	f
 configure_event	/usr/include/gtk-2.0/gtk/gtkwidget.h	/^  gboolean (* configure_event)		(GtkWidget	     *widget,$/;"	m	struct:_GtkWidgetClass
 connect_proxy	/usr/include/gtk-2.0/gtk/gtkaction.h	/^  void       (* connect_proxy)      (GtkAction *action,$/;"	m	struct:_GtkActionClass
 connect_proxy	/usr/include/gtk-2.0/gtk/gtkuimanager.h	/^  void (* connect_proxy)    (GtkUIManager *merge,$/;"	m	struct:_GtkUIManagerClass
@@ -7232,6 +7494,7 @@ current_font	/usr/include/gtk-2.0/gtk/gtktext.h	/^  GtkTextFont *current_font;	\
 current_indent	/usr/include/gtk-2.0/gtk/gtktree.h	/^  guint current_indent;$/;"	m	struct:_GtkTree
 current_line	/usr/include/gtk-2.0/gtk/gtktext.h	/^  GList *current_line;$/;"	m	struct:_GtkText
 current_pos	/usr/include/gtk-2.0/gtk/gtkoldeditable.h	/^  guint      current_pos;$/;"	m	struct:_GtkOldEditable
+current_tile_image	./map_edit_window.h	/^  GtkWidget* current_tile_image;$/;"	m	struct:MapEditWindow_
 cursor	/usr/include/gtk-2.0/gdk/gdkwindow.h	/^  GdkCursor *cursor;$/;"	m	struct:_GdkWindowAttr
 cursor_at_line_end	/usr/include/gtk-2.0/gtk/gtktextlayout.h	/^  guint cursor_at_line_end : 1;$/;"	m	struct:_GtkTextLineDisplay
 cursor_changed	/usr/include/gtk-2.0/gtk/gtktreeview.h	/^  void     (* cursor_changed)             (GtkTreeView       *tree_view);$/;"	m	struct:_GtkTreeViewClass
@@ -7353,7 +7616,7 @@ draw_arrow	/usr/include/gtk-2.0/gtk/gtkstyle.h	/^  void (*draw_arrow)		(GtkStyle
 draw_bg	/usr/include/gtk-2.0/gtk/gtktexttag.h	/^  guint draw_bg : 1;$/;"	m	struct:_GtkTextAppearance
 draw_box	/usr/include/gtk-2.0/gtk/gtkstyle.h	/^  void (*draw_box)		(GtkStyle		*style,$/;"	m	struct:_GtkStyleClass
 draw_box_gap	/usr/include/gtk-2.0/gtk/gtkstyle.h	/^  void (*draw_box_gap)		(GtkStyle		*style,$/;"	m	struct:_GtkStyleClass
-draw_brush	main.cpp	/^static void draw_brush (GtkWidget *widget, gdouble x, gdouble y)$/;"	f	file:	signature:(GtkWidget *widget, gdouble x, gdouble y)
+draw_brush	./main.cpp	/^static void draw_brush (GtkWidget *widget, gdouble x, gdouble y)$/;"	f	file:
 draw_check	/usr/include/gtk-2.0/gtk/gtkstyle.h	/^  void (*draw_check)		(GtkStyle		*style,$/;"	m	struct:_GtkStyleClass
 draw_diamond	/usr/include/gtk-2.0/gtk/gtkstyle.h	/^  void (*draw_diamond)		(GtkStyle		*style,$/;"	m	struct:_GtkStyleClass
 draw_drag_highlight	/usr/include/gtk-2.0/gtk/gtkclist.h	/^  void   (*draw_drag_highlight) (GtkCList        *clist,$/;"	m	struct:_GtkCListClass
@@ -7393,7 +7656,7 @@ draw_ticks	/usr/include/gtk-2.0/gtk/gtkruler.h	/^  void (* draw_ticks) (GtkRuler
 draw_trapezoids	/usr/include/gtk-2.0/gdk/gdkdrawable.h	/^  void (*draw_trapezoids)         (GdkDrawable      *drawable,$/;"	m	struct:_GdkDrawableClass
 draw_value	/usr/include/gtk-2.0/gtk/gtkscale.h	/^  void (* draw_value) (GtkScale *scale);$/;"	m	struct:_GtkScaleClass
 draw_vline	/usr/include/gtk-2.0/gtk/gtkstyle.h	/^  void (*draw_vline)		(GtkStyle		*style,$/;"	m	struct:_GtkStyleClass
-drawingarea1_button_press_event_cb	main.cpp	/^extern "C" void drawingarea1_button_press_event_cb(GtkWidget* widget, $/;"	f	signature:(GtkWidget* widget, GdkEventButton* event)
+drawingarea1_button_press_event_cb	./main.cpp	/^extern "C" void drawingarea1_button_press_event_cb(GtkWidget* widget, $/;"	f
 dummy1	/usr/include/gtk-2.0/gtk/gtktextiter.h	/^  gpointer dummy1;$/;"	m	struct:_GtkTextIter
 dummy10	/usr/include/gtk-2.0/gtk/gtktextiter.h	/^  gpointer dummy10;$/;"	m	struct:_GtkTextIter
 dummy11	/usr/include/gtk-2.0/gtk/gtktextiter.h	/^  gint dummy11;$/;"	m	struct:_GtkTextIter
@@ -7434,6 +7697,7 @@ entries	/usr/include/gtk-2.0/gtk/gtkbindings.h	/^  GtkBindingEntry	*entries;$/;"
 entry	/usr/include/gtk-2.0/gtk/gtkcombo.h	/^	GtkWidget *entry;$/;"	m	struct:_GtkCombo
 entry	/usr/include/gtk-2.0/gtk/gtkspinbutton.h	/^  GtkEntry entry;$/;"	m	struct:_GtkSpinButton
 entry_change_id	/usr/include/gtk-2.0/gtk/gtkcombo.h	/^	guint entry_change_id;$/;"	m	struct:_GtkCombo
+error_dialog	./map_size_dialog.c	/^void error_dialog(const char* str)$/;"	f
 event	/usr/include/gtk-2.0/gtk/gtktexttag.h	/^  gboolean (* event) (GtkTextTag        *tag,$/;"	m	struct:_GtkTextTagClass
 event	/usr/include/gtk-2.0/gtk/gtkwidget.h	/^  gboolean (* event)			(GtkWidget	     *widget,$/;"	m	struct:_GtkWidgetClass
 event_mask	/usr/include/gtk-2.0/gdk/gdkwindow.h	/^  GdkEventMask event_mask;$/;"	m	struct:_GdkWindowObject
@@ -7447,6 +7711,7 @@ expanded	/usr/include/gtk-2.0/gtk/gtkctree.h	/^  guint expanded : 1;$/;"	m	struc
 expanded	/usr/include/gtk-2.0/gtk/gtktreeitem.h	/^  guint expanded : 1;$/;"	m	struct:_GtkTreeItem
 expander_style	/usr/include/gtk-2.0/gtk/gtkctree.h	/^  guint expander_style : 2;$/;"	m	struct:_GtkCTree
 expose	/usr/include/gtk-2.0/gdk/gdkevents.h	/^  GdkEventExpose	    expose;$/;"	m	union:_GdkEvent
+expose_event	./main.cpp	/^extern "C" gboolean expose_event( GtkWidget *widget, GdkEventExpose *event )$/;"	f
 expose_event	/usr/include/gtk-2.0/gtk/gtkwidget.h	/^  gboolean (* expose_event)		(GtkWidget	     *widget,$/;"	m	struct:_GtkWidgetClass
 exposure_gcs	/usr/include/gtk-2.0/gdk/gdkscreen.h	/^  GdkGC *exposure_gcs[32];$/;"	m	struct:_GdkScreen
 extend_selection	/usr/include/gtk-2.0/gtk/gtkclist.h	/^  void   (*extend_selection)    (GtkCList       *clist,$/;"	m	struct:_GtkCListClass
@@ -7465,6 +7730,7 @@ fg_gc	/usr/include/gtk-2.0/gtk/gtkstyle.h	/^  GdkGC *fg_gc[5];$/;"	m	struct:_Gtk
 fg_set	/usr/include/gtk-2.0/gtk/gtkclist.h	/^  guint fg_set     : 1;$/;"	m	struct:_GtkCListRow
 fg_stipple	/usr/include/gtk-2.0/gtk/gtktexttag.h	/^  GdkBitmap *fg_stipple;$/;"	m	struct:_GtkTextAppearance
 fg_stipple_set	/usr/include/gtk-2.0/gtk/gtktexttag.h	/^  guint fg_stipple_set : 1;$/;"	m	struct:_GtkTextTag
+fi_handle	/usr/include/FreeImage.h	/^typedef void* fi_handle;$/;"	t
 file_list	/usr/include/gtk-2.0/gtk/gtkfilesel.h	/^  GtkWidget *file_list;$/;"	m	struct:_GtkFileSelection
 file_set	/usr/include/gtk-2.0/gtk/gtkfilechooserbutton.h	/^  void (* file_set) (GtkFileChooserButton *fc);$/;"	m	struct:_GtkFileChooserButtonClass
 filename	/usr/include/gtk-2.0/gtk/gtkfilefilter.h	/^  const gchar *filename;$/;"	m	struct:_GtkFileFilterInfo
@@ -7639,6 +7905,10 @@ grab_point	/usr/include/gtk-2.0/gtk/gtkcurve.h	/^  gint grab_point;             
 grab_window	/usr/include/gtk-2.0/gdk/gdkevents.h	/^  GdkWindow *grab_window;$/;"	m	struct:_GdkEventGrabBroken
 graph	/usr/include/gtk-2.0/gtk/gtkcurve.h	/^  GtkDrawingArea graph;$/;"	m	struct:_GtkCurve
 graphics_exposures	/usr/include/gtk-2.0/gdk/gdkgc.h	/^  gint		    graphics_exposures;$/;"	m	struct:_GdkGCValues
+green	/usr/include/FreeImage.h	/^	WORD green;$/;"	m	struct:tagFIRGB16
+green	/usr/include/FreeImage.h	/^	WORD green;$/;"	m	struct:tagFIRGBA16
+green	/usr/include/FreeImage.h	/^	float green;$/;"	m	struct:tagFIRGBAF
+green	/usr/include/FreeImage.h	/^	float green;$/;"	m	struct:tagFIRGBF
 green	/usr/include/gtk-2.0/gdk/gdkcolor.h	/^  guint16 green;$/;"	m	struct:_GdkColor
 green_mask	/usr/include/gtk-2.0/gdk/gdkvisual.h	/^  guint32 green_mask;$/;"	m	struct:_GdkVisual
 green_prec	/usr/include/gtk-2.0/gdk/gdkvisual.h	/^  gint green_prec;$/;"	m	struct:_GdkVisual
@@ -7836,6 +8106,7 @@ horizontal	/usr/include/gtk-2.0/gtk/gtkclist.h	/^  gint16 horizontal;$/;"	m	stru
 horizontal	/usr/include/gtk-2.0/gtk/gtkclist.h	/^  gint16 horizontal;$/;"	m	struct:_GtkCellWidget
 htimer	/usr/include/gtk-2.0/gtk/gtkclist.h	/^  gint htimer;$/;"	m	struct:_GtkCList
 htimer	/usr/include/gtk-2.0/gtk/gtklist.h	/^  guint htimer;$/;"	m	struct:_GtkList
+i	/usr/include/FreeImage.h	/^    double i;$/;"	m	struct:tagFICOMPLEX
 icon	/usr/include/gtk-2.0/gtk/gtkimage.h	/^  GIcon *icon;$/;"	m	struct:_GtkImageGIconData
 icon	/usr/include/gtk-2.0/gtk/gtktoolbar.h	/^  GtkWidget *icon;$/;"	m	struct:_GtkToolbarChild
 icon_factories	/usr/include/gtk-2.0/gtk/gtkrc.h	/^  GSList *icon_factories;$/;"	m	struct:_GtkRcStyle
@@ -7845,6 +8116,7 @@ icon_set	/usr/include/gtk-2.0/gtk/gtkimage.h	/^    GtkImageIconSetData icon_set;
 icon_set	/usr/include/gtk-2.0/gtk/gtkimage.h	/^  GtkIconSet *icon_set;$/;"	m	struct:_GtkImageIconSetData
 image	/usr/include/gtk-2.0/gtk/gtkimage.h	/^    GtkImageImageData image;$/;"	m	union:_GtkImage::__anon125
 image	/usr/include/gtk-2.0/gtk/gtkimage.h	/^  GdkImage *image;$/;"	m	struct:_GtkImageImageData
+image1	./main.cpp	/^GtkWidget* image1 ;$/;"	v
 impl	/usr/include/gtk-2.0/gdk/gdkpixmap.h	/^  GdkDrawable *impl;  \/* window-system-specific delegate object *\/$/;"	m	struct:_GdkPixmapObject
 impl	/usr/include/gtk-2.0/gdk/gdkwindow.h	/^  GdkDrawable *impl; \/* window-system-specific delegate object *\/  $/;"	m	struct:_GdkWindowObject
 implicit	/usr/include/gtk-2.0/gdk/gdkevents.h	/^  gboolean implicit;$/;"	m	struct:_GdkEventGrabBroken
@@ -7861,6 +8133,7 @@ info	/usr/include/gtk-2.0/gtk/gtkselection.h	/^  guint     info;$/;"	m	struct:_G
 info	/usr/include/gtk-2.0/gtk/gtkselection.h	/^  guint  info;$/;"	m	struct:_GtkTargetEntry
 info_list	/usr/include/gtk-2.0/gdk/gdkrgb.h	/^  GSList *info_list;$/;"	m	struct:_GdkRgbCmap
 init_from_rc	/usr/include/gtk-2.0/gtk/gtkstyle.h	/^  void     (*init_from_rc)      (GtkStyle               *style,$/;"	m	struct:_GtkStyleClass
+init_map_size_dialog	./map_size_dialog.c	/^void init_map_size_dialog()$/;"	f
 input	/usr/include/gtk-2.0/gtk/gtkspinbutton.h	/^  gint (*input)  (GtkSpinButton *spin_button,$/;"	m	struct:_GtkSpinButtonClass
 input_only	/usr/include/gtk-2.0/gdk/gdkwindow.h	/^  guint input_only : 1;$/;"	m	struct:_GdkWindowObject
 insert	/usr/include/gtk-2.0/gtk/gtkmenushell.h	/^  void (*insert)           (GtkMenuShell *menu_shell,$/;"	m	struct:_GtkMenuShellClass
@@ -7990,10 +8263,17 @@ lookup	/usr/include/gtk-2.0/gtk/gtkpreview.h	/^  guchar *lookup;$/;"	m	struct:_G
 ltr_context	/usr/include/gtk-2.0/gtk/gtktextlayout.h	/^  PangoContext *ltr_context;$/;"	m	struct:_GtkTextLayout
 lut	/usr/include/gtk-2.0/gdk-pixbuf-xlib/gdk-pixbuf-xlibrgb.h	/^  unsigned char lut[256]; \/* for 8-bit modes *\/$/;"	m	struct:_XlibRgbCmap
 magic	/usr/include/gtk-2.0/gdk-pixbuf/gdk-pixdata.h	/^  guint32 magic;        \/* GDK_PIXBUF_MAGIC_NUMBER *\/$/;"	m	struct:_GdkPixdata
-main	main.cpp	/^int main (int argc, char *argv[])$/;"	f	signature:(int argc, char *argv[])
+main	./main.cpp	/^int main (int argc, char *argv[])$/;"	f
 main_vbox	/usr/include/gtk-2.0/gtk/gtkfilesel.h	/^  GtkWidget *main_vbox;$/;"	m	struct:_GtkFileSelection
 map	/usr/include/gtk-2.0/gtk/gtkwidget.h	/^  void (* map)		       (GtkWidget        *widget);$/;"	m	struct:_GtkWidgetClass
+map_edit_window	./map_edit_window.c	/^MapEditWindow map_edit_window;$/;"	v
 map_event	/usr/include/gtk-2.0/gtk/gtkwidget.h	/^  gboolean (* map_event)		(GtkWidget	     *widget,$/;"	m	struct:_GtkWidgetClass
+map_height_txt	./map_size_dialog.c	/^GtkWidget* map_height_txt = NULL;$/;"	v
+map_size_window	./main.cpp	/^GtkWidget* map_size_window;$/;"	v
+map_tile_table	./main.cpp	/^GtkWidget* map_tile_table;$/;"	v
+map_tile_table	./map_edit_window.h	/^  GtkWidget* map_tile_table;$/;"	m	struct:MapEditWindow_
+map_tiles_pix	./main.cpp	/^GdkPixbuf** map_tiles_pix;$/;"	v
+map_width_txt	./map_size_dialog.c	/^GtkWidget* map_width_txt = NULL;$/;"	v
 mark_deleted	/usr/include/gtk-2.0/gtk/gtktextbuffer.h	/^  void (* mark_deleted)       (GtkTextBuffer *buffer,$/;"	m	struct:_GtkTextBufferClass
 mark_set	/usr/include/gtk-2.0/gtk/gtktextbuffer.h	/^  void (* mark_set)           (GtkTextBuffer *buffer,$/;"	m	struct:_GtkTextBufferClass
 marks_unbound	/usr/include/gtk-2.0/gtk/gtkbindings.h	/^  guint                 marks_unbound : 1;$/;"	m	struct:_GtkBindingEntry
@@ -8123,7 +8403,7 @@ ok_button	/usr/include/gtk-2.0/gtk/gtkfilesel.h	/^  GtkWidget *ok_button;$/;"	m	
 ok_if_empty	/usr/include/gtk-2.0/gtk/gtkcombo.h	/^	guint ok_if_empty:1;$/;"	m	struct:_GtkCombo
 old_editable	/usr/include/gtk-2.0/gtk/gtktext.h	/^  GtkOldEditable old_editable;$/;"	m	struct:_GtkText
 on_currently_loading_frame	/usr/include/gtk-2.0/gdk-pixbuf/gdk-pixbuf-animation.h	/^        gboolean   (*on_currently_loading_frame) (GdkPixbufAnimationIter *iter);$/;"	m	struct:_GdkPixbufAnimationIterClass
-on_window_destroy	main.cpp	/^extern "C" void on_window_destroy (GtkObject *object, gpointer user_data)$/;"	f	signature:(GtkObject *object, gpointer user_data)
+on_window_destroy	./main.cpp	/^extern "C" void on_window_destroy (GtkObject *object, gpointer user_data)$/;"	f
 one_display_cache	/usr/include/gtk-2.0/gtk/gtktextlayout.h	/^  GtkTextLineDisplay *one_display_cache;$/;"	m	struct:_GtkTextLayout
 one_style_cache	/usr/include/gtk-2.0/gtk/gtktextlayout.h	/^  GtkTextAttributes *one_style_cache;$/;"	m	struct:_GtkTextLayout
 orientation_changed	/usr/include/gtk-2.0/gtk/gtktoolbar.h	/^  void     (* orientation_changed) (GtkToolbar       *toolbar,$/;"	m	struct:_GtkToolbarClass
@@ -8457,6 +8737,7 @@ pixels_below_lines_set	/usr/include/gtk-2.0/gtk/gtktexttag.h	/^  guint pixels_be
 pixels_inside_wrap	/usr/include/gtk-2.0/gtk/gtktexttag.h	/^  gint pixels_inside_wrap;$/;"	m	struct:_GtkTextAttributes
 pixels_inside_wrap_set	/usr/include/gtk-2.0/gtk/gtktexttag.h	/^  guint pixels_inside_wrap_set : 1;$/;"	m	struct:_GtkTextTag
 pixels_per_unit	/usr/include/gtk-2.0/gtk/gtkruler.h	/^  gdouble pixels_per_unit;$/;"	m	struct:_GtkRulerMetric
+pixmap	./main.cpp	/^static GdkPixmap *pixmap = NULL;$/;"	v	file:
 pixmap	/usr/include/gtk-2.0/gtk/gtkclist.h	/^      GdkPixmap *pixmap;$/;"	m	struct:_GtkCell::__anon58::__anon59
 pixmap	/usr/include/gtk-2.0/gtk/gtkclist.h	/^      GdkPixmap *pixmap;$/;"	m	struct:_GtkCell::__anon58::__anon60
 pixmap	/usr/include/gtk-2.0/gtk/gtkclist.h	/^  GdkPixmap *pixmap;$/;"	m	struct:_GtkCellPixText
@@ -8526,6 +8807,7 @@ query_tooltip	/usr/include/gtk-2.0/gtk/gtkstatusicon.h	/^  gboolean (* query_too
 query_tooltip	/usr/include/gtk-2.0/gtk/gtkwidget.h	/^  gboolean     (* query_tooltip)      (GtkWidget  *widget,$/;"	m	struct:_GtkWidgetClass
 queued_events	/usr/include/gtk-2.0/gdk/gdkdisplay.h	/^  GList *queued_events;$/;"	m	struct:_GdkDisplay
 queued_tail	/usr/include/gtk-2.0/gdk/gdkdisplay.h	/^  GList *queued_tail;$/;"	m	struct:_GdkDisplay
+r	/usr/include/FreeImage.h	/^	double r;$/;"	m	struct:tagFICOMPLEX
 range	/usr/include/gtk-2.0/gtk/gtkscale.h	/^  GtkRange range;$/;"	m	struct:_GtkScale
 range	/usr/include/gtk-2.0/gtk/gtkscrollbar.h	/^  GtkRange range;$/;"	m	struct:_GtkScrollbar
 rc_properties	/usr/include/gtk-2.0/gtk/gtkrc.h	/^  GArray *rc_properties;$/;"	m	struct:_GtkRcStyle
@@ -8534,9 +8816,14 @@ rc_style_lists	/usr/include/gtk-2.0/gtk/gtkrc.h	/^  GSList *rc_style_lists;$/;"	
 ready	/usr/include/gtk-2.0/gtk/gtkprintoperationpreview.h	/^  void              (*ready)          (GtkPrintOperationPreview *preview,$/;"	m	struct:_GtkPrintOperationPreviewIface
 realize	/usr/include/gtk-2.0/gtk/gtkstyle.h	/^  void (*realize)               (GtkStyle               *style);$/;"	m	struct:_GtkStyleClass
 realize	/usr/include/gtk-2.0/gtk/gtkwidget.h	/^  void (* realize)	       (GtkWidget        *widget);$/;"	m	struct:_GtkWidgetClass
+realize_drawingarea	./main.cpp	/^extern "C"  gboolean realize_drawingarea( GtkWidget *widget, GdkEventConfigure *event )$/;"	f
 realized	/usr/include/gtk-2.0/gtk/gtktexttag.h	/^  guint realized : 1;$/;"	m	struct:_GtkTextAttributes
 reason	/usr/include/gtk-2.0/gdk/gdkevents.h	/^  GdkOwnerChange reason;$/;"	m	struct:_GdkEventOwnerChange
 rebuild_menu	/usr/include/gtk-2.0/gtk/gtktoolshell.h	/^  void            (*rebuild_menu)     (GtkToolShell *shell);$/;"	m	struct:_GtkToolShellIface
+red	/usr/include/FreeImage.h	/^	WORD red;$/;"	m	struct:tagFIRGB16
+red	/usr/include/FreeImage.h	/^	WORD red;$/;"	m	struct:tagFIRGBA16
+red	/usr/include/FreeImage.h	/^	float red;$/;"	m	struct:tagFIRGBAF
+red	/usr/include/FreeImage.h	/^	float red;$/;"	m	struct:tagFIRGBF
 red	/usr/include/gtk-2.0/gdk/gdkcolor.h	/^  guint16 red;$/;"	m	struct:_GdkColor
 red_mask	/usr/include/gtk-2.0/gdk/gdkvisual.h	/^  guint32 red_mask;$/;"	m	struct:_GdkVisual
 red_prec	/usr/include/gtk-2.0/gdk/gdkvisual.h	/^  gint red_prec;$/;"	m	struct:_GdkVisual
@@ -8577,6 +8864,13 @@ resolution	/usr/include/gtk-2.0/gdk/gdkscreen.h	/^  double resolution;		\/* pixe
 response	/usr/include/gtk-2.0/gtk/gtkdialog.h	/^  void (* response) (GtkDialog *dialog, gint response_id);$/;"	m	struct:_GtkDialogClass
 resync_selection	/usr/include/gtk-2.0/gtk/gtkclist.h	/^  void   (*resync_selection)    (GtkCList       *clist,$/;"	m	struct:_GtkCListClass
 retrieve_surrounding	/usr/include/gtk-2.0/gtk/gtkimcontext.h	/^  gboolean (*retrieve_surrounding) (GtkIMContext *context);$/;"	m	struct:_GtkIMContextClass
+rgbBlue	/usr/include/FreeImage.h	/^  BYTE rgbBlue;$/;"	m	struct:tagRGBQUAD
+rgbGreen	/usr/include/FreeImage.h	/^  BYTE rgbGreen;$/;"	m	struct:tagRGBQUAD
+rgbRed	/usr/include/FreeImage.h	/^  BYTE rgbRed;$/;"	m	struct:tagRGBQUAD
+rgbReserved	/usr/include/FreeImage.h	/^  BYTE rgbReserved;$/;"	m	struct:tagRGBQUAD
+rgbtBlue	/usr/include/FreeImage.h	/^  BYTE rgbtBlue;$/;"	m	struct:tagRGBTRIPLE
+rgbtGreen	/usr/include/FreeImage.h	/^  BYTE rgbtGreen;$/;"	m	struct:tagRGBTRIPLE
+rgbtRed	/usr/include/FreeImage.h	/^  BYTE rgbtRed;$/;"	m	struct:tagRGBTRIPLE
 right	/usr/include/gtk-2.0/gtk/gtkstyle.h	/^  gint right;$/;"	m	struct:_GtkBorder
 right_attach	/usr/include/gtk-2.0/gtk/gtktable.h	/^  guint16 right_attach;$/;"	m	struct:_GtkTableChild
 right_margin	/usr/include/gtk-2.0/gtk/gtktextlayout.h	/^  gint right_margin;$/;"	m	struct:_GtkTextLineDisplay
@@ -8735,6 +9029,7 @@ set_tooltip	/usr/include/gtk-2.0/gtk/gtktoolitem.h	/^  gboolean   (* set_tooltip
 set_use_preedit	/usr/include/gtk-2.0/gtk/gtkimcontext.h	/^  void     (*set_use_preedit)     (GtkIMContext   *context,$/;"	m	struct:_GtkIMContextClass
 set_values	/usr/include/gtk-2.0/gdk/gdkgc.h	/^  void (*set_values)     (GdkGC          *gc,$/;"	m	struct:_GdkGCClass
 setting	/usr/include/gtk-2.0/gdk/gdkevents.h	/^  GdkEventSetting           setting;$/;"	m	union:_GdkEvent
+setupMapWindow	./map_edit_window.c	/^void setupMapWindow()$/;"	f
 shadow_type	/usr/include/gtk-2.0/gtk/gtkclist.h	/^  GtkShadowType shadow_type;$/;"	m	struct:_GtkCList
 shape_mask	/usr/include/gtk-2.0/gtk/gtkwidget.h	/^  GdkBitmap *shape_mask;$/;"	m	struct:_GtkWidgetShapeInfo
 shaped	/usr/include/gtk-2.0/gdk/gdkwindow.h	/^  guint shaped : 1;$/;"	m	struct:_GdkWindowObject
@@ -8742,6 +9037,7 @@ shaped_objects	/usr/include/gtk-2.0/gtk/gtktextlayout.h	/^  GSList *shaped_objec
 show	/usr/include/gtk-2.0/gtk/gtkwidget.h	/^  void (* show)		       (GtkWidget        *widget);$/;"	m	struct:_GtkWidgetClass
 show_all	/usr/include/gtk-2.0/gtk/gtkwidget.h	/^  void (* show_all)            (GtkWidget        *widget);$/;"	m	struct:_GtkWidgetClass
 show_help	/usr/include/gtk-2.0/gtk/gtkwidget.h	/^  gboolean (* show_help)           (GtkWidget          *widget,$/;"	m	struct:_GtkWidgetClass
+show_map_size_dialog_event	./map_size_dialog.c	/^extern "C" gboolean show_map_size_dialog_event( GtkWidget *widget, $/;"	f
 show_menu	/usr/include/gtk-2.0/gtk/gtkmenutoolbutton.h	/^  void (*show_menu) (GtkMenuToolButton *button);$/;"	m	struct:_GtkMenuToolButtonClass
 show_stub	/usr/include/gtk-2.0/gtk/gtkctree.h	/^  guint show_stub      : 1;$/;"	m	struct:_GtkCTree
 show_text	/usr/include/gtk-2.0/gtk/gtkprogress.h	/^  guint          show_text : 1;$/;"	m	struct:_GtkProgress
@@ -8828,6 +9124,15 @@ tab_stops	/usr/include/gtk-2.0/gtk/gtktext.h	/^  GList *tab_stops;$/;"	m	struct:
 table	/usr/include/gtk-2.0/gtk/gtktexttag.h	/^  GtkTextTagTable *table;$/;"	m	struct:_GtkTextTag
 tabs	/usr/include/gtk-2.0/gtk/gtktexttag.h	/^  PangoTabArray *tabs;$/;"	m	struct:_GtkTextAttributes
 tabs_set	/usr/include/gtk-2.0/gtk/gtktexttag.h	/^  guint tabs_set : 1;$/;"	m	struct:_GtkTextTag
+tagBITMAPINFO	/usr/include/FreeImage.h	/^typedef struct tagBITMAPINFO { $/;"	s
+tagBITMAPINFOHEADER	/usr/include/FreeImage.h	/^typedef struct tagBITMAPINFOHEADER{$/;"	s
+tagFICOMPLEX	/usr/include/FreeImage.h	/^typedef struct tagFICOMPLEX {$/;"	s
+tagFIRGB16	/usr/include/FreeImage.h	/^typedef struct tagFIRGB16 {$/;"	s
+tagFIRGBA16	/usr/include/FreeImage.h	/^typedef struct tagFIRGBA16 {$/;"	s
+tagFIRGBAF	/usr/include/FreeImage.h	/^typedef struct tagFIRGBAF {$/;"	s
+tagFIRGBF	/usr/include/FreeImage.h	/^typedef struct tagFIRGBF {$/;"	s
+tagRGBQUAD	/usr/include/FreeImage.h	/^typedef struct tagRGBQUAD {$/;"	s
+tagRGBTRIPLE	/usr/include/FreeImage.h	/^typedef struct tagRGBTRIPLE {$/;"	s
 tag_added	/usr/include/gtk-2.0/gtk/gtktexttagtable.h	/^  void (* tag_added) (GtkTextTagTable *table, GtkTextTag *tag);$/;"	m	struct:_GtkTextTagTableClass
 tag_changed	/usr/include/gtk-2.0/gtk/gtktexttagtable.h	/^  void (* tag_changed) (GtkTextTagTable *table, GtkTextTag *tag, gboolean size_changed);$/;"	m	struct:_GtkTextTagTableClass
 tag_removed	/usr/include/gtk-2.0/gtk/gtktexttagtable.h	/^  void (* tag_removed) (GtkTextTagTable *table, GtkTextTag *tag);$/;"	m	struct:_GtkTextTagTableClass
@@ -8857,6 +9162,8 @@ text_pushed	/usr/include/gtk-2.0/gtk/gtkstatusbar.h	/^  void	(*text_pushed)	(Gtk
 theme_change_id	/usr/include/gtk-2.0/gtk/gtkimage.h	/^  guint theme_change_id;$/;"	m	struct:_GtkImageGIconData
 theme_change_id	/usr/include/gtk-2.0/gtk/gtkimage.h	/^  guint theme_change_id;$/;"	m	struct:_GtkImageIconNameData
 tile	/usr/include/gtk-2.0/gdk/gdkgc.h	/^  GdkPixmap	   *tile;$/;"	m	struct:_GdkGCValues
+tile_vbox	./main.cpp	/^GtkWidget* tile_vbox;$/;"	v
+tile_window	./main.cpp	/^GtkWidget* tile_window;$/;"	v
 time	/usr/include/gtk-2.0/gdk/gdkevents.h	/^  guint32 time;$/;"	m	struct:_GdkEventButton
 time	/usr/include/gtk-2.0/gdk/gdkevents.h	/^  guint32 time;$/;"	m	struct:_GdkEventCrossing
 time	/usr/include/gtk-2.0/gdk/gdkevents.h	/^  guint32 time;$/;"	m	struct:_GdkEventDND
@@ -9081,6 +9388,8 @@ width	/usr/include/gtk-2.0/gtk/gtkwidget.h	/^  gint width;$/;"	m	struct:_GtkWidg
 width_inc	/usr/include/gtk-2.0/gdk/gdkwindow.h	/^  gint width_inc;$/;"	m	struct:_GdkGeometry
 width_set	/usr/include/gtk-2.0/gtk/gtkclist.h	/^  guint width_set      : 1;$/;"	m	struct:_GtkCListColumn
 win_gravity	/usr/include/gtk-2.0/gdk/gdkwindow.h	/^  GdkGravity win_gravity;$/;"	m	struct:_GdkGeometry
+window	./main.cpp	/^GtkWidget* window;$/;"	v
+window	./map_edit_window.h	/^  GtkWidget* window;$/;"	m	struct:MapEditWindow_
 window	/usr/include/gtk-2.0/gdk/gdkevents.h	/^  GdkWindow *window;$/;"	m	struct:_GdkEventAny
 window	/usr/include/gtk-2.0/gdk/gdkevents.h	/^  GdkWindow *window;$/;"	m	struct:_GdkEventButton
 window	/usr/include/gtk-2.0/gdk/gdkevents.h	/^  GdkWindow *window;$/;"	m	struct:_GdkEventClient

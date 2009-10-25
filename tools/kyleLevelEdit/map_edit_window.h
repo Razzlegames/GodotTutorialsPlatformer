@@ -19,5 +19,6 @@ struct MapEditWindow_
 };
 
 typedef struct MapEditWindow_ MapEditWindow;
+void setupMapWindow();
 
 #endif /* MAP_EDIT_WINDOW_H */
