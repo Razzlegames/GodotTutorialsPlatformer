@@ -583,14 +583,7 @@
           </packing>
         </child>
         <child>
-          <object class="GtkImage" id="current_tile_image">
-            <property name="visible">True</property>
-            <property name="yalign">1</property>
-            <property name="stock">gtk-missing-image</property>
-          </object>
-          <packing>
-            <property name="position">2</property>
-          </packing>
+          <placeholder/>
         </child>
       </object>
     </child>
@@ -602,6 +595,7 @@
     <property name="stock">gtk-new</property>
   </object>
   <object class="GtkWindow" id="map_size_window">
+    <property name="events">GDK_KEY_PRESS_MASK | GDK_STRUCTURE_MASK</property>
     <property name="border_width">5</property>
     <property name="title" translatable="yes">Choose a Map Size</property>
     <property name="window_position">center-on-parent</property>
