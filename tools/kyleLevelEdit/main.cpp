@@ -181,12 +181,21 @@ extern "C" void drawingarea1_button_press_event_cb(GtkWidget* widget,
     GdkEventButton* event)
 {
 
-
   printf("captured event!\n");
   fflush(stdout);
 
 }
 
+
+//****************************************************************     
+
+gboolean image_press_cb(GtkWidget* event_box, GdkEventButton* event,
+    gpointer data)
+{
+
+  g_print("Retardo button pushed...\n");
+
+}
 
 //****************************************************************     
 
@@ -202,7 +211,7 @@ int main (int argc, char *argv[])
   builder = gtk_builder_new();
   gtk_builder_add_from_file (builder, "levelEditorGUI.glade", NULL);
 
-  // Create a reference to all needed widgets
+  // Create a reference to all needed widgets (from names in glade file)
   window = GTK_WIDGET (gtk_builder_get_object (builder, "window"));
   tile_window = GTK_WIDGET (gtk_builder_get_object (builder, "tile_window"));
 
@@ -217,34 +226,39 @@ int main (int argc, char *argv[])
 
   //GtkWidget* image1;
 
-
   int i;
   for(i = 0; i < 30; i++)
   {
+
+    GtkWidget* event_box = gtk_event_box_new();
 
     if(i % 2)
         image1 = gtk_image_new_from_file("ball_green.bmp");
     else
         image1 = gtk_image_new_from_file("ball_yellow.bmp");
 
-    gtk_container_add(GTK_CONTAINER(tile_vbox), image1);
+    gtk_container_add(GTK_CONTAINER(event_box), image1);
+    g_signal_connect(G_OBJECT(event_box), "button_press_event", 
+      G_CALLBACK(image_press_cb), image1);
+
+    gtk_container_add(GTK_CONTAINER(tile_vbox), event_box);
+    //gtk_container_add(GTK_CONTAINER(tile_vbox), image1);
     gtk_widget_show (image1);       
+    gtk_widget_show (event_box);       
 
   }
-
 
   gtk_builder_connect_signals (builder, NULL);          
   g_object_unref (G_OBJECT (builder));
 
   //gtk_drawing_area_size(drawingarea1, 600, 600);
 
-
   gtk_widget_show (window);       
   gtk_widget_show (tile_window);       
   gtk_widget_show (tile_vbox);       
   gtk_widget_show (map_edit_window.window);       
 
-  gtk_main ();
+  gtk_main();
 
   FreeImage_DeInitialise();
 

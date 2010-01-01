@@ -36,22 +36,6 @@ extern GtkWidget* image1;
 void init_map_size_dialog()
 {
 
-  //  if(map_height_txt)
-  //  {
-  //
-  //    fprintf(stderr, "Error map height txt was not NULL!n");
-  //    return;
-  //
-  //  }
-  //
-  //  if(map_width_txt)
-  //  {
-  //
-  //    fprintf(stderr, "Error map width txt was not NULL!n");
-  //    return;
-  //
-  //  }
-
   map_height_txt = GTK_WIDGET (gtk_builder_get_object (builder, "map_height_txt"));
   map_width_txt = GTK_WIDGET (gtk_builder_get_object (builder, "map_width_txt"));
 
@@ -100,7 +84,9 @@ extern unsigned short* tile_index_data;
  *   @param height height of the map
  *   @param width width of the map
  */
-void resize_map_data(int height, int width)
+
+void resize_map_data(int height, int width, 
+    unsigned short* tile_index_data)
 {
 
   if(tile_index_data)
@@ -177,7 +163,7 @@ extern "C" gboolean commit_map_size_event( GtkWidget *widget,
   //------------------------------------------------------------
   // Be sure to resize any data associated with the map
   //------------------------------------------------------------
-  resize_map_data(height, width);
+  resize_map_data(height, width, tile_index_data);
 
   // Add some pictures to the table (for testing only)
   GtkWidget* image;
