@@ -1,3 +1,5 @@
+.PHONY: all clean
+
 MAP_BMP = ./gimp_grid.bmp \
 	  puzzle_bezel.bmp \
 	  puzzle_background_swirl.bmp
@@ -7,7 +9,7 @@ MAP_BMP_HFILES= $(MAP_BMP:.bmp=.h)
 
 #  Run the Makefile recursively for each map bmp 
 #       file in the list above
-all:
+all: Makefile
 	@for i in $(MAP_BMP_CFILES); do\
 	    $(MAKE) $$i; done
 	@for i in $(MAP_BMP_HFILES); do\
