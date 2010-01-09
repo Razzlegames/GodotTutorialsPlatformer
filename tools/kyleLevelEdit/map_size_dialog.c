@@ -24,9 +24,6 @@ GtkWidget* map_height_txt = NULL;
 GtkWidget* map_width_txt = NULL;
 extern GtkWidget* image1;
 
-#define  ERROR_DIALOG(fmt, ...) { char temp2[0xFF];\
-  snprintf(temp2, 0xFF, fmt, ##__VA_ARGS__ ); \
-  error_dialog(temp2); }
 
 
 //****************************************************************     

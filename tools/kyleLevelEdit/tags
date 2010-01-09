@@ -29,7 +29,9 @@ DLL_CALLCONV	/usr/include/FreeImage.h	62;"	d
 DLL_CALLCONV	/usr/include/FreeImage.h	81;"	d
 DWORD	/usr/include/FreeImage.h	/^typedef uint32_t DWORD;$/;"	t
 DWORD	/usr/include/FreeImage.h	/^typedef unsigned long DWORD;$/;"	t
-ERROR_DIALOG	./map_size_dialog.c	26;"	d	file:
+ERROR	./error_dialogs.h	12;"	d
+ERROR_DIALOG	./error_dialogs.h	8;"	d
+ERROR_DIALOGS_H	./error_dialogs.h	3;"	d
 EXR_B44	/usr/include/FreeImage.h	675;"	d
 EXR_DEFAULT	/usr/include/FreeImage.h	669;"	d
 EXR_FLOAT	/usr/include/FreeImage.h	670;"	d
@@ -162,9 +164,10 @@ FREEIMAGE_IO	/usr/include/FreeImage.h	585;"	d
 FREEIMAGE_MAJOR_VERSION	/usr/include/FreeImage.h	49;"	d
 FREEIMAGE_MINOR_VERSION	/usr/include/FreeImage.h	50;"	d
 FREEIMAGE_RELEASE_SERIAL	/usr/include/FreeImage.h	51;"	d
-FreeImageErrorHandler	./ImageHandling.cpp	/^void FreeImageErrorHandler(FREE_IMAGE_FORMAT fif, const char *message) {$/;"	f
+FreeImageErrorHandler	./ImageHandling.cpp	/^void FreeImageErrorHandler(FREE_IMAGE_FORMAT fif, const char *message) $/;"	f
 FreeImage_OutputMessageFunction	/usr/include/FreeImage.h	/^typedef void (*FreeImage_OutputMessageFunction)(FREE_IMAGE_FORMAT fif, const char *msg);$/;"	t
 FreeImage_OutputMessageFunctionStdCall	/usr/include/FreeImage.h	/^typedef void (DLL_CALLCONV *FreeImage_OutputMessageFunctionStdCall)(FREE_IMAGE_FORMAT fif, const char *msg); $/;"	t
+GAMEMAP_H	./GameMap.h	3;"	d
 GCC_HASCLASSVISIBILITY	/usr/include/FreeImage.h	78;"	d
 GDKVAR	/usr/include/gtk-2.0/gdk/gdktypes.h	42;"	d
 GDKVAR	/usr/include/gtk-2.0/gdk/gdktypes.h	44;"	d
@@ -4971,6 +4974,7 @@ GTK_WRAP_CHAR	/usr/include/gtk-2.0/gtk/gtkenums.h	/^  GTK_WRAP_CHAR,$/;"	e	enum:
 GTK_WRAP_NONE	/usr/include/gtk-2.0/gtk/gtkenums.h	/^  GTK_WRAP_NONE,$/;"	e	enum:__anon104
 GTK_WRAP_WORD	/usr/include/gtk-2.0/gtk/gtkenums.h	/^  GTK_WRAP_WORD,$/;"	e	enum:__anon104
 GTK_WRAP_WORD_CHAR	/usr/include/gtk-2.0/gtk/gtkenums.h	/^  GTK_WRAP_WORD_CHAR$/;"	e	enum:__anon104
+GameMap	./GameMap.h	/^class GameMap$/;"	c
 GdkAppLaunchContext	/usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h	/^struct GdkAppLaunchContext$/;"	s
 GdkAppLaunchContext	/usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h	/^typedef struct GdkAppLaunchContext	      GdkAppLaunchContext;$/;"	t	typeref:struct:GdkAppLaunchContext
 GdkAppLaunchContextClass	/usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h	/^struct GdkAppLaunchContextClass$/;"	s
@@ -5856,6 +5860,7 @@ LIBS	./Makefile	/^LIBS= -lfreeimage$/;"	m
 LONG	/usr/include/FreeImage.h	/^typedef int32_t LONG;$/;"	t
 LONG	/usr/include/FreeImage.h	/^typedef long LONG;$/;"	t
 MAP_EDIT_WINDOW_H	./map_edit_window.h	3;"	d
+MAP_SIZE_DIALOG_H	./map_size_dialog.h	3;"	d
 MNG_DEFAULT	/usr/include/FreeImage.h	703;"	d
 MapEditWindow	./map_edit_window.h	/^typedef struct MapEditWindow_ MapEditWindow;$/;"	t	typeref:struct:MapEditWindow_
 MapEditWindow_	./map_edit_window.h	/^struct MapEditWindow_$/;"	s
@@ -7697,7 +7702,7 @@ entries	/usr/include/gtk-2.0/gtk/gtkbindings.h	/^  GtkBindingEntry	*entries;$/;"
 entry	/usr/include/gtk-2.0/gtk/gtkcombo.h	/^	GtkWidget *entry;$/;"	m	struct:_GtkCombo
 entry	/usr/include/gtk-2.0/gtk/gtkspinbutton.h	/^  GtkEntry entry;$/;"	m	struct:_GtkSpinButton
 entry_change_id	/usr/include/gtk-2.0/gtk/gtkcombo.h	/^	guint entry_change_id;$/;"	m	struct:_GtkCombo
-error_dialog	./map_size_dialog.c	/^void error_dialog(const char* str)$/;"	f
+error_dialog	./error_dialogs.c	/^void error_dialog(const char* str)$/;"	f
 event	/usr/include/gtk-2.0/gtk/gtktexttag.h	/^  gboolean (* event) (GtkTextTag        *tag,$/;"	m	struct:_GtkTextTagClass
 event	/usr/include/gtk-2.0/gtk/gtkwidget.h	/^  gboolean (* event)			(GtkWidget	     *widget,$/;"	m	struct:_GtkWidgetClass
 event_mask	/usr/include/gtk-2.0/gdk/gdkwindow.h	/^  GdkEventMask event_mask;$/;"	m	struct:_GdkWindowObject
@@ -8117,6 +8122,7 @@ icon_set	/usr/include/gtk-2.0/gtk/gtkimage.h	/^  GtkIconSet *icon_set;$/;"	m	str
 image	/usr/include/gtk-2.0/gtk/gtkimage.h	/^    GtkImageImageData image;$/;"	m	union:_GtkImage::__anon125
 image	/usr/include/gtk-2.0/gtk/gtkimage.h	/^  GdkImage *image;$/;"	m	struct:_GtkImageImageData
 image1	./main.cpp	/^GtkWidget* image1 ;$/;"	v
+image_press_cb	./main.cpp	/^gboolean image_press_cb(GtkWidget* event_box, GdkEventButton* event,$/;"	f
 impl	/usr/include/gtk-2.0/gdk/gdkpixmap.h	/^  GdkDrawable *impl;  \/* window-system-specific delegate object *\/$/;"	m	struct:_GdkPixmapObject
 impl	/usr/include/gtk-2.0/gdk/gdkwindow.h	/^  GdkDrawable *impl; \/* window-system-specific delegate object *\/  $/;"	m	struct:_GdkWindowObject
 implicit	/usr/include/gtk-2.0/gdk/gdkevents.h	/^  gboolean implicit;$/;"	m	struct:_GdkEventGrabBroken
@@ -8816,7 +8822,7 @@ rc_style_lists	/usr/include/gtk-2.0/gtk/gtkrc.h	/^  GSList *rc_style_lists;$/;"	
 ready	/usr/include/gtk-2.0/gtk/gtkprintoperationpreview.h	/^  void              (*ready)          (GtkPrintOperationPreview *preview,$/;"	m	struct:_GtkPrintOperationPreviewIface
 realize	/usr/include/gtk-2.0/gtk/gtkstyle.h	/^  void (*realize)               (GtkStyle               *style);$/;"	m	struct:_GtkStyleClass
 realize	/usr/include/gtk-2.0/gtk/gtkwidget.h	/^  void (* realize)	       (GtkWidget        *widget);$/;"	m	struct:_GtkWidgetClass
-realize_drawingarea	./main.cpp	/^extern "C"  gboolean realize_drawingarea( GtkWidget *widget, GdkEventConfigure *event )$/;"	f
+realize_drawingarea	./main.cpp	/^extern "C"  gboolean realize_drawingarea( GtkWidget *widget, $/;"	f
 realized	/usr/include/gtk-2.0/gtk/gtktexttag.h	/^  guint realized : 1;$/;"	m	struct:_GtkTextAttributes
 reason	/usr/include/gtk-2.0/gdk/gdkevents.h	/^  GdkOwnerChange reason;$/;"	m	struct:_GdkEventOwnerChange
 rebuild_menu	/usr/include/gtk-2.0/gtk/gtktoolshell.h	/^  void            (*rebuild_menu)     (GtkToolShell *shell);$/;"	m	struct:_GtkToolShellIface
@@ -8859,6 +8865,7 @@ reserved_2	/usr/include/gtk-2.0/gtk/gtktypeutils.h	/^  gpointer		 reserved_2;$/;
 reset	/usr/include/gtk-2.0/gtk/gtkimcontext.h	/^  void     (*reset)               (GtkIMContext   *context);$/;"	m	struct:_GtkIMContextClass
 resize_column	/usr/include/gtk-2.0/gtk/gtkclist.h	/^  void   (*resize_column)       (GtkCList       *clist,$/;"	m	struct:_GtkCListClass
 resize_count	/usr/include/gtk-2.0/gdk/gdkwindow.h	/^  guint8 resize_count;$/;"	m	struct:_GdkWindowObject
+resize_map_data	./map_size_dialog.c	/^void resize_map_data(int height, int width, $/;"	f
 resizeable	/usr/include/gtk-2.0/gtk/gtkclist.h	/^  guint resizeable     : 1;$/;"	m	struct:_GtkCListColumn
 resolution	/usr/include/gtk-2.0/gdk/gdkscreen.h	/^  double resolution;		\/* pixels\/points scale factor for fonts *\/$/;"	m	struct:_GdkScreen
 response	/usr/include/gtk-2.0/gtk/gtkdialog.h	/^  void (* response) (GtkDialog *dialog, gint response_id);$/;"	m	struct:_GtkDialogClass
@@ -9162,6 +9169,8 @@ text_pushed	/usr/include/gtk-2.0/gtk/gtkstatusbar.h	/^  void	(*text_pushed)	(Gtk
 theme_change_id	/usr/include/gtk-2.0/gtk/gtkimage.h	/^  guint theme_change_id;$/;"	m	struct:_GtkImageGIconData
 theme_change_id	/usr/include/gtk-2.0/gtk/gtkimage.h	/^  guint theme_change_id;$/;"	m	struct:_GtkImageIconNameData
 tile	/usr/include/gtk-2.0/gdk/gdkgc.h	/^  GdkPixmap	   *tile;$/;"	m	struct:_GdkGCValues
+tile_index_data	./GameMap.h	/^  unsigned short* tile_index_data;$/;"	m	class:GameMap
+tile_index_data	./main.cpp	/^unsigned short* tile_index_data = NULL;$/;"	v
 tile_vbox	./main.cpp	/^GtkWidget* tile_vbox;$/;"	v
 tile_window	./main.cpp	/^GtkWidget* tile_window;$/;"	v
 time	/usr/include/gtk-2.0/gdk/gdkevents.h	/^  guint32 time;$/;"	m	struct:_GdkEventButton

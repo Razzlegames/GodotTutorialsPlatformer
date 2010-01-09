@@ -1,9 +1,31 @@
 /* vim: set filetype=cpp.doxygen : */
+/**
+ *
+ * For Mapping:
+ *      - Need info for kyleleveledit.
+ *         -> Separate bmp images for each map tile part (just make in gimp and
+ *         separate, who cares for now).
+ *         ->  Make sure all tiles have same palette (16 entry) or can we use
+ *         256, prob.
+ *         -> Loader that brings in bmp tiles and you just paste them around the
+ *         level.  
+ *         -> Option to hflip and vflip tiles
+ *         -> Save as map of tile indicies (with vflip and hflip flags)
+ *         -> Kick myself for using stupid overdesigned tools first before
+ *         reading bmp format and doing myself...!
+ *
+ *
+
+ *
+ */
 
 #include <gtk/gtk.h>
+#include <gdk/gdkkeysyms.h>
+
 #include <FreeImage.h>
 #include "ImageHandling.h"
 #include "map_edit_window.h"
+#include "GameMap.h"
 
 extern "C"
 {
@@ -27,6 +49,8 @@ GtkWidget* map_tile_table;
 
 GdkPixbuf** map_tiles_pix;
 GtkWidget* image1 ;
+
+GameMap game_map;
 
 /// Map data, tile index only
 unsigned short* tile_index_data = NULL;
@@ -195,6 +219,22 @@ gboolean image_press_cb(GtkWidget* event_box, GdkEventButton* event,
 
   g_print("Retardo button pushed...\n");
 
+  return TRUE;
+
+}
+
+
+//****************************************************************     
+gboolean key_press_cb(GtkWidget* widget, GdkEventKey* event, 
+    gpointer user_data)
+{
+
+
+
+  g_print("Retardo key pushed...\n");
+
+  return FALSE;
+
 }
 
 //****************************************************************     
@@ -217,25 +257,66 @@ int main (int argc, char *argv[])
 
   setupMapWindow();
 
-  map_size_window = GTK_WIDGET (gtk_builder_get_object (builder, "map_size_window"));
-  map_tile_table = GTK_WIDGET (gtk_builder_get_object (builder, "map_tile_table"));
+  map_size_window = GTK_WIDGET (gtk_builder_get_object (builder,
+        "map_size_window"));
+  map_tile_table = GTK_WIDGET (gtk_builder_get_object (builder,
+        "map_tile_table"));
   tile_vbox = 
     GTK_WIDGET (gtk_builder_get_object (builder, "tile_vbox"));
 
   init_map_size_dialog();
 
+  GError* gerror = NULL;
+
   //GtkWidget* image1;
 
+  GdkPixbuf* pixbuf[30] = {NULL};
   int i;
   for(i = 0; i < 30; i++)
   {
 
     GtkWidget* event_box = gtk_event_box_new();
 
+    image1 = NULL;
+    gerror = NULL;
+    pixbuf[i] = NULL;
+
+    // TODO Hmm... store pixbuf for each tile, then create image to display
+    // (for scaling purposes, gtkImage won't scale, only pixbuf)
     if(i % 2)
-        image1 = gtk_image_new_from_file("ball_green.bmp");
+    {
+
+        pixbuf[i] = gdk_pixbuf_new_from_file("ball_green.bmp", &gerror);
+        image1 = gtk_image_new_from_pixbuf(pixbuf[i]);
+    }
     else
-        image1 = gtk_image_new_from_file("ball_yellow.bmp");
+    {
+
+        pixbuf[i] = gdk_pixbuf_new_from_file("ball_yellow.bmp", &gerror);
+        image1 = gtk_image_new_from_pixbuf(pixbuf[i]);
+    }
+
+    // Error occures
+    if(!image1)
+    {
+
+      ERROR("%s\n", gerror->message);
+
+    }
+
+    // Error occures
+    if(!pixbuf[i])
+    {
+
+      ERROR("%s\n", gerror->message);
+
+    }
+    else
+    {
+
+       game_map.pixbufs.push_back(pixbuf[i]);
+    }
+
 
     gtk_container_add(GTK_CONTAINER(event_box), image1);
     g_signal_connect(G_OBJECT(event_box), "button_press_event", 
@@ -252,6 +333,10 @@ int main (int argc, char *argv[])
   g_object_unref (G_OBJECT (builder));
 
   //gtk_drawing_area_size(drawingarea1, 600, 600);
+
+  // Conenct event signals to windows
+  g_signal_connect(G_OBJECT(tile_window), "key_press_event",
+      G_CALLBACK(key_press_cb), &game_map);
 
   gtk_widget_show (window);       
   gtk_widget_show (tile_window);       
