@@ -1,3 +1,31 @@
+/**
+ * TODO  Need to read up on Bitmap format:
+ *     http://en.wikipedia.org/wiki/BMP_file_format
+ *  
+ * For IDEA:
+ *  - Create separate palette and map info for each sprite with any tool
+ *  - 1) Use info to make generic sprite loading by merging palette info into one 16
+ *  color palette
+ *      -> 2) IF this cannot be done, merge into 256 (which includes all palette)
+ *      and see.
+ *      -> Design gfx so either step one or two are possible or they will not be
+ *      usable on the same level.
+ *
+ * For Mapping:
+ *      - Need info for kyleleveledit.
+ *         -> Separate bmp images for each map tile part (just make in gimp and
+ *         separate, who cares for now).
+ *         ->  Make sure all tiles have same palette (16 entry) or can we use 256,
+ *         prob.
+ *         -> Loader that brings in bmp tiles and you just paste them around the
+ *         level.  
+ *         -> Option to hflip and vflip tiles
+ *         -> Save as map of tile indicies (with vflip and hflip flags)
+ *         -> Kick myself for using stupid overdesigned tools first before
+ *         reading bmp format and doing myself...!
+ *
+ *
+ */
 
 //
 // vector<Gummy*> gummy_vector;
@@ -96,8 +124,8 @@ __attribute__((aligned(4))) struct ButtonStates_
 
 }ButtonStates;
 
-// Keep track of pallet creation
-int pallet_number = 0;
+// Keep track of palette creation
+int palette_number = 0;
 
 bool run_music = true;
 CharacterList* character_list;
@@ -404,6 +432,9 @@ void drawObjects(void)
 //****************************************************************
 /**
  *   Capture keypresses:  Find out what that crazy player wants us to do
+ *
+ *  TODO:  IDEA: Maybe have a different function for each mode of play
+ *    Simple enough....
  */
 
 void queryKeys(void)
@@ -696,6 +727,11 @@ void queryKeys(void)
 
 }
 
+
+
+
+//  TODO: SCREW THIS CRAP ONCE WE LEARN ENOUGH OF MAPS DELETE IT!
+
 #include "toolbox.h"
 #define CBB_0  0
 #define SBB_0 28
@@ -835,14 +871,14 @@ void init_map_test()
     // Convert Gimp colors from 8bit to 4bit (255 to 31 max)
     //   Equivalent to the following, but using more efficient shifts
     //        // Red
-    //        int color0 = (int)(test_map_pallet[i][0]*(32.0/256.0);
+    //        int color0 = (int)(test_map_palette[i][0]*(32.0/256.0);
     //        // Green
-    //        int color1 = (int)(test_map_pallet[i][1]*(32.0/256.0);
+    //        int color1 = (int)(test_map_palette[i][1]*(32.0/256.0);
     //        // Blue 
-    //        int color2 = (int)(test_map_pallet[i][2]*(32.0/256.0);
-    int color0 = test_map_pallet[i][0] >> 3;
-    int color1 = test_map_pallet[i][1] >> 3;
-    int color2 = test_map_pallet[i][2] >> 3;
+    //        int color2 = (int)(test_map_palette[i][2]*(32.0/256.0);
+    int color0 = test_map_palette[i][0] >> 3;
+    int color1 = test_map_palette[i][1] >> 3;
+    int color2 = test_map_palette[i][2] >> 3;
 
     pal_bg_bank[0][i]= RGB15(color0, color1,color2);
 
@@ -939,7 +975,6 @@ void init_map_test()
 int main()
 {   
 
-
   // Initialize globals
   new_frame = 0;
 
@@ -1011,18 +1046,18 @@ int main()
   character_list = new CharacterList();
 
   Sprites::initSprites();
-  gummy = new Gummy(pallet_number++);
+  gummy = new Gummy(palette_number++);
 
-  bird = new Bird(pallet_number++);
+  bird = new Bird(palette_number++);
 
-  //gummy2 = new Gummy(pallet_number);
+  //gummy2 = new Gummy(palette_number);
   //gummy2->position = Vector2D(70,120);
 
   //-----------------------------------------
   //		Set up Blue balls
   //-----------------------------------------
   ball_list = new CharacterList();
-  Ball* ball = new BallBlue(pallet_number++);
+  Ball* ball = new BallBlue(palette_number++);
 
   // For testing
   movable_ball = ball;
@@ -1035,7 +1070,7 @@ int main()
   for(int i = 0; i< 5; i++)
   {
 
-    ball = new BallGreen(pallet_number++);
+    ball = new BallGreen(palette_number++);
     ball->position = cv;
     character_list->add(ball);
     ball_list->add(ball);
@@ -1049,14 +1084,14 @@ int main()
   //		Set up Hearts
   //-----------------------------------------
   heart_list = new CharacterList();
-  heart = new Heart(pallet_number++);
+  heart = new Heart(palette_number++);
   character_list->add(heart);
   heart_list->c = heart;
 
   for(int i = 0; i < 0; i++)
   {
 
-    heart = new Heart(pallet_number++);
+    heart = new Heart(palette_number++);
     heart->position += Vector2D(rand()%(SCREEN_WIDTH-16), 
         rand()%(SCREEN_HEIGHT-16));
     character_list->add(heart);
@@ -1071,7 +1106,7 @@ int main()
   //                i, i*40,0, 0);
   //    }
 
-  //  Load up master pallet (256 16 bit colors, 
+  //  Load up master palette (256 16 bit colors, 
   //              Mult*2 since data is short; memcpy size param is in bytes)
   Sprites::addPalletData((unsigned char*)master_Palette, 256*2);    
   gummy->enableSprite();
@@ -1104,7 +1139,6 @@ int main()
   //    iprintf("\x1b[14;0H heart_position(%d,%d)", 
   //            heart->position.x,heart->position.y);
 
-
   //REG_BG0CNT |=  BG_256_COLOR;
 
   if(run_music )
@@ -1115,6 +1149,7 @@ int main()
 
   }
 
+  // BG position
   int x = 0;
   int y = 0;
 
@@ -1131,7 +1166,7 @@ int main()
     if(x & 0x0001)
         background.setOffset(x,y);
 
-    //x++;
+    x++;
     //y++;
 
     //iprintf("\x1b[11;0H gummy_v(%d,%d)", 

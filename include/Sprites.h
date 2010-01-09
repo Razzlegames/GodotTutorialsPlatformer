@@ -243,7 +243,7 @@ class Sprites
       static bool checkGFXBounds(int begin_index, int size);
       static bool freeGFXBlock(int begin_index);
       static void setGFXMemoryIndexOAM(int sprite_number, int offset);
-      int updateTileGFX(unsigned char* tiles, unsigned int size,
+      void updateTileGFX(unsigned char* tiles, unsigned int size,
               int sprite_gfx_index);
 
       //-------------------------------------------

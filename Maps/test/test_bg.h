@@ -5,7 +5,7 @@ static unsigned int TEST_MAP_HEIGHT = 40;
 
 /*  Call this macro repeatedly.  After each use, the pixel data can be extracted  */
 
-static char test_map_pallet[256][3] = {
+static char test_map_palette[256][3] = {
 
         {254,  0,254},
 	{  0,  1,  0},
