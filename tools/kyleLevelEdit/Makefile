@@ -6,17 +6,24 @@ BIN=tutorial
 OBJS= $(patsubst %.cpp,%.o,$(wildcard *.cpp)) \
       $(patsubst %.c,%.o,$(wildcard *.c)) \
 
+#---------------------------------------------------------------------------------
+#  Account for normal c/cpp files
+#---------------------------------------------------------------------------------
+CFILES := $(wildcard *.c)
+CPPFILES := $(wildcard *.cpp)
+SOURCES := $(CFILES) $(CPPFILES)
 
-all: $(OBJS)
+
+all: $(BIN) tags
+
+$(BIN): $(OBJS)
 	$(CC) $(CPPFLAGS) $(OBJS) $(LIBS) -o $(BIN) 
 
-
-%.o: %.cpp
+%.o: %.cpp 
 	$(CC) $(CPPFLAGS) -c $*.cpp
 
-%.o: %.c
+%.o: %.c 
 	$(CC) $(CPPFLAGS) -c $*.c
-
 
 run: all
 	./$(BIN)
@@ -24,5 +31,7 @@ run: all
 clean:
 	rm -f *o $(BIN)
 
-ctags:
-	ctags -R /usr/include/gtk-2.0/ ./ /usr/include/FreeImage.h
+tags: $(SOURCES)
+	-ctags -R --sort=yes --c++-kinds=+cdefgmnpstux \
+	  --fields=+iaKS --extra=+q ./ ../ \
+		/usr/include/gtk-2.0/ ./ /usr/include/FreeImage.h
