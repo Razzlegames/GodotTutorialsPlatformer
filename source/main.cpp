@@ -1166,7 +1166,7 @@ int main()
     if(x & 0x0001)
         background.setOffset(x,y);
 
-    x++;
+    //x++;
     //y++;
 
     //iprintf("\x1b[11;0H gummy_v(%d,%d)", 
