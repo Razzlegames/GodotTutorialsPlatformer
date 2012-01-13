@@ -17,7 +17,7 @@ void FreeImageErrorHandler(FREE_IMAGE_FORMAT fif, const char *message)
   {
     printf("%s Format\n", FreeImage_GetFormatFromFIF(fif));
   }
-  printf(message);
+  printf("%s\n", message);
   printf(" ***\n");
 
 }

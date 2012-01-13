@@ -13,6 +13,11 @@ CFILES := $(wildcard *.c)
 CPPFILES := $(wildcard *.cpp)
 SOURCES := $(CFILES) $(CPPFILES)
 
+# Take care of dependencies
+CDEPS = $(CFILES:.c=.d)
+CPPDEPS = $(CPPFILES:.cpp=.d)
+DEPS = $(CDEPS) $(CPPDEPS)
+
 
 all: $(BIN) tags
 
@@ -20,15 +25,23 @@ $(BIN): $(OBJS)
 	$(CC) $(CPPFLAGS) $(OBJS) $(LIBS) -o $(BIN) 
 
 %.o: %.cpp 
-	$(CC) $(CPPFLAGS) -c $*.cpp
+	$(CC) -MMD -MP -MF $*.d $(CPPFLAGS) -c $*.cpp
 
 %.o: %.c 
-	$(CC) $(CPPFLAGS) -c $*.c
+	$(CC) -MMD -MP -MF $*.d $(CPPFLAGS) -c $*.c
+
+-include $(DEPS)
 
 run: all
 	./$(BIN)
 
-clean:
+#---------------------------------------------------------------------------------
+#   Get rid of all the intermediary makefiles (.d files)
+#---------------------------------------------------------------------------------
+clean-deps:
+	-rm $(DEPS)
+
+clean: clean-deps
 	rm -f *o $(BIN)
 
 tags: $(SOURCES)

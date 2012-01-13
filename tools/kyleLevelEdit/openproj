@@ -1,0 +1,5 @@
+#!/bin/bash
+
+#  Set PSP Tags up
+vim  *.c *.cpp *.h 
+
