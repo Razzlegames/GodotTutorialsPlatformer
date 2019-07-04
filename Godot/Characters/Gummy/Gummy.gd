@@ -32,7 +32,6 @@ func _physics_process(delta):
 		
 	
 	velocity = move_and_slide(velocity, UP)
-	print(velocity)
 	call_deferred("updateGraphics", Vector2(velocity.x, velocity.y))
 	
 func updateGraphics(velocity):

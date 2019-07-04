@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Projectiles/bubbleGraphics.shader" type="Shader" id=1]
+[ext_resource path="res://RawTextures/Projectile/bubble.png" type="Texture" id=2]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 1 )
+shader_param/deformScale = 2.0
+shader_param/amplitude = Vector2( 0.02, 1 )
+shader_param/center = Vector2( 16, 16 )
+
+[sub_resource type="Shader" id=2]
+code = "shader_type canvas_item;
+
+uniform float deformScale = 2;
+uniform vec2 amplitude = vec2(0.2, 1);
+
+
+void vertex() {
+	VERTEX.x += cos(TIME * deformScale + VERTEX.x + VERTEX.y) * amplitude.x;
+	VERTEX.y += sin(TIME * deformScale + VERTEX.y + VERTEX.x) * amplitude.y;
+}
+"
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = SubResource( 2 )
+shader_param/deformScale = 2.0
+shader_param/amplitude = Vector2( 0.2, 1 )
+
+[node name="bubble" type="Sprite"]
+material = SubResource( 1 )
+position = Vector2( 94.7304, -95.1022 )
+texture = ExtResource( 2 )
+
+[node name="bubble2" type="Sprite" parent="."]
+material = SubResource( 3 )
+position = Vector2( 25.2696, 65.1022 )
+texture = ExtResource( 2 )
+offset = Vector2( -25.2696, -65.1022 )

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg8"
+   sodipodi:docname="Bubble.svg"
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)">
+  <defs
+     id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient849">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="0"
+         id="stop845" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0;"
+         offset="1"
+         id="stop847" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient823">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="0"
+         id="stop819" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0;"
+         offset="1"
+         id="stop821" />
+    </linearGradient>
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient823"
+       id="radialGradient825"
+       cx="79.375"
+       cy="123.8869"
+       fx="79.375"
+       fy="123.8869"
+       r="88.154762"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.5263841,1.0661369,-1.127086,1.6136449,97.849449,-160.64717)" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient849"
+       id="radialGradient851"
+       cx="111.125"
+       cy="165.46428"
+       fx="111.125"
+       fy="165.46428"
+       r="83.154762"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="331.33958"
+     inkscape:cy="572.89044"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1579"
+     inkscape:window-height="954"
+     inkscape:window-x="1684"
+     inkscape:window-y="1101"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="opacity:1;fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:0.60000002;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect815"
+       width="219.22618"
+       height="236.61308"
+       x="3.0238097"
+       y="49.803574"
+       ry="6.4255915" />
+    <circle
+       style="opacity:0.70800003;fill:url(#radialGradient825);fill-opacity:1;stroke:#b3b3b3;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path817"
+       cx="111.125"
+       cy="165.46428"
+       r="83.154762"
+       inkscape:export-filename="C:\Users\razzl\Development\razzlegba\Godot\RawTextures\Projectile\bubble.png"
+       inkscape:export-xdpi="4.610074"
+       inkscape:export-ydpi="4.610074" />
+    <circle
+       style="opacity:0.70800003;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:6.13636398;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path827"
+       cx="75.595238"
+       cy="116.70535"
+       r="10.205358" />
+    <circle
+       inkscape:export-ydpi="4.610074"
+       inkscape:export-xdpi="4.610074"
+       inkscape:export-filename="C:\Users\razzl\Development\razzlegba\Godot\RawTextures\Projectile\bubble.png"
+       r="83.154762"
+       cy="165.46428"
+       cx="111.125"
+       id="circle833"
+       style="opacity:1;fill:url(#radialGradient851);fill-opacity:1;stroke:none;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+  </g>
+</svg>
