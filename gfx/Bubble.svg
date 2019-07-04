@@ -16,7 +16,10 @@
    version="1.1"
    id="svg8"
    sodipodi:docname="Bubble.svg"
-   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)">
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
+   inkscape:export-filename="C:\Users\razzl\Development\razzlegba\gfx\bubble_HeightMap.png"
+   inkscape:export-xdpi="2.4436362"
+   inkscape:export-ydpi="2.4436362">
   <defs
      id="defs2">
     <linearGradient
@@ -107,20 +110,22 @@
        y="49.803574"
        ry="6.4255915" />
     <circle
-       style="opacity:0.70800003;fill:url(#radialGradient825);fill-opacity:1;stroke:#b3b3b3;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="display:inline;opacity:0.70800003;fill:url(#radialGradient825);fill-opacity:1;stroke:#b3b3b3;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="path817"
        cx="111.125"
        cy="165.46428"
        r="83.154762"
        inkscape:export-filename="C:\Users\razzl\Development\razzlegba\Godot\RawTextures\Projectile\bubble.png"
        inkscape:export-xdpi="4.610074"
-       inkscape:export-ydpi="4.610074" />
+       inkscape:export-ydpi="4.610074"
+       inkscape:label="Bubble" />
     <circle
-       style="opacity:0.70800003;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:6.13636398;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="display:inline;opacity:0.70800003;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:6.13636398;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="path827"
        cx="75.595238"
        cy="116.70535"
-       r="10.205358" />
+       r="10.205358"
+       inkscape:label="highlight" />
     <circle
        inkscape:export-ydpi="4.610074"
        inkscape:export-xdpi="4.610074"
