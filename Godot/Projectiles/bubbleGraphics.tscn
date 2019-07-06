@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Projectiles/bubbleGraphics.shader" type="Shader" id=1]
 [ext_resource path="res://RawTextures/Projectile/bubble.png" type="Texture" id=2]
+[ext_resource path="res://RawTextures/Projectile/bubbleNormalMap.png" type="Texture" id=3]
+[ext_resource path="res://RawTextures/Light/light_blob.png" type="Texture" id=4]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 1 )
@@ -31,9 +33,15 @@ shader_param/amplitude = Vector2( 0.2, 1 )
 material = SubResource( 1 )
 position = Vector2( 94.7304, -95.1022 )
 texture = ExtResource( 2 )
+normal_map = ExtResource( 3 )
 
 [node name="bubble2" type="Sprite" parent="."]
 material = SubResource( 3 )
 position = Vector2( 25.2696, 65.1022 )
 texture = ExtResource( 2 )
 offset = Vector2( -25.2696, -65.1022 )
+
+[node name="Light2D" type="Light2D" parent="."]
+visible = false
+position = Vector2( 68, 11 )
+texture = ExtResource( 4 )
