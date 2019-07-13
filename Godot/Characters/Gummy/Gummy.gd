@@ -1,20 +1,24 @@
 extends KinematicBody2D
 
 const SPEED = 100
-const gravity = 30
+const GRAVITY = 30
 
-const IDLE_FRAME = 2
-const UP = Vector2(0, -1)
-const MIN_VALUE = 0.004
+const IDLE_ANIMATION_FRAME = 2
+const UP_AXIS = Vector2(0, -1)
+const MIN_VELOCITY_X_TO_FLIP_GRAPHICS = 0.004
+const JUMP_VELOCITY = GRAVITY*20
 
 onready var graphics = $Sprite
 onready var animationPlayer = $Sprite/AnimationPlayer
 
 var velocity = Vector2(0, 0)
 
+func _process(delta):
+	updateGraphics(velocity)
+
 func _physics_process(delta):
 	
-	velocity.y += gravity
+	velocity.y += GRAVITY
 	
 	if Input.is_action_pressed("walk_left"):
 		velocity.x = -SPEED
@@ -26,25 +30,22 @@ func _physics_process(delta):
 	if is_on_floor() && Input.is_action_pressed("jump"):
 		animationPlayer.play("Jump")
 
-		var jumpVelocity =  gravity*20
-		velocity.y = clamp(velocity.y - jumpVelocity, 
-			-abs(jumpVelocity), abs(jumpVelocity))
+		velocity.y = clamp(velocity.y - JUMP_VELOCITY, 
+			-abs(JUMP_VELOCITY), abs(JUMP_VELOCITY))
 		
-	
-	velocity = move_and_slide(velocity, UP)
-	call_deferred("updateGraphics", Vector2(velocity.x, velocity.y))
-	
+	velocity = move_and_slide(velocity, UP_AXIS)
+
 func updateGraphics(velocity):
 	
 	if is_on_floor():
-		if abs(velocity.x) <= MIN_VALUE:
-			graphics.frame = IDLE_FRAME
+		if abs(velocity.x) <= MIN_VELOCITY_X_TO_FLIP_GRAPHICS:
+			graphics.frame = IDLE_ANIMATION_FRAME
 			animationPlayer.stop()
 		else:
 			animationPlayer.play("Walk")
-	if velocity.x > MIN_VALUE:
+	if velocity.x > MIN_VELOCITY_X_TO_FLIP_GRAPHICS:
 		graphics.flip_h = false
-	elif velocity.x < -MIN_VALUE:
+	elif velocity.x < -MIN_VELOCITY_X_TO_FLIP_GRAPHICS:
 		graphics.flip_h = true
 
 		

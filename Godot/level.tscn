@@ -23,6 +23,7 @@ polygon = PoolVector2Array( -72.9223, 12.0339, 65.7166, -30.9886, 72.6129, -12.6
 motion_scale = Vector2( 0, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+modulate = Color( 0.462745, 0.101961, 0.513726, 1 )
 position = Vector2( 34.6198, -30.1195 )
 scale = Vector2( 3.19215, 1.85921 )
 texture = ExtResource( 1 )
@@ -44,7 +45,6 @@ format = 1
 tile_data = PoolIntArray( -458737, 0, 0, -458736, 0, 0, -458735, 0, 0, -458734, 0, 0, -458733, 0, 0, -458732, 0, 0, -458731, 0, 0, -458730, 0, 0, -327687, 0, 0, -327686, 0, 0, -327685, 0, 0, -327684, 0, 0, -327683, 0, 0, -327682, 0, 0, -327681, 0, 0, -393216, 0, 0, -393215, 0, 0, -393214, 0, 0, -393213, 0, 0, -393212, 0, 0, -393211, 0, 0, -65541, 0, 0, -65540, 0, 0, -65539, 0, 0, -65538, 0, 0, -65537, 0, 0, -131072, 0, 0, -131071, 0, 0, -131070, 0, 0, -131069, 0, 0, -131068, 0, 0, -131067, 0, 0, -131066, 0, 0, -131065, 0, 0, -131064, 0, 0, -131061, 0, 0, -131060, 0, 0, -131059, 0, 0, -131058, 0, 0, -131057, 0, 0, -131056, 0, 0, -131055, 0, 0, -131054, 0, 0, -131053, 0, 0, -131052, 0, 0, -131051, 0, 0, -131050, 0, 0, -131049, 0, 0, -131048, 0, 0, -131047, 0, 0, -131046, 0, 0, 196602, 0, 0, 196603, 0, 0, 196604, 0, 0, 196605, 0, 0, 196606, 0, 0, 196607, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0 )
 
 [node name="TileMap2" type="TileMap" parent="."]
-visible = false
 position = Vector2( 25.6194, -70.935 )
 rotation = -0.694641
 scale = Vector2( 0.995947, 1.00677 )
@@ -61,6 +61,7 @@ current = true
 zoom = Vector2( 0.7, 0.7 )
 
 [node name="Light2D" type="Light2D" parent="Gummy"]
+visible = false
 texture = ExtResource( 6 )
 energy = 2.24
 shadow_enabled = true
@@ -104,8 +105,42 @@ collision_mask = 0
 format = 1
 tile_data = PoolIntArray( -589835, 0, 0, -589834, 0, 0, -589833, 0, 0, -589832, 0, 0, -589831, 0, 0, -589830, 0, 0, -589829, 0, 0, -589828, 0, 0, -589827, 0, 0, -589826, 0, 0, -589825, 0, 0, -655360, 0, 0, -655359, 0, 0, -655358, 0, 0, -196619, 0, 0, -196618, 0, 0, -196617, 0, 0, -196616, 0, 0, -196615, 0, 0, -196614, 0, 0, -196613, 0, 0, -196612, 0, 0, -196611, 0, 0, -196610, 0, 0, -196609, 0, 0, -262144, 0, 0, -262143, 0, 0, -262142, 0, 0, -262141, 0, 0, -262140, 0, 0, -262139, 0, 0, -262138, 0, 0, -262137, 0, 0, -262136, 0, 0, -262135, 0, 0, -11, 0, 0, -10, 0, 0, -9, 0, 0, -8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 262137, 0, 0, 262138, 0, 0, 262139, 0, 0, 262140, 0, 0, 262141, 0, 0, 262142, 0, 0, 262143, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0, 196619, 0, 0, 196620, 0, 0, 196621, 0, 0, 196622, 0, 0, 196623, 0, 0, 524277, 0, 0, 524278, 0, 0, 524279, 0, 0, 524280, 0, 0, 524281, 0, 0, 524282, 0, 0, 524283, 0, 0, 524284, 0, 0, 524285, 0, 0, 524286, 0, 0, 524287, 0, 0, 458752, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458759, 0, 0, 458760, 0, 0, 458761, 0, 0, 458762, 0, 0, 458763, 0, 0, 458764, 0, 0, 458765, 0, 0 )
 
-[node name="bubble" parent="." instance=ExtResource( 8 )]
-position = Vector2( 128.122, -92.943 )
+[node name="bubble" parent="ForgroundParallaxBackground/ForgroundParallaxLayer" instance=ExtResource( 8 )]
+position = Vector2( -109.133, 13.6002 )
+scale = Vector2( 2.47197, 2.47197 )
 
-[node name="bubble2" parent="." instance=ExtResource( 8 )]
-position = Vector2( 156.944, -186.456 )
+[node name="bubble2" parent="ForgroundParallaxBackground/ForgroundParallaxLayer" instance=ExtResource( 8 )]
+position = Vector2( 108.469, -268.354 )
+scale = Vector2( 2.47197, 2.47197 )
+
+[node name="Bubbles" type="Node2D" parent="."]
+position = Vector2( 127.842, -90.9498 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="bubble" parent="Bubbles" instance=ExtResource( 8 )]
+
+[node name="bubble3" parent="Bubbles" instance=ExtResource( 8 )]
+position = Vector2( -138.873, -34.5831 )
+
+[node name="bubble4" parent="Bubbles" instance=ExtResource( 8 )]
+position = Vector2( -48.6325, -123.202 )
+
+[node name="bubble5" parent="Bubbles" instance=ExtResource( 8 )]
+position = Vector2( 166.431, -57.2783 )
+
+[node name="bubble6" parent="Bubbles" instance=ExtResource( 8 )]
+position = Vector2( -79.4331, 38.906 )
+
+[node name="bubble7" parent="Bubbles" instance=ExtResource( 8 )]
+position = Vector2( -279.907, -37.8253 )
+
+[node name="bubble8" parent="Bubbles" instance=ExtResource( 8 )]
+position = Vector2( -281.528, 106.451 )
+
+[node name="bubble9" parent="Bubbles" instance=ExtResource( 8 )]
+position = Vector2( 65.9241, -208.579 )
+
+[node name="bubble2" parent="Bubbles" instance=ExtResource( 8 )]
+position = Vector2( 29.1024, -95.5062 )
