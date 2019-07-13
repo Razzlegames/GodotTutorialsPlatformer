@@ -31,15 +31,13 @@ shader_param/amplitude = Vector2( 0.2, 1 )
 
 [node name="bubble" type="Sprite"]
 material = SubResource( 1 )
-position = Vector2( 94.7304, -95.1022 )
 texture = ExtResource( 2 )
 normal_map = ExtResource( 3 )
 
 [node name="bubble2" type="Sprite" parent="."]
 material = SubResource( 3 )
-position = Vector2( 25.2696, 65.1022 )
+scale = Vector2( 1.1, 1.1 )
 texture = ExtResource( 2 )
-offset = Vector2( -25.2696, -65.1022 )
 
 [node name="Light2D" type="Light2D" parent="."]
 visible = false
