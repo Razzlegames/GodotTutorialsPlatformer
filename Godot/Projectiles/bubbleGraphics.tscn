@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Projectiles/bubbleGraphics.shader" type="Shader" id=1]
+[ext_resource path="res://RawTextures/Projectile/bubble.png" type="Texture" id=2]
+[ext_resource path="res://RawTextures/Projectile/bubbleNormalMap.png" type="Texture" id=3]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 1 )
+shader_param/center = Vector2( 16, 16 )
+
+[sub_resource type="Shader" id=2]
+code = "shader_type canvas_item;
+
+uniform float timeScale = 2;
+uniform float amplitude = 1.0f;
+
+void vertex() {
+
+	VERTEX.y += sin(TIME * timeScale + VERTEX.y + VERTEX.x) * amplitude;
+}
+"
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = SubResource( 2 )
+shader_param/timeScale = 2.0
+shader_param/amplitude = 1.0
+
+[node name="bubbleGraphics" type="Sprite"]
+material = SubResource( 1 )
+texture = ExtResource( 2 )
+normal_map = ExtResource( 3 )
+
+[node name="bubbleShaderSprite" type="Sprite" parent="."]
+material = SubResource( 3 )
+scale = Vector2( 1.1, 1.1 )
+texture = ExtResource( 2 )

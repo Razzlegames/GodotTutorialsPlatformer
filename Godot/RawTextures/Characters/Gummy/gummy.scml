@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spriter_data generator="krita" scml_version="1" generator_version="3.3.3">
+    <folder name="" id="0">
+        <file height="179.00" width="29.00" name="/turning.png" id="0"/>
+        <file height="24.00" width="23.00" name="/running.png" id="1"/>
+        <file height="24.00" width="23.00" name="/running.png" id="2"/>
+        <file height="24.00" width="20.00" name="/running.png" id="3"/>
+        <file height="25.00" width="30.00" name="/dying.png" id="4"/>
+        <file height="18.00" width="21.00" name="/Ducking.png" id="5"/>
+        <file height="26.00" width="23.00" name="/Jumping.png" id="6"/>
+    </folder>
+    <entity name="y20116gummy" id="0">
+        <animation length="1000" name="default" looping="false" id="0">
+            <mainline>
+                <key id="0">
+                    <object_ref timeline="0" id="0" key="0" z_index="0"/>
+                    <object_ref timeline="1" id="1" key="0" z_index="1"/>
+                    <object_ref timeline="2" id="2" key="0" z_index="2"/>
+                    <object_ref timeline="3" id="3" key="0" z_index="3"/>
+                    <object_ref timeline="4" id="4" key="0" z_index="4"/>
+                    <object_ref timeline="5" id="5" key="0" z_index="5"/>
+                    <object_ref timeline="6" id="6" key="0" z_index="6"/>
+                </key>
+            </mainline>
+            <timeline name="object-Jumping" id="0">
+                <key spin="0" id="0">
+                    <object y="-198" scale_x="1.00" scale_y="1.00" file="6" angle="0.00" folder="0" x="5"/>
+                </key>
+            </timeline>
+            <timeline name="object-Ducking" id="1">
+                <key spin="0" id="0">
+                    <object y="-174" scale_x="1.00" scale_y="1.00" file="5" angle="0.00" folder="0" x="7"/>
+                </key>
+            </timeline>
+            <timeline name="object-dying" id="2">
+                <key spin="0" id="0">
+                    <object y="-134" scale_x="1.00" scale_y="1.00" file="4" angle="0.00" folder="0" x="1"/>
+                </key>
+            </timeline>
+            <timeline name="object-running" id="3">
+                <key spin="0" id="0">
+                    <object y="-72" scale_x="1.00" scale_y="1.00" file="3" angle="0.00" folder="0" x="7"/>
+                </key>
+            </timeline>
+            <timeline name="object-running" id="4">
+                <key spin="0" id="0">
+                    <object y="-102" scale_x="1.00" scale_y="1.00" file="2" angle="0.00" folder="0" x="6"/>
+                </key>
+            </timeline>
+            <timeline name="object-running" id="5">
+                <key spin="0" id="0">
+                    <object y="-38" scale_x="1.00" scale_y="1.00" file="1" angle="0.00" folder="0" x="5"/>
+                </key>
+            </timeline>
+            <timeline name="object-turning" id="6">
+                <key spin="0" id="0">
+                    <object y="-0" scale_x="1.00" scale_y="1.00" file="0" angle="0.00" folder="0" x="3"/>
+                </key>
+            </timeline>
+        </animation>
+    </entity>
+</spriter_data>
