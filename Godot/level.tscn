@@ -18,6 +18,7 @@ polygon = PoolVector2Array( -72.9223, 12.0339, 65.7166, -30.9886, 72.6129, -12.6
 [node name="level" type="Node2D"]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+editor/display_folded = true
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0, 0 )
@@ -69,7 +70,7 @@ shadow_gradient_length = 1.4
 shadow_filter_smooth = 1.6
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2( -30, -220 )
+position = Vector2( -30, 230 )
 rotation = -0.411837
 
 [node name="icon" type="Sprite" parent="StaticBody2D"]
@@ -108,6 +109,7 @@ tile_data = PoolIntArray( -589835, 0, 0, -589834, 0, 0, -589833, 0, 0, -589832, 
 [node name="bubble" parent="ForgroundParallaxBackground/ForgroundParallaxLayer" instance=ExtResource( 8 )]
 position = Vector2( -109.133, 13.6002 )
 scale = Vector2( 2.47197, 2.47197 )
+normal_map = null
 
 [node name="bubble2" parent="ForgroundParallaxBackground/ForgroundParallaxLayer" instance=ExtResource( 8 )]
 position = Vector2( 108.469, -268.354 )
@@ -131,7 +133,7 @@ position = Vector2( -48.6325, -123.202 )
 position = Vector2( 166.431, -57.2783 )
 
 [node name="bubble6" parent="Bubbles" instance=ExtResource( 8 )]
-position = Vector2( -79.4331, 38.906 )
+position = Vector2( -93.882, 40.425 )
 
 [node name="bubble7" parent="Bubbles" instance=ExtResource( 8 )]
 position = Vector2( -279.907, -37.8253 )

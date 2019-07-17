@@ -1,27 +1,18 @@
 shader_type canvas_item;
 
-uniform float deformScale = 2;
-uniform vec2 amplitude = vec2(0.2, 10);
-
-uniform vec2 center = vec2(16, 16);
+uniform float refractionMagnitude = 30.0;
 
 void fragment() {
 	
-	vec3 normal = - texture(NORMAL_TEXTURE, UV).rgb * vec3(1.0,-1.0,1.0);
+	// Possibly a more acturate way to do refraction? Uncomment and see how you like it (and comment out below refraction)
+	//vec3 refraction = -refract(vec3(0,0,-1), texture(NORMAL_TEXTURE, UV).rgb, 1.1) *2.0;
 	
-    float xMix = sin(UV.x*3.14);
-	float yMix = sin(UV.y*3.14);
-	float mixAmount = (xMix + yMix)/ 2.0;
-
+	vec3 refraction = - texture(NORMAL_TEXTURE, UV).rgb * vec3(1.0,-1.0,1.0);
+	
 	vec4 textureRead = texture(TEXTURE, UV);
-	vec2 textureOffset = center - UV;
-	vec4 offsetScreenRead = textureLod(SCREEN_TEXTURE, SCREEN_UV + normal.rg/30.0, 0.0);
-
-//	COLOR = mix(textureLod(SCREEN_TEXTURE, SCREEN_UV + 
-//		vec2(xMix, yMix)/100.0, 0.0), textureRead, 0.5);
+	vec4 offsetScreenRead = textureLod(SCREEN_TEXTURE, SCREEN_UV + refraction.rg/refractionMagnitude, 0.0);
 
 	if (textureRead.a  > .04) {
-		COLOR = mix(offsetScreenRead, textureRead, .5);
 		COLOR = offsetScreenRead;
 	}
 	else {

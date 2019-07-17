@@ -16,9 +16,21 @@
    version="1.1"
    id="svg8"
    sodipodi:docname="heightMap.svg"
-   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)">
   <defs
      id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient1440">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="0"
+         id="stop1436" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0;"
+         offset="1"
+         id="stop1438" />
+    </linearGradient>
     <linearGradient
        inkscape:collect="always"
        id="linearGradient831">
@@ -41,7 +53,18 @@
        fy="115.57143"
        r="72.571426"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(1.0729166,0,0,1.0729167,32.742184,25.590772)" />
+       gradientTransform="matrix(1.0729166,0,0,1.0729167,56.93266,284.88244)" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1440"
+       id="radialGradient1442"
+       cx="97.744637"
+       cy="150.42084"
+       fx="97.744637"
+       fy="150.42084"
+       r="74.088974"
+       gradientTransform="matrix(1,0,0,1.0268199,0,-4.0342752)"
+       gradientUnits="userSpaceOnUse" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -50,18 +73,18 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.35"
-     inkscape:cx="-64.285714"
-     inkscape:cy="315.28073"
+     inkscape:zoom="0.25"
+     inkscape:cx="373.05397"
+     inkscape:cy="296.25621"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
-     showgrid="true"
+     showgrid="false"
      showguides="false"
-     inkscape:window-width="1366"
-     inkscape:window-height="705"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
-     inkscape:window-maximized="1">
+     inkscape:window-width="954"
+     inkscape:window-height="723"
+     inkscape:window-x="873"
+     inkscape:window-y="1259"
+     inkscape:window-maximized="0">
     <inkscape:grid
        type="xygrid"
        id="grid835" />
@@ -82,21 +105,28 @@
      inkscape:groupmode="layer"
      id="layer1">
     <g
-       id="g839">
-      <rect
-         y="71.726189"
-         x="18.14286"
-         height="157.2381"
-         width="157.2381"
-         id="rect815"
-         style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332" />
+       id="g1450"
+       inkscape:export-xdpi="20.676926"
+       inkscape:export-ydpi="20.676926">
+      <g
+         id="g1445">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+           id="rect815"
+           width="157.2381"
+           height="157.2381"
+           x="18.14286"
+           y="71.726189" />
+      </g>
       <ellipse
-         ry="77.863091"
-         rx="77.863083"
-         cy="149.58928"
-         cx="96.005951"
-         id="path817"
-         style="fill:url(#radialGradient833);fill-opacity:1;stroke:none;stroke-width:0.28387585" />
+         inkscape:transform-center-y="213.78333"
+         inkscape:transform-center-x="74.083333"
+         ry="76.076035"
+         rx="74.088974"
+         cy="150.42084"
+         cx="97.744637"
+         id="path1430"
+         style="opacity:0.98999999;fill:url(#radialGradient1442);fill-opacity:1;stroke:none;stroke-width:7.51014996;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     </g>
   </g>
 </svg>
