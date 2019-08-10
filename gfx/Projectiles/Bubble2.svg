@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
+   sodipodi:docname="Bubble2.svg">
+  <defs
+     id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient845">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="0"
+         id="stop841" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0;"
+         offset="1"
+         id="stop843" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient825">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="0"
+         id="stop821" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0;"
+         offset="1"
+         id="stop823" />
+    </linearGradient>
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient825"
+       id="radialGradient827"
+       cx="102.80952"
+       cy="154.88095"
+       fx="102.80952"
+       fy="154.88095"
+       r="95.714287"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient845"
+       id="radialGradient847"
+       cx="102.80952"
+       cy="154.88095"
+       fx="102.80952"
+       fy="154.88095"
+       r="95.714287"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="-644.28571"
+     inkscape:cy="560"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="3840"
+     inkscape:window-height="2097"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="opacity:0.98999999;fill:#999999;fill-opacity:1;stroke:#ffffff;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect817"
+       width="511.0238"
+       height="438.45236"
+       x="-145.14284"
+       y="-68.124992" />
+    <path
+       id="circle819"
+       style="opacity:0.98999999;fill:#ffffff;fill-opacity:1;stroke:url(#radialGradient827);stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       sodipodi:type="arc"
+       sodipodi:cx="102.80952"
+       sodipodi:cy="154.88095"
+       sodipodi:rx="90.714287"
+       sodipodi:ry="53.672623"
+       sodipodi:start="0"
+       sodipodi:end="0.014518035"
+       sodipodi:open="true"
+       d="m 193.5238,154.88095 a 90.714287,53.672623 0 0 1 -0.01,0.77919" />
+    <g
+       id="g859"
+       inkscape:export-filename="C:\Users\razzl\Development\razzlegba\Godot\RawTextures\Projectile\bubble2.png"
+       inkscape:export-xdpi="4.25"
+       inkscape:export-ydpi="4.25">
+      <circle
+         r="90.714287"
+         cy="154.88095"
+         cx="102.80952"
+         id="path815"
+         style="opacity:0.98999999;fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <circle
+         style="opacity:0.98999999;fill:url(#radialGradient847);fill-opacity:1;stroke:none;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="circle839"
+         cx="102.80952"
+         cy="154.88095"
+         r="90.714287" />
+      <circle
+         r="15.119047"
+         cy="114.05952"
+         cx="60.476189"
+         id="path849"
+         style="opacity:0.98999999;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:6.060606;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    </g>
+  </g>
+</svg>

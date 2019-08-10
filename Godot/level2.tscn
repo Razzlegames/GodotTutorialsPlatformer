@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://RawTextures/Background/cloudy_background.png" type="Texture" id=1]
 [ext_resource path="res://RawTextures/greyTexture.png" type="Texture" id=2]
@@ -8,12 +8,56 @@
 [ext_resource path="res://RawTextures/Light/light_blob.png" type="Texture" id=6]
 [ext_resource path="res://icon.png" type="Texture" id=7]
 [ext_resource path="res://Projectiles/bubbleGraphics.tscn" type="PackedScene" id=8]
+[ext_resource path="res://RawTextures/Projectile/bubble2.png" type="Texture" id=9]
+[ext_resource path="res://RawTextures/Projectile/bubbleNormalMap2.png" type="Texture" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 72.6203, 10 )
 
 [sub_resource type="OccluderPolygon2D" id=2]
 polygon = PoolVector2Array( -72.9223, 12.0339, 65.7166, -30.9886, 72.6129, -12.6056, -67.8206, 31.4894 )
+
+[sub_resource type="Shader" id=5]
+code = "shader_type canvas_item;
+
+uniform float refractionMagnitude = 30.0;
+
+void fragment() {
+	
+	vec3 refraction = - texture(NORMAL_TEXTURE, UV).rgb * vec3(	1.0, -1.0, 1.0);
+	
+	vec4 textureRead = texture(TEXTURE, UV);
+	vec4 offsetScreenRead = textureLod(SCREEN_TEXTURE, SCREEN_UV + refraction.rg/refractionMagnitude, 0.0);
+	
+	if (textureRead.a > 0.04) {
+		COLOR = offsetScreenRead;	
+	}
+	else {
+		COLOR = textureRead;
+	}	
+}"
+
+[sub_resource type="ShaderMaterial" id=6]
+shader = SubResource( 5 )
+shader_param/refractionMagnitude = 30.0
+
+[sub_resource type="Shader" id=3]
+code = "shader_type canvas_item;
+
+uniform float timeScale = 2;
+uniform float amplitude = 1.0f;
+
+void vertex() {
+	VERTEX.y += sin(TIME * timeScale + VERTEX.y + VERTEX.x) * amplitude;
+}
+
+
+"
+
+[sub_resource type="ShaderMaterial" id=4]
+shader = SubResource( 3 )
+shader_param/timeScale = 2.0
+shader_param/amplitude = 1.0
 
 [node name="level" type="Node2D"]
 
@@ -121,29 +165,13 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="bubble" parent="Bubbles" instance=ExtResource( 8 )]
-position = Vector2( -95.7133, -6.82747 )
+[node name="Bubble2Normals" type="Sprite" parent="Bubbles"]
+material = SubResource( 6 )
+position = Vector2( -12.5087, -2.50873 )
+texture = ExtResource( 9 )
+normal_map = ExtResource( 10 )
 
-[node name="bubble3" parent="Bubbles" instance=ExtResource( 8 )]
-position = Vector2( -135.492, -33.3537 )
-
-[node name="bubble4" parent="Bubbles" instance=ExtResource( 8 )]
-position = Vector2( -48.6325, -123.202 )
-
-[node name="bubble5" parent="Bubbles" instance=ExtResource( 8 )]
-position = Vector2( -96.9996, 42.3456 )
-
-[node name="bubble6" parent="Bubbles" instance=ExtResource( 8 )]
-position = Vector2( -23.8056, 1.09694 )
-
-[node name="bubble7" parent="Bubbles" instance=ExtResource( 8 )]
-position = Vector2( -279.907, -37.8253 )
-
-[node name="bubble8" parent="Bubbles" instance=ExtResource( 8 )]
-position = Vector2( -281.528, 106.451 )
-
-[node name="bubble9" parent="Bubbles" instance=ExtResource( 8 )]
-position = Vector2( 65.9241, -208.579 )
-
-[node name="bubble2" parent="Bubbles" instance=ExtResource( 8 )]
-position = Vector2( 29.1024, -95.5062 )
+[node name="BubbleGraphics" type="Sprite" parent="Bubbles/Bubble2Normals"]
+material = SubResource( 4 )
+scale = Vector2( 1.124, 1.124 )
+texture = ExtResource( 9 )
