@@ -1,6 +1,6 @@
 extends PathFollow2D
 
-export var curveSpeed = 40 
+export var curveSpeed = 60
 
 enum Direction {
  FORWARD = 1, REVERSE = -1	

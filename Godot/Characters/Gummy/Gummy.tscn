@@ -39,6 +39,7 @@ tracks/0/keys = {
 height = 11.1333
 
 [node name="Gummy" type="KinematicBody2D"]
+collision/safe_margin = 0.3
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]

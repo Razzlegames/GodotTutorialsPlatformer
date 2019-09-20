@@ -4,7 +4,7 @@ const SPEED = 100
 const GRAVITY = 30
 
 const IDLE_ANIMATION_FRAME = 2
-const UP_AXIS = Vector2(0, -1)
+const UP_AXIS = Vector2.UP
 const MIN_VELOCITY_X_TO_FLIP_GRAPHICS = 0.004
 const JUMP_VELOCITY = GRAVITY*20
 
@@ -12,13 +12,13 @@ onready var graphics = $Sprite
 onready var animationPlayer = $Sprite/AnimationPlayer
 
 var velocity = Vector2(0, 0)
+var platformSnap = Vector2.DOWN * 20
+var collisions = {}
 
 func _process(delta):
 	updateGraphics(velocity)
 
 func _physics_process(delta):
-	
-	velocity.y += GRAVITY
 	
 	if Input.is_action_pressed("walk_left"):
 		velocity.x = -SPEED
@@ -26,14 +26,21 @@ func _physics_process(delta):
 		velocity.x = SPEED
 	else:
 		velocity.x = 0
+	 
+	velocity.y += GRAVITY  
 	
-	if is_on_floor() && Input.is_action_pressed("jump"):
+	var currentSnap = platformSnap
+	
+	if is_on_floor() && Input.is_action_just_pressed("jump"):
 		animationPlayer.play("Jump")
+		currentSnap = Vector2.ZERO
 
-		velocity.y = clamp(velocity.y - JUMP_VELOCITY, 
-			-abs(JUMP_VELOCITY), abs(JUMP_VELOCITY))
-		
-	velocity = move_and_slide(velocity, UP_AXIS)
+		velocity.y = -JUMP_VELOCITY + get_floor_velocity().y 
+
+	velocity = move_and_slide_with_snap(velocity,  currentSnap, UP_AXIS )
+	#velocity = move_and_slide(velocity,  UP_AXIS )
+			
+
 
 func updateGraphics(velocity):
 	
