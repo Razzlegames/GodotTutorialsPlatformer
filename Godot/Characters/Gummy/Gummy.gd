@@ -12,7 +12,7 @@ onready var graphics = $Sprite
 onready var animationPlayer = $Sprite/AnimationPlayer
 
 var velocity = Vector2(0, 0)
-var platformSnap = Vector2.DOWN * 20
+var platformSnap = Vector2.DOWN * 53
 var collisions = {}
 
 func _process(delta):
@@ -35,11 +35,10 @@ func _physics_process(delta):
 		animationPlayer.play("Jump")
 		currentSnap = Vector2.ZERO
 
-		velocity.y = -JUMP_VELOCITY + get_floor_velocity().y 
-
+		velocity.y = -JUMP_VELOCITY 
+	
 	velocity = move_and_slide_with_snap(velocity,  currentSnap, UP_AXIS )
 	#velocity = move_and_slide(velocity,  UP_AXIS )
-			
 
 
 func updateGraphics(velocity):

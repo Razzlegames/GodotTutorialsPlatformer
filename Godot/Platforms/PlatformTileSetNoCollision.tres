@@ -20,6 +20,6 @@ polygon = PoolVector2Array( -8, -8, -8, 8, 8, 8, 8, -8 )
 "one_way": false,
 "one_way_margin": 1.0,
 "shape": null,
-"shape_transform": Transform2D( 1, 0, 0, 1, 8, 8 )
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 0/z_index = 0

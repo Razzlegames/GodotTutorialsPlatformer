@@ -172,8 +172,12 @@ position = Vector2( 60.0791, 17.8795 )
 offset = 0.0
 
 [node name="MovingPlatform2" parent="movingPlatforms" instance=ExtResource( 10 )]
-editor/display_folded = true
 position = Vector2( -418.902, 144.2 )
 curve = SubResource( 4 )
 
+[node name="MovingPlatformPathFollow2D" parent="movingPlatforms/MovingPlatform2" index="0"]
+position = Vector2( 432.435, -123.106 )
+
 [editable path="movingPlatforms/MovingPlatform"]
+
+[editable path="movingPlatforms/MovingPlatform2"]

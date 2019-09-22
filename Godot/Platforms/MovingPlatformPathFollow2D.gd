@@ -1,6 +1,6 @@
 extends PathFollow2D
 
-export var curveSpeed = 60
+export var curveSpeed = 40 
 
 enum Direction {
  FORWARD = 1, REVERSE = -1	
@@ -20,7 +20,7 @@ func moveOnPath(delta):
 	if unit_offset >= 0.991 && pathDirection == Direction.FORWARD:
 		pathDirection = Direction.REVERSE
 	
-	elif unit_offset <= 0.01 && pathDirection == Direction.REVERSE:
+	elif unit_offset <= 0.001 && pathDirection == Direction.REVERSE:
 		pathDirection = Direction.FORWARD
 		
 
