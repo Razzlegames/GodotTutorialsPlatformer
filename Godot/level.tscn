@@ -1,13 +1,13 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://RawTextures/Background/cloudy_background.png" type="Texture" id=1]
 [ext_resource path="res://RawTextures/greyTexture.png" type="Texture" id=2]
 [ext_resource path="res://PlayerFollowingBackground.gd" type="Script" id=3]
 [ext_resource path="res://PlatformTileSet.tres" type="TileSet" id=4]
-[ext_resource path="res://Platforms/PlatformTileSetNoCollision.tres" type="TileSet" id=5]
-[ext_resource path="res://Characters/Gummy/Gummy.tscn" type="PackedScene" id=6]
-[ext_resource path="res://RawTextures/Light/light_blob.png" type="Texture" id=7]
-[ext_resource path="res://icon.png" type="Texture" id=8]
+[ext_resource path="res://Characters/Gummy/Gummy.tscn" type="PackedScene" id=5]
+[ext_resource path="res://RawTextures/Light/light_blob.png" type="Texture" id=6]
+[ext_resource path="res://icon.png" type="Texture" id=7]
+[ext_resource path="res://Platforms/PlatformTileSetNoCollision.tres" type="TileSet" id=8]
 [ext_resource path="res://Projectiles/bubbleGraphics.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Platforms/MovingPlatform.tscn" type="PackedScene" id=10]
 
@@ -23,10 +23,18 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 60.0791, 17.8795, 0, 0, 0, 0, 64.2487, -103.04, 0, 0, 0, 0, 68.6245, -178.943, 0, 0, 0, 0, 108.902, -204.2, 0, 0, 0, 0, 91.8932, -315.232 )
 }
 
+[sub_resource type="Curve2D" id=6]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 15.8982, -4.24939, 0, 0, 0, 0, 171.657, -6.22437, 0, 0, 0, 0, 304.158, -4.37119 )
+}
+
 [sub_resource type="Curve2D" id=4]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 153.989, -115.032, 0, 0, 0, 0, 435.587, -123.194, 0, 0, 0, 0, 696.78, -127.275 )
 }
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 14.5888, 12.8773 )
 
 [node name="level" type="Node2D"]
 
@@ -62,12 +70,13 @@ tile_data = PoolIntArray( -458737, 0, 0, -458736, 0, 0, -458735, 0, 0, -458734, 
 position = Vector2( 25.6194, -70.935 )
 rotation = -0.694641
 scale = Vector2( 0.995947, 1.00677 )
-tile_set = ExtResource( 5 )
+tile_set = ExtResource( 4 )
 cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( -327655, 0, 0, -327654, 0, 0, -327653, 0, 0, -327652, 0, 0, -327651, 0, 0, -327650, 0, 0, -65527, 0, 0, -65526, 0, 0, -65525, 0, 0, -65524, 0, 0, -65523, 0, 0, -65522, 0, 0, -65521, 0, 0, -65520, 0, 0, -65519, 0, 0, -65518, 0, 0, -65517, 0, 0, -65516, 0, 0, -65515, 0, 0, -65514, 0, 0, -65513, 0, 0, -65512, 0, 0, -65511, 0, 0 )
 
-[node name="Gummy" parent="." instance=ExtResource( 6 )]
+[node name="Gummy" parent="." instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 0, -60 )
 
 [node name="Camera2D" type="Camera2D" parent="Gummy"]
@@ -76,19 +85,20 @@ zoom = Vector2( 0.7, 0.7 )
 
 [node name="Light2D" type="Light2D" parent="Gummy"]
 visible = false
-texture = ExtResource( 7 )
+texture = ExtResource( 6 )
 energy = 2.24
 shadow_enabled = true
 shadow_gradient_length = 1.4
 shadow_filter_smooth = 1.6
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( -30, 230 )
 rotation = -0.411837
 
 [node name="icon" type="Sprite" parent="StaticBody2D"]
 scale = Vector2( 2.34619, 0.296743 )
-texture = ExtResource( 8 )
+texture = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 visible = false
@@ -101,6 +111,7 @@ rotation = 0.307087
 occluder = SubResource( 2 )
 
 [node name="ForgroundParallaxBackground" type="ParallaxBackground" parent="."]
+editor/display_folded = true
 layer = 1
 
 [node name="ForgroundParallaxLayer" type="ParallaxLayer" parent="ForgroundParallaxBackground"]
@@ -112,7 +123,7 @@ motion_mirroring = Vector2( 2000, 2000 )
 
 [node name="TileMap" type="TileMap" parent="ForgroundParallaxBackground/ForgroundParallaxLayer"]
 scale = Vector2( 2, 2 )
-tile_set = ExtResource( 5 )
+tile_set = ExtResource( 8 )
 cell_size = Vector2( 16, 16 )
 collision_layer = 0
 collision_mask = 0
@@ -128,7 +139,47 @@ normal_map = null
 position = Vector2( 108.469, -268.354 )
 scale = Vector2( 2.47197, 2.47197 )
 
+[node name="movingPlatforms" type="Node2D" parent="."]
+
+[node name="MovingPlatform" parent="movingPlatforms" instance=ExtResource( 10 )]
+editor/display_folded = true
+position = Vector2( -340, 0 )
+curve = SubResource( 3 )
+curveSpeed = 30
+
+[node name="MovingPlatformPathFollow2D" parent="movingPlatforms/MovingPlatform" index="0"]
+position = Vector2( 60.0791, 17.8795 )
+offset = 0.0
+
+[node name="MovingPlatform3" parent="movingPlatforms" instance=ExtResource( 10 )]
+editor/display_folded = true
+position = Vector2( -170, -270 )
+curve = SubResource( 6 )
+curveSpeed = 20
+
+[node name="MovingPlatform2" parent="movingPlatforms" instance=ExtResource( 10 )]
+editor/display_folded = true
+position = Vector2( -418.902, 144.2 )
+curve = SubResource( 4 )
+curveSpeed = 10
+
+[node name="MovingPlatformPathFollow2D" parent="movingPlatforms/MovingPlatform2" index="0"]
+position = Vector2( 432.435, -123.105 )
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2( 50, 3 )
+
+[node name="Sprite" type="Sprite" parent="RigidBody2D"]
+position = Vector2( 66.754, 3.66663 )
+scale = Vector2( 0.472797, 0.472797 )
+texture = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2( 67.7798, 3.52103 )
+shape = SubResource( 5 )
+
 [node name="Bubbles" type="Node2D" parent="."]
+editor/display_folded = true
 position = Vector2( 127.842, -90.9498 )
 __meta__ = {
 "_edit_lock_": true
@@ -160,23 +211,6 @@ position = Vector2( 65.9241, -208.579 )
 
 [node name="bubble2" parent="Bubbles" instance=ExtResource( 9 )]
 position = Vector2( 29.1024, -95.5062 )
-
-[node name="movingPlatforms" type="Node2D" parent="."]
-
-[node name="MovingPlatform" parent="movingPlatforms" instance=ExtResource( 10 )]
-position = Vector2( -340, 0 )
-curve = SubResource( 3 )
-
-[node name="MovingPlatformPathFollow2D" parent="movingPlatforms/MovingPlatform" index="0"]
-position = Vector2( 60.0791, 17.8795 )
-offset = 0.0
-
-[node name="MovingPlatform2" parent="movingPlatforms" instance=ExtResource( 10 )]
-position = Vector2( -418.902, 144.2 )
-curve = SubResource( 4 )
-
-[node name="MovingPlatformPathFollow2D" parent="movingPlatforms/MovingPlatform2" index="0"]
-position = Vector2( 432.435, -123.106 )
 
 [editable path="movingPlatforms/MovingPlatform"]
 

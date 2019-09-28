@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Characters/Gummy/Gummy.gd" type="Script" id=1]
 [ext_resource path="res://RawTextures/Characters/Gummy/gummy.png" type="Texture" id=2]
+[ext_resource path="res://Physics/headRayCast.tscn" type="PackedScene" id=3]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Jump"
@@ -55,3 +56,44 @@ anims/Walk = SubResource( 2 )
 visible = false
 position = Vector2( 0.36805, 2.57636 )
 shape = SubResource( 3 )
+
+[node name="RayCasts" type="Node2D" parent="."]
+
+[node name="HeadRayCasts" type="Node2D" parent="RayCasts"]
+
+[node name="headRayCast" parent="RayCasts/HeadRayCasts" instance=ExtResource( 3 )]
+enabled = true
+cast_to = Vector2( 0, 40 )
+disable_collisions = true
+physics_path = NodePath("../../..")
+
+[node name="leftHeadRayCast2" parent="RayCasts/HeadRayCasts" instance=ExtResource( 3 )]
+position = Vector2( -7, -4 )
+rotation = 2.12232
+enabled = true
+cast_to = Vector2( 0, 45 )
+disable_collisions = true
+physics_path = NodePath("../../..")
+
+[node name="rightHeadRayCast3" parent="RayCasts/HeadRayCasts" instance=ExtResource( 3 )]
+position = Vector2( 7, -4 )
+rotation = -2.12232
+enabled = true
+cast_to = Vector2( 0, 45 )
+disable_collisions = true
+physics_path = NodePath("../../..")
+
+[node name="GroundRayCasts" type="Node2D" parent="RayCasts"]
+position = Vector2( 0, 13 )
+
+[node name="headRayCast5" parent="RayCasts/GroundRayCasts" instance=ExtResource( 3 )]
+rotation = 2.12232
+scale = Vector2( 1, -1 )
+enabled = true
+physics_path = NodePath("../../..")
+
+[node name="headRayCast6" parent="RayCasts/GroundRayCasts" instance=ExtResource( 3 )]
+rotation = -2.12232
+scale = Vector2( 1, -1 )
+enabled = true
+physics_path = NodePath("../../..")

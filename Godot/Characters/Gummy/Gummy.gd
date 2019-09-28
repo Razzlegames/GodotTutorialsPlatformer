@@ -12,8 +12,9 @@ onready var graphics = $Sprite
 onready var animationPlayer = $Sprite/AnimationPlayer
 
 var velocity = Vector2(0, 0)
-var platformSnap = Vector2.DOWN * 53
-var collisions = {}
+var platformSnap = Vector2.DOWN * 32
+
+var is_jumping = false
 
 func _process(delta):
 	updateGraphics(velocity)
@@ -21,7 +22,7 @@ func _process(delta):
 func _physics_process(delta):
 	
 	if Input.is_action_pressed("walk_left"):
-		velocity.x = -SPEED
+		velocity.x = -SPEED 
 	elif Input.is_action_pressed("walk_right"):
 		velocity.x = SPEED
 	else:
@@ -31,12 +32,15 @@ func _physics_process(delta):
 	
 	var currentSnap = platformSnap
 	
+	if is_on_floor() && is_jumping:
+		is_jumping = false
+	
 	if is_on_floor() && Input.is_action_just_pressed("jump"):
 		animationPlayer.play("Jump")
+		
 		currentSnap = Vector2.ZERO
-
 		velocity.y = -JUMP_VELOCITY 
-	
+		
 	velocity = move_and_slide_with_snap(velocity,  currentSnap, UP_AXIS )
 	#velocity = move_and_slide(velocity,  UP_AXIS )
 

@@ -13,19 +13,18 @@ func _ready():
 	physics_object = get_node(physics_path)
 	add_exception(physics_object)
 	set_exclude_parent_body(true)
-	set_physics_process(true)
 
 func setDisableCollisions(_disable):
 	disable_collisions = _disable
 
 func _physics_process(delta):
 	
-	set_position(physics_object.get_position())
-
 	var collision_obj_to_add_back = []
-	while is_colliding():
+	if is_colliding():
 		var col = get_collider()
 
+		if col is TileMap:
+			return
 		if  col is PhysicsBody2D :
 			col.propagate_call("setOneWayCollision", [disable_collisions, physics_object], true)
 		if !(col is Area2D):
