@@ -23,17 +23,17 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 60.0791, 17.8795, 0, 0, 0, 0, 64.2487, -103.04, 0, 0, 0, 0, 68.6245, -178.943, 0, 0, 0, 0, 108.902, -204.2, 0, 0, 0, 0, 91.8932, -315.232 )
 }
 
-[sub_resource type="Curve2D" id=6]
+[sub_resource type="Curve2D" id=4]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 15.8982, -4.24939, 0, 0, 0, 0, 171.657, -6.22437, 0, 0, 0, 0, 304.158, -4.37119 )
 }
 
-[sub_resource type="Curve2D" id=4]
+[sub_resource type="Curve2D" id=5]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 153.989, -115.032, 0, 0, 0, 0, 435.587, -123.194, 0, 0, 0, 0, 696.78, -127.275 )
 }
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 14.5888, 12.8773 )
 
 [node name="level" type="Node2D"]
@@ -154,13 +154,13 @@ offset = 0.0
 [node name="MovingPlatform3" parent="movingPlatforms" instance=ExtResource( 10 )]
 editor/display_folded = true
 position = Vector2( -170, -270 )
-curve = SubResource( 6 )
+curve = SubResource( 4 )
 curveSpeed = 20
 
 [node name="MovingPlatform2" parent="movingPlatforms" instance=ExtResource( 10 )]
 editor/display_folded = true
 position = Vector2( -418.902, 144.2 )
-curve = SubResource( 4 )
+curve = SubResource( 5 )
 curveSpeed = 10
 
 [node name="MovingPlatformPathFollow2D" parent="movingPlatforms/MovingPlatform2" index="0"]
@@ -176,7 +176,7 @@ texture = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 position = Vector2( 67.7798, 3.52103 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="Bubbles" type="Node2D" parent="."]
 editor/display_folded = true

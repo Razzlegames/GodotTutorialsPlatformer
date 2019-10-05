@@ -14,36 +14,49 @@ onready var animationPlayer = $Sprite/AnimationPlayer
 var velocity = Vector2(0, 0)
 var platformSnap = Vector2.DOWN * 32
 
-var is_jumping = false
-
 func _process(delta):
 	updateGraphics(velocity)
 
 func _physics_process(delta):
 	
 	if Input.is_action_pressed("walk_left"):
-		velocity.x = -SPEED 
+		walkLeft()
 	elif Input.is_action_pressed("walk_right"):
-		velocity.x = SPEED
+		walkRight()
 	else:
-		velocity.x = 0
-	 
-	velocity.y += GRAVITY  
+		stopWalking()
 	
+	applyStandardGravity()
+
 	var currentSnap = platformSnap
-	
-	if is_on_floor() && is_jumping:
-		is_jumping = false
-	
-	if is_on_floor() && Input.is_action_just_pressed("jump"):
-		animationPlayer.play("Jump")
 		
-		currentSnap = Vector2.ZERO
-		velocity.y = -JUMP_VELOCITY 
+	if Input.is_action_just_pressed("jump"):
+		if jump():
+			currentSnap = Vector2.ZERO
 		
 	velocity = move_and_slide_with_snap(velocity,  currentSnap, UP_AXIS )
+	# TODO Due to a current bug if we use "stop_on_slope" in move_and_slide_with_snap
+	#   we need to detect when on a platform and use regular move_and_slide for those cases
 	#velocity = move_and_slide(velocity,  UP_AXIS )
 
+func applyStandardGravity():
+	velocity.y += GRAVITY  
+
+func stopWalking():
+	velocity.x = 0
+
+func walkLeft():
+	 velocity.x = -SPEED 
+	
+func walkRight():
+	velocity.x = SPEED
+
+func jump():
+	if is_on_floor():
+		animationPlayer.play("Jump")
+		velocity.y = -JUMP_VELOCITY 
+		return true
+	return false
 
 func updateGraphics(velocity):
 	
