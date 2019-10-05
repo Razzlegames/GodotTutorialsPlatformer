@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Physics/headRayCast.gd" type="Script" id=1]
+
+[node name="headRayCast" type="RayCast2D"]
+rotation = 3.14159
+cast_to = Vector2( 0, 20 )
+script = ExtResource( 1 )

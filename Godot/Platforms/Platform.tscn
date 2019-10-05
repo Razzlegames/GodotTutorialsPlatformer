@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Platforms/PlatformTileSetNoCollision.tres" type="TileSet" id=1]
+[ext_resource path="res://Platforms/oneWayCollisionAdapter.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 79.472, 8.12408 )
+
+[node name="Platform" type="KinematicBody2D" groups=[
+"MovingPlatform",
+]]
+motion/sync_to_physics = true
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 79.1848, 8.25494 )
+shape = SubResource( 1 )
+
+[node name="oneWayCollisionAdapter" type="Node2D" parent="."]
+script = ExtResource( 2 )

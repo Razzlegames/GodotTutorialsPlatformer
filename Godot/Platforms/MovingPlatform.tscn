@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Platforms/MovingPlatform.gd" type="Script" id=1]
+[ext_resource path="res://Platforms/MovingPlatformPathFollow2D.gd" type="Script" id=2]
+[ext_resource path="res://Platforms/Platform.tscn" type="PackedScene" id=3]
+
+[sub_resource type="Curve2D" id=1]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 60.0791, 17.8795, 0, 0, 0, 0, 64.2487, -103.04, 0, 0, 0, 0, 68.6245, -178.943, 0, 0, 0, 0, 80.8129, -245.426, 0, 0, 0, 0, 91.8932, -315.232 )
+}
+
+[node name="MovingPlatform" type="Path2D"]
+curve = SubResource( 1 )
+script = ExtResource( 1 )
+
+[node name="MovingPlatformPathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2( 83.0324, -259.409 )
+offset = 278.784
+rotate = false
+script = ExtResource( 2 )
+
+[node name="Platform" parent="MovingPlatformPathFollow2D" instance=ExtResource( 3 )]

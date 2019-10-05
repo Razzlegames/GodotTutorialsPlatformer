@@ -7,9 +7,9 @@
 [ext_resource path="res://Characters/Gummy/Gummy.tscn" type="PackedScene" id=5]
 [ext_resource path="res://RawTextures/Light/light_blob.png" type="Texture" id=6]
 [ext_resource path="res://icon.png" type="Texture" id=7]
-[ext_resource path="res://Platforms/PlatformTileSetNoCollision.tres" type="TileSet" id=8]
-[ext_resource path="res://Projectiles/bubbleGraphics.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Platforms/MovingPlatform.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Projectiles/bubbleGraphics.tscn" type="PackedScene" id=8]
+[ext_resource path="res://RawTextures/Projectile/bubble2.png" type="Texture" id=9]
+[ext_resource path="res://RawTextures/Projectile/bubbleNormalMap2.png" type="Texture" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 72.6203, 10 )
@@ -17,24 +17,47 @@ extents = Vector2( 72.6203, 10 )
 [sub_resource type="OccluderPolygon2D" id=2]
 polygon = PoolVector2Array( -72.9223, 12.0339, 65.7166, -30.9886, 72.6129, -12.6056, -67.8206, 31.4894 )
 
-[sub_resource type="Curve2D" id=3]
-resource_local_to_scene = true
-_data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 60.0791, 17.8795, 0, 0, 0, 0, 64.2487, -103.04, 0, 0, 0, 0, 68.6245, -178.943, 0, 0, 0, 0, 108.902, -204.2, 0, 0, 0, 0, 91.8932, -315.232 )
+[sub_resource type="Shader" id=5]
+code = "shader_type canvas_item;
+
+uniform float refractionMagnitude = 30.0;
+
+void fragment() {
+	
+	vec3 refraction = - texture(NORMAL_TEXTURE, UV).rgb * vec3(	1.0, -1.0, 1.0);
+	
+	vec4 textureRead = texture(TEXTURE, UV);
+	vec4 offsetScreenRead = textureLod(SCREEN_TEXTURE, SCREEN_UV + refraction.rg/refractionMagnitude, 0.0);
+	
+	if (textureRead.a > 0.04) {
+		COLOR = offsetScreenRead;	
+	}
+	else {
+		COLOR = textureRead;
+	}	
+}"
+
+[sub_resource type="ShaderMaterial" id=6]
+shader = SubResource( 5 )
+shader_param/refractionMagnitude = 30.0
+
+[sub_resource type="Shader" id=3]
+code = "shader_type canvas_item;
+
+uniform float timeScale = 2;
+uniform float amplitude = 1.0f;
+
+void vertex() {
+	VERTEX.y += sin(TIME * timeScale + VERTEX.y + VERTEX.x) * amplitude;
 }
 
-[sub_resource type="Curve2D" id=4]
-_data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 15.8982, -4.24939, 0, 0, 0, 0, 171.657, -6.22437, 0, 0, 0, 0, 304.158, -4.37119 )
-}
 
-[sub_resource type="Curve2D" id=5]
-_data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 153.989, -115.032, 0, 0, 0, 0, 435.587, -123.194, 0, 0, 0, 0, 696.78, -127.275 )
-}
+"
 
-[sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 14.5888, 12.8773 )
+[sub_resource type="ShaderMaterial" id=4]
+shader = SubResource( 3 )
+shader_param/timeScale = 2.0
+shader_param/amplitude = 1.0
 
 [node name="level" type="Node2D"]
 
@@ -52,7 +75,7 @@ texture = ExtResource( 1 )
 
 [node name="PlayerFollowingBackground" type="Sprite" parent="."]
 modulate = Color( 1, 1, 1, 0.25098 )
-position = Vector2( 28.6194, -72.935 )
+position = Vector2( 25.6194, -70.935 )
 scale = Vector2( 112.545, 77.4844 )
 texture = ExtResource( 2 )
 script = ExtResource( 3 )
@@ -76,7 +99,6 @@ format = 1
 tile_data = PoolIntArray( -327655, 0, 0, -327654, 0, 0, -327653, 0, 0, -327652, 0, 0, -327651, 0, 0, -327650, 0, 0, -65527, 0, 0, -65526, 0, 0, -65525, 0, 0, -65524, 0, 0, -65523, 0, 0, -65522, 0, 0, -65521, 0, 0, -65520, 0, 0, -65519, 0, 0, -65518, 0, 0, -65517, 0, 0, -65516, 0, 0, -65515, 0, 0, -65514, 0, 0, -65513, 0, 0, -65512, 0, 0, -65511, 0, 0 )
 
 [node name="Gummy" parent="." instance=ExtResource( 5 )]
-editor/display_folded = true
 position = Vector2( 0, -60 )
 
 [node name="Camera2D" type="Camera2D" parent="Gummy"]
@@ -92,7 +114,6 @@ shadow_gradient_length = 1.4
 shadow_filter_smooth = 1.6
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-editor/display_folded = true
 position = Vector2( -30, 230 )
 rotation = -0.411837
 
@@ -111,7 +132,6 @@ rotation = 0.307087
 occluder = SubResource( 2 )
 
 [node name="ForgroundParallaxBackground" type="ParallaxBackground" parent="."]
-editor/display_folded = true
 layer = 1
 
 [node name="ForgroundParallaxLayer" type="ParallaxLayer" parent="ForgroundParallaxBackground"]
@@ -123,95 +143,35 @@ motion_mirroring = Vector2( 2000, 2000 )
 
 [node name="TileMap" type="TileMap" parent="ForgroundParallaxBackground/ForgroundParallaxLayer"]
 scale = Vector2( 2, 2 )
-tile_set = ExtResource( 8 )
+tile_set = ExtResource( 4 )
 cell_size = Vector2( 16, 16 )
 collision_layer = 0
 collision_mask = 0
 format = 1
 tile_data = PoolIntArray( -589835, 0, 0, -589834, 0, 0, -589833, 0, 0, -589832, 0, 0, -589831, 0, 0, -589830, 0, 0, -589829, 0, 0, -589828, 0, 0, -589827, 0, 0, -589826, 0, 0, -589825, 0, 0, -655360, 0, 0, -655359, 0, 0, -655358, 0, 0, -196619, 0, 0, -196618, 0, 0, -196617, 0, 0, -196616, 0, 0, -196615, 0, 0, -196614, 0, 0, -196613, 0, 0, -196612, 0, 0, -196611, 0, 0, -196610, 0, 0, -196609, 0, 0, -262144, 0, 0, -262143, 0, 0, -262142, 0, 0, -262141, 0, 0, -262140, 0, 0, -262139, 0, 0, -262138, 0, 0, -262137, 0, 0, -262136, 0, 0, -262135, 0, 0, -11, 0, 0, -10, 0, 0, -9, 0, 0, -8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 262137, 0, 0, 262138, 0, 0, 262139, 0, 0, 262140, 0, 0, 262141, 0, 0, 262142, 0, 0, 262143, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0, 196619, 0, 0, 196620, 0, 0, 196621, 0, 0, 196622, 0, 0, 196623, 0, 0, 524277, 0, 0, 524278, 0, 0, 524279, 0, 0, 524280, 0, 0, 524281, 0, 0, 524282, 0, 0, 524283, 0, 0, 524284, 0, 0, 524285, 0, 0, 524286, 0, 0, 524287, 0, 0, 458752, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458759, 0, 0, 458760, 0, 0, 458761, 0, 0, 458762, 0, 0, 458763, 0, 0, 458764, 0, 0, 458765, 0, 0 )
 
-[node name="bubble" parent="ForgroundParallaxBackground/ForgroundParallaxLayer" instance=ExtResource( 9 )]
+[node name="bubble" parent="ForgroundParallaxBackground/ForgroundParallaxLayer" instance=ExtResource( 8 )]
 position = Vector2( -109.133, 13.6002 )
 scale = Vector2( 2.47197, 2.47197 )
 normal_map = null
 
-[node name="bubble2" parent="ForgroundParallaxBackground/ForgroundParallaxLayer" instance=ExtResource( 9 )]
+[node name="bubble2" parent="ForgroundParallaxBackground/ForgroundParallaxLayer" instance=ExtResource( 8 )]
 position = Vector2( 108.469, -268.354 )
 scale = Vector2( 2.47197, 2.47197 )
 
-[node name="movingPlatforms" type="Node2D" parent="."]
-
-[node name="MovingPlatform" parent="movingPlatforms" instance=ExtResource( 10 )]
-editor/display_folded = true
-position = Vector2( -340, 0 )
-curve = SubResource( 3 )
-curveSpeed = 30
-
-[node name="MovingPlatformPathFollow2D" parent="movingPlatforms/MovingPlatform" index="0"]
-position = Vector2( 60.0791, 17.8795 )
-offset = 0.0
-
-[node name="MovingPlatform3" parent="movingPlatforms" instance=ExtResource( 10 )]
-editor/display_folded = true
-position = Vector2( -170, -270 )
-curve = SubResource( 4 )
-curveSpeed = 20
-
-[node name="MovingPlatform2" parent="movingPlatforms" instance=ExtResource( 10 )]
-editor/display_folded = true
-position = Vector2( -418.902, 144.2 )
-curve = SubResource( 5 )
-curveSpeed = 10
-
-[node name="MovingPlatformPathFollow2D" parent="movingPlatforms/MovingPlatform2" index="0"]
-position = Vector2( 432.435, -123.105 )
-
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
-position = Vector2( 50, 3 )
-
-[node name="Sprite" type="Sprite" parent="RigidBody2D"]
-position = Vector2( 66.754, 3.66663 )
-scale = Vector2( 0.472797, 0.472797 )
-texture = ExtResource( 7 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-position = Vector2( 67.7798, 3.52103 )
-shape = SubResource( 6 )
-
 [node name="Bubbles" type="Node2D" parent="."]
-editor/display_folded = true
 position = Vector2( 127.842, -90.9498 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="bubble" parent="Bubbles" instance=ExtResource( 9 )]
-position = Vector2( -95.7133, -6.82747 )
+[node name="Bubble2Normals" type="Sprite" parent="Bubbles"]
+material = SubResource( 6 )
+position = Vector2( -12.5087, -2.50873 )
+texture = ExtResource( 9 )
+normal_map = ExtResource( 10 )
 
-[node name="bubble3" parent="Bubbles" instance=ExtResource( 9 )]
-position = Vector2( -135.492, -33.3537 )
-
-[node name="bubble4" parent="Bubbles" instance=ExtResource( 9 )]
-position = Vector2( -48.6325, -123.202 )
-
-[node name="bubble5" parent="Bubbles" instance=ExtResource( 9 )]
-position = Vector2( -96.9996, 42.3456 )
-
-[node name="bubble6" parent="Bubbles" instance=ExtResource( 9 )]
-position = Vector2( -23.8056, 1.09694 )
-
-[node name="bubble7" parent="Bubbles" instance=ExtResource( 9 )]
-position = Vector2( -279.907, -37.8253 )
-
-[node name="bubble8" parent="Bubbles" instance=ExtResource( 9 )]
-position = Vector2( -281.528, 106.451 )
-
-[node name="bubble9" parent="Bubbles" instance=ExtResource( 9 )]
-position = Vector2( 65.9241, -208.579 )
-
-[node name="bubble2" parent="Bubbles" instance=ExtResource( 9 )]
-position = Vector2( 29.1024, -95.5062 )
-
-[editable path="movingPlatforms/MovingPlatform"]
-
-[editable path="movingPlatforms/MovingPlatform2"]
+[node name="BubbleGraphics" type="Sprite" parent="Bubbles/Bubble2Normals"]
+material = SubResource( 4 )
+scale = Vector2( 1.124, 1.124 )
+texture = ExtResource( 9 )
