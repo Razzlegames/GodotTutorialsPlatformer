@@ -166,15 +166,15 @@ curveSpeed = 10
 [node name="MovingPlatformPathFollow2D" parent="movingPlatforms/MovingPlatform2" index="0"]
 position = Vector2( 432.435, -123.105 )
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
+[node name="TestRigidBody2D" type="RigidBody2D" parent="."]
 position = Vector2( 50, 3 )
 
-[node name="Sprite" type="Sprite" parent="RigidBody2D"]
+[node name="Sprite" type="Sprite" parent="TestRigidBody2D"]
 position = Vector2( 66.754, 3.66663 )
 scale = Vector2( 0.472797, 0.472797 )
 texture = ExtResource( 7 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TestRigidBody2D"]
 position = Vector2( 67.7798, 3.52103 )
 shape = SubResource( 6 )
 
