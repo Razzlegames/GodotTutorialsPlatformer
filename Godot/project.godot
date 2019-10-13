@@ -17,7 +17,7 @@ _global_script_class_icons={
 
 config/name="GummyPlatformer"
 run/main_scene="res://level.tscn"
-config/icon="res://icon.png"
+config/icon="res://RawTextures/Characters/Gummy/gummy.png"
 
 [display]
 
