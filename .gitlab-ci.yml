@@ -13,7 +13,7 @@ before_script:
 linux:
   stage: export
   script:
-    - cd godot -v --path Godot --export "Linux/X11" ./build/linux/$EXPORT_NAME.x86_64
+    - godot -v --path Godot --export "Linux/X11" ./build/linux/$EXPORT_NAME.x86_64
   artifacts:
     name: $EXPORT_NAME-$CI_JOB_NAME
     paths:
