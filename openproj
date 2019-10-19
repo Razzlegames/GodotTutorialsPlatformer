@@ -1,4 +1,0 @@
-#!/bin/bash
-
-vim source/*{cpp,c} include/*h
-
