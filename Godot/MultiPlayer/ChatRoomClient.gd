@@ -2,14 +2,24 @@ extends Node
 
 const UDP_PORT = 1507
 var socketUDP = PacketPeerUDP.new()
-var count = 0
 
-func _process(delta):
+
+func _ready():
 	sendTest()
 
 func sendTest():
-	var test = "test"
-	socketUDP.set_dest_address("127.0.0.1", UDP_PORT)
-	socketUDP.put_var(test)
-	print("test sent: "+ str(count))
-	count += 1
+	var count = 0
+	
+	var dictionary = {}
+	while true:
+		var test = "test"
+		socketUDP.set_dest_address("127.0.0.1", UDP_PORT)
+		dictionary[test] = count
+		
+		var packetType = "HEARTBEAT"
+		dictionary["packetType"] = packetType
+		
+		socketUDP.put_var(dictionary)
+		print("test sent: "+ str(count))
+		count += 1
+		yield(get_tree().create_timer(4), "timeout")
