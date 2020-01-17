@@ -15,11 +15,11 @@ func _process(delta):
 	var packetCount = socketUDP.get_available_packet_count()
 	if packetCount <= 0:
 		return 
-	print("Packets to get: "+ packetCount)
-	var packet = socketUDP.get_packet()
+	print("Packets to get: "+ str(packetCount))
+	var packet = socketUDP.get_var()
 	checkForErrors()
 	
-	if packet.size() > 0:
+	if packet != null:
 		print(str(packet))
 
 func checkForErrors():
