@@ -8,9 +8,14 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Node",
+"class": "ChatRoom",
+"language": "GDScript",
+"path": "res://MultiPlayer/ChatRoom.gd"
+} ]
 _global_script_class_icons={
-
+"ChatRoom": ""
 }
 
 [application]

@@ -1,7 +1,15 @@
 extends Node
 
+class_name ChatRoom
+
 const UDP_PORT = 1507
 var socketUDP = PacketPeerUDP.new()
+
+class Packet:
+	enum Type { HEART_BEAT, CHAT_MESSAGE, CONNECT_REQUEST, CONNECT_ACCEPT} 
+	enum DataKey { MESSAGE, SOURCE_IP_ADDRESS, SOURCE_PORT, DESTINATION_IP_ADDRESS, DESTINATION_PORT }
+	var type: int
+	var dataMap = {}
 
 func _ready():
 	startListening()
@@ -16,11 +24,13 @@ func _process(delta):
 	if packetCount <= 0:
 		return 
 	print("Packets to get: "+ str(packetCount))
-	var packet = socketUDP.get_var()
-	checkForErrors()
 	
-	if packet != null:
-		print(str(packet))
+	for i in range(packetCount):
+		var packet = socketUDP.get_var()
+		checkForErrors()
+		
+		if packet != null:
+			print(str(packet))
 
 func checkForErrors():
 	var error = socketUDP.get_packet_error()
