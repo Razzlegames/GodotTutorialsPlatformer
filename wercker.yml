@@ -1,3 +1,6 @@
+# Example: https://github.com/wercker/wercker/blob/master/wercker.yml
+
+
 export:
     box: razzlegames/godot-ci:docker0
     steps:
@@ -8,7 +11,7 @@ export:
             name: Copy resource file to Werker paths
             code: cp ./resources.pck "$WERCKER_OUTPUT_DIR"
 
-build-multiplayer-server:
+build:
     box: razzlegames/godot-ci:docker0
     steps:
         - internal/docker-build:
