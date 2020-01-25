@@ -1,0 +1,16 @@
+export:
+    box: razzlegames/godot-ci:docker0
+    steps:
+        - script:
+            name: export resource file for stand alone Godot Server
+            code: godot -v --export "Linux/X11" ./resources.pck
+        - script:
+            name: Copy resource file to Werker paths
+            code: cp ./resources.pck "$WERCKER_OUTPUT_DIR"
+
+build-multiplayer-server:
+    box: razzlegames/godot-ci:docker0
+    steps:
+        - internal/docker-build:
+            dockerfile: Docker/MultiplayerServer/Dockerfile
+            image-name: razzlegba-chat-server
