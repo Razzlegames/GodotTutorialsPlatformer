@@ -10,11 +10,7 @@ export:
                        
         - script:
             name: Copy resource file to Werker paths
-            code: >
-            cp -v Godot/resources.pck "$WERCKER_OUTPUT_DIR" 
-                  && echo " List what's in Wercker output: " 
-                  && find "$WERCKER_OUTPUT_DIR" 
-                  && test -f "$WERCKER_OUTPUT_DIR/resources.pck " 
+            code: cp -v Godot/resources.pck "$WERCKER_OUTPUT_DIR" && echo " List what's in Wercker output: " && find "$WERCKER_OUTPUT_DIR" && test -f "$WERCKER_OUTPUT_DIR/resources.pck " 
 
 build:
     box: razzlegames/godot-ci:docker0
