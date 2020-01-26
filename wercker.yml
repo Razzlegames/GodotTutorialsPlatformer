@@ -6,11 +6,11 @@ export:
     steps:
         - script:
             name: export resource file for stand alone Godot Server
-            code: find ./ && cd Godot && godot -v --export "Linux/X11" ./resources.pck 
+            code: cd Godot && godot -v --export "Linux/X11" ./resources.pck && find .
                        
         - script:
             name: Copy resource file to Werker paths
-            code: cp -v Godot/resources.pck "$WERCKER_OUTPUT_DIR" 
+            code: cp -v Godot/resources.pck "$WERCKER_OUTPUT_DIR"
 
         - script:
             name: List what's in Wercker output
