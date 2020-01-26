@@ -18,7 +18,7 @@ export:
 
         - script:
             name: Test resources exist
-            code: test -f "$WERCKER_OUTPUT_DIR/resources.pck " 
+            code: test -f "$WERCKER_OUTPUT_DIR/resources.pck" 
 build:
     box: razzlegames/godot-ci:docker0
     steps:
