@@ -6,10 +6,11 @@ export:
     steps:
         - script:
             name: export resource file for stand alone Godot Server
-            code: godot -v --export "Linux/X11" ./resources.pck
+            code: find ./ && godot -v --export "Linux/X11" ./resources.pck 
+                       
         - script:
             name: Copy resource file to Werker paths
-            code: cp ./resources.pck "$WERCKER_OUTPUT_DIR"
+            code: find ./ && cp ./resources.pck "$WERCKER_OUTPUT_DIR"
 
 build:
     box: razzlegames/godot-ci:docker0
