@@ -22,6 +22,9 @@ export:
 build:
     box: razzlegames/godot-ci:docker0
     steps:
+        - script:
+             name: Print all local files to check for resources
+             code: find ./
         - internal/docker-build:
             dockerfile: Docker/MultiplayerServer/Dockerfile
             image-name: razzlegba-chat-server
