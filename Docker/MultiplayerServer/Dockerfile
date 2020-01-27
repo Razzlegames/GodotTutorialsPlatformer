@@ -1,8 +1,9 @@
 FROM razzlegames/godot-server:ubuntu-first
 LABEL author="razzlegames@gmail.com"
 
-RUN useradd godotuser -m
+EXPOSE 1507/udp
 
+RUN useradd godotuser -m
 COPY resources.pck /home/godotuser/
 
 WORKDIR /home/godotuser/
