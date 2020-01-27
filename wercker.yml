@@ -28,3 +28,10 @@ build:
         - internal/docker-build:
             dockerfile: Dockerfile
             image-name: razzlegba-chat-server
+
+push-docker:
+  steps:
+    - internal/docker-push:
+        username: $DOCKERHUB_USERNAME
+        password: $DOCKERHUB_PASSWORD
+        repository: razzlegames/razzlegba-chat-server
