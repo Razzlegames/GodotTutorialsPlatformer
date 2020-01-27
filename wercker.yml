@@ -19,19 +19,19 @@ export:
         - script:
             name: Test resources exist
             code: test -f "$WERCKER_OUTPUT_DIR/resources.pck" 
-build:
+
+server-docker:
     box: razzlegames/godot-ci:docker0
     steps:
         - script:
-             name: Print all local files to check for resources
-             code: find ./
+            name: Print all local files to check for resources
+            code: find ./
+
         - internal/docker-build:
             dockerfile: Dockerfile
             image-name: razzlegba-chat-server
 
-push-docker:
-  steps:
-    - internal/docker-push:
-        username: $DOCKERHUB_USERNAME
-        password: $DOCKERHUB_PASSWORD
-        repository: razzlegames/razzlegba-chat-server
+        - internal/docker-push:
+            username: $DOCKERHUB_USERNAME
+            password: $DOCKERHUB_PASSWORD
+            repository: razzlegames/razzlegba-chat-server
