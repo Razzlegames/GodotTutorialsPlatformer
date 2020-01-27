@@ -34,4 +34,5 @@ server-docker:
         - internal/docker-push:
             username: $DOCKERHUB_USERNAME
             password: $DOCKERHUB_PASSWORD
-            repository: razzlegames/razzlegba-chat-server
+            image-name: razzlegba-chat-server
+            repository: $DOCKERHUB_USERNAME/razzlegba-chat-server
