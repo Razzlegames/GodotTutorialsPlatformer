@@ -21,6 +21,7 @@ class Packet:
 	
 	var type: int
 	var chatMessage: String
+	var dataMap = {}
 
 func _ready():
 	startListening()
@@ -72,6 +73,8 @@ func addConnectedClient(ip_address: String, port: int) -> Client:
 	
 	connectedClients[toClientKey(client)] = client
 	print("Added client: " + client.toString())
+	socketUDP.set_dest_address(ip_address, port)
+	socketUDP.put_var("Added client on server")
 	return client
 
 func checkForErrors():

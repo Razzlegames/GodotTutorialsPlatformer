@@ -23,3 +23,26 @@ func sendTest():
 		print("test sent: "+ str(count))
 		count += 1
 		yield(get_tree().create_timer(4), "timeout")
+		
+
+func _process(delta):
+	
+	var packetCount = socketUDP.get_available_packet_count()
+	if packetCount <= 0:
+		return 
+	print("Packets to get: "+ str(packetCount))
+	
+	for i in range(packetCount):
+		var packet: PoolByteArray = socketUDP.get_packet()
+		checkForErrors()
+		processPacket(packet)
+
+func processPacket(packet):
+	var message = bytes2var(packet)
+	print(message)
+		
+func checkForErrors():
+	var error = socketUDP.get_packet_error()
+	if error != OK:
+		print("Error: "+ str(error))
+		print("Packet count: " + str(socketUDP.get_available_packet_count()))
