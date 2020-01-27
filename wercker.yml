@@ -10,7 +10,7 @@ export:
                        
         - script:
             name: Copy resource file to Werker paths
-            code: cp -v Godot/resources.pck "$WERCKER_OUTPUT_DIR"
+            code: cp -v Godot/resources.pck "$WERCKER_OUTPUT_DIR" && cp -vR Docker/MultiplayerServer/Dockerfile "$WERCKER_OUTPUT_DIR"
 
         - script:
             name: List what's in Wercker output
@@ -26,5 +26,5 @@ build:
              name: Print all local files to check for resources
              code: find ./
         - internal/docker-build:
-            dockerfile: Docker/MultiplayerServer/Dockerfile
+            dockerfile: Dockerfile
             image-name: razzlegba-chat-server
