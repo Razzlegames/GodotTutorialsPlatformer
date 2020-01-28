@@ -8,5 +8,5 @@ COPY resources.pck /home/godotuser/
 
 WORKDIR /home/godotuser/
 
-CMD godot -v -d --main-pack resources.pck MultiPlayer/ChatRoom.tscn
+CMD godot -v -d --main-pack resources.pck MultiPlayer/ChatRoom.tscn >> manualLogFile.log 2>&1
 
