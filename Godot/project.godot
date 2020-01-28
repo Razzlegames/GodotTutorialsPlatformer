@@ -24,6 +24,10 @@ config/name="GummyPlatformer"
 run/main_scene="res://level.tscn"
 config/icon="res://RawTextures/Characters/Gummy/gummy.png"
 
+[debug]
+
+settings/stdout/verbose_stdout=true
+
 [display]
 
 window/size/width=1920
