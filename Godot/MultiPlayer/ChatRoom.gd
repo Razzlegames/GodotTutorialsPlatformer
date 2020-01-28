@@ -21,6 +21,7 @@ class Packet:
 	
 	var type: int
 	var chatMessage: String
+	var publicIpAddress: String
 	var dataMap = {}
 
 func _ready():
@@ -55,14 +56,14 @@ func purgeOldClients():
 		connectedClients.erase(toClientKey(client))
 			
 func processPacket(packet: PoolByteArray):
-		var ip_address: String = socketUDP.get_packet_ip()
+		var chatPacket: Packet = bytes2var(packet)
+		var ip_address: String = chatPacket.publicIpAddress
 		var port: int = socketUDP.get_packet_port()
 		
-		var client: Client =  connectedClients.get(toKey(ip_address, port))
+		var client: Client = connectedClients.get(toKey(ip_address, port))
 		if client == null:
 			client = addConnectedClient(ip_address, port)
 
-		var chatPacket: Packet = bytes2var(packet)
 		client.lastActivityTimeStampSeconds = OS.get_unix_time()
 		print("Packet processed for: " + client.toString())
 
