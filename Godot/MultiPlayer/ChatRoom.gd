@@ -52,7 +52,7 @@ func purgeOldClients():
 			toPurge.push_back(client)
 	
 	for client in toPurge:
-		connectedClients.erase(client)
+		connectedClients.erase(toClientKey(client))
 			
 func processPacket(packet: PoolByteArray):
 		var ip_address: String = socketUDP.get_packet_ip()
@@ -74,7 +74,7 @@ func addConnectedClient(ip_address: String, port: int) -> Client:
 	connectedClients[toClientKey(client)] = client
 	print("Added client: " + client.toString())
 	socketUDP.set_dest_address(ip_address, port)
-	socketUDP.put_var("Added client on server")
+	socketUDP.put_var("Added client on server" + to_json(connectedClients))
 	return client
 
 func checkForErrors():
