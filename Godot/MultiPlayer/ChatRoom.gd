@@ -9,12 +9,13 @@ var connectedClients = {}
 const MAX_CLIENT_INACTIVE_SECONDS = 2 * 60
 
 class Client:
-	var ip_address: String
+	var ipAddress: String
+	var localIpAddress: String
 	var port: int
 	var lastActivityTimeStampSeconds: int
 
 	func toString() -> String:
-		return str(lastActivityTimeStampSeconds) + ":" + ip_address + ":" + str(port)
+		return str(lastActivityTimeStampSeconds) + ":" + ipAddress + ":" + str(port)
 
 class Packet:
 	enum Type { HEART_BEAT, CHAT_MESSAGE, CONNECT_REQUEST, CONNECT_ACCEPT} 
@@ -40,14 +41,15 @@ func _process(delta):
 	print("Packets to get: "+ str(packetCount))
 	
 	for i in range(packetCount):
-		var packet: PoolByteArray = socketUDP.get_packet()
+		var packet = socketUDP.get_var()
 		checkForErrors()
-		processPacket(packet)
+		if packet != null:
+			processPacket(packet)
 
 func purgeOldClients():
 	
 	var toPurge = []
-	for client in connectedClients:
+	for client in connectedClients.values():
 		var inactiveSeconds: int = OS.get_unix_time() - client.lastActivityTimeStampSeconds
 		if inactiveSeconds >= MAX_CLIENT_INACTIVE_SECONDS:
 			toPurge.push_back(client)
@@ -55,27 +57,30 @@ func purgeOldClients():
 	for client in toPurge:
 		connectedClients.erase(toClientKey(client))
 			
-func processPacket(packet: PoolByteArray):
-		var chatPacket: Packet = bytes2var(packet)
-		var ip_address: String = chatPacket.publicIpAddress
+func processPacket(packet):
+		print("Packet received: " + str(packet))
+		var localIpAddress: String = socketUDP.get_packet_ip()
+		var ipAddress: String = packet.publicIpAddress
 		var port: int = socketUDP.get_packet_port()
 		
-		var client: Client = connectedClients.get(toKey(ip_address, port))
+		var client: Client = connectedClients.get(toKey(ipAddress, port))
 		if client == null:
-			client = addConnectedClient(ip_address, port)
+			client = addConnectedClient(ipAddress, localIpAddress, port)
 
 		client.lastActivityTimeStampSeconds = OS.get_unix_time()
 		print("Packet processed for: " + client.toString())
 
-func addConnectedClient(ip_address: String, port: int) -> Client:
+func addConnectedClient(ipAddress: String, localIpAddress: String, port: int) -> Client:
+	
 	var client  = Client.new()
-	client.ip_address = ip_address
+	client.ipAddress = ipAddress
+	client.localIpAddress = localIpAddress
 	client.port = port
 	
 	connectedClients[toClientKey(client)] = client
 	print("Added client: " + client.toString())
-	socketUDP.set_dest_address(ip_address, port)
-	socketUDP.put_var("Added client on server" + to_json(connectedClients))
+	socketUDP.set_dest_address(client.localIpAddress, client.port)
+	socketUDP.put_var("Added client on server" + str(inst2dict(client)))
 	return client
 
 func checkForErrors():
@@ -85,7 +90,7 @@ func checkForErrors():
 		print("Packet count: " + str(socketUDP.get_available_packet_count()))
 
 func toClientKey(client: Client) -> String:
-	return toKey(client.ip_address, client.port)
+	return toKey(client.ipAddress, client.port)
 	
-func toKey(ip_address: String, port: int) -> String:
-	return ip_address + ":" +  str(port)
+func toKey(ipAddress: String, port: int) -> String:
+	return ipAddress + ":" +  str(port)
