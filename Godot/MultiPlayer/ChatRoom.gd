@@ -63,12 +63,13 @@ func processPacket(packet):
 		var ipAddress: String = packet.publicIpAddress
 		var port: int = socketUDP.get_packet_port()
 		
-		var client: Client = connectedClients.get(toKey(ipAddress, port))
+		var client: Client = connectedClients.get(
+			toKey(ipAddress, localIpAddress, port))
 		if client == null:
 			client = addConnectedClient(ipAddress, localIpAddress, port)
 
 		client.lastActivityTimeStampSeconds = OS.get_unix_time()
-		print("Packet processed for: " + client.toString())
+		print("Packet processed for: " + toClientKey(client))
 
 func addConnectedClient(ipAddress: String, localIpAddress: String, port: int) -> Client:
 	
@@ -90,7 +91,7 @@ func checkForErrors():
 		print("Packet count: " + str(socketUDP.get_available_packet_count()))
 
 func toClientKey(client: Client) -> String:
-	return toKey(client.ipAddress, client.port)
+	return toKey(client.ipAddress, client.localIpAddress, client.port)
 	
-func toKey(ipAddress: String, port: int) -> String:
-	return ipAddress + ":" +  str(port)
+func toKey(ipAddress: String, localAddress: String, port: int) -> String:
+	return ipAddress + ":" + localAddress + ":" + str(port)
