@@ -11,8 +11,32 @@ func _ready():
 func startTestAfterPublicIpIsSaved():
 	while publicIpAddress == null:
 		yield(get_tree().create_timer(0.2), "timeout")
-	sendTest()
+	sendTest2Packets()
 
+func sendTest2Packets():
+	var count = 0
+	
+	while true:
+		var test = "test"
+		socketUDP.set_dest_address("127.0.0.1", UDP_PORT)
+		#socketUDP.set_dest_address("192.168.99.100", UDP_PORT)
+		#socketUDP.set_dest_address("172.17.0.2", UDP_PORT)
+		
+		var packet = ChatRoom.Packet.new()
+		packet.dataMap[test] = count
+		packet.publicIpAddress = publicIpAddress
+		packet.type = ChatRoom.Packet.Type.HEART_BEAT
+		
+		var jsonPacket = inst2dict(packet)
+		print("Json packet: " + str(jsonPacket))
+		socketUDP.put_var(jsonPacket)
+		
+		packet.dataMap["second"] = count + 10
+		socketUDP.put_var(inst2dict(packet))
+		print("test sent: "+ str(count))
+		count += 1
+		yield(get_tree().create_timer(4), "timeout")
+		
 func sendTest():
 	var count = 0
 	
@@ -30,9 +54,11 @@ func sendTest():
 		var jsonPacket = inst2dict(packet)
 		print("Json packet: " + str(jsonPacket))
 		socketUDP.put_var(jsonPacket)
+	
 		print("test sent: "+ str(count))
 		count += 1
-		yield(get_tree().create_timer(4), "timeout")
+		yield(get_tree().create_timer(4), "timeout")		
+
 
 func getYourPublicIp():
 	$HTTPRequest.request("http://bot.whatismyipaddress.com/")
