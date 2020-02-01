@@ -1,9 +1,11 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://MultiPlayer/ChatRoomClient.gd" type="Script" id=1]
+[ext_resource path="res://MultiPlayer/GetPublicIpHTTPRequest.gd" type="Script" id=2]
 
 [node name="ChatRoomClient" type="Node"]
 script = ExtResource( 1 )
 
-[node name="HTTPRequest" type="HTTPRequest" parent="."]
-[connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
+[node name="GetPublicIpHTTPRequest" type="HTTPRequest" parent="."]
+script = ExtResource( 2 )
+[connection signal="request_completed" from="GetPublicIpHTTPRequest" to="GetPublicIpHTTPRequest" method="_on_GetPublicIpHTTPRequest_request_completed"]

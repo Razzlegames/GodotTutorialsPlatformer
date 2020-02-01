@@ -49,6 +49,7 @@ func sendTest():
 		var packet = ChatRoom.Packet.new()
 		packet.dataMap[test] = count
 		packet.publicIpAddress = publicIpAddress
+		
 		packet.type = ChatRoom.Packet.Type.HEART_BEAT
 		
 		var jsonPacket = inst2dict(packet)
@@ -61,7 +62,14 @@ func sendTest():
 
 
 func getYourPublicIp():
-	$HTTPRequest.request("http://bot.whatismyipaddress.com/")
+	var getPublicIpHttpRequest = $GetPublicIpHTTPRequest
+	getPublicIpHttpRequest.getIpAddressAsync()
+	yield(getPublicIpHttpRequest, "ipReceivedOrGiveUp")
+	
+	if !getPublicIpHttpRequest.successfullCall():
+		print("Cannot get public IP Address for client!")
+		assert(getPublicIpHttpRequest.successfullCall())
+	publicIpAddress = getPublicIpHttpRequest.publicIpAddress
 
 func _process(delta):
 	
