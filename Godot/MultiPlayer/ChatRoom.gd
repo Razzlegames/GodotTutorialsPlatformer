@@ -4,6 +4,7 @@ class_name ChatRoom
 
 const UDP_PORT = 1507
 var socketUDP = PacketPeerUDP.new()
+var publicIpAddress = null
 
 var connectedClients = {}
 const MAX_CLIENT_INACTIVE_SECONDS = 2 * 60
@@ -18,14 +19,26 @@ class Client:
 		return str(lastActivityTimeStampSeconds) + ":" + ipAddress + ":" + str(port)
 
 class Packet:
-	enum Type { HEART_BEAT, CHAT_MESSAGE, CONNECT_REQUEST, CONNECT_ACCEPT} 
+	enum Type { HEART_BEAT, CHAT_MESSAGE, CONNECT_REQUEST, CONNECT_ACCEPT, CLIENT_LIST } 
 	
 	var type: int
 	var chatMessage: String
 	var publicIpAddress: String
 	var dataMap = {}
+	
+	static func copyFrom(dictionary: Dictionary) -> Packet:
+		var packet = Packet.new()
+		packet.type = dictionary.type
+		packet.chatMessage = dictionary.chatMessage
+		packet.publicIpAddress = dictionary.publicIpAddress
+	
+		for key in dictionary.dataMap:
+			packet.dataMap[key] = dictionary.dataMap[key]
+		return packet
 
 func _ready():
+	getYourPublicIp()
+	sendClientListMessageForever()
 	startListening()
 
 func startListening():
@@ -41,10 +54,28 @@ func _process(delta):
 	print("Packets to get: "+ str(packetCount))
 	
 	for i in range(packetCount):
-		var packet = socketUDP.get_var()
+		var packetDictionary = socketUDP.get_var()
 		checkForErrors()
-		if packet != null:
+		if packetDictionary != null:
+			print("Packet received: " + str(packetDictionary))
+			var packet = Packet.copyFrom(packetDictionary)
 			processPacket(packet)
+
+func sendClientListMessageForever():
+	while true:
+		for client in connectedClients.values():
+			sendClientListMessage(client)
+		yield(get_tree().create_timer(4), "timeout")
+
+func getYourPublicIp():
+	var getPublicIpHttpRequest = $GetPublicIpHTTPRequest
+	getPublicIpHttpRequest.getIpAddressAsync()
+	yield(getPublicIpHttpRequest, "ipReceivedOrGiveUp")
+	
+	if !getPublicIpHttpRequest.successfullCall():
+		print("Cannot get public IP Address for client!")
+		assert(getPublicIpHttpRequest.successfullCall())
+	publicIpAddress = getPublicIpHttpRequest.publicIpAddress
 
 func purgeOldClients():
 	
@@ -57,8 +88,8 @@ func purgeOldClients():
 	for client in toPurge:
 		connectedClients.erase(toClientKey(client))
 			
-func processPacket(packet):
-		print("Packet received: " + str(packet))
+func processPacket(packet: Packet):
+	
 		var localIpAddress: String = socketUDP.get_packet_ip()
 		var ipAddress: String = packet.publicIpAddress
 		var port: int = socketUDP.get_packet_port()
@@ -67,9 +98,32 @@ func processPacket(packet):
 			toKey(ipAddress, localIpAddress, port))
 		if client == null:
 			client = addConnectedClient(ipAddress, localIpAddress, port)
-
+		
+		match packet.type:
+			Packet.Type.HEART_BEAT:
+				pass
+			Packet.Type.CHAT_MESSAGE:
+				pass
+			Packet.Type.CONNECT_REQUEST:
+				pass
+			Packet.Type.CONNECT_ACCEPT:
+				pass
+			
 		client.lastActivityTimeStampSeconds = OS.get_unix_time()
 		print("Packet processed for: " + toClientKey(client))
+
+func sendClientListMessage(client: Client):
+	
+	var packet = Packet.new()
+	packet.type = Packet.Type.CLIENT_LIST
+	packet.publicIpAddress
+	
+	var clientList = []
+	for c in connectedClients.values():
+		clientList.append(inst2dict(c))
+	packet.dataMap.clientList = to_json(clientList)
+	socketUDP.set_dest_address(client.localIpAddress, client.port)
+	socketUDP.put_var(inst2dict(packet))
 
 func addConnectedClient(ipAddress: String, localIpAddress: String, port: int) -> Client:
 	
@@ -95,3 +149,4 @@ func toClientKey(client: Client) -> String:
 	
 func toKey(ipAddress: String, localAddress: String, port: int) -> String:
 	return ipAddress + ":" + localAddress + ":" + str(port)
+

@@ -13,9 +13,15 @@ _global_script_classes=[ {
 "class": "ChatRoom",
 "language": "GDScript",
 "path": "res://MultiPlayer/ChatRoom.gd"
+}, {
+"base": "HTTPRequest",
+"class": "GetPublicIpHTTPRequest",
+"language": "GDScript",
+"path": "res://MultiPlayer/GetPublicIpHTTPRequest.gd"
 } ]
 _global_script_class_icons={
-"ChatRoom": ""
+"ChatRoom": "",
+"GetPublicIpHTTPRequest": ""
 }
 
 [application]
