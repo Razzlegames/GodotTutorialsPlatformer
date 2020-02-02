@@ -26,16 +26,6 @@ class Packet:
 	var publicIpAddress: String
 	var dataMap = {}
 	
-	static func copyFrom(dictionary: Dictionary) -> Packet:
-		var packet = Packet.new()
-		packet.type = dictionary.type
-		packet.chatMessage = dictionary.chatMessage
-		packet.publicIpAddress = dictionary.publicIpAddress
-	
-		for key in dictionary.dataMap:
-			packet.dataMap[key] = dictionary.dataMap[key]
-		return packet
-
 func _ready():
 	getYourPublicIp()
 	sendClientListMessageForever()
@@ -58,8 +48,7 @@ func _process(delta):
 		checkForErrors()
 		if packetDictionary != null:
 			print("Packet received: " + str(packetDictionary))
-			var packet = Packet.copyFrom(packetDictionary)
-			processPacket(packet)
+			processPacket(dict2inst(packetDictionary) as Packet)
 
 func sendClientListMessageForever():
 	while true:
@@ -89,28 +78,28 @@ func purgeOldClients():
 		connectedClients.erase(toClientKey(client))
 			
 func processPacket(packet: Packet):
+		
+	var localIpAddress: String = socketUDP.get_packet_ip()
+	var ipAddress: String = packet.publicIpAddress
+	var port: int = socketUDP.get_packet_port()
 	
-		var localIpAddress: String = socketUDP.get_packet_ip()
-		var ipAddress: String = packet.publicIpAddress
-		var port: int = socketUDP.get_packet_port()
+	var client: Client = connectedClients.get(
+		toKey(ipAddress, localIpAddress, port))
+	if client == null:
+		client = addConnectedClient(ipAddress, localIpAddress, port)
+	
+	match packet.type:
+		Packet.Type.HEART_BEAT:
+			pass
+		Packet.Type.CHAT_MESSAGE:
+			pass
+		Packet.Type.CONNECT_REQUEST:
+			pass
+		Packet.Type.CONNECT_ACCEPT:
+			pass
 		
-		var client: Client = connectedClients.get(
-			toKey(ipAddress, localIpAddress, port))
-		if client == null:
-			client = addConnectedClient(ipAddress, localIpAddress, port)
-		
-		match packet.type:
-			Packet.Type.HEART_BEAT:
-				pass
-			Packet.Type.CHAT_MESSAGE:
-				pass
-			Packet.Type.CONNECT_REQUEST:
-				pass
-			Packet.Type.CONNECT_ACCEPT:
-				pass
-			
-		client.lastActivityTimeStampSeconds = OS.get_unix_time()
-		print("Packet processed for: " + toClientKey(client))
+	client.lastActivityTimeStampSeconds = OS.get_unix_time()
+	print("Packet processed for: " + toClientKey(client))
 
 func sendClientListMessage(client: Client):
 	
