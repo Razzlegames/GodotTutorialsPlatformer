@@ -20,6 +20,24 @@ export:
             name: Test resources exist
             code: test -f "$WERCKER_OUTPUT_DIR/resources.pck" 
 
+godot-docker:
+    box: razzlegames/godot-ci:docker0
+    steps:
+        - script:
+            name: Create base godot server docker image
+            code: find ./
+
+        - internal/docker-build:
+            dockerfile: Docker/UbuntuGodotDocker/Dockerfile
+            image-name: godot-server
+
+        - internal/docker-push:
+            username: $DOCKERHUB_USERNAME
+            password: $DOCKERHUB_PASSWORD
+            image-name: godot-server
+            repository: $DOCKERHUB_USERNAME/godot-server
+
+
 server-docker:
     box: razzlegames/godot-ci:docker0
     steps:
@@ -36,3 +54,15 @@ server-docker:
             password: $DOCKERHUB_PASSWORD
             image-name: razzlegba-chat-server
             repository: $DOCKERHUB_USERNAME/razzlegba-chat-server
+            tag: ubuntu-first
+
+deploy:
+    box: razzlegames/godot-ci:docker0
+    steps:
+        - script:
+            name: Pull new docker image
+            code: docker pull $DOCKERHUB_USERNAME/razzlegba-chat-server
+        - script:
+            name: Run new docker image
+            code: docker pull $DOCKERHUB_USERNAME/razzlegba-chat-server
+
