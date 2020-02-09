@@ -24,6 +24,7 @@ class Packet:
 	var type: int
 	var chatMessage: String
 	var publicIpAddress: String
+	var requestedIpToConnectTo: String
 	var dataMap = {}
 	
 func _ready():
