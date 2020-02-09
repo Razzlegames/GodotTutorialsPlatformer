@@ -37,7 +37,6 @@ godot-docker:
             image-name: godot-server
             repository: $DOCKERHUB_USERNAME/godot-server
 
-
 server-docker:
     box: razzlegames/godot-ci:docker0
     steps:
