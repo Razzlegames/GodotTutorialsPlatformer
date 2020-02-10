@@ -9,6 +9,7 @@ RUN apt-get update && apt-get install -y --fix-missing --no-install-recommends \
     unzip \
     wget \
     zip \
+    netcat \
     && rm -rf /var/lib/apt/lists/*
 
 ENV GODOT_VERSION "3.1.2"
