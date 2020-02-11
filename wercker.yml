@@ -1,5 +1,11 @@
 # Example: https://github.com/wercker/wercker/blob/master/wercker.yml
 
+build:
+   box: razzlegames/godot-ci:docker0
+   steps:
+        - script:
+                name: Do nothing build...
+                code: echo "Build... nothing to do"
 
 export:
     box: razzlegames/godot-ci:docker0
