@@ -49,7 +49,10 @@ func _process(delta):
 		checkForErrors()
 		if packetDictionary != null:
 			print("Packet received: " + str(packetDictionary))
-			processPacket(dict2inst(packetDictionary) as Packet)
+			# "as" keyword is broken in Godot 3.1.2 :( (only on export)
+			# https://github.com/godotengine/godot/issues/33418
+			var packet = dict2inst(packetDictionary)
+			processPacket(packet)
 
 func sendClientListMessageForever():
 	while true:
