@@ -67,9 +67,6 @@ deploy:
     box: razzlegames/godot-ci:docker0
     steps:
         - script:
-            name: Pull new docker image
-            code: docker pull $DOCKERHUB_USERNAME/razzlegba-chat-server
-        - script:
-            name: Run new docker image
-            code: docker pull $DOCKERHUB_USERNAME/razzlegba-chat-server
+            name: Login to Oracle host 1
+            code: echo "Implement"
 
