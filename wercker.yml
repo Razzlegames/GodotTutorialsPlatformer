@@ -42,6 +42,7 @@ godot-docker:
             password: $DOCKERHUB_PASSWORD
             image-name: godot-server
             repository: $DOCKERHUB_USERNAME/godot-server
+            tag: ubuntu-first
 
 
 server-docker:
@@ -60,7 +61,6 @@ server-docker:
             password: $DOCKERHUB_PASSWORD
             image-name: razzlegba-chat-server
             repository: $DOCKERHUB_USERNAME/razzlegba-chat-server
-            tag: ubuntu-first
 
 deploy:
     box: razzlegames/godot-ci:docker0
