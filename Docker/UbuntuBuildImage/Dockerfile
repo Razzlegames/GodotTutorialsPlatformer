@@ -11,6 +11,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     zip \
     && rm -rf /var/lib/apt/lists/*
 
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    ssh \
+    && rm -rf /var/lib/apt/lists/*
+
 ADD ./get-docker.sh get-docker.sh
 RUN chmod +x get-docker.sh \
     && ./get-docker.sh \

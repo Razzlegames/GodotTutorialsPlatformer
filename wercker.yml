@@ -68,5 +68,5 @@ deploy:
     steps:
         - script:
             name: Login to Oracle host 1 $ORACLE_HOST_1
-            code: ssh ubuntu@$ORACLE_HOST_1 -i $ORACLE_SSH_KEY_PRIVATE && whoami && ifconfig
+            code:  echo "$ORACLE_SSH_KEY_PRIVATE" | tr -d '\r' | ssh-add - && ssh ubuntu@$ORACLE_HOST_1 && whoami && ifconfig
 
