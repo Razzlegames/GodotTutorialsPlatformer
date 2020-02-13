@@ -65,6 +65,8 @@ server-docker:
 deploy:
     box: razzlegames/godot-ci:docker0
     steps:
+        - add-ssh-key:
+            keyname: ORACLE_SSH_KEY
         - add-to-known_hosts:
             hostname: $ORACLE_HOST_1
             fingerprint: SHA256:bOkfSrb1/O/QKTzyhAf8ruxm988h9XHk2/GQ/7YF7Tc.
