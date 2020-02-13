@@ -67,6 +67,9 @@ deploy:
     box: razzlegames/godot-ci:docker0
     steps:
         - script:
+            name: Run SSH agent
+            code:  eval $(ssh-agent -s)
+        - script:
             name: Login to Oracle host 1 $ORACLE_HOST_1
             code:  echo "$ORACLE_SSH_KEY_PRIVATE" | tr -d '\r' | ssh-add - && ssh ubuntu@$ORACLE_HOST_1 && whoami && ifconfig
 
