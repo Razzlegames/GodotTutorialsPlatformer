@@ -85,7 +85,7 @@ deploy:
 
         - script:
             name: Create Script
-            code: echo "docker pull $MULTIPLAYER_SERVER_DOCKER_PATH" >> deployScript.sh && echo "docker run -d $MULTIPLAYER_HOST_PORT:$MULTIPLAYER_CONTAINER_PORT/$MULTIPLAYER_PROTOCOL $MULTIPLAYER_SERVER_DOCKER_PATH" >> deployScript.sh
+            code: echo "docker pull $MULTIPLAYER_SERVER_DOCKER_PATH" >> deployScript.sh && echo "docker run -d $MULTIPLAYER_SERVER_DOCKER_PATH -p $MULTIPLAYER_HOST_PORT:$MULTIPLAYER_CONTAINER_PORT/$MULTIPLAYER_PROTOCOL" >> deployScript.sh
 
         - script:
             name: Login to Oracle host 1 $ORACLE_HOST_1 and run Docker server
