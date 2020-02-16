@@ -79,6 +79,9 @@ deploy:
             fingerprint: SHA256:bOkfSrb1/O/QKTzyhAf8ruxm988h9XHk2/GQ/7YF7Tc.
 
         - script:
+            name: Print out all files in step
+            code: find ./ 
+        - script:
             name: Login to Oracle host 1 $ORACLE_HOST_1
             code: ssh -o "StrictHostKeyChecking=no" ubuntu@$ORACLE_HOST_1 "whoami && ./deployViaDocker.sh"
 
