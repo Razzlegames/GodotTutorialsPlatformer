@@ -82,10 +82,13 @@ deploy:
             name: Print out all files in step
             code: find ./ 
 
+        - script:
+            name: Print docker command about to use
+            code: echo "docker pull $MULTIPLAYER_SERVER_DOCKER_PATH" && echo "docker run -v -d -p $MULTIPLAYER_HOST_PORT:$MULTIPLAYER_CONTAINER_PORT/$MULTIPLAYER_PROTOCOL $MULTIPLAYER_SERVER_DOCKER_PATH" 
 
         - script:
             name: Create Script
-            code: echo "docker pull $MULTIPLAYER_SERVER_DOCKER_PATH" >> deployScript.sh && echo "docker run -d $MULTIPLAYER_SERVER_DOCKER_PATH -p $MULTIPLAYER_HOST_PORT:$MULTIPLAYER_CONTAINER_PORT/$MULTIPLAYER_PROTOCOL" >> deployScript.sh
+            code: echo "docker pull $MULTIPLAYER_SERVER_DOCKER_PATH" >> deployScript.sh && echo "docker run -v -d -p $MULTIPLAYER_HOST_PORT:$MULTIPLAYER_CONTAINER_PORT/$MULTIPLAYER_PROTOCOL $MULTIPLAYER_SERVER_DOCKER_PATH" >> deployScript.sh
 
         - script:
             name: Login to Oracle host 1 $ORACLE_HOST_1 and run Docker server
