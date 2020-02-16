@@ -6,10 +6,13 @@ build:
         - add-ssh-key:
             keyname: ORACLE_SSH_KEY
 
+
+prepare-deploy:
+   box: razzlegames/godot-ci:docker0
+   steps:
         - script:
             name: Copy Deploy script to Werker paths
             code: cp -v Deploy/deployViaDocker.sh "$WERCKER_OUTPUT_DIR" && chmod +x "$WERCKER_OUTPUT_DIR/deployViaDocker.sh"
-        
 
 export:
     box: razzlegames/godot-ci:docker0
