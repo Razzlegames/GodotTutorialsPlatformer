@@ -80,5 +80,5 @@ deploy:
 
         - script:
             name: Login to Oracle host 1 $ORACLE_HOST_1
-            code: ssh -o "StrictHostKeyChecking=no" ubuntu@$ORACLE_HOST_1 "whoami && ifconfig"
+            code: ssh -o "StrictHostKeyChecking=no" ubuntu@$ORACLE_HOST_1 "whoami && ./deployViaDocker.sh"
 
