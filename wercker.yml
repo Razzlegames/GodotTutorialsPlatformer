@@ -82,14 +82,11 @@ deploy:
             name: Print out all files in step
             code: find ./ 
 
-        - script:
-            name: Login to Oracle host 1 $ORACLE_HOST_1
-            code: ssh -o "StrictHostKeyChecking=no" ubuntu@$ORACLE_HOST_1 
 
         - script:
-            name: pull docker 
-            code: docker pull $MULTIPLAYER_SERVER_DOCKER_PATH
+            name: Create Script
+            code: echo "docker pull $MULTIPLAYER_SERVER_DOCKER_PATH" >> deployScript.sh && echo "docker run -d $MULTIPLAYER_HOST_PORT:$MULTIPLAYER_CONTAINER_PORT/$MULTIPLAYER_PROTOCOL $MULTIPLAYER_SERVER_DOCKER_PATH" >> deployScript.sh
 
         - script:
-            name: Run Service
-            code: docker run -d $MULTIPLAYER_HOST_PORT:$MULTIPLAYER_CONTAINER_PORT/$MULTIPLAYER_PROTOCOL $MULTIPLAYER_SERVER_DOCKER_PATH
+            name: Login to Oracle host 1 $ORACLE_HOST_1 and run Docker server
+            code: ssh -o "StrictHostKeyChecking=no" ubuntu@$ORACLE_HOST_1 "bash -s" < ./deployScript.sh 
