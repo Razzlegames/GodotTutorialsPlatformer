@@ -93,7 +93,7 @@ deploy:
 
         - script:
             name: Login to Oracle host 1 "$ORACLE_HOST_1" and stop latest docker image
-            code: ssh -o "StrictHostKeyChecking=no" ubuntu@$ORACLE_HOST_1 "bash -s" < "$(./stopScript.sh && echo error code: $?) || true"
+            code: ssh -o "StrictHostKeyChecking=no" ubuntu@$ORACLE_HOST_1 "bash -s" < ./stopScript.sh || true
 
         - script:
             name: Login to Oracle host 1 "$ORACLE_HOST_1" and run latest docker image
