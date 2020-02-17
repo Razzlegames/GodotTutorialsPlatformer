@@ -81,20 +81,20 @@ deploy:
             
         - script:
             name: Create Run script
-            code: echo "docker run -v -d -p $MULTIPLAYER_HOST_PORT:$MULTIPLAYER_CONTAINER_PORT/$MULTIPLAYER_PROTOCOL $MULTIPLAYER_SERVER_DOCKER_PATH" >> runScript.sh
+            code: echo "docker run -v -d --name $MULTIPLAYER_DOCKER_NAME -p $MULTIPLAYER_HOST_PORT:$MULTIPLAYER_CONTAINER_PORT/$MULTIPLAYER_PROTOCOL $MULTIPLAYER_SERVER_DOCKER_PATH" >> runScript.sh
 
         - script:
             name: Create Stop script
-            code: echo "docker stop $MULTIPLAYER_SERVER_DOCKER_PATH && docker rm $MULTIPLAYER_SERVER_DOCKER_PATH" >> stopScript.sh
+            code: echo "docker stop $MULTIPLAYER_DOCKER_NAME && docker rm $MULTIPLAYER_DOCKER_NAME" >> stopScript.sh
 
         - script:
             name: Login to Oracle host 1 $ORACLE_HOST_1 and pull latest docker image
             code: ssh -o "StrictHostKeyChecking=no" ubuntu@$ORACLE_HOST_1 "bash -s" < ./pullScript.sh
 
         - script:
-            name: Login to Oracle host 1 $ORACLE_HOST_1 and stop latest docker image
-            code: ssh -o "StrictHostKeyChecking=no" ubuntu@$ORACLE_HOST_1 "bash -s" < ./stopScript.sh
+            name: Login to Oracle host 1 "$ORACLE_HOST_1" and stop latest docker image
+            code: ssh -o "StrictHostKeyChecking=no" ubuntu@$ORACLE_HOST_1 "bash -s" < "./stopScript.sh || true"
 
         - script:
-            name: Login to Oracle host 1 $ORACLE_HOST_1 and run latest docker image
+            name: Login to Oracle host 1 "$ORACLE_HOST_1" and run latest docker image
             code: ssh -o "StrictHostKeyChecking=no" ubuntu@$ORACLE_HOST_1 "bash -s" < ./runScript.sh
