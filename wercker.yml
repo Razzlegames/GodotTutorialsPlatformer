@@ -91,8 +91,16 @@ deploy:
             code: echo "docker run -v -d -p $MULTIPLAYER_HOST_PORT:$MULTIPLAYER_CONTAINER_PORT/$MULTIPLAYER_PROTOCOL $MULTIPLAYER_SERVER_DOCKER_PATH" >> runScript.sh
 
         - script:
+            name: Create Stop script
+            code: echo "docker stop $MULTIPLAYER_SERVER_DOCKER_PATH && docker rm $MULTIPLAYER_SERVER_DOCKER_PATH" >> stopScript.sh
+
+        - script:
             name: Login to Oracle host 1 $ORACLE_HOST_1 and pull latest docker image
             code: ssh -o "StrictHostKeyChecking=no" ubuntu@$ORACLE_HOST_1 "bash -s" < ./pullScript.sh
+
+        - script:
+            name: Login to Oracle host 1 $ORACLE_HOST_1 and stop latest docker image
+            code: ssh -o "StrictHostKeyChecking=no" ubuntu@$ORACLE_HOST_1 "bash -s" < ./stopScript.sh
 
         - script:
             name: Login to Oracle host 1 $ORACLE_HOST_1 and run latest docker image
