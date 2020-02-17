@@ -1,21 +1,20 @@
 # Example: https://github.com/wercker/wercker/blob/master/wercker.yml
 
+box: razzlegames/godot-ci:docker0
+no-response-timeout: 10
 build:
-   box: razzlegames/godot-ci:docker0
    steps:
         - add-ssh-key:
             keyname: ORACLE_SSH_KEY
 
 
 prepare-deploy:
-   box: razzlegames/godot-ci:docker0
    steps:
         - script:
             name: Copy Deploy script to Werker paths
             code: cp -v Deploy/deployViaDocker.sh "$WERCKER_OUTPUT_DIR" && chmod +x "$WERCKER_OUTPUT_DIR/deployViaDocker.sh"
 
 export:
-    box: razzlegames/godot-ci:docker0
     steps:
         - script:
             name: export resource file for stand alone Godot Server
@@ -34,7 +33,6 @@ export:
             code: test -f "$WERCKER_OUTPUT_DIR/resources.pck" 
 
 godot-docker:
-    box: razzlegames/godot-ci:docker0
     steps:
         - script:
             name: Create base godot server docker image
@@ -53,7 +51,6 @@ godot-docker:
 
 
 server-docker:
-    box: razzlegames/godot-ci:docker0
     steps:
         - script:
             name: Print all local files to check for resources
@@ -70,8 +67,6 @@ server-docker:
             repository: $DOCKERHUB_USERNAME/razzlegba-chat-server
 
 deploy:
-    box: razzlegames/godot-ci:docker0
-    no-response-timeout: 10
     steps:
         - add-ssh-key:
             keyname: ORACLE_SSH_KEY
@@ -88,9 +83,17 @@ deploy:
             code: echo "docker pull $MULTIPLAYER_SERVER_DOCKER_PATH" && echo "docker run -v -d -p $MULTIPLAYER_HOST_PORT:$MULTIPLAYER_CONTAINER_PORT/$MULTIPLAYER_PROTOCOL $MULTIPLAYER_SERVER_DOCKER_PATH" 
 
         - script:
-            name: Create Script
-            code: echo "docker pull $MULTIPLAYER_SERVER_DOCKER_PATH" >> deployScript.sh && echo "docker run -v -d -p $MULTIPLAYER_HOST_PORT:$MULTIPLAYER_CONTAINER_PORT/$MULTIPLAYER_PROTOCOL $MULTIPLAYER_SERVER_DOCKER_PATH" >> deployScript.sh
+            name: Create Pull Script
+            code: echo "docker pull $MULTIPLAYER_SERVER_DOCKER_PATH" >> pullScript.sh
+            
+        - script:
+            name: Create Run script
+            code: echo "docker run -v -d -p $MULTIPLAYER_HOST_PORT:$MULTIPLAYER_CONTAINER_PORT/$MULTIPLAYER_PROTOCOL $MULTIPLAYER_SERVER_DOCKER_PATH" >> runScript.sh
 
         - script:
-            name: Login to Oracle host 1 $ORACLE_HOST_1 and run Docker server
-            code: ssh -o "StrictHostKeyChecking=no" ubuntu@$ORACLE_HOST_1 "bash -s" < ./deployScript.sh 
+            name: Login to Oracle host 1 $ORACLE_HOST_1 and pull latest docker image
+            code: ssh -o "StrictHostKeyChecking=no" ubuntu@$ORACLE_HOST_1 "bash -s" < ./pullScript.sh
+
+        - script:
+            name: Login to Oracle host 1 $ORACLE_HOST_1 and run latest docker image
+            code: ssh -o "StrictHostKeyChecking=no" ubuntu@$ORACLE_HOST_1 "bash -s" < ./runScript.sh
