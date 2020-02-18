@@ -5,5 +5,6 @@
 
 [node name="ChatRoomClient" type="Node"]
 script = ExtResource( 1 )
+serverIp = "129.146.155.65"
 
 [node name="GetPublicIpHTTPRequest" parent="." instance=ExtResource( 2 )]

@@ -4,6 +4,8 @@ const UDP_PORT = 1507
 var socketUDP = PacketPeerUDP.new()
 var publicIpAddress = null
 
+export(String) var serverIp
+
 func _ready():
 	getYourPublicIp()
 	startTestAfterPublicIpIsSaved()
@@ -18,9 +20,11 @@ func sendTest2Packets():
 	
 	while true:
 		var test = "test"
-		socketUDP.set_dest_address("127.0.0.1", UDP_PORT)
+		#socketUDP.set_dest_address("127.0.0.1", UDP_PORT)
 		#socketUDP.set_dest_address("192.168.99.100", UDP_PORT)
 		#socketUDP.set_dest_address("172.17.0.2", UDP_PORT)
+		#socketUDP.set_dest_address("129.146.155.65", UDP_PORT)
+		socketUDP.set_dest_address(serverIp, UDP_PORT)
 		
 		var packet = ChatRoom.Packet.new()
 		packet.dataMap[test] = count
@@ -60,7 +64,6 @@ func sendTest():
 		count += 1
 		yield(get_tree().create_timer(4), "timeout")		
 
-
 func getYourPublicIp():
 	var getPublicIpHttpRequest = $GetPublicIpHTTPRequest
 	getPublicIpHttpRequest.getIpAddressAsync()
@@ -84,7 +87,7 @@ func _process(delta):
 		processPacket(packet)
 
 func processPacket(packet):
-	print("Server packet Received: " + str(packet))
+	print("Server [%s] packet Received: %s" % [socketUDP.get_packet_ip(), str(packet)])
 		
 func checkForErrors():
 	var error = socketUDP.get_packet_error()
