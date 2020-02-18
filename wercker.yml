@@ -81,7 +81,7 @@ deploy:
             
         - script:
             name: Create Run script
-            code: echo "docker run -v -d --name $MULTIPLAYER_DOCKER_NAME -p $MULTIPLAYER_HOST_PORT:$MULTIPLAYER_CONTAINER_PORT/$MULTIPLAYER_PROTOCOL $MULTIPLAYER_SERVER_DOCKER_PATH && exit 0" >> runScript.sh
+            code: echo "docker run --name $MULTIPLAYER_DOCKER_NAME -d -p $MULTIPLAYER_HOST_PORT:$MULTIPLAYER_CONTAINER_PORT/$MULTIPLAYER_PROTOCOL $MULTIPLAYER_SERVER_DOCKER_PATH && exit 0" >> runScript.sh
 
         - script:
             name: Create Stop script
