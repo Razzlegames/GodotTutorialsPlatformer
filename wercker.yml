@@ -42,7 +42,6 @@ godot-docker:
             repository: $DOCKERHUB_USERNAME/godot-server
             tag: ubuntu-first
 
-
 server-docker:
     steps:
         - script:
