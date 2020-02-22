@@ -4,8 +4,9 @@ LABEL author="razzlegames@gmail.com"
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ca-certificates \
     git \
-    python \
-    python-openssl \
+    python3 \
+    python3-cryptography \
+    python3-pip \
     unzip \
     wget \
     zip \

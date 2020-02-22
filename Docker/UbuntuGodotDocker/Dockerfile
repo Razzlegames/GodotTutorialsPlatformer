@@ -4,13 +4,16 @@ LABEL author="razzlegames@gmail.com"
 RUN apt-get update && apt-get install -y --fix-missing --no-install-recommends \
     ca-certificates \
     git \
-    python \
-    python-openssl \
+    python3 \
+    python3-cryptography \
+    python3-pip \
     unzip \
     wget \
     zip \
     netcat \
     && rm -rf /var/lib/apt/lists/*
+
+RUN pip3 install gitpython
 
 ENV GODOT_VERSION "3.1.2"
 

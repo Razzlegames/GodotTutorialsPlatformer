@@ -25,6 +25,19 @@ export:
             name: Test resources exist
             code: test -f "$WERCKER_OUTPUT_DIR/resources.pck" 
 
+create-the-building-container:
+    steps:
+        - internal/docker-build:
+            dockerfile: Docker/UbuntuGodotDocker/Dockerfile
+            image-name: godot-ci
+
+        - internal/docker-push:
+            username: $DOCKERHUB_USERNAME
+            password: $DOCKERHUB_PASSWORD
+            image-name: godot-ci
+            repository: $DOCKERHUB_USERNAME/godot-ci
+            tag: docker0
+
 godot-docker:
     steps:
         - script:
