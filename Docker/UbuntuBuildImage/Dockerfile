@@ -1,4 +1,4 @@
-FROM ubuntu:cosmic
+FROM ubuntu:bionic
 LABEL author="razzlegames@gmail.com"
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
