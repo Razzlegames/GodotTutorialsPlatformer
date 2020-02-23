@@ -6,9 +6,6 @@ build:
    steps:
         - add-ssh-key:
             keyname: ORACLE_SSH_KEY
-        - script:
-            name: Copy deploy script
-            code: cp -v Deploy/createDeployScript.py "$WERCKER_OUTPUT_DIR" 
 
 export:
     steps:
@@ -74,21 +71,11 @@ server-docker:
             image-name: razzlegba-chat-server
             repository: $DOCKERHUB_USERNAME/razzlegba-chat-server
 
-deploy:
+create-deploy-scripts:
     steps:
-        - add-ssh-key:
-            keyname: ORACLE_SSH_KEY
-        - add-to-known_hosts:
-            hostname: $ORACLE_HOST_1
-            fingerprint: SHA256:bOkfSrb1/O/QKTzyhAf8ruxm988h9XHk2/GQ/7YF7Tc.
-
         - script:
             name: Print out all files in step
             code: find ./ 
-
-        - script:
-            name: Create main deploy script
-            code: python3 createDeployScript.py --dockerPath "$MULTIPLAYER_SERVER_DOCKER_PATH" -s "$ORACLE_HOST_2" 
 
         - script:
             name: Print docker command about to use
@@ -105,6 +92,23 @@ deploy:
         - script:
             name: Create Stop script
             code: echo "docker stop $MULTIPLAYER_DOCKER_NAME && docker rm $MULTIPLAYER_DOCKER_NAME" >> stopScript.sh
+
+        - script:
+            name: Copy deploy scripts
+            code: cp -v runScript.sh stopScript.sh pullScript.sh "$WERCKER_OUTPUT_DIR" 
+
+deploy1:
+    steps:
+
+        - add-ssh-key:
+            keyname: ORACLE_SSH_KEY
+        - add-to-known_hosts:
+            hostname: $ORACLE_HOST_1
+            fingerprint: SHA256:bOkfSrb1/O/QKTzyhAf8ruxm988h9XHk2/GQ/7YF7Tc.
+
+        - script:
+            name: Print out all files in step
+            code: find ./ 
 
         - script:
             name: Login to Oracle host 1 $ORACLE_HOST_1 and pull latest docker image
