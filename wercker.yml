@@ -1,12 +1,11 @@
 # Example: https://github.com/wercker/wercker/blob/master/wercker.yml
 
-box: razzlegames/godot-ci:docker0
+box: razzlegames/godot-ci:1582430295
 no-response-timeout: 10
 build:
    steps:
         - add-ssh-key:
             keyname: ORACLE_SSH_KEY
-
 export:
     steps:
         - script:

@@ -1,9 +1,14 @@
-FROM ubuntu:bionic
+FROM ubuntu:xenial
 LABEL author="razzlegames@gmail.com"
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
+#RUN service ntp stop && ntpdate -s time.nist.gov  && service ntp start
+
+
+RUN apt-get -o Acquire::Check-Valid-Until=false update && apt-get install -y \
     ca-certificates \
     git \
+    python \
+    python-openssl \
     python3 \
     python3-cryptography \
     python3-pip \
@@ -12,7 +17,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     zip \
     && rm -rf /var/lib/apt/lists/*
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN apt-get -o Acquire::Check-Valid-Until=false update && apt-get install -y --no-install-recommends \
     ssh \
     && rm -rf /var/lib/apt/lists/*
 
