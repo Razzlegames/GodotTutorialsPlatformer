@@ -6,6 +6,9 @@ build:
    steps:
         - add-ssh-key:
             keyname: ORACLE_SSH_KEY
+        - script:
+            name: Copy deploy script
+            code: cp -v Deploy/createDeployScript.py "$WERCKER_OUTPUT_DIR" 
 
 export:
     steps:
@@ -84,6 +87,10 @@ deploy:
             code: find ./ 
 
         - script:
+            name: Create main deploy script
+            code: python3 createDeployScript.py --dockerPath "$MULTIPLAYER_SERVER_DOCKER_PATH" -s "$ORACLE_HOST_2" 
+
+        - script:
             name: Print docker command about to use
             code: echo "docker pull $MULTIPLAYER_SERVER_DOCKER_PATH" && echo "docker run -v -d -p $MULTIPLAYER_HOST_PORT:$MULTIPLAYER_CONTAINER_PORT/$MULTIPLAYER_PROTOCOL $MULTIPLAYER_SERVER_DOCKER_PATH" 
 
@@ -110,3 +117,15 @@ deploy:
         - script:
             name: Login to Oracle host 1 "$ORACLE_HOST_1" and run latest docker image
             code: ssh -o "StrictHostKeyChecking=no" ubuntu@$ORACLE_HOST_1 "bash -s" < ./runScript.sh
+
+        - script:
+            name: Login to Oracle host 2 $ORACLE_HOST_2 and pull latest docker image
+            code: ssh -o "StrictHostKeyChecking=no" ubuntu@$ORACLE_HOST_2 "bash -s" < ./pullScript.sh
+
+        - script:
+            name: Login to Oracle host 2 "$ORACLE_HOST_2" and stop latest docker image
+            code: ssh -o "StrictHostKeyChecking=no" ubuntu@$ORACLE_HOST_2 "bash -s" < ./stopScript.sh || true
+
+        - script:
+            name: Login to Oracle host 2 "$ORACLE_HOST_2" and run latest docker image
+            code: ssh -o "StrictHostKeyChecking=no" ubuntu@$ORACLE_HOST_2 "bash -s" < ./runScript.sh

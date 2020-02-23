@@ -5,7 +5,6 @@ import argparse
 
 parser = argparse.ArgumentParser()
 
-parser.add_argument("-s", "--server", help="Server IP to deploy to", required=True)
 parser.add_argument("-n", "--name", help="name of docker image, used while running locally", required=True)
 parser.add_argument("-a", "--dockerPath", help="full path to docker image, in dockerHub", required=True )
 parser.add_argument("-hp", "--hostPort", help="Port mapped to host, from docker container", required=True)
