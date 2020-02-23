@@ -35,7 +35,7 @@ create-the-building-container:
             password: $DOCKERHUB_PASSWORD
             image-name: godot-ci
             repository: $DOCKERHUB_USERNAME/godot-ci
-            tag: docker0
+            tag: $WERCKER_GIT_COMMIT
 
 godot-docker:
     steps:
