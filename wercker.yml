@@ -1,6 +1,6 @@
 # Example: https://github.com/wercker/wercker/blob/master/wercker.yml
 
-box: razzlegames/godot-ci:docker0
+box: barichello/godot-ci
 no-response-timeout: 10
 build:
    steps:
@@ -26,6 +26,10 @@ export:
 
 create-the-building-container:
     steps:
+        - script:
+            name: Copy get-docker.sh to Wercker 
+            code: cp -v get-docker.sh "$WERCKER_OUTPUT_DIR"
+
         - internal/docker-build:
             dockerfile: Docker/UbuntuBuildImage/Dockerfile
             image-name: godot-ci
