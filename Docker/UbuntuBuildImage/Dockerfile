@@ -21,7 +21,6 @@ RUN apt-get -o Acquire::Check-Valid-Until=false update && apt-get install -y --n
     ssh \
     && rm -rf /var/lib/apt/lists/*
 
-ADD ./get-docker.sh get-docker.sh
 RUN chmod +x get-docker.sh \
     && ./get-docker.sh \
     && rm -rf /var/lib/apt/lists/*
