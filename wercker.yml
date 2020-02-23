@@ -118,6 +118,16 @@ deploy:
             name: Login to Oracle host 1 "$ORACLE_HOST_1" and run latest docker image
             code: ssh -o "StrictHostKeyChecking=no" ubuntu@$ORACLE_HOST_1 "bash -s" < ./runScript.sh
 
+deploy2:
+    steps:
+
+        - add-ssh-key:
+            keyname: ORACLE_SSH_KEY
+
+        - add-to-known_hosts:
+            hostname: $ORACLE_HOST_2
+            fingerprint: SHA256:uS1W2mXh4huXlcFS/nFWSz5sUV+DO08D+VkVR1Rwjvs
+
         - script:
             name: Login to Oracle host 2 $ORACLE_HOST_2 and pull latest docker image
             code: ssh -o "StrictHostKeyChecking=no" ubuntu@$ORACLE_HOST_2 "bash -s" < ./pullScript.sh
