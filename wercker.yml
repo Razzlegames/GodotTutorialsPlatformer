@@ -70,6 +70,13 @@ server-docker:
             image-name: razzlegba-chat-server
             repository: $DOCKERHUB_USERNAME/razzlegba-chat-server
 
+        - internal/docker-push:
+                username: $DOCKERHUB_USERNAME
+                password: $DOCKERHUB_PASSWORD
+                image-name: razzlegba-chat-server
+                repository: $DOCKERHUB_USERNAME/razzlegba-chat-server
+                tag: $WERCKER_GIT_COMMIT
+
 create-deploy-scripts:
     steps:
         - script:
