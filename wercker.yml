@@ -27,7 +27,7 @@ export:
 create-the-building-container:
     steps:
         - internal/docker-build:
-            dockerfile: Docker/UbuntuGodotDocker/Dockerfile
+            dockerfile: Docker/UbuntuBuildImage/Dockerfile
             image-name: godot-ci
 
         - internal/docker-push:
