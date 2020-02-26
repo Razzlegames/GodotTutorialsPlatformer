@@ -1,6 +1,6 @@
 # Example: https://github.com/wercker/wercker/blob/master/wercker.yml
 
-box: barichello/godot-ci
+box: razzlegames/godot-ci:docker0
 no-response-timeout: 10
 build:
    steps:
