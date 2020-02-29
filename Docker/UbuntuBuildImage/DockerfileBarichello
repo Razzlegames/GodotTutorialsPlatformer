@@ -1,0 +1,6 @@
+FROM barichello/godot-ci
+
+
+RUN apt-get -o Acquire::Check-Valid-Until=false update && apt-get install -y --no-install-recommends \
+    ssh \
+    & rm -rf /var/lib/apt/lists/*
