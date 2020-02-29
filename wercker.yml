@@ -28,7 +28,7 @@ create-the-building-container:
     steps:
         - script:
             name: Copy get-docker.sh to Wercker 
-            code: cp -v get-docker.sh "$WERCKER_OUTPUT_DIR"
+            code: cp -v Docker/UbuntuBuildImage/get-docker.sh ./
 
         - internal/docker-build:
             dockerfile: Docker/UbuntuBuildImage/Dockerfile
