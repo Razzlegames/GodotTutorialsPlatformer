@@ -1,6 +1,5 @@
 extends Node2D
 
-
 func _input(event):
 	if  event.is_action_released("ui_home"):
 		print("Home")
@@ -10,3 +9,4 @@ func _input(event):
 		for byte in pos_bytes:
 			print(byte)
 		print(bytes2var(pos_bytes) )
+		
