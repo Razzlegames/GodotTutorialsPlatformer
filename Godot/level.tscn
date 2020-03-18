@@ -93,7 +93,7 @@ position = Vector2( 28.6194, -72.935 )
 scale = Vector2( 112.545, 77.4844 )
 texture = ExtResource( 5 )
 script = ExtResource( 6 )
-cameraPath = NodePath("../Gummy/Camera2D")
+cameraPath = NodePath("../../Gummy/Camera2D")
 
 [node name="LevelTiles" type="Node2D" parent="."]
 editor/display_folded = true
@@ -192,7 +192,6 @@ position = Vector2( 67.7798, 3.52103 )
 shape = SubResource( 6 )
 
 [node name="Bubbles" type="Node2D" parent="."]
-editor/display_folded = true
 position = Vector2( 127.842, -90.9498 )
 __meta__ = {
 "_edit_lock_": true
