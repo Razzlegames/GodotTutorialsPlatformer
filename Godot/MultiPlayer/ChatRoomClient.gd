@@ -87,7 +87,11 @@ func _process(delta):
 		processPacket(packet)
 
 func processPacket(packet):
-	print("Server [%s] packet Received: %s" % [socketUDP.get_packet_ip(), str(packet)])
+	print("--------------------------------------")
+	print("Server [%s] packet Received:" % [socketUDP.get_packet_ip()])
+	print("--------------------------------------")
+	print("Server [%s] packet Details: %s" % [socketUDP.get_packet_ip(), str(packet)])
+	print("--------------------------------------\n")
 		
 func checkForErrors():
 	var error = socketUDP.get_packet_error()
